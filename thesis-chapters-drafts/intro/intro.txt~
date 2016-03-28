@@ -1,0 +1,9 @@
+IPv6 is the designated successor of IPv4, which was specified and implemented in a context with a limited number of users and hosts, most of them circumscribed to the scientific world. The most relevant aspect of this first specification is the 32 bit address space, which in that context was considered sufficient to include the needs in terms of required address.\\
+Since the first specifications, the communication between hosts evolved in a way that was not predictable; new networks arose to fulfill the needs of organizations and enterprises, modeling the Internet of today. In this new context, researcher and professional involved in the IT field realized that the new requirements could not be satisfied by adding new specifications to the existing IPv4, but that there was the need to specify a new protocol, based on the new requirements of the actual context. 
+
+One of the most visible enhancements in IPv6 regards the increasing number of addresses, changing from 32 to 128 bit. This specification addresses the requirement for more devices connecting to the Internet and it is also a foresight for the future. Although this is a foundamental feature of the new IP protocol version, it is not the only enhancement and change of the protocol, which has been rethought in many other aspects. One of them is the ICMP protocol.\\
+As IPv4, IPv6 relies on the ICMP protocol, called ICMPv6 in the new version, to provide control and error messages. Furthermore, ICMP in IPv6 acquired new relevance because it is used by other protocols, such as the Neighbor Discovering Protocol, which are fundamental for networking functionalities of an IPv6 node.\\
+
+
+From a security point of view, ICMPv6 messages cannot be totally filtered by security devices, which for IPv4 is one of the main mitigation techniques. This particularity introduces new exploitation possibilities for 
+an attacker.
