@@ -99,9 +99,9 @@
 }
 
 \usepackage{multirow}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1-\arrayrulewidth\relax}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1-\arrayrulewidth\relax}}
+\setlength{\tabcolsep}{0pt}
 \usepackage{booktabs,fixltx2e}
 %\usepackage[flushleft]{threeparttable}
 \usepackage{tikz}
@@ -110,7 +110,7 @@
 \usepackage{footnote}
 
 \usepackage{arydshln}
-
+\usepackage{placeins}
 
 
 \begin{document}
@@ -409,39 +409,6 @@ The table (see~\ref{table:IPv6}) shows the specification of the IPv6 header. Fro
  \item \textbf{Destination Address}:\quad 128-bit address of the intended recipient of the packet.
 \end{itemize}
 
-\vspace{25pt}
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{1}{|C{1.5cm}}{\cellcolor{darkblue} Version}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Traffic Class}&\multicolumn{5}{C{7.5cm}|}{\cellcolor{darkblue} Flow Label}\\
-\hline
-\multicolumn{4}{|C{6.0cm}}{\cellcolor{lightblue} Payload Length}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{darkblue} Next Header}&\multicolumn{2}{C{3.0cm}|}{\cellcolor{lightblue} Hop Limit}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Source Address}}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Destination Address}}\\
-\hline
-\end{tabular}
-\caption{IPv6 Header}
-\label{table:IPv6}
-\end{table}
-\end{savenotes}
 
 \subsubsection{RFC 4443}
 \label{subsub:4443}
@@ -449,12 +416,10 @@ The table (see~\ref{table:IPv6}) shows the specification of the IPv6 header. Fro
 The Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification categorizes two broad type of messages, error and informational messages.\\
 As shown in the table (see~\ref{table:ICMPv6}), the general ICMPv6 header format is composed by an 8 bit \textbf{type} field, an 8 bit \textbf{code} field, and a 16 bit \textbf{checksum} field. The message body suggests 
 specific header fields which are characteristic of each message type.\\
-ICMPv6 messages are categorized by its type field, while the code field in this specification identifies a specific message under the category.
-
+ICMPv6 messages are categorized by its type field, while the code field in this specification identifies a specific message under the category.\\
 Error messages are characterized by a 0 in the high order bits of the type field, which gives a value range between 0 and 127. Informational message are instead characterized by a 1 in the high order bits, for a possible 
-value range between 128 and 255.
+value range between 128 and 255.\\
 
-\vspace{20pt}
 \begin{savenotes}
 \begin{table}[h]
 \centering
@@ -474,12 +439,10 @@ value range between 128 and 255.
 \end{table}
 \end{savenotes}
 
-\vspace{30pt}
 The next two table (see~\ref{table:ICMPv6ErrorMessages} and~\ref{table:ICMPv6InformationalMessages}) summarize the type of ICMPv6 messages described in this RFC.\\
-
 \textbf{ICMPv6 Error Messages}\\
 \begin{savenotes}
-\begin{table}[h]
+\begin{table}[!htpb]
 \centering
 \begin{tabular}{|L{3.0cm}|L{8.0cm}|}
 \rowcolor{lightblue}
@@ -508,7 +471,7 @@ Type field&Error Message\\
 
 \textbf{ICMPv6 Informational Messages}\\
 \begin{savenotes}
-\begin{table}[h]
+\begin{table}[!htpb]
 \centering
 \begin{tabular}{|L{3.0cm}|L{8.0cm}|}
 \rowcolor{lightblue}
@@ -535,37 +498,14 @@ The RFC, besides ICMPv6 fields, gives directives also for IPv6 fields of interes
 invoking packet``. For an Echo Request, the IPv6 field is ''any legal IPv6 address``. 
 
 
-\textbf{Destination Unreachable}
-
+\textbf{Destination Unreachable}\\
 The first inspected message type is Destination Unreachable. Its purpose is to generate an error ''in response to a packet that cannot be delivered to its destination address for reasons other than congestion``.\\
-The table (see~\ref{table:destUnreach}) shows the header fields.
-
+For a detailed view of the header, table (see~\ref{table:destUnreach}) in \ref{Appendix 1}.\\
+The table (see~\ref{table:destUnreachCodes}) summarizes the type and code fields of the header, with the corresponding code name of the message.\\
 \begin{savenotes}
-\begin{table}[h]
+\begin{table}[!htpb]
 \centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{Unused}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
-\hdashline
-\end{tabular}
-\caption{Destination Unreachable}
-\label{table:destUnreach}
-\end{table}
-\end{savenotes}
-
-The table (see~\ref{table:destUnreachCodes}) summarizes the type, which is always 1, and code fields of the header, with the corresponding code name of the message.\\
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|L{2.0cm}|L{2.0cm}|L{6.0cm}|}
+\begin{tabular}{|L{1.5cm}|L{1.5cm}|L{9.0cm}|}
 \rowcolor{lightblue}
 \hline
 Type&Code&Description\\
@@ -600,53 +540,12 @@ The following illustrates the meaning behind codes and description:
 A Packet Too Big must be sent by a router in response to a packet that it cannot forward because the packet is larger than the MTU of the outgoing link.\\
 The table (see~\ref{table:packettoobig}) shows the header fields.\\
 
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{MTU}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
-\hdashline
-\end{tabular}
-\caption{Packet Too Big}
-\label{table:packettoobig}
-\end{table}
-\end{savenotes}
-
 For this message the type field must always be 2 and the code set to 0 and ignored by the receiver. The MTU value represent ''the Maximum Transmission Unit of the next-hop link``.
 
 
 \textbf{Time Exceeded Message}
 
-The first table (see~\ref{table:timeExceeded}) underlines the header fields of this type of message, while the second one (see~\ref{table:timeExceededCodes}) shows the codes.
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{Unused}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
-\hdashline
-\end{tabular}
-\caption{Time Exceeded}
-\label{table:timeExceeded}
-\end{table}
-\end{savenotes}
+The table (see~\ref{table:timeExceeded}) underlines the header fields of this type of message, while the second one (see~\ref{table:timeExceededCodes}) shows the codes.
 
 If a router receives a packet with a Hop Limit of zero, or if a router decrements a packet's Hop Limit to zero, it must discard the packet and originate an ICMPv6 Time Exceeded message with Code 0 to the source of the 
 packet. An ICMPv6 Time Exceeded message with Code 1 is used to report fragment reassembly timeout.\\
@@ -675,26 +574,6 @@ Type&Code&Description\\
 Parameter Problem message to the packet's source, indicating the type and location of the problem``.\\
 The table (see~\ref{table:paramProb}) underlines the header fields of this type of message.\\
 
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{Pointer}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
-\hdashline
-\end{tabular}
-\caption{Parameter Problem}
-\label{table:paramProb}
-\end{table}
-\end{savenotes}
 
 The table (see~\ref{table:paramProbCodes}) shows a mapping between each code and a description of the error.
 \begin{savenotes}
@@ -723,26 +602,6 @@ is beyond what can fit in the maximum size of an ICMPv6 error message``.\\
 The RFC states that each node must implements an Echo mechanism in order to produce Echo Requests and answer with Echo Replies. It also mentions the implementation of an application layer interface, for diagnostics 
 purposes, to originate requests and receive replies.\\
 The table (see~\ref{table:echoReq}) shows the header fields of an Echo Request message.\\
-
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Sequence Number}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\hfil Data}}\\
-\hdashline
-\end{tabular}
-\caption{Echo Request}
-\label{table:echoReq}
-\end{table}
-\end{savenotes}
 
 An Echo Request code is always 0. Identifier and Sequence Number are considered helping fields, which, in fact, could be expected to be zero, as depicted in the table (see~\ref{table:echoReqFields}).\\
 
@@ -773,26 +632,6 @@ Data&Zero or more octets of arbitrary data.\\
 \textbf{Echo Reply}
 
 Next two tables identify respectively the Echo Reply Header (see~\ref{table:echoRep}) and its fields (see~\ref{table:echoRepFields} with the value, where present, or the function.\\
-
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Sequence Number}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{8}{:c:}{\multirow{-2}{*}{\hfil Data}}\\
-\hdashline
-\end{tabular}
-\caption{Echo Reply}
-\label{table:echoRep}
-\end{table}
-\end{savenotes}
 
 \vspace{20pt}
 \begin{savenotes}
@@ -872,25 +711,6 @@ information that may not appear in all packets``. Options defined in the documen
 
 The function of a Router Solicitation message, for a host, is to inform a router to generate a Router Advertisement. The format of a Router Solicitation is shown in the table (see~\ref{table:routerSolicit}).
 
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Reserved}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{:c:}{Options}\\
-\hdashline
-\end{tabular}
-\caption{Router Solicitation}
-\label{table:routerSolicit}
-\end{table}
-\end{savenotes}
-
-
 Router Solicitation specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
@@ -933,29 +753,6 @@ Source link-layer address &The link-layer address of the sender, if known.\\
 Router Advertisement are sent by routers periodically, or in response to a Router Solicitaion, to help hosts in their configuration processes. Examples of such processes are the mechanism to configure their addresses, 
 how to obtain information about DNS servers, prefix information for the link.\\
 The table (see~\ref{table:routerAdvert}) shows the header of a Router Advertisement.
-
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{0.375cm}C{0.375cm}C{0.75cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|c}{\cellcolor{darkblue} Type}&\multicolumn{4}{|c|}{\cellcolor{lightblue} Code}&\multicolumn{4}{c|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{2}{|c}{\cellcolor{lightblue} Cur Hop Limit}&\multicolumn{1}{|c|}{\cellcolor{darkblue}M}&\multicolumn{1}{c|}{\cellcolor{lightblue}O}&\multicolumn{2}{c|}{\cellcolor{darkblue} Reserved}&\multicolumn{4}{c|}{\cellcolor{lightblue} Router Lifetime}\\
-\hline
-\multicolumn{10}{|c|}{\cellcolor{darkblue} Reachable Time}\\
-\hline
-\multicolumn{10}{|c|}{\cellcolor{lightblue} Retrans Timer}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{10}{:c:}{Options}\\
-\hdashline
-\end{tabular}
-\caption{Router Advertisement}
-\label{table:routerAdvert}
-\end{table}
-\end{savenotes}
-
 
 Router Advertisement specifies three IPv6 fields:
 
@@ -1014,33 +811,6 @@ Prefix Information&These options specify the prefixes that are on-link and/or ar
 Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.\\
 The table (see~\ref{table:neighSolicit}) shows the header format.
 
-\begin{savenotes}
-\begin{table}[h]
-\centering
-\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{8}{|c|}{\cellcolor{lightblue} Reserved}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{}\\
-\rowcolor{darkblue}
-\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{8}{:c:}{Options}\\
-\hdashline
-\end{tabular}
-\caption{Neighbor Solicitation}
-\label{table:neighSolicit}
-\end{table}
-\end{savenotes}
-
 Neighbor Solicitation specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
@@ -1083,32 +853,254 @@ Source link-layer address &The link-layer address for the sender.\\
 
 A Neighbor Advertisement is sent by a node in response to a Neighbor Solicitation, or to spread information quickly. The latter is called unsolicited Neighbor Advertisement.\\
 
-\begin{savenotes}
-\begin{table}[h!]
-\centering
-\begin{tabular}{|C{0.375cm}C{0.375cm}C{0.375cm}C{0.375cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
-\hline
-\multicolumn{5}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
-\hline
-\multicolumn{1}{|C{0.375cm}}{\cellcolor{lightblue}R}&\multicolumn{1}{|C{0.375cm}}{\cellcolor{darkblue}S}&\multicolumn{1}{|C{0.375cm}}{\cellcolor{lightblue}O}&\multicolumn{8}{|c|}{\cellcolor{darkblue} Reserved}\\
-\hline
-\rowcolor{lightblue}
-\multicolumn{11}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{11}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{11}{|c|}{}\\
-\rowcolor{lightblue}
-\multicolumn{11}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
-\hline
-\rowcolor{darkblue}
-\multicolumn{11}{:c:}{Options}\\
-\hdashline
+Neighbor Advertisement specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&An address assigned to the interface from which the advertisement is sent.\\
+ Destination Address&For solicited advertisements, the Source Address of an invoking Neighbor Solicitation or, if the solicitation's Source Address is the unspecified address, the all-nodes multicast address. For 
+ unsolicited advertisements typically the all-nodes multicast address.\\
+ Hop Limit&255\\
 \end{tabular}
-\caption{Neighbor Advertisement}
-\label{table:neighAdv}
+
+The table (see~\ref{table:neighAdvFields}) shows the fields with the specifications.\\
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&136\\
+\hline
+Code&0\\
+\hline
+R&Router flag. When set, the R-bit indicates that the sender is a router. The R-bit is used by Neighbor Unreachability Detection to detect a router that changes to a host.\\
+\hline
+S&Solicited flag. When set, the S-bit indicates that the advertisement was sent in response to a Neighbor Solicitation from the Destination address. The S-bit is used as a reachability confirmation for Neighbor 
+Unreachability Detection. It must not be set in multicast advertisements or in unsolicited unicast advertisements.\\
+\hline
+O&Override flag. When set, the O-bit indicates that the advertisement should override an existing cache entry and update the cached link-layer address. When it is not set the advertisement will not update a cached 
+link-layer address though it will update an existing Neighbor Cache entry for which no link-layer address is known. It should not be set in solicited advertisements for anycast addresses and in solicited proxy 
+advertisements. It should be set in other solicited advertisements and in unsolicited advertisements.\\
+\hline
+Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Target Address&For solicited advertisements, the Target Address field in the Neighbor Solicitation message that prompted this advertisement. For an unsolicited advertisement, the address whose link-layer address has 
+changed. The Target Address must not be a multicast address.\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{Valid Options}\\
+\hline
+Target link-layer address&The link-layer address for the target, i.e., the sender of the advertisement.  This option must be included on link layers that have addresses when responding to multicast solicitations.  When 
+responding to a unicast Neighbor Solicitation this option should be included. The option must be included for multicast solicitations in order to avoid infinite Neighbor Solicitation "recursion" when the peer node does 
+not have a cache entry to return a Neighbor Advertisements message.\\
+\hline
+\end{tabular}
+\caption{Neighbor Advertisement Fields and Options}
+\label{table:neighAdvFields}
 \end{table}
 \end{savenotes}
+
+\textbf{Redirect}
+
+Redirect messages are used by routers to inform a node about a better first-hop node on the path to a destination.\\
+
+Redirect specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&must be the link-local address assigned to the interface from which this message is sent.\\
+ Destination Address&The Source Address of the packet that triggered the redirect.\\
+ Hop Limit&255\\
+\end{tabular}
+
+The table (see~\ref{table:redirectFields}) shows the fields with the specifications.\\
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&137\\
+\hline
+Code&0\\
+\hline
+Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Target Address&An IP address that is a better first hop to use for the ICMP Destination Address. When the target is the actual endpoint of communication, i.e., the destination is a neighbor, the Target Address field must 
+contain the same value as the ICMP Destination Address field.  Otherwise, the target is a better first-hop router and the Target Address must be the router's link-local address so that hosts can uniquely identify routers.\\
+\hline
+Destination Address&The IP address of the destination that is redirected to the target.\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{Valid Options}\\
+\hline
+Target link-layer address&The link-layer address for the target.\\
+\hline
+Redirected Header&As much as possible of the IP packet that triggered the sending of the Redirect without making the redirect packet exceed the minimum MTU specified in [IPv6].\\
+\hline
+\end{tabular}
+\caption{Redirect Fields and Options}
+\label{table:redirectFields}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Options}
+
+RFC 4861 specifies a set of options, which can be included in the messages. The general form includes an 8 bit identifier (Type) and an 8 bit length field, which represents ''the length of the option in units of 8 octets. 
+Options should be padded when necessary to ensure that they end on their natural 64-bit boundaries``.
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{8.0cm}|}
+\rowcolor{lightblue}
+\hline
+Type&Option Name\\
+\hline
+1&Source Link-Layer Address\\
+\hline
+2&Target Link-Layer Address\\
+\hline
+3&Prefix Information\\
+\hline
+4&Redirected Header\\
+\hline
+5&MTU\\
+\hline
+\end{tabular}
+\caption{Options Type and Names}
+\label{table:optionsTN}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Source/Target Link-layer Address}\\
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+\multirow{2}{*}{Type}&1\qquad for Source Link-layer Address\\ \cline{2-2}
+&2\qquad for Target Link-layer Address\\
+\hline
+Length&The length of the option (including the type and length fields) in units of 8 octets. For example, the length for IEEE 802 addresses is 1\\
+\hline
+Link-Layer Address&The variable length link-layer address.\\
+\hline
+\end{tabular}
+\caption{Source/Target Link-layer Address Fields}
+\label{table:srcTargetLinkLayer}
+\end{table}
+\end{savenotes}
+
+''The Source Link-Layer Address option contains the link-layer address of the sender of the packet. It is used in the Neighbor Solicitation, Router Solicitation, and Router Advertisement packets. The Target Link-Layer 
+Address option contains the link-layer address of the target. It is used in Neighbor Advertisement and Redirect packets. These options must be silently ignored for other Neighbor Discovery messages.``
+
+\textbf{Prefix Information}\\
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&3\\
+\hline
+Length&4\\
+\hline
+Prefix Length&The number of leading bits in the Prefix that are valid.\\
+\hline
+L&On-link flag. When set, indicates that this prefix can be used for on-link determination. When not set the advertisement makes no statement about on-link or off-link properties of the prefix.\\
+\hline
+A&Autonomous address-configuration flag. When set indicates that this prefix can be used for stateless address configuration.\\
+\hline
+Reserved1&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Valid Lifetime&The length of time in seconds (relative to the time the packet is sent) that the prefix is valid for the purpose of on-link determination. A value of all one bits (0xffffffff) represents infinity.\\
+\hline
+Preferred Lifetime&The length of time in seconds (relative to the time the packet is sent) that addresses generated from the prefix via stateless address autoconfiguration remain preferred. A value of all one bits 
+(0xffffffff) represents infinity.\\
+\hline
+Reserved2&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Prefix&An IP address or a prefix of an IP address. The Prefix Length field contains the number of valid leading bits in the prefix. The bits in the prefix after the prefix length are reserved and must be initialized to 
+zero by the sender and ignored by the receiver.\\
+\hline
+\end{tabular}
+\caption{Prefix Information Fields}
+\label{table:prefixInfo}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Redirect Header}\\
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&4\\
+\hline
+Length&The length of the option in units of 8 octets.\\
+\hline
+Reserved&They must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+IP header + data&The original packet truncated to ensure that the size of the redirect message does not exceed the minimum MTU required to support IPv6.\\
+\hline
+\end{tabular}
+\caption{Redirect Header Fields}
+\label{table:redirHead}
+\end{table}
+\end{savenotes}
+
+\textbf{MTU}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&5\\
+\hline
+Length&1\\
+\hline
+Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+MTU&The recommended MTU for the link.\\
+\hline
+\end{tabular}
+\caption{MTU Fields}
+\label{table:mtu}
+\end{table}
+\end{savenotes}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1305,8 +1297,412 @@ allow the traffic without restrictions.
 \pagebreak
 
 %-----------------------------APPENDIX--------------------------------
-\section*{Appendix 1 - [Title]}
-%\label{Appendix 1}
+\section*{Appendix 1 - Protocol Headers}
+\label{Appendix 1}
 \addcontentsline{toc}{section}{Appendix 1}
+
+\subsection*{IPv6}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{1}{|C{40pt}}{\cellcolor{darkblue} Version}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Traffic Class}&\multicolumn{5}{C{200pt}|}{\cellcolor{darkblue} Flow Label}\\
+\hline
+\multicolumn{4}{|C{160pt}}{\cellcolor{lightblue} Payload Length}&\multicolumn{2}{|C{80pt}|}{\cellcolor{darkblue} Next Header}&\multicolumn{2}{C{80pt}|}{\cellcolor{lightblue} Hop Limit}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Source Address}}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Destination Address}}\\
+\hline
+\end{tabular}
+\caption{IPv6 Header}
+\label{table:IPv6}
+\end{table}
+\end{savenotes}
+
+\subsection*{ICMPv6}
+
+\subsubsection*{RFC 4443}
+
+The following are the Protocol Headers described in RFC 4443.\\
+
+\vspace{15pt}
+\textbf{Destination Unreachable}
+\begin{savenotes}
+\begin{table} [!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{Unused}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
+\hdashline
+\end{tabular}
+\caption{Destination Unreachable}
+\label{table:destUnreach}
+\end{table}
+\end{savenotes}
+
+\textbf{Packet Too Big}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{MTU}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
+\hdashline
+\end{tabular}
+\caption{Packet Too Big}
+\label{table:packettoobig}
+\end{table}
+\end{savenotes}
+
+\textbf{Time Exceeded}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{Unused}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
+\hdashline
+\end{tabular}
+\caption{Time Exceeded}
+\label{table:timeExceeded}
+\end{table}
+\end{savenotes}
+
+\textbf{Parameter Problem}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{Pointer}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\parbox{10cm}{As much of invocking packet as possible without the ICMPv6 packet exceeding the minimum IPv6 MTU}}}\\
+\hdashline
+\end{tabular}
+\caption{Parameter Problem}
+\label{table:paramProb}
+\end{table}
+\end{savenotes}
+
+\textbf{Echo Request}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Sequence Number}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\hfil Data}}\\
+\hdashline
+\end{tabular}
+\caption{Echo Request}
+\label{table:echoReq}
+\end{table}
+\end{savenotes}
+
+\textbf{Echo Reply}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Sequence Number}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{\multirow{-2}{*}{\hfil Data}}\\
+\hdashline
+\end{tabular}
+\caption{Echo Reply}
+\label{table:echoRep}
+\end{table}
+\end{savenotes}
+
+\subsubsection*{RFC 4861}
+
+\textbf{Router Solicitation}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Router Solicitation}
+\label{table:routerSolicit}
+\end{table}
+\end{savenotes}
+
+\textbf{Router Advertisement}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{10pt}C{10pt}C{20pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{4}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{2}{|c}{\cellcolor{lightblue} Cur Hop Limit}&\multicolumn{1}{|c|}{\cellcolor{darkblue}M}&\multicolumn{1}{c|}{\cellcolor{lightblue}O}&\multicolumn{2}{c|}{\cellcolor{darkblue} Reserved}
+&\multicolumn{4}{c|}{\cellcolor{lightblue} Router Lifetime}\\
+\hline
+\multicolumn{10}{|c|}{\cellcolor{darkblue} Reachable Time}\\
+\hline
+\multicolumn{10}{|c|}{\cellcolor{lightblue} Retrans Timer}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{10}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Router Advertisement}
+\label{table:routerAdvert}
+\end{table}
+\end{savenotes}
+
+\textbf{Neighbor Solicitation}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{8}{|c|}{\cellcolor{lightblue} Reserved}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Neighbor Solicitation}
+\label{table:neighSolicit}
+\end{table}
+\end{savenotes}
+
+\textbf{Neighbor Advertisement}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{10pt}C{10pt}C{10pt}C{10pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{5}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{1}{|C{10pt}}{\cellcolor{lightblue}R}&\multicolumn{1}{|C{10pt}}{\cellcolor{darkblue}S}&\multicolumn{1}{|C{10pt}}{\cellcolor{lightblue}O}&\multicolumn{8}{|c|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{11}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Neighbor Advertisement}
+\label{table:neighAdv}
+\end{table}
+\end{savenotes}
+
+\textbf{Redirect}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{8}{|c|}{\cellcolor{lightblue} Reserved}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Destination Address}}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Redirect}
+\label{table:redirect}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Source/Target link-layer Address}
+\vspace{20pt}
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Length}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Link-layer Address}\\
+\hline
+\end{tabular}
+\caption{Source/Target link-layer Address}
+\label{table:optionsSrcTgt}
+\end{table}
+\end{savenotes}
+
+\textbf{Prefix Information}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{10pt}C{10pt}C{20pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue}Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Length}&\multicolumn{2}{C{80pt}|}{\cellcolor{darkblue} Prefix length}&\multicolumn{1}{C{10pt}|}{\cellcolor{lightblue}L}
+&\multicolumn{1}{C{10pt}|}{\cellcolor{darkblue}A}&\multicolumn{2}{C{60pt}|}{\cellcolor{lightblue}Reserved1}\\
+\hline
+\multicolumn{10}{|C{320pt}|}{\cellcolor{darkblue} Valid Lifetime}\\
+\hline
+\multicolumn{10}{|C{320pt}|}{\cellcolor{lightblue} Preferred Lifetime}\\
+\hline
+\multicolumn{10}{|C{320pt}|}{\cellcolor{darkblue} Reserved2}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{10}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{10}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{10}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{10}{|c|}{\multirow{-4}{*}{\hfil Prefix}}\\
+\hline
+\end{tabular}
+\caption{Prefix Information}
+\label{table:optionsPrefix}
+\end{table}
+\end{savenotes}
+
+\textbf{Redirect Header}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Length}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\multicolumn{8}{|C{320pt}|}{\cellcolor{lightblue} Reserved}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{\multirow{-2}{*}{\hfil IP Header + Data}}\\
+\hline
+\end{tabular}
+\caption{Redirect Header}
+\label{table:optionsRedir}
+\end{table}
+\end{savenotes}
+
+\textbf{MTU}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\begin{tabular}{|C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}C{40pt}|}
+\hline
+\multicolumn{2}{|C{80pt}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{80pt}|}{\cellcolor{lightblue} Length}&\multicolumn{4}{C{160pt}|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\multicolumn{8}{|C{320pt}|}{\cellcolor{lightblue} MTU}\\
+\hline
+\end{tabular}
+\caption{MTU}
+\label{table:optionsMTU}
+\end{table}
+\end{savenotes}
+
+
+
+\pagebreak
+\section*{Appendix 2 - ICMPv6 Headers}
+\label{Appendix 2}
+\addcontentsline{toc}{section}{Appendix 2}
+
 
 \end{document}
