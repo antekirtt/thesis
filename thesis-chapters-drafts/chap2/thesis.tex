@@ -391,6 +391,9 @@ being processed properly by the receiving IP layer.\\
 \textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most 
 significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer.\\
 \hdashline
+\textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
+unspecified address has a value of 0:0:0:0:0:0:0:0.\\
+\hdashline
 \end{tabular}
 
 
@@ -448,7 +451,7 @@ As shown in the table (see~\ref{table:ICMPv6}), the general ICMPv6 header format
 specific header fields which are characteristic of each message type.\\
 ICMPv6 messages are categorized by its type field, while the code field in this specification identifies a specific message under the category.
 
-Error messages are characterized by a 0 in the high order bits of the type field, which gives a value range between 0 and 127. informational message are instead characterized by a 1 in the high order bits, for a possible 
+Error messages are characterized by a 0 in the high order bits of the type field, which gives a value range between 0 and 127. Informational message are instead characterized by a 1 in the high order bits, for a possible 
 value range between 128 and 255.
 
 \vspace{20pt}
@@ -825,6 +828,305 @@ The data, which has no limitations in size, must be the same which has been rece
 \subsubsection{RFC 4861}
 \label{subsub:4861}
 
+The Neighbor Discovering Protocol has many functionalities and it is used by an IPv6 nodes in order to determine the link-layer address of neighbors, hosts and routers, and to discover which router is able to forward 
+their packets to another off-link networks. In addition, it is used as a reachability mechanism to determine if a host is still alive.\\
+The RFC defines five additional messages, characterized by the type field (for these messages the code is always zero), as summarized in the table (see~\ref{table:4861Messages}).
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|L{3.0cm}|L{8.0cm}|}
+\rowcolor{lightblue}
+\hline
+Type field&Message\\
+\hline
+133&Router Solicitation\\
+\hline
+134&Router Advertisement\\
+\hline
+135&Neighbor Solicitation\\
+\hline
+136&Neighbor Advertisement\\
+\hline
+137&Redirect\\
+\hline
+\end{tabular}
+\caption{RFC 4861 Messages}
+\label{table:4861Messages}
+\end{table}
+\end{savenotes}
+
+This RFC defines in addition five options, with the possibility to be extended in the future, that ''provide a mechanism for encoding variable length fields, fields that may appear multiple times in the same packet, or 
+information that may not appear in all packets``. Options defined in the document are:
+\vspace{-15pt}
+\begin{itemize}
+ \item Source Link-Layer Address
+ \item Target Link-Layer Address
+ \item Prefix Information
+ \item Redirected Header
+ \item MTU
+\end{itemize}
+
+
+\textbf{Router Solicitation}\\
+
+The function of a Router Solicitation message, for a host, is to inform a router to generate a Router Advertisement. The format of a Router Solicitation is shown in the table (see~\ref{table:routerSolicit}).
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
+\hline
+\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{4}{|c|}{\cellcolor{lightblue} Identifier}&\multicolumn{4}{c|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Router Solicitation}
+\label{table:routerSolicit}
+\end{table}
+\end{savenotes}
+
+
+Router Solicitation specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&An IP address assigned to the sending interface, or the unspecified address if no address is assigned to the sending interface.\\
+ Destination Address&Typically the all-routers multicast address.\\
+ Hop Limit&255\\
+\end{tabular}
+
+\vspace{15pt}
+The next table (see~\ref{table:routerSolfields}) summarizes the requirements of the fields.\\
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|L{3.0cm}|L{8.0cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&133\\
+\hline
+Code&0\\
+\hline
+Reserved&This field is unused. It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{Valid Options}\\
+\hline
+Source link-layer address &The link-layer address of the sender, if known.\\
+\hline
+\end{tabular}
+\caption{Router Solicitation Fields and Options}
+\label{table:routerSolfields}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Router Advertisement}\\
+
+Router Advertisement are sent by routers periodically, or in response to a Router Solicitaion, to help hosts in their configuration processes. Examples of such processes are the mechanism to configure their addresses, 
+how to obtain information about DNS servers, prefix information for the link.\\
+The table (see~\ref{table:routerAdvert}) shows the header of a Router Advertisement.
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|C{1.5cm}C{1.5cm}C{0.375cm}C{0.375cm}C{0.75cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
+\hline
+\multicolumn{2}{|c}{\cellcolor{darkblue} Type}&\multicolumn{4}{|c|}{\cellcolor{lightblue} Code}&\multicolumn{4}{c|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{2}{|c}{\cellcolor{lightblue} Cur Hop Limit}&\multicolumn{1}{|c|}{\cellcolor{darkblue}M}&\multicolumn{1}{c|}{\cellcolor{lightblue}O}&\multicolumn{2}{c|}{\cellcolor{darkblue} Reserved}&\multicolumn{4}{c|}{\cellcolor{lightblue} Router Lifetime}\\
+\hline
+\multicolumn{10}{|c|}{\cellcolor{darkblue} Reachable Time}\\
+\hline
+\multicolumn{10}{|c|}{\cellcolor{lightblue} Retrans Timer}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{10}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Router Advertisement}
+\label{table:routerAdvert}
+\end{table}
+\end{savenotes}
+
+
+Router Advertisement specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&must be the link-local address assigned to the interface from which this message is sent.\\
+ Destination Address&Typically the Source Address of an invoking Router Solicitation or the all-nodes multicast address.\\
+ Hop Limit&255\\
+\end{tabular}
+
+\vspace{15pt}
+The table (see~\ref{table:routerAdvfields}) summarizes the fields with their specifications.\\
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&134\\
+\hline
+Code&0\\
+\hline
+Cur Hop Limit&The default value that should be placed in the Hop Count field of the IP header for outgoing IP packets. A value of zero means unspecified\\
+\hline
+M&"Managed address configuration" flag. When set, it indicates that addresses are available via Dynamic Host Configuration Protocol\\
+\hline
+O&"Other configuration" flag. When set, it indicates that other configuration information is available via DHCPv6.\\
+\hline
+Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Router Lifetime&The lifetime associated with the default router in units of seconds.\\
+\hline
+Reachable Time&The time, in milliseconds, that a node assumes a neighbor is reachable after having received a reachability confirmation.\\
+\hline
+Retrans Timer&The time, in milliseconds, between retransmitted Neighbor Solicitation messages.\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{Valid Options}\\
+\hline
+Source link-layer address &The link-layer address of the interface from which the Router Advertisement is sent.\\
+\hline
+MTU&should be sent on links that have a variable MTU.\\
+\hline
+Prefix Information&These options specify the prefixes that are on-link and/or are used for stateless address autoconfiguration.\\
+\hline
+\end{tabular}
+\caption{Router Advertisement Fields and Options}
+\label{table:routerAdvfields}
+\end{table}
+\end{savenotes}
+
+\textbf{Neighbor Solicitation}
+
+Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.\\
+The table (see~\ref{table:neighSolicit}) shows the header format.
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
+\hline
+\multicolumn{2}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{8}{|c|}{\cellcolor{lightblue} Reserved}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{}\\
+\rowcolor{darkblue}
+\multicolumn{8}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{8}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Neighbor Solicitation}
+\label{table:neighSolicit}
+\end{table}
+\end{savenotes}
+
+Neighbor Solicitation specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&Either an address assigned to the interface from which this message is sent or (if Duplicate Address Detection is in progress) the unspecified address.\\
+ Destination Address&Either the solicited-node multicast address corresponding to the target address, or the target address.\\
+ Hop Limit&255\\
+\end{tabular}
+
+The table (see~\ref{table:neighSolicitFields}) summarizes the fields with their specifications.\\
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\rowcolor{lightblue}
+\hline
+Field&Value/Description\\
+\hline
+Type&135\\
+\hline
+Code&0\\
+\hline
+Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
+\hline
+Target Address&The IP address of the target of the solicitation. It must not be a multicast address.\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{Valid Options}\\
+\hline
+Source link-layer address &The link-layer address for the sender.\\
+\hline
+\end{tabular}
+\caption{Neighbor Solicitation Fields and Options}
+\label{table:neighSolicitFields}
+\end{table}
+\end{savenotes}
+
+
+\textbf{Neighbor Advertisement}
+
+A Neighbor Advertisement is sent by a node in response to a Neighbor Solicitation, or to spread information quickly. The latter is called unsolicited Neighbor Advertisement.\\
+
+\begin{savenotes}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|C{0.375cm}C{0.375cm}C{0.375cm}C{0.375cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}C{1.5cm}|}
+\hline
+\multicolumn{5}{|C{3.0cm}}{\cellcolor{darkblue} Type}&\multicolumn{2}{|C{3.0cm}|}{\cellcolor{lightblue} Code}&\multicolumn{4}{C{6.0cm}|}{\cellcolor{darkblue} Checksum}\\
+\hline
+\multicolumn{1}{|C{0.375cm}}{\cellcolor{lightblue}R}&\multicolumn{1}{|C{0.375cm}}{\cellcolor{darkblue}S}&\multicolumn{1}{|C{0.375cm}}{\cellcolor{lightblue}O}&\multicolumn{8}{|c|}{\cellcolor{darkblue} Reserved}\\
+\hline
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{}\\
+\rowcolor{lightblue}
+\multicolumn{11}{|c|}{\multirow{-4}{*}{\hfil Target Address}}\\
+\hline
+\rowcolor{darkblue}
+\multicolumn{11}{:c:}{Options}\\
+\hdashline
+\end{tabular}
+\caption{Neighbor Advertisement}
+\label{table:neighAdv}
+\end{table}
+\end{savenotes}
+
+Neighbor Advertisement specifies three IPv6 fields:
+
+\begin{tabular}{L{4.0cm}L{11.5cm}}
+ Source Address&An address assigned to the interface from which the advertisement is sent.\\
+ Destination Address&For solicited advertisements, the Source Address of an invoking Neighbor Solicitation or, if the solicitation's Source Address is the unspecified address, the all-nodes multicast address. For 
+ unsolicited advertisements typically the all-nodes multicast address.\\
+ Hop Limit&255\\
+\end{tabular}
+
+
+
+
+
+
+
+
+
 
 \pagebreak
 In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. Many researches explore this scenario, and countermeasures are developed to mitigate the risk of a 
@@ -925,17 +1227,14 @@ to network nodes along the communication’s path''.
 
 \textbf{Analyzed RFCs}\\
 
-The following table shows the list of protocols and associated RFC from Lewandowski's study that are in scope with this research. 
+The following table (see~\ref{table:protocolsInScope}) shows the list of protocols and associated RFC from Lewandowski's study that are in scope with this research. 
 \vspace{15pt}
 \begin{savenotes}
 \begin{table}[h]
 \centering
-%\vspace{5pt}
-%{\setlength{\extrarowheight}{10pt}
 \begin{tabular}{|C{8.5cm}|C{4.5cm}|}
 \rowcolor{darkblue}
 \hline
-%\multicolumn{4}{ |l| }{\textbf{Use Case:} Ensure authenticity of canceling}\\
 Protocol&RFC\\
 \hline
 \rowcolor{lightblue}
@@ -1018,8 +1317,15 @@ allow the traffic without restrictions.
 \pagebreak
 
 %-----------------------------APPENDIX--------------------------------
-\section*{Appendix 1 - [Title]}
-%\label{Appendix 1}
+\section*{Appendix 1 - ICMPv6 Headers}
+\label{Appendix 1}
 \addcontentsline{toc}{section}{Appendix 1}
+
+
+
+\section*{Appendix 2 - ICMPv6 Headers}
+\label{Appendix 2}
+\addcontentsline{toc}{section}{Appendix 2}
+
 
 \end{document}
