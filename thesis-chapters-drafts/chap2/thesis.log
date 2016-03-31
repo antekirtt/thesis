@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  29 MAR 2016 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  30 MAR 2016 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1541,32 +1541,35 @@ Package: placeins 2005/04/18  v 2.2
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./thesis.aux)
+ (./thesis.aux
+
+LaTeX Warning: Label `table:4443EchoReq' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 116.
-LaTeX Font Info:    Try loading font information for T2A+cmr on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 118.
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 118.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 116.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 118.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -1640,7 +1643,7 @@ Package caption Info: hypcap package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box81
-Package hyperref Info: Link coloring ON on input line 116.
+Package hyperref Info: Link coloring ON on input line 118.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1650,9 +1653,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 118.
+LaTeX Info: Redefining \pageref on input line 118.
+LaTeX Info: Redefining \nameref on input line 118.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
@@ -1663,12 +1666,12 @@ LaTeX Info: Redefining \nameref on input line 116.
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 160.
-LaTeX Font Info:    Try loading font information for U+msa on input line 168.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 162.
+LaTeX Font Info:    Try loading font information for U+msa on input line 170.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 168.
+LaTeX Font Info:    Try loading font information for U+msb on input line 170.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1689,207 +1692,254 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 \openout7 = `thesis.lot'.
 
  [9]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 246.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 248.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 256--256
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
 [][][][][]$\T1/pcr/m/n/10 http : / / www . cisco . com / c / en / us / support 
 / docs / ip / access-[]lists / 13608-[]21 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--257
+Underfull \hbox (badness 10000) in paragraph at lines 259--259
 [][][][][]$\T1/pcr/m/n/10 http : / / www . cisco . com / c / en / us / about / 
 security-[]center /
  []
 
 [10] [11] [12] [13] [14]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 325.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 327.
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--334
+Underfull \hbox (badness 10000) in paragraph at lines 330--336
 
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 406--406
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--344
+
+ []
+
+[15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 415--415
 [][][][][]$\T1/pcr/m/n/10 http : / / www . iana . org / assignments / protocol-
 []numbers / protocol-[]numbers .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--422
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 527--534
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 561--563
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 566--570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 588--590
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 546--553
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
-
- []
-
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 751--752
-
- []
-
-[24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 806--807
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--848
-
- []
-
-[26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 890--892
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 963--964
+Underfull \hbox (badness 10000) in paragraph at lines 585--589
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 986--988
+Underfull \hbox (badness 10000) in paragraph at lines 607--609
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 989--990
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1028--1029
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 642--643
 
  []
 
-[29] [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1119--1121
+[23] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1122--1123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
-
- []
-
-[33] <figures/communicationScenarios.png, id=416, 916.42375pt x 534.99875pt>
-File: figures/communicationScenarios.png Graphic file (type png)
-
-<use figures/communicationScenarios.png>
-Package pdftex.def Info: figures/communicationScenarios.png used on input line 
-1141.
-(pdftex.def)             Requested size: 354.86412pt x 207.16292pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1147--1152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1153--1163
-
- []
-
-[34 <./figures/communicationScenarios.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1168--1170
-
- []
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1189
-
- []
-
-
-Overfull \hbox (12.9685pt too wide) in paragraph at lines 1190--1214
-[]\T1/ptm/m/n/12 The fol-low-ing ta-ble (see [][]20[][]) shows the list of pro-
-to-cols and as-so-ci-ated RFC from Lewandowski's
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1215--1216
-
- []
-
-[36] [37] [38] [39] [40] [41] [42] [43] (./thesis.bbl [44]) [45]
-Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1340--1340
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 866--867
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 909--911
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 982--983
+
+ []
+
+[28] [29] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1007
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1048
+
+ []
+
+[31] [32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1148--1150
+
+ []
+
+[34] <figures/communicationScenarios.png, id=436, 916.42375pt x 534.99875pt>
+File: figures/communicationScenarios.png Graphic file (type png)
+
+<use figures/communicationScenarios.png>
+Package pdftex.def Info: figures/communicationScenarios.png used on input line 
+1160.
+(pdftex.def)             Requested size: 354.86412pt x 207.16292pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1182
+
+ []
+
+[35 <./figures/communicationScenarios.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1187--1189
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1207--1208
+
+ []
+
+
+Overfull \hbox (12.9685pt too wide) in paragraph at lines 1209--1233
+[]\T1/ptm/m/n/12 The fol-low-ing ta-ble (see [][]20[][]) shows the list of pro-
+to-cols and as-so-ci-ated RFC from Lewandowski's
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
+
+ []
+
+[38] [39] [40] [41] [42] [43] [44] (./thesis.bbl [45]) [46]
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
+
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 1359--1359
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1362--1362
+Underfull \hbox (badness 1033) in paragraph at lines 1381--1381
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[46]
-Underfull \hbox (badness 1033) in paragraph at lines 1384--1384
+[47]
+Underfull \hbox (badness 1033) in paragraph at lines 1403--1403
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1406--1406
+Underfull \hbox (badness 1033) in paragraph at lines 1425--1425
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[47] [48] [49] [50] [51]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1688.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1688.
+[48] [49] [50] [51]
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1709--1737
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1746--1767
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1776--1788
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1797--1810
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1819--1832
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1842--1855
+ [][] 
+ []
+
+
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1864--1885
+ [][] 
+ []
+
+[52] [53] [54] [55]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1890.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1890.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1688.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1688.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1890.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1890.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7A58D5B54E1057BF3807C62D27877FD3;1108.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 30293 strings out of 493105
- 537120 string characters out of 6137071
- 653241 words of memory out of 5000000
- 33105 multiletter control sequences out of 15000+600000
+ 30314 strings out of 493105
+ 537427 string characters out of 6137071
+ 651709 words of memory out of 5000000
+ 33115 multiletter control sequences out of 15000+600000
  58490 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,97p,10378b,507s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1901,10 +1951,10 @@ pe1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (51 pages, 206086 bytes).
+Output written on thesis.pdf (55 pages, 213923 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 513 compressed objects within 6 object streams
- 131 named destinations out of 1000 (max. 500000)
+ 617 PDF objects out of 1000 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 142 named destinations out of 1000 (max. 500000)
  170 words of extra memory for PDF output out of 10000 (max. 10000000)
 
