@@ -112,7 +112,9 @@
 
 \usepackage{arydshln}
 \usepackage{placeins}
-
+\usepackage{enumitem}
+\usepackage{cleveref}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
 
 \begin{document}
 
@@ -345,10 +347,10 @@ RFCs use a specific set of words to express the requirements of the implementati
 understood by implementors. The reason is that a lack of compliance may lead to the introduction of some vulnerabilities, where a node is especting a particular behavior from another peer, while the peer's implementation 
 follows slightly different specifications. This research, inside next sections, will try to underline where, under each message type, and along the general specifications (e.g. general processing rules), it is possible 
 to insert vulnerabilities in the protocol if the interpretation of the specifications were different between the implementations.\\
-Since the list of possibilities may be long, only some of them will be cited in this chapter under each message type, while the complete list is left to Appendix. This work will eventually generate the set of test to be 
-performed during the experiment.
+Since the list of possibilities may be long, this research will use criteria in order to generate a subset of specification to test. The followed mechanism is to first select specifications and insert them into a set of 
+tables, each related to a specific message, and then select from each table the test to be performed during the experiment. The criteria are presented at the end of this chapter, after the related works' analysis.\\
 
-
+\pagebreak
 \subsubsection{Terminology}
 \label{subsub:terminology}
 
@@ -409,7 +411,7 @@ unspecified address has a value of 0:0:0:0:0:0:0:0.\\
 \label{subsub:2460}
 The table (see~\ref{table:IPv6}) shows the specification of the IPv6 header. From the point of view of this research, there are four interesting fields which are strictly involved in the ICMPv6 specification:
 \vspace{-15pt}
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
  \item \textbf{Next Header}:\quad 8-bit, identifies the type of header immediately following the IPv6 header. Uses the same values as the IPv4 Protocol field. The ICMPv6 value is 58. The complete list is available on 
  IANA's website\footnote{\url{http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml}, accessed on 27.03.2016}
  \item \textbf{Hop Limit}:\quad 8-bit, decremented by 1 by each node that forwards the packet. The packet is discarded if Hop Limit is decremented to zero.
@@ -506,10 +508,10 @@ The RFC, besides ICMPv6 fields, gives directives also for IPv6 fields of interes
 invoking packet``. For an Echo Request, the IPv6 field is ''any legal IPv6 address``.\\
 The RFC includes a ''Message Processing Rules`` section, which underlines the rules that a node \textcolor{red}{must} observe while processing an ICMPv6 message. The complete list is in table ~\ref{table:4443ProcRules} 
 in Appendix 2.\\
-During the preparation for the experiment is is important to identify tests that may lead to unexpected, from the RFC specification point of view, results. One example of that, taking the first rule in the 
+During the preparation for the experiment it is important to identify tests that may lead to unexpected, from the RFC specification point of view, results. One example of that, taking the first rule in the 
 aforementioned table, may be:\\
 what would happend in the case that an ICMPv6 error message of unknown type is received at its destination, and it is passed to the upper-layer process \textbf{with a forged malicious payload}?\\
-As this research will show, some test may be spread across different scenarios, while other are more suitable to be performed only in a specific scenario; the example above is a good candidate for a outside-to-inside 
+As this research will show, some test may be spread across different scenarios, while other are more suitable to be performed only in a specific scenario; the example above is a good candidate for an outside-to-inside 
 direction scenario, in order to test the behavior of an internal node.
 
 
@@ -520,6 +522,7 @@ The table (see~\ref{table:destUnreachCodes}) summarizes the type and code fields
 \begin{savenotes}
 \begin{table}[!ht]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|C{1cm}|C{1cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -539,7 +542,7 @@ Type&Code&Description\\
 \end{table}
 \end{savenotes}
 
-The Unused field accordingly to the RFC must be initialized to zero by the originator and ignored by the receiver.\\
+The Unused field accordingly to the RFC must be initialized to zero by the originator and ignored by the receiver. \\
 The following illustrates the meaning behind codes and description:
 
 \textbf{No Route to Destination}: lack of a matching entry in the forwarding node's routing table\\
@@ -562,7 +565,8 @@ The table (see~\ref{table:timeExceeded}) in Appendix 1 underlines the header fie
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{2.0cm}|L{2.0cm}|L{6.0cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|C{2.0cm}|C{2.0cm}|L{6.5cm}|}
 \rowcolor{lightblue}
 \hline
 Type&Code&Description\\
@@ -577,7 +581,7 @@ Type&Code&Description\\
 \end{savenotes}
 
 If a router receives a packet with a Hop Limit of zero, or if a router decrements a packet's Hop Limit to zero, it must discard the packet and originate an ICMPv6 Time Exceeded message with Code 0 to the source of the 
-packet. An ICMPv6 Time Exceeded message with Code 1 is used to report fragment reassembly timeout.\\
+packet. An ICMPv6 Time Exceeded message with Code 1 is used to report fragment reassembly timeout.
 
 \textbf{Parameter Problem Message}
 
@@ -589,6 +593,7 @@ Table \ref{table:paramProbCodes} shows a mapping between each code and a descrip
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|C{1.0cm}|C{1.0cm}|L{8.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -604,17 +609,18 @@ Type&Code&Description\\
 \end{table}
 \end{savenotes}
 Accordingly to the specification, the pointer field ''identifies the octet offset within the invoking packet where the error was detected. The pointer will point beyond the end of the ICMPv6 packet if the field in error 
-is beyond what can fit in the maximum size of an ICMPv6 error message``.\\
+is beyond what can fit in the maximum size of an ICMPv6 error message``.
 
 \textbf{Echo Request}
 
 The RFC states that each node must implements an Echo mechanism in order to produce Echo Requests and answer with Echo Replies. It also mentions the implementation of an application layer interface, for diagnostics 
 purposes, to originate requests and receive replies.\\
 The table (see~\ref{table:echoReq}) in Appendix 1 shows the header fields of an Echo Request message.\\
-An Echo Request code is always 0. Identifier and Sequence Number are considered helping fields, which, in fact, could be expected to be zero, as depicted in table \ref{table:echoReqFields}.\\
+An Echo Request code is always 0. Identifier and Sequence Number are considered helping fields, which, in fact, could be expected to be zero, as depicted in table \ref{table:echoReqFields}.
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|L{2.0cm}|L{10.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -643,7 +649,8 @@ For the Echo Reply Header (see~\ref{table:echoRep}), while table \ref{table:echo
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{2.0cm}|L{10.0cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{2.0cm}|L{11.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -679,6 +686,7 @@ The RFC defines five additional messages, characterized by the type field (for t
 \begin{savenotes}
 \begin{table}[h]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|C{3.0cm}|L{8.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -703,7 +711,7 @@ Type field&Message\\
 This RFC defines in addition five options, with the possibility to be extended in the future, that ''provide a mechanism for encoding variable length fields, fields that may appear multiple times in the same packet, or 
 information that may not appear in all packets``. Options defined in the document are:
 \vspace{-15pt}
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Source Link-Layer Address
  \item Target Link-Layer Address
  \item Prefix Information
@@ -719,9 +727,13 @@ The function of a Router Solicitation message, for a host, is to inform a router
 Router Solicitation specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
+ \hdashline
  Source Address&An IP address assigned to the sending interface, or the unspecified address if no address is assigned to the sending interface.\\
+ \hdashline
  Destination Address&Typically the all-routers multicast address.\\
+ \hdashline
  Hop Limit&255\\
+ \hdashline
 \end{tabular}
 
 \vspace{15pt}
@@ -729,6 +741,7 @@ The next table (see~\ref{table:routerSolfields}) summarizes the requirements of 
 \begin{savenotes}
 \begin{table}[h]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|L{3.0cm}|L{10.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -756,13 +769,17 @@ Source link-layer address &The link-layer address of the sender, if known.\\
 
 Router Advertisement are sent by routers periodically, or in response to a Router Solicitaion, to help hosts in their configuration processes. Examples of such processes are the mechanism to configure their addresses, 
 how to obtain information about DNS servers, prefix information for the link.\\
-The table \ref{table:routerAdvert} shows the header of a Router Advertisement.\\
+The table \ref{table:routerAdvert} in Appendix 1 shows the header of a Router Advertisement.\\
 Router Advertisement specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
+\hdashline
  Source Address&must be the link-local address assigned to the interface from which this message is sent.\\
+ \hdashline
  Destination Address&Typically the Source Address of an invoking Router Solicitation or the all-nodes multicast address.\\
+ \hdashline
  Hop Limit&255\\
+ \hdashline
 \end{tabular}
 
 \vspace{15pt}
@@ -771,6 +788,7 @@ The table (see~\ref{table:routerAdvfields}) summarizes the fields with their spe
 \begin{savenotes}
 \begin{table}[h]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|L{3.0cm}|L{11.6cm}|}
 \rowcolor{lightblue}
 \hline
@@ -812,13 +830,17 @@ Prefix Information&These options specify the prefixes that are on-link and/or ar
 \textbf{Neighbor Solicitation}
 
 Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.\\
-See table~\ref{table:neighSolicit} for the detailed header format.\\
+See table~\ref{table:neighSolicit} in Appendix 1 for the detailed header format.\\
 Neighbor Solicitation specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
+\hdashline
  Source Address&Either an address assigned to the interface from which this message is sent or (if Duplicate Address Detection is in progress) the unspecified address.\\
+ \hdashline
  Destination Address&Either the solicited-node multicast address corresponding to the target address, or the target address.\\
+ \hdashline
  Hop Limit&255\\
+ \hdashline
 \end{tabular}
 
 Table~\ref{table:neighSolicitFields} summarizes the fields with their specifications.\\
@@ -826,6 +848,7 @@ Table~\ref{table:neighSolicitFields} summarizes the fields with their specificat
 \begin{savenotes}
 \begin{table}[h]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|L{3.0cm}|L{11.6cm}|}
 \rowcolor{lightblue}
 \hline
@@ -856,10 +879,14 @@ Source link-layer address &The link-layer address for the sender.\\
 A Neighbor Advertisement is sent by a node in response to a Neighbor Solicitation, or to spread information quickly. The latter is called unsolicited Neighbor Advertisement.\\
 Neighbor Advertisement specifies three IPv6 fields:\\
 \begin{tabular}{L{4.0cm}L{11.5cm}}
+\hdashline
  Source Address&An address assigned to the interface from which the advertisement is sent.\\
+ \hdashline
  Destination Address&For solicited advertisements, the Source Address of an invoking Neighbor Solicitation or, if the solicitation's Source Address is the unspecified address, the all-nodes multicast address. For 
  unsolicited advertisements typically the all-nodes multicast address.\\
+ \hdashline
  Hop Limit&255\\
+ \hdashline
 \end{tabular}
 
 The table (see~\ref{table:neighAdvFields}) shows the fields with the specifications.\\
@@ -867,7 +894,8 @@ The table (see~\ref{table:neighAdvFields}) shows the fields with the specificati
 \begin{savenotes}
 \begin{table}[!htp]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -876,14 +904,11 @@ Type&136\\
 \hline
 Code&0\\
 \hline
-R&Router flag. When set, the R-bit indicates that the sender is a router. The R-bit is used by Neighbor Unreachability Detection to detect a router that changes to a host.\\
+R&Router flag. When set, the R-bit indicates that the sender is a router.\\
 \hline
-S&Solicited flag. When set, the S-bit indicates that the advertisement was sent in response to a Neighbor Solicitation from the Destination address. The S-bit is used as a reachability confirmation for Neighbor 
-Unreachability Detection. It must not be set in multicast advertisements or in unsolicited unicast advertisements.\\
+S&Solicited flag. When set, the S-bit indicates that the advertisement was sent in response to a Neighbor Solicitation from the Destination address.\\
 \hline
-O&Override flag. When set, the O-bit indicates that the advertisement should override an existing cache entry and update the cached link-layer address. When it is not set the advertisement will not update a cached 
-link-layer address though it will update an existing Neighbor Cache entry for which no link-layer address is known. It should not be set in solicited advertisements for anycast addresses and in solicited proxy 
-advertisements. It should be set in other solicited advertisements and in unsolicited advertisements.\\
+O&Override flag. When set, the O-bit indicates that the advertisement should override an existing cache entry and update the cached link-layer address.\\
 \hline
 Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
 \hline
@@ -893,9 +918,7 @@ changed. The Target Address must not be a multicast address.\\
 \rowcolor{lightblue}
 \multicolumn{2}{|c|}{Valid Options}\\
 \hline
-Target link-layer address&The link-layer address for the target, i.e., the sender of the advertisement.  This option must be included on link layers that have addresses when responding to multicast solicitations.  When 
-responding to a unicast Neighbor Solicitation this option should be included. The option must be included for multicast solicitations in order to avoid infinite Neighbor Solicitation "recursion" when the peer node does 
-not have a cache entry to return a Neighbor Advertisements message.\\
+Target link-layer address&The link-layer address for the target, i.e., the sender of the advertisement.\\
 \hline
 \end{tabular}
 \caption{Neighbor Advertisement Fields and Options}
@@ -909,16 +932,21 @@ Redirect messages are used by routers to inform a node about a better first-hop 
 Redirect specifies three IPv6 fields:\\
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
- Source Address&must be the link-local address assigned to the interface from which this message is sent.\\
+\hdashline
+ Source Address&Must be the link-local address assigned to the interface from which this message is sent.\\
+ \hdashline
  Destination Address&The Source Address of the packet that triggered the redirect.\\
+ \hdashline
  Hop Limit&255\\
+ \hdashline
 \end{tabular}
 
 Table~\ref{table:redirectFields} shows the fields with the specifications.\\
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -939,7 +967,7 @@ Destination Address&The IP address of the destination that is redirected to the 
 \hline
 Target link-layer address&The link-layer address for the target.\\
 \hline
-Redirected Header&As much as possible of the IP packet that triggered the sending of the Redirect without making the redirect packet exceed the minimum MTU specified in [IPv6].\\
+Redirected Header&As much as possible of the IP packet that triggered the sending of the Redirect without making the redirect packet exceed the minimum MTU.\\
 \hline
 \end{tabular}
 \caption{Redirect Fields and Options}
@@ -956,6 +984,7 @@ Options should be padded when necessary to ensure that they end on their natural
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
+\addtolength{\tabcolsep}{3pt}
 \begin{tabular}{|L{3.0cm}|L{6.0cm}|}
 \rowcolor{lightblue}
 \hline
@@ -983,7 +1012,8 @@ Type&Option Name\\
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -1006,10 +1036,13 @@ Address option contains the link-layer address of the target. It is used in Neig
 
 \textbf{Prefix Information}\\
 
+The Prefix Information is used by routers to inform hosts about on-link prefixes of the network segments, and allow them to perform address autoconfiguration.\\
+
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -1045,10 +1078,13 @@ zero by the sender and ignored by the receiver.\\
 
 \textbf{Redirect Header}\\
 
+This options is used by Redirect messages and contains, in IP header and data, the original packet that triggered the redirect.\\
+
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -1069,10 +1105,13 @@ IP header + data&The original packet truncated to ensure that the size of the re
 
 \textbf{MTU}
 
+The MTU option is used to ensure that all the nodes on the link use the same MTU value, in such case where ''heterogeneous technologies are bridged together``.\\
+
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
-\begin{tabular}{|L{3.0cm}|L{11.6cm}|}
+\addtolength{\tabcolsep}{3pt}
+\begin{tabular}{|L{3.0cm}|L{12.0cm}|}
 \rowcolor{lightblue}
 \hline
 Field&Value/Description\\
@@ -1092,7 +1131,8 @@ MTU&The recommended MTU for the link.\\
 \end{savenotes}
 
 
-
+This ends the background analysis. Next, this research takes on the related work, in which other researches are taken into consideration in order to understand what have been done in the field, and to take suggestions 
+about possible scenarios that are worth to test.
 
 
 
@@ -1107,11 +1147,12 @@ MTU&The recommended MTU for the link.\\
 
 
 \pagebreak
-In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. Many researches explore this scenario, and countermeasures are developed to mitigate the risk of a 
-security breach from the external network. There is another scenario to take into consideration, the case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The 
+In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another 
+scenario to take into consideration, especially if APT and the amont of resources that APA have are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without 
+authorization. The 
 absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information 
 outside the internal perimeter.\\
-This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and at the same time be able to pursue its goals. 
+This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and, at the same time, to be able to pursue its goals. 
 The analysis of this scenario is presented next, and it is usually referred to with the presence of a covert channel.
 
 \subsection{Covert Channel}
@@ -1128,16 +1169,19 @@ of a genuine message``.\\
 In the context of a networked communication, ''Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located 
 somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob``\cite{netaware}.\\
 In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications 
-from the inside to the outside, regulated by the organization's security policy. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a 
+from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a 
 covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
+
+\textbf{Policy}: A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area 
+\footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
+\textbf{Standard}: A mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
+\textbf{Procedure}: Procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.
 
 \subsubsection{Definitions}
 \label{subsub:definitions}
 
 \textbf{Covert Channel} is a ''communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by 
-manipulating an overt communication``\cite{netaware}.\\
-
-\textbf{Overt Communication}\\
+manipulating an overt\footnote{``open to view or knowledge; not concealed or secret'', \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016} communication``\cite{netaware}.
 
 \textbf{Cover traffic} ''is the traffic that is being manipulated by covert channel participants``\cite{netaware}.
 
@@ -1721,14 +1765,17 @@ Selected&\multicolumn{1}{c|}{Specification}\\
 &In cases where the internet-layer protocol is required to pass an ICMPv6 error message to the upper-layer process, the upper-layer protocol type is extracted from the original packet and used to select the appropriate 
 upper-layer process to handle the error.\\
 \hline
-&An ICMPv6 error message \textcolor{red}{MUST NOT} be originated as a result of receiving the following:\\
-&- An ICMPv6 error message.\\
-&- An ICMPv6 redirect message\\
-&- A packet destined to an IPv6 multicast address. (There are two exceptions to this rule: (1) the Packet Too Big Message to allow Path MTU discovery to work for IPv6 multicast, and (2) the Parameter Problem Message, Code 
-2 reporting an unrecognized IPv6 option that has the Option Type highest- order two bits set to 10).\\
-&- A packet sent as a link-layer multicast\\
-&- A packet sent as a link-layer broadcast\\
-&- A packet whose source address does not uniquely identify a single node\\
+&An ICMPv6 error message \textcolor{red}{MUST NOT} be originated as a result of receiving the following:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item An ICMPv6 error message.
+ \item An ICMPv6 redirect message.
+ \item A packet destined to an IPv6 multicast address. (There are two exceptions to this rule: (1) the Packet Too Big Message to allow Path MTU discovery to work for IPv6 multicast, and (2) the Parameter Problem Message, Code 
+2 reporting an unrecognized IPv6 option that has the Option Type highest- order two bits set to 10).
+ \item A packet sent as a link-layer multicast.
+ \item A packet sent as a link-layer broadcast.
+ \item A packet whose source address does not uniquely identify a single node.
+\end{itemize}
+\\
 \hline
 &Finally, in order to limit the bandwidth and forwarding costs incurred by originating ICMPv6 error messages, an IPv6 node \textcolor{red}{MUST} limit the rate of ICMPv6 error messages it originates.\\
 \hline
@@ -1748,6 +1795,8 @@ upper-layer process to handle the error.\\
 \multicolumn{2}{|c|}{Destination Unreachable}\\
 \hline
 Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&Unused field: This field is unused for all code values. It \textcolor{red}{MUST} be initialized to zero by the originator and ignored by the receiver.\\
 \hline
 &A Destination Unreachable message \textcolor{red}{SHOULD} be generated by a router, or by the IPv6 layer in the originating node, in response to a packet that cannot be delivered to its destination address for reasons 
 other than congestion.\\
@@ -1885,5 +1934,361 @@ belonging to the interface on which the Echo Request message was received.\\
 \label{table:4443EchoReq}
 \end{table}
 \end{savenotes}
+
+
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Router Solicitation}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&Hosts \textcolor{red}{MUST} silently discard any received Router Solicitation Messages.\\
+\hline
+&A router \textcolor{red}{MUST} silently discard any received Router Solicitation messages that do not satisfy all of the following validity checks:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+  \item The IP Hop Limit field has a value of 255, i.e., the packet could not possibly have been forwarded by a router.
+  \item ICMP Checksum is valid.
+  \item ICMP Code is 0.
+  \item ICMP length (derived from the IP length) is 8 or more octets.
+  \item All included options have a length that is greater than zero.
+  \item If the IP source address is the unspecified address, there is no source link-layer address option in the message.
+ \end{itemize}
+\\
+\hline
+&The contents of the Reserved field, and of any unrecognized options, \textcolor{red}{MUST} be ignored.\\
+\hline
+&The contents of any defined options that are not specified to be used with Router Solicitation messages \textcolor{red}{MUST} be ignored and the packet processed as normal.  The only defined option that may appear is the 
+Source Link-Layer Address option.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Validation of Router Solicitation}
+\label{table:4861RoutSol}
+\end{table}
+\end{savenotes}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Router Advertisement}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A router \textcolor{red}{MUST} silently discard any received Router Advertisement messages that do not satisfy all of the following validity checks:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+  \item IP Source Address is a link-local address.  Routers must use their link-local address as the source for Router Advertisement and Redirect messages so that hosts can uniquely identify routers.
+  \item The IP Hop Limit field has a value of 255, i.e., the packet could not possibly have been forwarded by a router.
+  \item ICMP Checksum is valid.
+  \item ICMP Code is 0.
+  \item ICMP length (derived from the IP length) is 16 or more octets.
+  \item All included options have a length that is greater than zero.
+ \end{itemize}
+\\
+\hline
+&The contents of the Reserved field, and of any unrecognized options, \textcolor{red}{MUST} be ignored.\\
+\hline
+&The contents of any defined options that are not specified to be used with Router Advertisement messages \textcolor{red}{MUST} be ignored and the packet processed as normal.  The only defined options that may appear are 
+the Source Link-Layer Address, Prefix Information and MTU options.\\
+\hline
+&A host \textcolor{red}{MUST NOT} send Router Advertisement messages at any time.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Validation of Router Advertisement}
+\label{table:4861RoutAdv}
+\end{table}
+\end{savenotes}
+
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Neighbor Solicitation}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A node \textcolor{red}{MUST} silently discard any received Neighbor Solicitation messages that do not satisfy all of the following validity checks:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+  \item The IP Hop Limit field has a value of 255, i.e., the packet could not possibly have been forwarded by a router.
+  \item ICMP Checksum is valid.
+  \item ICMP Code is 0.
+  \item ICMP length (derived from the IP length) is 24 or more octets.
+  \item Target Address is not a multicast address.
+  \item All included options have a length that is greater than zero.
+  \item If the IP source address is the unspecified address, the IP destination address is a solicited-node multicast address.
+  \item If the IP source address is the unspecified address, there is no  source link-layer address option in the message.
+ \end{itemize}
+\\
+\hline
+&The contents of the Reserved field, and of any unrecognized options, \textcolor{red}{MUST} be ignored.\\
+\hline
+&The contents of any defined options that are not specified to be used with Neighbor Solicitation messages \textcolor{red}{MUST} be ignored and the packet processed as normal. The only defined option that may appear is 
+the Source Link-Layer Address option.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Validation of Neighbor Solicitation}
+\label{table:4861NeighSol}
+\end{table}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Neighbor Solicitation - Sending}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&If the source address of the packet prompting the solicitation is the same as one of the addresses assigned to the outgoing interface, that address \textcolor{red}{SHOULD} be placed in the IP Source Address of the 
+outgoing solicitation.\\
+\hline
+&If the solicitation is being sent to a solicited-node multicast address, the sender \textcolor{red}{MUST} include its link-layer address (if it has one) as a Source Link-Layer Address option.\\
+\hline
+&Otherwise, the sender \textcolor{red}{SHOULD} include its link-layer address (if it has one) as a Source Link-Layer Address option.\\
+\hline
+&On unicast solicitations, an implementation \textcolor{red}{MAY} omit the Source Link-Layer Address option.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Sending Neighbor Solicitation}
+\label{table:4861NeighSolSend}
+\end{table}
+\end{savenotes}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Neighbor Solicitation - Reception}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A valid Neighbor Solicitation that does not meet any of the following requirements \textcolor{red}{MUST} be silently discarded:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item The Target Address is a "valid" unicast or anycast address assigned to the receiving interface.
+ \item The Target Address is a unicast or anycast address for which the node is offering proxy service.
+ \item The Target Address is a "tentative" address on which Duplicate Address Detection is being performed.
+\end{itemize}
+\\
+\hline
+&If the Source Address is not the unspecified address and, on link layers that have addresses, the solicitation includes a Source Link-Layer Address option, then the recipient \textcolor{red}{SHOULD} create or update the 
+Neighbor Cache entry for the IP Source Address of the solicitation.\\
+\hline
+&If the Source Address is the unspecified address, the node \textcolor{red}{MUST NOT} create or update the Neighbor Cache entry.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Reception of Neighbor Solicitation}
+\label{table:4861NeighSolRec}
+\end{table}
+\end{savenotes}
+
+
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Neighbor Advertisement}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A node \textcolor{red}{MUST} silently discard any received Neighbor Advertisement messages that do not satisfy all of the following validity checks:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+  \item The IP Hop Limit field has a value of 255, i.e., the packet could not possibly have been forwarded by a router.
+  \item ICMP Checksum is valid.
+  \item ICMP Code is 0.
+  \item ICMP length (derived from the IP length) is 24 or more octets.
+  \item Target Address is not a multicast address.
+  \item If the IP Destination Address is a multicast address the Solicited flag is zero.
+  \item All included options have a length that is greater than zero.
+ \end{itemize}
+\\
+\hline
+&The contents of the Reserved field, and of any unrecognized options, \textcolor{red}{MUST} be ignored.\\
+\hline
+&The contents of any defined options that are not specified to be used with Neighbor Advertisement messages \textcolor{red}{MUST} be ignored and the packet processed as normal. The only defined option that may appear is 
+the Target Link-Layer Address option.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Validation of Neighbor Advertisement}
+\label{table:4861NeighAdv}
+\end{table}
+\end{savenotes}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Sending Solicited Neighbor Advertisement}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&If the solicitation's IP Destination Address is not a multicast address, the Target Link-Layer Address option \textcolor{red}{MAY} be omitted.\\
+\hline
+&If the solicitation's IP Destination Address is a multicast address, the Target Link-Layer option \textcolor{red}{MUST} be included in the advertisement.\\
+\hline
+&if the node is a router, it \textcolor{red}{MUST} set the Router flag to one; otherwise, it \textcolor{red}{MUST} set the flag to zero.\\
+\hline
+&If the Target Address is either an anycast address or a unicast address for which the node is providing proxy service, or the Target Link-Layer Address option is not included, the Override flag \textcolor{red}{SHOULD} be 
+set to zero.  Otherwise, the Override flag \textcolor{red}{SHOULD} be set to one.\\
+\hline
+&If the source of the solicitation is the unspecified address, the node \textcolor{red}{MUST} set the Solicited flag to zero and multicast the advertisement to the all-nodes address. Otherwise, the node \textcolor{red}{MUST} 
+set the Solicited flag to one and unicast the advertisement to the Source Address of the solicitation.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Solicited Neighbor Advertisement}
+\label{table:4861NeighAdvSol}
+\end{table}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Receipt of Neighbor Advertisement}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&When a valid Neighbor Advertisement is received (either solicited or unsolicited), the Neighbor Cache is searched for the target's entry. If no entry exists, the advertisement \textcolor{red}{SHOULD} be silently 
+discarded.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Receipt of Neighbor Advertisement}
+\label{table:4861NeighAdvSol}
+\end{table}
+\end{savenotes}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Redirect}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A host \textcolor{red}{MUST} silently discard any received Redirect message that does not satisfy all of the following validity checks:
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+  \item IP Source Address is a link-local address.  Routers must use their link-local address as the source for Router Advertisement and Redirect messages so that hosts can uniquely identify routers.
+  \item The IP Hop Limit field has a value of 255, i.e., the packet could not possibly have been forwarded by a router.
+  \item ICMP Checksum is valid.
+  \item ICMP Code is 0.
+  \item ICMP length (derived from the IP length) is 40 or more octets.
+  \item The IP source address of the Redirect is the same as the current first-hop router for the specified ICMP Destination Address.
+  \item  The ICMP Destination Address field in the redirect message does not contain a multicast address.
+  \item The ICMP Target Address is either a link-local address (when redirected to a router) or the same as the ICMP Destination Address (when redirected to the on-link destination).
+  \item All included options have a length that is greater than zero.
+ \end{itemize}
+\\
+\hline
+&The contents of the Reserved field, and of any unrecognized options, \textcolor{red}{MUST} be ignored.\\
+\hline
+&The contents of any defined options that are not specified to be used with Redirect messages \textcolor{red}{MUST} be ignored and the packet processed as normal. The only defined options that may appear are the Target 
+Link-Layer Address option and the Redirected Header option.\\
+\hline
+&A host \textcolor{red}{MUST NOT} consider a redirect invalid just because the Target Address of the redirect is not covered under one of the link's prefixes.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Validation of Redirect}
+\label{table:4861Redir}
+\end{table}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Redirect - Router and Host Specifications}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&A router \textcolor{red}{MUST NOT} update its routing tables upon receipt of a Redirect.\\
+\hline
+&A host receiving a valid redirect \textcolor{red}{SHOULD} update its Destination Cache accordingly so that subsequent traffic goes to the specified target.\\
+\hline
+&If no Destination Cache entry exists for the destination, an implementation \textcolor{red}{SHOULD} create such an entry.\\
+\hline
+&If the Target and Destination Addresses are the same, the host \textcolor{red}{MUST} treat the Target as on-link.\\
+\hline
+&If the Target Address is not the same as the Destination Address, the host \textcolor{red}{MUST} set IsRouter to TRUE for the target.\\
+\hline
+&A host \textcolor{red}{MUST NOT} send Redirect messages.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Redirect, specifications}
+\label{table:4861RedirSpec}
+\end{table}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\begin{tabular}{|C{2.0cm}|L{13.5cm}|}
+\rowcolor{lightblue}
+\hline
+\multicolumn{2}{|c|}{Options Processing}\\
+\hline
+Selected&\multicolumn{1}{c|}{Specification}\\
+\hline
+&In order to ensure that future extensions properly coexist with current implementations, all nodes \textcolor{red}{MUST} silently ignore any options they do not recognize in received ND packets and continue processing 
+the packet.\\
+\hline
+&All options specified in this document \textcolor{red}{MUST} be recognized.\\
+\hline
+&A node \textcolor{red}{MUST NOT} ignore valid options just because the ND message contains unrecognized ones.\\
+\hline
+&The option \textcolor{red}{MUST NOT} depend on the presence or absence of any other options.\\
+\hline
+&Options in Neighbor Discovery packets can appear in any order; receivers \textcolor{red}{MUST} be prepared to process them independently of their order.\\
+\hline
+&The amount of data to include in the Redirected Header option \textcolor{red}{MUST} be limited so that the entire redirect packet does not exceed the minimum MTU required to support IPv6.\\
+\hline
+&The size of an ND packet including the IP header is limited to the link MTU.  When adding options to an ND packet, a node \textcolor{red}{MUST NOT} exceed the link MTU.\\
+\hline
+\end{tabular}
+\caption{RFC 4861 - Options}
+\label{table:4861Options}
+\end{table}
+\end{savenotes}
+
 
 \end{document}

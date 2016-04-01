@@ -5,18 +5,18 @@
 \contentsline {table}{\numberline {5}{\ignorespaces Time Exceeded Codes\relax }}{22}{table.caption.5}
 \contentsline {table}{\numberline {6}{\ignorespaces Parameter Problem Codes\relax }}{22}{table.caption.6}
 \contentsline {table}{\numberline {7}{\ignorespaces Echo Request Fields\relax }}{23}{table.caption.7}
-\contentsline {table}{\numberline {8}{\ignorespaces Echo Reply Fields\relax }}{24}{table.caption.8}
+\contentsline {table}{\numberline {8}{\ignorespaces Echo Reply Fields\relax }}{23}{table.caption.8}
 \contentsline {table}{\numberline {9}{\ignorespaces RFC 4861 Messages\relax }}{24}{table.caption.9}
 \contentsline {table}{\numberline {10}{\ignorespaces Router Solicitation Fields and Options\relax }}{25}{table.caption.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Router Advertisement Fields and Options\relax }}{27}{table.caption.11}
-\contentsline {table}{\numberline {12}{\ignorespaces Neighbor Solicitation Fields and Options\relax }}{28}{table.caption.12}
-\contentsline {table}{\numberline {13}{\ignorespaces Neighbor Advertisement Fields and Options\relax }}{29}{table.caption.13}
-\contentsline {table}{\numberline {14}{\ignorespaces Redirect Fields and Options\relax }}{30}{table.caption.14}
+\contentsline {table}{\numberline {11}{\ignorespaces Router Advertisement Fields and Options\relax }}{26}{table.caption.11}
+\contentsline {table}{\numberline {12}{\ignorespaces Neighbor Solicitation Fields and Options\relax }}{27}{table.caption.12}
+\contentsline {table}{\numberline {13}{\ignorespaces Neighbor Advertisement Fields and Options\relax }}{28}{table.caption.13}
+\contentsline {table}{\numberline {14}{\ignorespaces Redirect Fields and Options\relax }}{29}{table.caption.14}
 \contentsline {table}{\numberline {15}{\ignorespaces Options Type and Names\relax }}{30}{table.caption.15}
-\contentsline {table}{\numberline {16}{\ignorespaces Source/Target Link-layer Address Fields\relax }}{31}{table.caption.16}
-\contentsline {table}{\numberline {17}{\ignorespaces Prefix Information Fields\relax }}{32}{table.caption.17}
+\contentsline {table}{\numberline {16}{\ignorespaces Source/Target Link-layer Address Fields\relax }}{30}{table.caption.16}
+\contentsline {table}{\numberline {17}{\ignorespaces Prefix Information Fields\relax }}{31}{table.caption.17}
 \contentsline {table}{\numberline {18}{\ignorespaces Redirect Header Fields\relax }}{32}{table.caption.18}
-\contentsline {table}{\numberline {19}{\ignorespaces MTU Fields\relax }}{33}{table.caption.19}
+\contentsline {table}{\numberline {19}{\ignorespaces MTU Fields\relax }}{32}{table.caption.19}
 \contentsline {table}{\numberline {20}{\ignorespaces Investigated Protocols\relax }}{38}{table.caption.21}
 \contentsline {table}{\numberline {21}{\ignorespaces IPv6 Header\relax }}{47}{table.caption.22}
 \contentsline {table}{\numberline {22}{\ignorespaces Destination Unreachable\relax }}{47}{table.caption.23}
@@ -41,3 +41,14 @@
 \contentsline {table}{\numberline {41}{\ignorespaces RFC 4443 - Parameter Problem\relax }}{54}{table.caption.42}
 \contentsline {table}{\numberline {42}{\ignorespaces RFC 4443 - Echo Request\relax }}{54}{table.caption.43}
 \contentsline {table}{\numberline {43}{\ignorespaces RFC 4443 - Echo Reply\relax }}{55}{table.caption.44}
+\contentsline {table}{\numberline {44}{\ignorespaces RFC 4861 - Validation of Router Solicitation\relax }}{56}{table.caption.45}
+\contentsline {table}{\numberline {45}{\ignorespaces RFC 4861 - Validation of Router Advertisement\relax }}{57}{table.caption.46}
+\contentsline {table}{\numberline {46}{\ignorespaces RFC 4861 - Validation of Neighbor Solicitation\relax }}{58}{table.caption.47}
+\contentsline {table}{\numberline {47}{\ignorespaces RFC 4861 - Sending Neighbor Solicitation\relax }}{59}{table.caption.48}
+\contentsline {table}{\numberline {48}{\ignorespaces RFC 4861 - Reception of Neighbor Solicitation\relax }}{59}{table.caption.49}
+\contentsline {table}{\numberline {49}{\ignorespaces RFC 4861 - Validation of Neighbor Advertisement\relax }}{60}{table.caption.50}
+\contentsline {table}{\numberline {50}{\ignorespaces RFC 4861 - Solicited Neighbor Advertisement\relax }}{61}{table.caption.51}
+\contentsline {table}{\numberline {51}{\ignorespaces RFC 4861 - Receipt of Neighbor Advertisement\relax }}{61}{table.caption.52}
+\contentsline {table}{\numberline {52}{\ignorespaces RFC 4861 - Validation of Redirect\relax }}{62}{table.caption.53}
+\contentsline {table}{\numberline {53}{\ignorespaces RFC 4861 - Redirect, specifications\relax }}{63}{table.caption.54}
+\contentsline {table}{\numberline {54}{\ignorespaces RFC 4861 - Options\relax }}{63}{table.caption.55}
