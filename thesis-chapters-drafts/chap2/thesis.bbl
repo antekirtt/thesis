@@ -117,4 +117,24 @@ N.~Lucena, J.~Pease, P.~Yadollahpour, and S.~J. Chapin, ``{Syntax and
   Semantics-Preserving Application-Layer Protocol Steganography},''
   \emph{Syracuse University}, 2004.
 
+\bibitem{voodoo}
+\BIBentryALTinterwordspacing
+R.~P. Murphy. (2006) {IPv6/ICMPv6 Covert Channels}. Accessed: 2-04-2016.
+  [Online]. Available:
+  \url{https://www.defcon.org/images/defcon-14/dc-14-presentations/DC-14-Murphy.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6ready}
+\BIBentryALTinterwordspacing
+I.~R. Committee. (2013) {IPv6 Ready Logo White Paper}. Accessed: 2-04-2016.
+  [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/IPv6_Ready_Logo_White_Paper_Final.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6readyCore}
+\BIBentryALTinterwordspacing
+------. (2010) {Core Conformance}. Accessed: 2-04-2016. [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/Core_Conformance_Latest.pdf}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

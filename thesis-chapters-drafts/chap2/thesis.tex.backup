@@ -113,6 +113,8 @@
 \usepackage{arydshln}
 \usepackage{placeins}
 \usepackage{enumitem}
+\usepackage{cleveref}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
 
 \begin{document}
 
@@ -1167,16 +1169,19 @@ of a genuine message``.\\
 In the context of a networked communication, ''Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located 
 somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob``\cite{netaware}.\\
 In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications 
-from the inside to the outside, regulated by the organization's security policy. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a 
+from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a 
 covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
+
+\textbf{Policy}: A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area 
+\footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
+\textbf{Standard}: A mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
+\textbf{Procedure}: Procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.
 
 \subsubsection{Definitions}
 \label{subsub:definitions}
 
 \textbf{Covert Channel} is a ''communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by 
-manipulating an overt communication``\cite{netaware}.\\
-
-\textbf{Overt Communication}\\
+manipulating an overt\footnote{``open to view or knowledge; not concealed or secret'', \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016} communication``\cite{netaware}.
 
 \textbf{Cover traffic} ''is the traffic that is being manipulated by covert channel participants``\cite{netaware}.
 
@@ -1283,10 +1288,133 @@ Lewandowski's study proposed six properties of covert channels which are importa
 Lewandowski observed that some of the considered protocols, Neighbor Discovering is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols 
 as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''.\\
 This research, even though the observation may be correct,  will not consider its assumption. The reason is given, as stated before, by the fact that it is important to consider also the actual transition period, where 
-the two protocol, IPv4 and IPv6, cohexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of 
+the two protocols, IPv4 and IPv6, cohexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of 
 syntax and semantics preservation knowledge, and any IPv6 packet will transit without deep inspection. For the same reason, an address-based filtering mechanism for IPv6 would probably not be in place. Another aspect, 
 still related to the active warden, is the direction of the communication, from the inside to the outside: since it is considered a communication from a trusted to an untrusted network, the default configuration may 
 allow the traffic without restrictions.
+
+
+\textbf{Analyzed Covert Channels}
+
+In his research, Lewandowski defined a set of possible covert channels to test, which are spread among different protocols. For the scope of this research, only those that are mentioned in the aforementioned RFCs are 
+taken into consideration.\\
+
+The following table summarizes the protocol or message, the fields, and the bandwidth of the tested covert channels.
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|C{4.5cm}|C{3.0cm}|C{3.5cm}|C{3.0cm}|}
+\rowcolor{darkblue}
+\hline
+Protocol/Message&Field&Covert Channel&Bandwidth\\
+\hline
+IPv6&Source Address&False Source Address&128 bits/packet\\
+\hline
+ICMPv6/All&Checksum&Arbitrary data&16 bits/packet\\
+\hline
+ICMPv6/Destination Unreachable&Unused&Arbitrary data&32 bits/packet\\
+\hline
+ICMPv6/Packet Too Big&Code&Undefined Code&8 bits/packet\\
+\hline
+ICMPv6/Packet Too Big&MTU&Arbitrary data&32 bits/packet\\
+\hline
+ICMPv6/Time Exceeded&Unused&Arbitrary data&32 bits/packet\\
+\hline
+ICMPv6/Parameter Problem&Pointer&Arbitrary data&32 bits/packet\\
+\hline
+ICMPv6/Echo Request&Code&Undefined Code&8 bits/packet\\
+\hline
+ICMPv6/Echo Request&Data&Arbitrary data&Unlimited\\
+\hline
+ICMPv6/Echo Reply&Code&Undefined Code&8 bits/packet\\
+\hline
+ICMPv6/Echo Reply&Data&Arbitrary data&Unlimited\\
+\hline
+\end{tabular}
+\caption{Tested Covert Channels}
+\label{table:testedCC}
+\end{table}
+\end{savenotes}
+
+\subsubsection{Existing Tools}
+\label{subsub:tools}
+
+Lewandowski built a tool called \textit{cctool} in order to perform the tests. The tool has the ability to ``verify the existence of the covert channels, as well as to test the functionality of active wardens''. The results of 
+his tests are strictly dependent on the quality of the wardens and on the scenarios used for the tests, which include, as mentioned before, also the possibility to modify the traffic in transit.\\
+It is also worth mentioning some of the assumptions he made in order to better understand the tests. The syntax and semantics preservation are important factors in scenarios where the active wardens have the capabilities 
+to understand, at different levels, the protocols. For example, Lewandowski built a scenario, called Cover Correctness Test, where a sender produces ICMPv6 traffic which is manipulated by Alice, but there is no receiver, 
+namely Bob, at the end. The correctness of the covert channel, in this case, is demonstrated by the fact that an ICMPv6 Echo Request reaches the destination and an ICMPv6 Echo Reply is generated as usual. For such a test, 
+``the conclusion is that the covert message embedding by Alice does not disrupt the cover traffic enough to impede its normal functionality''.\\
+One limitation of this kind of tests, as the author specified, is that many covert channel cannot be tested, in particular where an answer is not espected back.\\
+Another type of scenario, instead, include also Bob, who is able to receive the message and restore it back to its initial, syntactically and semantically correct, version. In this case it is possible to test also messages 
+which do not include an answer in its processing rule, because the test environment expected that ``both sender and receiver are located on a controlled network''.\\
+The results performed by Lewandowski using cctool showed that the manipulation of the Source Address was defeated by the wardens. The tests on ICMPv6 implied an Echo Request, with correcteness measured with the answer, 
+resulted in a half of them defeated in the case of the manipulation of the Code field, while the covert channels were successful in case of the Data field manipulation.\\
+
+Another interesting tool that have been built with the purpose to test covert channel in ICMPv6 is \textit{Voodonet}, or v00d00N3t \cite{voodoo}. The purpose of the tool is to use ICMPv6 Echo messages as a covert channel 
+to tunnel traffic. Covert Channel is embedded in the Data portion of Echo Reply message: the tool could send ``Echo Reply messages with a  payload of 1440 bytes in payload with no problem''. The capabilities of the tool 
+is to send and receive data from keyboard (chat) or as text files. Another interesting functionality, which increases the ability to maintain the covert channel, is a time- or bytes-based mechanism to throttle the dispatch 
+of the data.
+
+
+
+\subsection{Other Projects}
+\label{sub:otherProj}
+
+\subsubsection{IPv6 Ready}
+\label{subsub:ipv6Ready}
+
+The IPv6 Ready Logo \footnote{\url{https://www.ipv6ready.org}, accessed 2.3.2016} is ``a conformance and interoperability testing program intended to increase user confidence by demonstrating that IPv6 is available now 
+and is ready to be used''. Its mission `` is to define the test specifications for IPv6 conformance and interoperability testing, to provide access to self-test tools and to deliver the IPv6 Ready Logo'' \cite{ipv6ready}.\\
+The project is composed by an Administrative Group, responsible for the administration, the definition of procedures and regulations, and by a Technical Group, which is responsible to define the tests specifications and 
+submit them to the Administrative Group in order to be ``published for public review''.\\
+The procedure to obtain the certification and the possibility to exhibit the IPv6 Ready Logo on the products is to first download the test specifications. After that it is possible to use a self-testing tool or to submit 
+the product to specialized and approved laboratories.\\
+IPv6 Ready project entered the phase 2 and version 4.06 of the test since 2010. Phase 1 indicated ``that the product includes IPv6 mandatory core protocols and can interoperate with other IPv6 equipments'', while Phase 2 
+indicated ``that a product has successfully satisfied strong requirements stated by the Logo Committee''.\\
+The project produced a detailed document\cite{ipv6readyCore} which indicates the required network topology, as well as the detailed list of test to be performed against each protocol. Test are organized in sections 
+based on RFCs, and inside each sections in groups defined by their functionalities, e.g. Address Resolution and Neighbor Unreachability Detection for the section RFC 4861. Inside the section it is defined the scope, which 
+describes broadly the content of the RFC, and the default packet of the message type (ICMPv6). The following table(see~\ref{table:ipv6readyPacketEx}) is an example of a Router Advertisement packet:
+
+
+\begin{savenotes}
+\begin{table}[h]
+\centering
+\begin{tabular}{|C{3.0cm}|C{4.0cm}|C{5.0cm}|}
+\rowcolor{darkblue}
+\hline
+Header&Field&Value\\
+\hline
+\multirow{3}{*}{IPv6 Header}&Source Address&TR\footnote{Testing Router} Link-Local address\\ \cline{2-3}
+&Destination Address&All-nodes multicast address\\ \cline{2-3}
+&Next Header&58\\
+\hline
+\multirow{7}{*}{ICMPv6 Header}&Type&134\\ \cline{2-3}
+&Code&0\\ \cline{2-3}
+&M Bit&0\\ \cline{2-3}
+&O Bit&0\\ \cline{2-3}
+&Router Lifetime&20s\\ \cline{2-3}
+&Reachable Time&10s\\ \cline{2-3}
+&Retrans Timer&1s\\
+\hline
+\multirow{5}{*}{Prefix Option}&Type&3\\ \cline{2-3}
+&L Bit&1\\ \cline{2-3}
+&A Bit&1\\ \cline{2-3}
+&Valid Lifetime&20s\\ \cline{2-3}
+&Preferred Lifetime&20s\\
+\hline
+\end{tabular}
+\caption{Router Advertisement Packet example for IPv6 Ready Project}
+\label{table:ipv6readyPacketEx}
+\end{table}
+\end{savenotes}
+
+
+In each group 
+
+
+
 
 
 
