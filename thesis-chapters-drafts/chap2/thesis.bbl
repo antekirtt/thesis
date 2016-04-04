@@ -124,17 +124,52 @@ R.~P. Murphy. (2006) {IPv6/ICMPv6 Covert Channels}. Accessed: 2-04-2016.
   \url{https://www.defcon.org/images/defcon-14/dc-14-presentations/DC-14-Murphy.pdf}
 \BIBentrySTDinterwordspacing
 
+\bibitem{thc}
+\BIBentryALTinterwordspacing
+{The Hacker Choice}. (2006) {Attacking the IPv6 Protocol Suite}. Accessed:
+  4-04-2016. [Online]. Available:
+  \url{https://www.thc.org/papers/vh_thc-ipv6_attack.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{ipv6ready}
 \BIBentryALTinterwordspacing
-I.~R. Committee. (2013) {IPv6 Ready Logo White Paper}. Accessed: 2-04-2016.
-  [Online]. Available:
+{IPv6 Ready Committee}. (2013) {IPv6 Ready Logo White Paper}. Accessed:
+  2-04-2016. [Online]. Available:
   \url{https://www.ipv6ready.org/docs/IPv6_Ready_Logo_White_Paper_Final.pdf}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ipv6readyCore}
 \BIBentryALTinterwordspacing
-------. (2010) {Core Conformance}. Accessed: 2-04-2016. [Online]. Available:
+{IPv6 Ready Committee}. (2010) {Core Conformance}. Accessed: 2-04-2016.
+  [Online]. Available:
   \url{https://www.ipv6ready.org/docs/Core_Conformance_Latest.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6readyCore2}
+\BIBentryALTinterwordspacing
+{IPv6 Ready Committee}. (2010) {Core Interoperability}. Accessed: 2-04-2016.
+  [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/Core_Interoperability_Latest.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sans}
+A.~Pilihanto, ``{A complete guide on IPv6 attack and defense},'' \emph{SANS
+  Institute}, 2011.
+
+\bibitem{rfc4862}
+\BIBentryALTinterwordspacing
+S.~Thomson, T.~Narten, and T.~Jinmei, ``{IPv6 Stateless Address
+  Autoconfiguration},'' Internet Requests for Comments, {RFC Editor}, {RFC}
+  4862, September 2007. [Online]. Available:
+  \url{http://www.rfc-editor.org/info/rfc4862}
+\BIBentrySTDinterwordspacing
+
+\bibitem{smurf}
+\BIBentryALTinterwordspacing
+F.~Gont and W.~Liu, ``{Security Implications of IPv6 Options of Type 10xxxxxx
+  draft-gont-6man-ipv6-smurf-amplifier-03},'' Internet Draft, {Draft}, March
+  2013. [Online]. Available:
+  \url{https://tools.ietf.org/html/draft-gont-6man-ipv6-smurf-amplifier-03}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
