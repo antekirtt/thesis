@@ -23,7 +23,7 @@
 \setlength{\parindent}{0cm}
 \usepackage{setspace}
 \onehalfspacing
-\setlength{\parskip}{1em}
+\setlength{\parskip}{\baselineskip}
 \usepackage{amsmath} 
 \usepackage{amsthm}
 % Packages for building tables and tabulars 
@@ -219,111 +219,48 @@ rootkit&ff
 \label{sec:1}
 
 
-IPv6 is the designated successor of IPv4, a protocol specified and implemented in a context with a limited number of users and hosts, most of them circumscribed to the scientific world. The need of a new protocol arose 
-because of a changed context: the evolution of new powerful devices and their spread in many field of the society, which in turn modified the behavior and the requests of new entities, being them individuals or big 
-organizations. The new IP protocol has been specified and redesigned in many aspects, taking in consideration the evolution of the requirements and the future needs of the involved actors.
+IPv6 is the designated successor of IPv4, a protocol specified and implemented in a context with a limited number of users and hosts, most of them circumscribed to the scientific world. The need of a new protocol arose because of a changed context: the evolution of new powerful devices and their spread in many field of the society, which in turn modified the behavior and the requests of new entities, being them individuals or big organizations. The new IP protocol has been specified and redesigned in many aspects, taking in consideration the evolution of the requirements and the future needs of the involved actors.
 
-IPv6\cite{rfc2460}, with respect to his predecessor, changed in many aspects. The headers have been modified to accommodate new functionality and improved capabilities, mainly it provides ``expanded addressing 
-capabilities'', ``header format simplification'', ``improved support for extensions and options'', ``flow labeling capability'', and ``authentication and privacy capabilities''. One of the most relevant aspect is the increased 
-address space from 32 bits to 128 bits, which deals with the demand of new communicating devices to fulfill organization's requirements.
+IPv6\cite{rfc2460}, with respect to his predecessor, changed in many aspects. The headers have been modified to accommodate new functionality and improved capabilities, mainly it provides ``expanded addressing capabilities'', ``header format simplification'', ``improved support for extensions and options'', ``flow labeling capability'', and ``authentication and privacy capabilities''. One of the most relevant aspect is the increased address space from 32 bits to 128 bits, which deals with the demand of new communicating devices to fulfill organization's requirements.
 
-Despite IPv6 specifications have been formalized in 1998, its spread and adoption by the world community is far from being accomplished. Among the many possible reasons that could explain this behavior, two of them 
-deserve particular attention. The first one is related to the depletion of address space, which has been mitigated by the introduction of Network Address Translation (NAT)\cite{rfc3022}: the use of NAT allows to use a private, not routeable,
-address space for the internal network of an organization, and the use of one, or limited number, public IPv4 address at the network boundary. This technique mitigated the need to request an IPv6 128 bits address by 
-organizations, because their requirements to allocate new IPv4 address from IANA\footnote{\url{http://www.iana.org/}} have been reduced. The second reason is related to the applications and services offered by organizations. These 
-applications have been written for, and tested against, IPv4. Many of them represents IT assets which are critical for the business assets and goals of enterprises: the introduction of new applications written for IPv6 
-represents a great effort in terms of financial investment, time for implementation and testing, and use of enterprises' resources.
+Despite IPv6 specifications have been formalized in 1998, its spread and adoption by the world community is far from being accomplished. Among the many possible reasons that could explain this behavior, two of them deserve particular attention. The first one is related to the depletion of address space, which has been mitigated by the introduction of Network Address Translation (NAT)\cite{rfc3022}: the use of NAT allows to use a private, not routeable, address space for the internal network of an organization, and the use of one, or limited number, public IPv4 address at the network boundary. This technique mitigated the need to request an IPv6 128 bits address by organizations, because their requirements to allocate new IPv4 address from IANA\footnote{\url{http://www.iana.org/}} have been reduced. The second reason is related to the applications and services offered by organizations. These applications have been written for, and tested against, IPv4. Many of them represents IT assets which are critical for the business assets and goals of enterprises: the introduction of new applications written for IPv6 represents a great effort in terms of financial investment, time for implementation and testing, and use of enterprises' resources.
 
-The IPv6 world is composed by a number of protocols, which are used by nodes to fulfill their requirements: for some of them it is possible to find similar functionality in IPv4,  
-while others are completely new protocols. In this set of protocols, one of them deserves particular attention: ICMPv6.
+The IPv6 world is composed by a number of protocols, which are used by nodes to fulfill their requirements: for some of them it is possible to find similar functionality in IPv4, while others are completely new protocols. In this set of protocols, one of them deserves particular attention: ICMPv6.
 
-ICMPv6, despite it shares almost the same naming convention with respect with the predecessor, it is a new protocol, which make it a critical subject of research by the scientific 
-community. The reasons behind its criticality arise because it holds some functions which are similar in ICMP (e.g. Echo Request), but at the same time it introduces a number of new functionalities, and responsibilities, 
-for the correct behavior of an IPv6 node.
+ICMPv6, despite it shares almost the same naming convention with respect with the predecessor, it is a new protocol, which make it a critical subject of research by the scientific community. The reasons behind its criticality arise because it holds some functions which are similar in ICMP (e.g. Echo Request), but at the same time it introduces a number of new functionalities, and responsibilities, for the correct behavior of an IPv6 node.
 
-ICMP has been used by IPv4 to manage error and informational messages to allow for a better management and troubleshooting of the network.  This protocol has been tested for many years, with the identification of 
-vulnerabilities which can be 
-potentially be exploited by malicious actors. Many best practices \footnote{\url{http://www.cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html\#anc29}, accessed 20.03.2016}
-\footnote{\url{http://www.cisco.com/c/en/us/about/security-center/firewall-best-practices.html\#\_Toc332805964}, accessed 20.03.2016} 
-suggested to filter ICMPv4 messages at network boundaries to mitigate the risk of the exploitation of some vulnerabilities without 
-compromising the network functionalities. Nowadays the network evolved in more sophisticated designs, and new concepts, like Bring Your Own Device (BYOD) and wireless networks, partially obsolete the very same concept of boundaries, bringing new 
-threats to the internal network. The security controls could no more be applied only at the boundaries, but must be introduced in other segments of the network. This new security controls applies to the ICMPv4 protocol 
-as well, and filtering must be introduced where such messages are not strictly required by network administrators.
+ICMP has been used by IPv4 to manage error and informational messages to allow for a better management and troubleshooting of the network.  This protocol has been tested for many years, with the identification of vulnerabilities which can be potentially be exploited by malicious actors. Many best practices \footnote{\url{http://www.cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html\#anc29}, accessed 20.03.2016} \footnote{\url{http://www.cisco.com/c/en/us/about/security-center/firewall-best-practices.html\#\_Toc332805964}, accessed 20.03.2016} suggested to filter ICMPv4 messages at network boundaries to mitigate the risk of the exploitation of some vulnerabilities without compromising the network functionalities. Nowadays the network evolved in more sophisticated designs, and new concepts, like Bring Your Own Device (BYOD) and wireless networks, partially obsolete the very same concept of boundaries, bringing new threats to the internal network. The security controls could no more be applied only at the boundaries, but must be introduced in other segments of the network. This new security controls applies to the ICMPv4 protocol as well, and filtering must be introduced where such messages are not strictly required by network administrators.
 
-``ICMPv6 is used by IPv6 nodes to report errors encountered in processing packets, and to perform other internet-layer functions, such as diagnostics (ICMPv6 Echo). ICMPv6 is an integral part of IPv6, and the base 
-protocol (all the messages and behavior required by this specification) MUST be fully implemented by every IPv6 node''\cite{rfc4443}.
+``ICMPv6 is used by IPv6 nodes to report errors encountered in processing packets, and to perform other internet-layer functions, such as diagnostics (ICMPv6 Echo). ICMPv6 is an integral part of IPv6, and the base protocol (all the messages and behavior required by this specification) MUST be fully implemented by every IPv6 node''\cite{rfc4443}.
 
-This paragraph of RFC 4443 describes broadly the purpose of ICMPv6, but the most important part is the last sentence, which states that the base protocol must be fully implemented by every IPv6 node. In the RFC 
-terminology, the word “MUST, or the terms REQUIRED or SHALL, mean that the definition is an absolute requirement of the specification“\cite{rfc2119}. The real distinction between ICMPv4 and ICMPv6 in this context is formal: RFC 
-792 states that ``ICMP [...] must be implemented by every IP module''\cite{rfc792}, which means that an implementation is required. The ICMPv6 specification is more precise because it refers to every IPv6 node, which covers the 
-implementation inside the module, but also, with the concept of node, implies that the node must be able to use its functions.
+This paragraph of RFC 4443 describes broadly the purpose of ICMPv6, but the most important part is the last sentence, which states that the base protocol must be fully implemented by every IPv6 node. In the RFC terminology, the word “MUST, or the terms REQUIRED or SHALL, mean that the definition is an absolute requirement of the specification“\cite{rfc2119}. The real distinction between ICMPv4 and ICMPv6 in this context is formal: RFC 792 states that ``ICMP [...] must be implemented by every IP module''\cite{rfc792}, which means that an implementation is required. The ICMPv6 specification is more precise because it refers to every IPv6 node, which covers the implementation inside the module, but also, with the concept of node, implies that the node must be able to use its functions.
 
-This is a fundamental distinction, because the best practices in use with ICMPv4, with ICMPv6 are no more relevant, at least with some message types. As it is written in this paper\cite{chak}, which cites RFC 4861\cite{rfc4861}, ``ICMPv6 is 
-used for basic functionalities and used by other IPv6 protocols [...] Neighbor Discovery Protocol is a protocol used with IPv6 to perform various tasks like router discovery, stateless automatic address configuration of a node, neighbor 
-discovery, duplicate address detection, determining the Link Layer addresses of other nodes, address prefix discovery, and maintaining routing information about the paths to other active neighbor nodes''.
+This is a fundamental distinction, because the best practices in use with ICMPv4, with ICMPv6 are no more relevant, at least with some message types. As it is written in this paper\cite{chak}, which cites RFC 4861\cite{rfc4861}, ``ICMPv6 is used for basic functionalities and used by other IPv6 protocols [...] Neighbor Discovery Protocol is a protocol used with IPv6 to perform various tasks like router discovery, stateless automatic address configuration of a node, neighbor discovery, duplicate address detection, determining the Link Layer addresses of other nodes, address prefix discovery, and maintaining routing information about the paths to other active neighbor nodes''.
 
-This is the first critical point to consider: despite version 4 and version 6 of the ICMP protocol have some similar functions, they are different protocols. ICMPv6 is not a protocol modified to adapt itself to IPv6, a new analysis 
-must be performed in an exhaustive way taking into account new scenarios, and new best practices must be applied to mitigate the risk of exploitation of new vulnerabilities related to its functionalities.
+This is the first critical point to consider: despite version 4 and version 6 of the ICMP protocol have some similar functions, they are different protocols. ICMPv6 is not a protocol modified to adapt itself to IPv6, a new analysis must be performed in an exhaustive way taking into account new scenarios, and new best practices must be applied to mitigate the risk of exploitation of new vulnerabilities related to its functionalities.
 
-Another important aspect to take into consideration when dealing with IPv6 in general, and with ICMPv6, is the transition from version 4 to version 6. For the aforementioned reasons, many organizations 
-delayed as much as they could the deployment of an IPv6 native Internet connectivity. Nevertheless the scientific community continued to improve the new version and its related protocols, and Operating Systems (OS) started to include 
-them in their network implementations. At the same time, techniques to allow a slow transition have been developed: examples of that are the dual stack, the presence and coexistence of both protocol versions in the same 
-node, or the encapsulation of IPv6 inside IPv4, in those network segments where IPv6 has not been deployed yet. Additionally, in many OS, IPv6 is active by default and preferred over IPv4.
+Another important aspect to take into consideration when dealing with IPv6 in general, and with ICMPv6, is the transition from version 4 to version 6. For the aforementioned reasons, many organizations delayed as much as they could the deployment of an IPv6 native Internet connectivity. Nevertheless the scientific community continued to improve the new version and its related protocols, and Operating Systems (OS) started to include them in their network implementations. At the same time, techniques to allow a slow transition have been developed: examples of that are the dual stack, the presence and coexistence of both protocol versions in the same node, or the encapsulation of IPv6 inside IPv4, in those network segments where IPv6 has not been deployed yet. Additionally, in many OS, IPv6 is active by default and preferred over IPv4.
 
-These aspects must not be underestimated and show again how critical and urgent is an in-depth analysis of ICMPv6: not only this protocol is fundamental for IPv6 and the best practices can be used only against the previous 
-version, but it is already present and activated in OS that users employ in their everyday life. This last distinction is very important because it introduces another aspect to take into account: network 
-administrator and security officer must not deal only with threats deriving from the exploitation of technical vulnerabilities, but also with behavioral procedures shaped around years of practice. IPv6 and ICMPv6 are 
-not protocols that will be introduced in the future, they are already present in this transition period and we must deal with them now. Countermeasures must be in place, at the network boundaries and inside critical 
-network segments above all, that take into consideration version 6 of the protocols. Such countermeasures must follow new best practices carefully shaped around the new version.
+These aspects must not be underestimated and show again how critical and urgent is an in-depth analysis of ICMPv6: not only this protocol is fundamental for IPv6 and the best practices can be used only against the previous version, but it is already present and activated in OS that users employ in their everyday life. This last distinction is very important because it introduces another aspect to take into account: network administrator and security officer must not deal only with threats deriving from the exploitation of technical vulnerabilities, but also with behavioral procedures shaped around years of practice. IPv6 and ICMPv6 are not protocols that will be introduced in the future, they are already present in this transition period and we must deal with them now. Countermeasures must be in place, at the network boundaries and inside critical network segments above all, that take into consideration version 6 of the protocols. Such countermeasures must follow new best practices carefully shaped around the new version.
 
-The underlined elements, the differences between the two ICMP version and the transition period with the coexistence of IPv4 and IPv6, lead to another topic: the impact of the full deployment of IPv6, and ICMPv6, and the 
-implications for the involved actors, being them users, enterprises, states, or malicious actors.
+The underlined elements, the differences between the two ICMP version and the transition period with the coexistence of IPv4 and IPv6, lead to another topic: the impact of the full deployment of IPv6, and ICMPv6, and the implications for the involved actors, being them users, enterprises, states, or malicious actors.
 
-The scientific community has been involved in the specification, in the improvement, and testing of the protocols since time. But, with respect with the preceding version of the protocols, version 6 of the suite 
-must deal with a very different situation. The electronic communication is spread around the world in a pervasive way, and the near future, with the Internet of Things (IoT)
-\footnote{IoT, \url{http://www.theinternetofthings.eu/what-is-the-internet-of-things}, accessed 21.03.2016}, will further the spread. ICMPv6, and IPv6, 
-will be fully deployed in a world strongly dependent on the electronic communication, where critical infrastructures (CI) must be managed and protected, where enterprises relies on its IT infrastructure to support their business 
-assets, and where users are tight to their online experience for their everyday needs. This change in the very basic infrastructure of the network will have an impact which has no terms of comparison with respect to IPv4, 
-where the initial small amount of users allowed to discover the concept of security and to learn by experience. The transition period, which introduced some security issues, in this case works as a mitigation technique to allow researcher 
-to test the protocols in an exhaustive way, without waiting that the fully deployed IPv6 infrastructures reveals potential weaknesses.
+The scientific community has been involved in the specification, in the improvement, and testing of the protocols since time. But, with respect with the preceding version of the protocols, version 6 of the suite must deal with a very different situation. The electronic communication is spread around the world in a pervasive way, and the near future, with the Internet of Things (IoT) \footnote{IoT, \url{http://www.theinternetofthings.eu/what-is-the-internet-of-things}, accessed 21.03.2016}, will further the spread. ICMPv6, and IPv6, will be fully deployed in a world strongly dependent on the electronic communication, where critical infrastructures (CI) must be managed and protected, where enterprises relies on its IT infrastructure to support their business assets, and where users are tight to their online experience for their everyday needs. This change in the very basic infrastructure of the network will have an impact which has no terms of comparison with respect to IPv4, where the initial small amount of users allowed to discover the concept of security and to learn by experience. The transition period, which introduced some security issues, in this case works as a mitigation technique to allow researcher to test the protocols in an exhaustive way, without waiting that the fully deployed IPv6 infrastructures reveals potential weaknesses.
 
-This urgency can be better understood by taking into consideration the evolution of the threats, the sophistication of malware, and the malicious actors involved in the research of vulnerabilities to exploit, as well as 
-their purposes and means to reach their goals.
+This urgency can be better understood by taking into consideration the evolution of the threats, the sophistication of malware, and the malicious actors involved in the research of vulnerabilities to exploit, as well as their purposes and means to reach their goals.
 
-The term Advanced Persistent Threat (APT) is used to define ''any sophisticated adversary engaged in information warfare in support of long-term strategic goals``\cite{apt}. One of the main characteristic of APT detected 
-in the wild is the sophistication of the attack. One example is the Uroburos rootkit\cite{uroburos}, which ''modular structure allows extending it with new features easily, which makes it not only highly sophisticated 
-but also highly flexible and dangerous``. The analysis of the rootkit suggests that ''the development of a framework like Uroburos is a huge investment`` and ''that it was designed to target government institutions, 
-research institutions or companies dealing with sensitive information as well as similar high-profile targets``. There are other example of APT that suggested an evolution of the threat landscape, like Stuxnet\cite{stuxnet}.
-Even if the aforementioned malware do not target directly IPv6, they share a common characteristic which is important to underline: the sophistication, the investment behind them, and the presence of an Advanced Persistent 
-Adversary (APA)\cite{apa}, term that ''depicts not only the threat, but the threat actors as well``.
+The term Advanced Persistent Threat (APT) is used to define ''any sophisticated adversary engaged in information warfare in support of long-term strategic goals``\cite{apt}. One of the main characteristic of APT detected in the wild is the sophistication of the attack. One example is the Uroburos rootkit\cite{uroburos}, which ''modular structure allows extending it with new features easily, which makes it not only highly sophisticated but also highly flexible and dangerous``. The analysis of the rootkit suggests that ''the development of a framework like Uroburos is a huge investment`` and ''that it was designed to target government institutions, research institutions or companies dealing with sensitive information as well as similar high-profile targets``. There are other example of APT that suggested an evolution of the threat landscape, like Stuxnet\cite{stuxnet}. Even if the aforementioned malware do not target directly IPv6, they share a common characteristic which is important to underline: the sophistication, the investment behind them, and the presence of an Advanced Persistent Adversary (APA)\cite{apa}, term that ''depicts not only the threat, but the threat actors as well``.
 
-The evolution of the threat landscape depicts a situation where APA, often associated with groups sponsored by state actors, have a remarkable budget to develop very sophisticated attacks to reach their goals. In the current 
-situation, given the impact that the full deployment of IPv6 will have, those actors have the resources and the motivation to research and discover vulnerabilities in IPv6, ICMPv6, and other protocols involved. 
-Moreover, if this research will succeed, APA can gain a considerable advantage over their opponents, because a possible vulnerability at network layer may allow to bypass more easily the security mechanisms in place and 
-give more robust mechanisms to stay undetected for longer.
+The evolution of the threat landscape depicts a situation where APA, often associated with groups sponsored by state actors, have a remarkable budget to develop very sophisticated attacks to reach their goals. In the current situation, given the impact that the full deployment of IPv6 will have, those actors have the resources and the motivation to research and discover vulnerabilities in IPv6, ICMPv6, and other protocols involved. 
+Moreover, if this research will succeed, APA can gain a considerable advantage over their opponents, because a possible vulnerability at network layer may allow to bypass more easily the security mechanisms in place and give more robust mechanisms to stay undetected for longer.
 
-While research and tests on ICMPv6 are an ongoing process, the urgency and criticality of the subject require a more in-depth analysis which take into account the full deployment, but also the transition period. To 
-pursue this goal it is important to start from the specifications of the protocol, the RFCs. Those documents represent a guideline, the result of an agreement between many stakeholders. As a guideline, there is no 
-guarantee that the implementation will follow the suggestion, even in the sections specified with a ''must``.
+While research and tests on ICMPv6 are an ongoing process, the urgency and criticality of the subject require a more in-depth analysis which take into account the full deployment, but also the transition period. To pursue this goal it is important to start from the specifications of the protocol, the RFCs. Those documents represent a guideline, the result of an agreement between many stakeholders. As a guideline, there is no guarantee that the implementation will follow the suggestion, even in the sections specified with a ''must``.
 
-It is worth to underline the contribution of this research. The first contribution is to produce the necessary awareness with regard to IPv6 and ICMPv6. This is the starting point to understand the need to analyze the protocols in 
-detail. Furthermore, it is important to see the big picture, which include not only ICMPv6, but also its relationship with the devices involved in the communication, the target hosts, and the firewalls through which the 
-packets must transit. Firewalls are devices configured by human beings, which may commit mistakes and use different best practices. Each configuration can produce a different scenario, which is worth to analyze because 
-in the real world each system may differ from another, and the goal of an APA is to find these slight differences between them to take advantage. This work's contribution is an analysis of different scenarios where the use of 
-the ICMPv6 protocol could arise different security issues, with respect to the configuration of network boundary devices. A scenario-based experiment needs also a test set, based on RFC specifications,
-and the implementation of a software to conduct the experiments, which also represent a contribution of this research.
+It is worth to underline the contribution of this research. The first contribution is to produce the necessary awareness with regard to IPv6 and ICMPv6. This is the starting point to understand the need to analyze the protocols in detail. Furthermore, it is important to see the big picture, which include not only ICMPv6, but also its relationship with the devices involved in the communication, the target hosts, and the firewalls through which the packets must transit. Firewalls are devices configured by human beings, which may commit mistakes and use different best practices. Each configuration can produce a different scenario, which is worth to analyze because in the real world each system may differ from another, and the goal of an APA is to find these slight differences between them to take advantage. This work's contribution is an analysis of different scenarios where the use of the ICMPv6 protocol could arise different security issues, with respect to the configuration of network boundary devices. A scenario-based experiment needs also a test set, based on RFC specifications, and the implementation of a software to conduct the experiments, which also represent a contribution of this research.
 
-The novelty of this research resides in the scenario-based experiment, which involves the identification of a test set based on the RFCs specifications, to find possible vulnerabilities that can be exploited. Furthermore, 
-the tests must consider both directions of the network flow, from the outside to the internal network, and from the internal and trusted network to the outside. The traffic traveling in both directions must cross a 
-network boundary device, which is a necessary condition to consider a potential vulnerability as such. The reason behind the novelty of this approach is that, as this research will underline in next chapter, other 
-researches consider only one traffic flow direction, or the compliance with the protocol itself of most implementation, without considering network boundary devices, which, taking into account the transition period, may 
-or may not be configured to cope with IPv6 and the related protocols.
+The novelty of this research resides in the scenario-based experiment, which involves the identification of a test set based on the RFCs specifications, to find possible vulnerabilities that can be exploited. Furthermore, the tests must consider both directions of the network flow, from the outside to the internal network, and from the internal and trusted network to the outside. The traffic traveling in both directions must cross a network boundary device, which is a necessary condition to consider a potential vulnerability as such. The reason behind the novelty of this approach is that, as this research will underline in next chapter, other researches consider only one traffic flow direction, or the compliance with the protocol itself of most implementation, without considering network boundary devices, which, taking into account the transition period, may or may not be configured to cope with IPv6 and the related protocols.
 
-The next chapters of this work will explore the background, the specification inside RFCs, and the related work(see~\ref{sec:2}), which includes existing tools and projects to test ICMPv6, and a review of the literature.
-Then the analysis proceeds with definition of the methodology(see~\ref{sec:3}) of this research, which is based on the scientific method of the experimentation; the chapter includes the motivation behind this choice and 
-behind the choice of the technology to conduct the experiments. The implementation is the next chapter(see~\ref{sec:4}), which deal with the details of the technology, followed by the experiment(see~\ref{sec:5}), which 
-describes the set of performed tests. The chapter related to the results(see~\ref{sec:6}) includes a discussion about the results of the experiment and its meaning. Finally, the conclusions(see~\ref{sec:7}) summarizes the 
-research, discuss about suggestions and future work.
+The next chapters of this work will explore the background, the specification inside RFCs, and the related work(see~\ref{sec:2}), which includes existing tools and projects to test ICMPv6, and a review of the literature. Then the analysis proceeds with definition of the methodology(see~\ref{sec:3}) of this research, which is based on the scientific method of the experimentation; the chapter includes the motivation behind this choice and behind the choice of the technology to conduct the experiments. The implementation is the next chapter(see~\ref{sec:4}), which deal with the details of the technology, followed by the experiment(see~\ref{sec:5}), which describes the set of performed tests. The chapter related to the results(see~\ref{sec:6}) includes a discussion about the results of the experiment and its meaning. Finally, the conclusions(see~\ref{sec:7}) summarizes the research, discuss about suggestions and future work.
 
  
 
@@ -336,30 +273,17 @@ research, discuss about suggestions and future work.
 \subsection{Background}
 \label{sub:background}
 
-''The Internet Standards process is an activity of the Internet Society\footnote{\url{http://www.internetsociety.org/}} that is organized and managed on behalf of the Internet community by the Internet Architecture Board (IAB)\footnote{\url{https://www.iab.org/}} and 
-the Internet Engineering Steering 
-Group (IESG)\footnote{\url{https://www.ietf.org/iesg/}}.
-... an Internet Standard is a specification that is stable and well-understood, is technically competent, has multiple, independent, and interoperable implementations with substantial operational experience, 
-enjoys significant public support, and is recognizably useful in some or all parts of the Internet. ... Each distinct version of an Internet standards-related specification is published as part of the "Request for 
-Comments" (RFC) document series.  This archival series is the official publication channel for Internet standards documents and other publications of the IESG, IAB, and Internet community.``\cite{rfc2026}
+``The Internet Standards process is an activity of the Internet Society\footnote{\url{http://www.internetsociety.org/}} that is organized and managed on behalf of the Internet community by the Internet Architecture Board (IAB)\footnote{\url{https://www.iab.org/}} and the Internet Engineering Steering Group (IESG)\footnote{\url{https://www.ietf.org/iesg/}}. [...] an Internet Standard is a specification that is stable and well-understood, is technically competent, has multiple, independent, and interoperable implementations with substantial operational experience, enjoys significant public support, and is recognizably useful in some or all parts of the Internet. [...] Each distinct version of an Internet standards-related specification is published as part of the Request for Comments (RFC) document series.  This archival series is the official publication channel for Internet standards documents and other publications of the IESG, IAB, and Internet community.''\cite{rfc2026}
 
-This work starts by analyzing the RFCs related to ICMPv6, which specify the protocol and the features to which each implementation must adhere. The main goal of an agreement on a protocol is interoperability
-\footnote{\url{http://www.merriam-webster.com/dictionary/interoperability}}, but, since this is not a binding process, and even though implementations follow the main specifications, it is always possible that some of 
-them do not adhere completely. This could lead to some interoperability issues, which may introduce vulnerabilities in the protocol.
+This work starts by analyzing the RFCs related to ICMPv6, which specify the protocol and the features to which each implementation must adhere. The main goal of an agreement on a protocol is interoperability \footnote{\url{http://www.merriam-webster.com/dictionary/interoperability}}, but, since this is not a binding process, and even though implementations follow the main specifications, it is always possible that some of them do not adhere completely. This could lead to some interoperability issues, which may introduce vulnerabilities in the protocol.
 
-The background of this research is represented by two RFCs, ''Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification``\cite{rfc4443}, and ''Neighbor Discovery for IP version 6 
-(IPv6)``\cite{rfc4861}. These two RFCs specify the general header for ICMPv6 messages, and each specific message header to which each implementation must adhere.
+The background of this research is represented by two RFCs, ``Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification''\cite{rfc4443}, and ``Neighbor Discovery for IP version 6 (IPv6)''\cite{rfc4861}. These two RFCs specify the general header for ICMPv6 messages, and each specific message header to which each implementation must adhere.
 
-The IPv6 specification\cite{rfc2460} is only partially in the scope of this research, but it must be mentioned, because of its tight relationship with ICMPv6, and because in each ICMPv6 message type specification some of 
-its fields are cited, as it will be underlined later in the chapter.
+The IPv6 specification\cite{rfc2460} is only partially in the scope of this research, but it must be mentioned, because of its tight relationship with ICMPv6, and because in each ICMPv6 message type specification some of its fields are cited, as it will be underlined later in the chapter.
 
-RFCs use a specific set of words to express the requirements of the implementations \cite{rfc2119}. Words like ''must``, or ''should`` have a particular meaning, as expressed in the cited document, that should be well 
-understood by implementors. The reason is that a lack of compliance may lead to the introduction of some vulnerabilities, where a node is expecting a particular behavior from another peer, while the peer's implementation 
-follows slightly different specifications. This research, inside next sections, will try to underline where, under each message type, and along the general specifications (e.g. general processing rules), it is possible 
-to insert vulnerabilities in the protocol if the interpretation of the specifications were different between the implementations.
+RFCs use a specific set of words to express the requirements of the implementations \cite{rfc2119}. Words like ``must'', or ``should'' have a particular meaning, as expressed in the cited document, that should be well understood by implementors. The reason is that a lack of compliance may lead to the introduction of some vulnerabilities, where a node is expecting a particular behavior from another peer, while the peer's implementation follows slightly different specifications. This research, inside next sections, will try to underline where, under each message type, and along the general specifications (e.g. general processing rules), it is possible to insert vulnerabilities in the protocol if the interpretation of the specifications were different between the implementations.
 
-Since the list of possibilities may be long, this research will use criteria in order to generate a subset of specification to test. The followed mechanism is to first select specifications and insert them into a set of 
-tables, each related to a specific message, and then select from each table the test to be performed during the experiment. The criteria are presented at the end of this chapter, after the related works' analysis.
+Since the list of possibilities may be long, this research will use criteria in order to generate a subset of specification to test. The followed mechanism is to first select specifications and insert them into a set of tables, each related to a specific message, and then select from each table the test to be performed during the experiment. The criteria are presented at the end of this chapter, after the related works' analysis.
 
 \pagebreak
 \subsubsection{Terminology}
@@ -383,11 +307,9 @@ This research background's analysis starts from the terminology, since it is imp
 \hdashline
 \textit{Off-link}:&an address that is not assigned to any interfaces on the specified link.\\
 \hdashline
-\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most 
-bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches.\\
+\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches.\\
 \hdashline
-\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are 
-being processed properly by the receiving IP layer.\\
+\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are being processed properly by the receiving IP layer.\\
 \hdashline
 \textit{Packet}:&an IPv6 header plus payload.\\
 \hdashline
@@ -409,8 +331,7 @@ being processed properly by the receiving IP layer.\\
 \hdashline
 \textit{All-routers multicast address}:&the link-local scope address to reach all routers, FF02::2.\\
 \hdashline
-\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most 
-significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer.\\
+\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer.\\
 \hdashline
 \textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
 unspecified address has a value of 0:0:0:0:0:0:0:0.\\
@@ -423,8 +344,7 @@ unspecified address has a value of 0:0:0:0:0:0:0:0.\\
 The table (see~\ref{table:IPv6}) shows the specification of the IPv6 header. From the point of view of this research, there are four interesting fields which are strictly involved in the ICMPv6 specification:
 \vspace{-15pt}
 \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
- \item \textbf{Next Header}:\quad 8-bit, identifies the type of header immediately following the IPv6 header. Uses the same values as the IPv4 Protocol field. The ICMPv6 value is 58. The complete list is available on 
- IANA's website\footnote{\url{http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml}, accessed on 27.03.2016}
+ \item \textbf{Next Header}:\quad 8-bit, identifies the type of header immediately following the IPv6 header. Uses the same values as the IPv4 Protocol field. The ICMPv6 value is 58. The complete list is available on IANA's website\footnote{\url{http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml}, accessed on 27.03.2016}
  \item \textbf{Hop Limit}:\quad 8-bit, decremented by 1 by each node that forwards the packet. The packet is discarded if Hop Limit is decremented to zero.
  \item \textbf{Source Address}:\quad 128-bit address of the originator of the packet.
  \item \textbf{Destination Address}:\quad 128-bit address of the intended recipient of the packet.
@@ -436,8 +356,7 @@ The table (see~\ref{table:IPv6}) shows the specification of the IPv6 header. Fro
 
 The Internet Control Message Protocol (ICMPv6) for the Internet Protocol Version 6 (IPv6) Specification categorizes two broad type of messages, error and informational messages.
 
-As shown in the table (see~\ref{table:ICMPv6}), the general ICMPv6 header format is composed by an 8 bit \textbf{type} field, an 8 bit \textbf{code} field, and a 16 bit \textbf{checksum} field. The message body suggests 
-specific header fields which are characteristic of each message type.
+As shown in the table (see~\ref{table:ICMPv6}), the general ICMPv6 header format is composed by an 8 bit \textbf{type} field, an 8 bit \textbf{code} field, and a 16 bit \textbf{checksum} field. The message body suggests specific header fields which are characteristic of each message type.
 
 ICMPv6 messages are categorized by its type field, while the code field in this specification identifies a specific message under the category.
 
@@ -518,28 +437,26 @@ Type field&Informational Message\\
 \label{table:ICMPv6InformationalMessages}
 \end{table}
 \end{savenotes}
-The RFC, besides ICMPv6 fields, gives directives also for IPv6 fields of interest. For all the error messages and Echo Reply is the Destination Address field, which is ''copied from the Source Address field of the 
-invoking packet``. For an Echo Request, the IPv6 field is ''any legal IPv6 address``.
+The RFC, besides ICMPv6 fields, gives directives also for IPv6 fields of interest. For all the error messages and Echo Reply is the Destination Address field, which is ``copied from the Source Address field of the invoking packet''. For an Echo Request, the IPv6 field is ``any legal IPv6 address''.
 
-Besides type and code fields, another field is common to all the ICMPv6 messages: the checksum. The checksum is ''used to detect data corruption in the ICMPv6 message and parts of the IPv6 header`` and ''is the 16-bit 
-one's complement of the one's complement sum of the entire ICMPv6 message, starting with the ICMPv6 message type field, and prepended with a pseudo-header of IPv6 header fields``. The procedure implies to sum up the 
-binary values of 16 bit at a time, and invert the bit values of the final result.
+Besides type and code fields, another field is common to all the ICMPv6 messages: the checksum. The checksum is ``used to detect data corruption in the ICMPv6 message and parts of the IPv6 header'' and ``is the 16-bit one's complement of the one's complement sum of the entire ICMPv6 message, starting with the ICMPv6 message type field, and prepended with a pseudo-header of IPv6 header fields''. The procedure implies to sum up the binary values of 16 bit at a time, and invert the bit values of the final result.
 
-The RFC includes a ''Message Processing Rules`` section, which underlines the rules that a node \textcolor{red}{must} observe while processing an ICMPv6 message. The complete list is in table ~\ref{table:4443ProcRules} 
-in Appendix 2.
+The RFC includes a ``Message Processing Rules'' section, which underlines the rules that a node must observe while processing an ICMPv6 message. The complete list is in table ~\ref{table:4443ProcRules} in Appendix 2.
 
-During the preparation for the experiment it is important to identify tests that may lead to unexpected, from the RFC specification point of view, results. One example of that, taking the first rule in the 
-aforementioned table, may be:\newline
+During the preparation for the experiment it is important to identify tests that may lead to unexpected, from the RFC specification point of view, results. One example of that, taking the first rule in the aforementioned table, may be:\newline
 what would happened in the case that an ICMPv6 error message of unknown type is received at its destination, and it is passed to the upper-layer process with a forged malicious payload?
 
-As this research will show, some test may be spread across different scenarios, while other are more suitable to be performed only in a specific scenario; the example above is a good candidate for an outside-to-inside 
-direction scenario, in order to test the behavior of an internal node.
+As this research will show, some test may be spread across different scenarios, while other are more suitable to be performed only in a specific scenario; the example above is a good candidate for an outside-to-inside direction scenario, in order to test the behavior of an internal node.
 
 
-\textbf{Destination Unreachable}\\
-The first inspected message type is Destination Unreachable. Its purpose is to generate an error ''in response to a packet that cannot be delivered to its destination address for reasons other than congestion``.\\
-For a detailed view of the header, table (see~\ref{table:destUnreach}) in \ref{Appendix 1}.\\
-The table (see~\ref{table:destUnreachCodes}) summarizes the type and code fields of the header, with the corresponding code name of the message.\\
+\textbf{Destination Unreachable}
+
+The first inspected message type is Destination Unreachable. Its purpose is to generate an error ``in response to a packet that cannot be delivered to its destination address for reasons other than congestion''.
+
+For a detailed view of the header, table (see~\ref{table:destUnreach}) in \ref{Appendix 1}.
+
+The table (see~\ref{table:destUnreachCodes}) summarizes the type and code fields of the header, with the corresponding code name of the message.
+
 \begin{savenotes}
 \begin{table}[!ht]
 \centering
@@ -566,14 +483,16 @@ Type&Code&Description\\
 The Unused field accordingly to the RFC must be initialized to zero by the originator and ignored by the receiver.
 
 The following illustrates the meaning behind codes and description:
-
-\textbf{No Route to Destination}: lack of a matching entry in the forwarding node's routing table\\
-\textbf{Communication with destination administratively prohibited}: administrative prohibition (e.g., a "firewall filter")\\
-\textbf{Beyond scope of source address}: the destination is beyond the scope of the source address (e.g., when a packet has a link-local source address and a global-scope destination address)\\
-\textbf{Address unreachable}: the reason for the failure to deliver cannot be mapped to any of other codes\\
-\textbf{Port unreachable}: generated in response to a packet for which the transport protocol (e.g., UDP) has no listener\\
-\textbf{Source address failed ingress/egress policy}: the packet with this source address is not allowed due to ingress or egress filtering policies\\
-\textbf{Reject route to destination}: the route to the destination is a reject route (may occur if the router has been configured to reject all the traffic for a specific prefix).\\
+\vspace{-15pt}
+\begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item \textbf{No Route to Destination}: lack of a matching entry in the forwarding node's routing table
+ \item \textbf{Communication with destination administratively prohibited}: administrative prohibition (e.g., a ``firewall filter'')
+ \item \textbf{Beyond scope of source address}: the destination is beyond the scope of the source address (e.g., when a packet has a link-local source address and a global-scope destination address)
+ \item \textbf{Address unreachable}: the reason for the failure to deliver cannot be mapped to any of other codes
+ \item \textbf{Port unreachable}: generated in response to a packet for which the transport protocol (e.g., UDP) has no listener
+ \item \textbf{Source address failed ingress/egress policy}: the packet with this source address is not allowed due to ingress or egress filtering policies
+ \item \textbf{Reject route to destination}: the route to the destination is a reject route (may occur if the router has been configured to reject all the traffic for a specific prefix)
+\end{enumerate}
 
 \textbf{Packet Too Big}
 
@@ -581,7 +500,7 @@ A Packet Too Big must be sent by a router in response to a packet that it cannot
 
 The table (see~\ref{table:packettoobig}) in Appendix 1 shows the header fields.
 
-For this message the type field must always be 2 and the code set to 0 and ignored by the receiver. The MTU value represent ''the Maximum Transmission Unit of the next-hop link``.
+For this message the type field must always be 2 and the code set to 0 and ignored by the receiver. The MTU value represent ``the Maximum Transmission Unit of the next-hop link''.
 
 \textbf{Time Exceeded Message}
 
@@ -605,14 +524,14 @@ Type&Code&Description\\
 \end{table}
 \end{savenotes}
 
-If a router receives a packet with a Hop Limit of zero, or if a router decrements a packet's Hop Limit to zero, it must discard the packet and originate an ICMPv6 Time Exceeded message with Code 0 to the source of the 
-packet. An ICMPv6 Time Exceeded message with Code 1 is used to report fragment reassembly timeout.
+If a router receives a packet with a Hop Limit of zero, or if a router decrements a packet's Hop Limit to zero, it must discard the packet and originate an ICMPv6 Time Exceeded message with Code 0 to the source of the packet. An ICMPv6 Time Exceeded message with Code 1 is used to report fragment reassembly timeout.
 
 \textbf{Parameter Problem Message}
 
-''If an IPv6 node processing a packet finds a problem with a field in the IPv6 header or extension headers such that it cannot complete processing the packet, it must discard the packet and should originate an ICMPv6 
-Parameter Problem message to the packet's source, indicating the type and location of the problem``.\\
-The table (see~\ref{table:paramProb}) in Appendix 1 underlines the header fields of this type of message.\\
+``If an IPv6 node processing a packet finds a problem with a field in the IPv6 header or extension headers such that it cannot complete processing the packet, it must discard the packet and should originate an ICMPv6 Parameter Problem message to the packet's source, indicating the type and location of the problem''.
+
+The table (see~\ref{table:paramProb}) in Appendix 1 underlines the header fields of this type of message.
+
 Table \ref{table:paramProbCodes} shows a mapping between each code and a description of the error.
 
 \begin{savenotes}
@@ -633,14 +552,14 @@ Type&Code&Description\\
 \label{table:paramProbCodes}
 \end{table}
 \end{savenotes}
-Accordingly to the specification, the pointer field ''identifies the octet offset within the invoking packet where the error was detected. The pointer will point beyond the end of the ICMPv6 packet if the field in error 
-is beyond what can fit in the maximum size of an ICMPv6 error message``.
+Accordingly to the specification, the pointer field ``identifies the octet offset within the invoking packet where the error was detected. The pointer will point beyond the end of the ICMPv6 packet if the field in error is beyond what can fit in the maximum size of an ICMPv6 error message''.
 
 \textbf{Echo Request}
 
-The RFC states that each node must implements an Echo mechanism in order to produce Echo Requests and answer with Echo Replies. It also mentions the implementation of an application layer interface, for diagnostics 
-purposes, to originate requests and receive replies.\\
-The table (see~\ref{table:echoReq}) in Appendix 1 shows the header fields of an Echo Request message.\\
+The RFC states that each node must implements an Echo mechanism in order to produce Echo Requests and answer with Echo Replies. It also mentions the implementation of an application layer interface, for diagnostics purposes, to originate requests and receive replies.
+
+The table (see~\ref{table:echoReq}) in Appendix 1 shows the header fields of an Echo Request message.
+
 An Echo Request code is always 0. Identifier and Sequence Number are considered helping fields, which, in fact, could be expected to be zero, as depicted in table \ref{table:echoReqFields}.
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -669,7 +588,7 @@ Data&Zero or more octets of arbitrary data.\\
 
 \textbf{Echo Reply}
 
-For the Echo Reply Header (see~\ref{table:echoRep}), while table \ref{table:echoRepFields} shows the fields with the value, where present, or the function.\\
+For the Echo Reply Header (see~\ref{table:echoRep}), while table \ref{table:echoRepFields} shows the fields with the value, where present, or the function.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -695,17 +614,18 @@ Data&The data from the invoking Echo Request message.\\
 \label{table:echoRepFields}
 \end{table}
 \end{savenotes}
-The RFC reiterate the implementation of the same mechanism as underlined in the Echo Request. In addition, it highlights that if the message is in response to a request to the unicast address of the node, the source 
-address of the Echo Reply must be copied from the destination address field of the Echo Request.\\
-An Echo Reply should be also originated in the case that the Request has been made to an IPv6 multicast or anycast address, in this case with the source address of the interface that received the message.\\
+The RFC reiterate the implementation of the same mechanism as underlined in the Echo Request. In addition, it highlights that if the message is in response to a request to the unicast address of the node, the source address of the Echo Reply must be copied from the destination address field of the Echo Request.
+
+An Echo Reply should be also originated in the case that the Request has been made to an IPv6 multicast or anycast address, in this case with the source address of the interface that received the message.
+
 The data, which has no limitations in size, must be the same which has been received inside the Echo Request.
 
 
 \subsubsection{RFC 4861}
 \label{subsub:4861}
 
-The Neighbor Discovering Protocol has many functionalities and it is used by an IPv6 nodes in order to determine the link-layer address of neighbors, hosts and routers, and to discover which router is able to forward 
-their packets to another off-link networks. In addition, it is used as a reachability mechanism to determine if a host is still alive.\\
+The Neighbor Discovering Protocol has many functionalities and it is used by an IPv6 nodes in order to determine the link-layer address of neighbors, hosts and routers, and to discover which router is able to forward their packets to another off-link networks. In addition, it is used as a reachability mechanism to determine if a host is still alive.
+
 The RFC defines five additional messages, characterized by the type field (for these messages the code is always zero), as summarized in table \ref{table:4861Messages}.
 
 \begin{savenotes}
@@ -733,8 +653,7 @@ Type field&Message\\
 \end{table}
 \end{savenotes}
 
-This RFC defines in addition five options, with the possibility to be extended in the future, that ''provide a mechanism for encoding variable length fields, fields that may appear multiple times in the same packet, or 
-information that may not appear in all packets``. Options defined in the document are:
+This RFC defines in addition five options, with the possibility to be extended in the future, that ``provide a mechanism for encoding variable length fields, fields that may appear multiple times in the same packet, or information that may not appear in all packets''. Options defined in the document are:
 \vspace{-15pt}
 \begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Source Link-Layer Address
@@ -792,9 +711,10 @@ Source link-layer address &The link-layer address of the sender, if known.\\
 
 \textbf{Router Advertisement}
 
-Router Advertisement are sent by routers periodically, or in response to a Router Solicitation, to help hosts in their configuration processes. Examples of such processes are the mechanism to configure their addresses, 
-how to obtain information about DNS servers, prefix information for the link.\\
-The table \ref{table:routerAdvert} in Appendix 1 shows the header of a Router Advertisement.\\
+Router Advertisement are sent by routers periodically, or in response to a Router Solicitation, to help hosts in their configuration processes. Examples of such processes are the mechanism to configure their addresses, how to obtain information about DNS servers, prefix information for the link.
+
+The table \ref{table:routerAdvert} in Appendix 1 shows the header of a Router Advertisement.
+
 Router Advertisement specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
@@ -808,7 +728,7 @@ Router Advertisement specifies three IPv6 fields:
 \end{tabular}
 
 \vspace{15pt}
-The table (see~\ref{table:routerAdvfields}) summarizes the fields with their specifications.\\
+The table (see~\ref{table:routerAdvfields}) summarizes the fields with their specifications.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -854,8 +774,10 @@ Prefix Information&These options specify the prefixes that are on-link and/or ar
 
 \textbf{Neighbor Solicitation}
 
-Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.\\
-See table~\ref{table:neighSolicit} in Appendix 1 for the detailed header format.\\
+Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.
+
+See table~\ref{table:neighSolicit} in Appendix 1 for the detailed header format.
+
 Neighbor Solicitation specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
@@ -868,7 +790,7 @@ Neighbor Solicitation specifies three IPv6 fields:
  \hdashline
 \end{tabular}
 
-Table~\ref{table:neighSolicitFields} summarizes the fields with their specifications.\\
+Table~\ref{table:neighSolicitFields} summarizes the fields with their specifications.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -901,8 +823,10 @@ Source link-layer address &The link-layer address for the sender.\\
 
 \textbf{Neighbor Advertisement}
 
-A Neighbor Advertisement is sent by a node in response to a Neighbor Solicitation, or to spread information quickly. The latter is called unsolicited Neighbor Advertisement.\\
-Neighbor Advertisement specifies three IPv6 fields:\\
+A Neighbor Advertisement is sent by a node in response to a Neighbor Solicitation, or to spread information quickly. The latter is called unsolicited Neighbor Advertisement.
+
+Neighbor Advertisement specifies three IPv6 fields:
+
 \begin{tabular}{L{4.0cm}L{11.5cm}}
 \hdashline
  Source Address&An address assigned to the interface from which the advertisement is sent.\\
@@ -914,7 +838,7 @@ Neighbor Advertisement specifies three IPv6 fields:\\
  \hdashline
 \end{tabular}
 
-The table (see~\ref{table:neighAdvFields}) shows the fields with the specifications.\\
+The table (see~\ref{table:neighAdvFields}) shows the fields with the specifications.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -937,8 +861,7 @@ O&Override flag. When set, the O-bit indicates that the advertisement should ove
 \hline
 Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
 \hline
-Target Address&For solicited advertisements, the Target Address field in the Neighbor Solicitation message that prompted this advertisement. For an unsolicited advertisement, the address whose link-layer address has 
-changed. The Target Address must not be a multicast address.\\
+Target Address&For solicited advertisements, the Target Address field in the Neighbor Solicitation message that prompted this advertisement. For an unsolicited advertisement, the address whose link-layer address has changed. The Target Address must not be a multicast address.\\
 \hline
 \rowcolor{lightblue}
 \multicolumn{2}{|c|}{Valid Options}\\
@@ -953,8 +876,9 @@ Target link-layer address&The link-layer address for the target, i.e., the sende
 
 \textbf{Redirect}
 
-Redirect messages are used by routers to inform a node about a better first-hop node on the path to a destination.\\
-Redirect specifies three IPv6 fields:\\
+Redirect messages are used by routers to inform a node about a better first-hop node on the path to a destination.
+
+Redirect specifies three IPv6 fields:
 
 \begin{tabular}{L{4.0cm}L{11.5cm}}
 \hdashline
@@ -966,7 +890,8 @@ Redirect specifies three IPv6 fields:\\
  \hdashline
 \end{tabular}
 
-Table~\ref{table:redirectFields} shows the fields with the specifications.\\
+Table~\ref{table:redirectFields} shows the fields with the specifications.
+
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
@@ -982,8 +907,7 @@ Code&0\\
 \hline
 Reserved&It must be initialized to zero by the sender and must be ignored by the receiver.\\
 \hline
-Target Address&An IP address that is a better first hop to use for the ICMP Destination Address. When the target is the actual endpoint of communication, i.e., the destination is a neighbor, the Target Address field must 
-contain the same value as the ICMP Destination Address field.  Otherwise, the target is a better first-hop router and the Target Address must be the router's link-local address so that hosts can uniquely identify routers.\\
+Target Address&An IP address that is a better first hop to use for the ICMP Destination Address. When the target is the actual endpoint of communication, i.e., the destination is a neighbor, the Target Address field must contain the same value as the ICMP Destination Address field.  Otherwise, the target is a better first-hop router and the Target Address must be the router's link-local address so that hosts can uniquely identify routers.\\
 \hline
 Destination Address&The IP address of the destination that is redirected to the target.\\
 \hline
@@ -1003,8 +927,7 @@ Redirected Header&As much as possible of the IP packet that triggered the sendin
 
 \textbf{Options}
 
-RFC 4861 specifies a set of options, which can be included in the messages. The general form includes an 8 bit identifier (Type) and an 8 bit length field, which represents ''the length of the option in units of 8 octets. 
-Options should be padded when necessary to ensure that they end on their natural 64-bit boundaries``.
+RFC 4861 specifies a set of options, which can be included in the messages. The general form includes an 8 bit identifier (Type) and an 8 bit length field, which represents ``the length of the option in units of 8 octets. Options should be padded when necessary to ensure that they end on their natural 64-bit boundaries''.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1032,7 +955,7 @@ Type&Option Name\\
 \end{savenotes}
 
 
-\textbf{Source/Target Link-layer Address}\\
+\textbf{Source/Target Link-layer Address}
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1056,12 +979,11 @@ Link-Layer Address&The variable length link-layer address.\\
 \end{table}
 \end{savenotes}
 
-''The Source Link-Layer Address option contains the link-layer address of the sender of the packet. It is used in the Neighbor Solicitation, Router Solicitation, and Router Advertisement packets. The Target Link-Layer 
-Address option contains the link-layer address of the target. It is used in Neighbor Advertisement and Redirect packets. These options must be silently ignored for other Neighbor Discovery messages.``\\
+``The Source Link-Layer Address option contains the link-layer address of the sender of the packet. It is used in the Neighbor Solicitation, Router Solicitation, and Router Advertisement packets. The Target Link-Layer Address option contains the link-layer address of the target. It is used in Neighbor Advertisement and Redirect packets. These options must be silently ignored for other Neighbor Discovery messages.''
 
-\textbf{Prefix Information}\\
+\textbf{Prefix Information}
 
-The Prefix Information is used by routers to inform hosts about on-link prefixes of the network segments, and allow them to perform address autoconfiguration.\\
+The Prefix Information is used by routers to inform hosts about on-link prefixes of the network segments, and allow them to perform address autoconfiguration.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1101,9 +1023,9 @@ zero by the sender and ignored by the receiver.\\
 \end{savenotes}
 
 
-\textbf{Redirect Header}\\
+\textbf{Redirect Header}
 
-This options is used by Redirect messages and contains, in IP header and data, the original packet that triggered the redirect.\\
+This options is used by Redirect messages and contains, in IP header and data, the original packet that triggered the redirect.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1130,7 +1052,7 @@ IP header + data&The original packet truncated to ensure that the size of the re
 
 \textbf{MTU}
 
-The MTU option is used to ensure that all the nodes on the link use the same MTU value, in such case where ''heterogeneous technologies are bridged together``.\\
+The MTU option is used to ensure that all the nodes on the link use the same MTU value, in such case where ``heterogeneous technologies are bridged together''.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1156,46 +1078,31 @@ MTU&The recommended MTU for the link.\\
 \end{savenotes}
 
 
-This ends the background analysis. Next, this research takes on the related work, in which other researches are taken into consideration in order to understand what have been done in the field, and to take suggestions 
-about possible scenarios that are worth to test.
+This ends the background analysis. Next, this research takes on the related work, in which other researches are taken into consideration in order to understand what have been done in the field, and to take suggestions about possible scenarios that are worth to test.
 
 
-
-
-
-
-
-
-
-
-
-
-
-\pagebreak
-In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another 
-scenario to take into consideration, especially if APT and the amount of resources that APAs have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without 
-authorization. The 
-absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information 
-outside the internal perimeter.\\
-This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and, at the same time, to be able to pursue its goals. 
-The analysis of this scenario is presented next, and it is usually referred to with the presence of a covert channel.
 
 \subsection{Covert Channel}
 \label{sub:covert}
+
+
+In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another scenario to take into consideration, especially if APT and the amount of resources that APAs have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information outside the internal perimeter.
+
+This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and, at the same time, to be able to pursue its goals. 
+
+The analysis of this scenario is presented next, and it is usually referred to with the presence of a covert channel.
 
 Before attempting to analyze the scenario characterized by a covert channel in a networked communication, it is necessary to describe the context in which it came out first, that is, the Prisoners' Problem.
 
 \subsubsection{The Prisoners' Problem}
 \label{subsub:prisoners}
 
-The Prisoners' Problem\cite{prisoners} involves two actors that ''have been arrested and are about to be locked in widely separated cells``, and a warden, who ''is willing to allow the prisoners 
-to exchange messages in the hope that he can deceive at least one of them into accepting as a genuine communication from the other either a fraudulent message created by the warden himself or else a modification by him 
-of a genuine message``.\\
-In the context of a networked communication, ''Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located 
-somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob``\cite{netaware}.\\
-In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications 
-from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a 
-covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
+The Prisoners' Problem\cite{prisoners} involves two actors that ``have been arrested and are about to be locked in widely separated cells'', and a warden, who ``is willing to allow the prisoners to exchange messages in the hope that he can deceive at least one of them into accepting as a genuine communication from the other either a fraudulent message created by the warden himself or else a modification by him of a genuine message''.
+
+In the context of a networked communication, ``Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located 
+somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob''\cite{netaware}.
+
+In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
 
 \textbf{Policy}: A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area 
 \footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
@@ -1205,25 +1112,24 @@ covert channel, in order to deceive the countermeasures in place to consider it 
 \subsubsection{Definitions}
 \label{subsub:definitions}
 
-\textbf{Covert Channel} is a ''communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by 
-manipulating an overt\footnote{``open to view or knowledge; not concealed or secret'', \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016} communication``\cite{netaware}.
+\textbf{Covert Channel} is a ``communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by 
+manipulating an overt communication''\cite{netaware} \footnote{open to view or knowledge; not concealed or secret, \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016}.
 
-\textbf{Cover traffic} ''is the traffic that is being manipulated by covert channel participants``\cite{netaware}.
+\textbf{Cover traffic} ``is the traffic that is being manipulated by covert channel participants''\cite{netaware}.
 
-\textbf{Storage Covert Channel} ''manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least 
-with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content``\cite{netaware}.
+\textbf{Storage Covert Channel} ``manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least 
+with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content''\cite{netaware}.
 
-An \textbf{active warden} ''is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the 
+An \textbf{active warden} ``is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the 
 content of network traffic''\cite{netaware}\\
 
 \subsubsection{Related Research}
 
-The aforementioned Lewandowski's research defines a communication model for network storage channels, which involves two parties who wish to communicate covertly. ``As a cover, Alice and Bob might either select a suitable, 
-already ongoing communication or generate an appropriate one if they can do so without arousing suspicion, and then they proceed to modify the cover communication’s content to transmit their information. Meanwhile a 
-third party, Wendy, positioned somewhere on the covert communication’s path, attempts to disrupt Alice and Bob’s efforts while preserving the integrity of the cover traffic''.\\
+The aforementioned Lewandowski's research defines a communication model for network storage channels, which involves two parties who wish to communicate covertly. ``As a cover, Alice and Bob might either select a suitable, already ongoing communication or generate an appropriate one if they can do so without arousing suspicion, and then they proceed to modify the cover communication’s content to transmit their information. Meanwhile a third party, Wendy, positioned somewhere on the covert communication’s path, attempts to disrupt Alice and Bob’s efforts while preserving the integrity of the cover traffic''.
+
 The author extracted six scenarios (see Figure~\ref{fig:commScenarios}) from the model, based on the work of Lucena\cite{lucena}.
 
-\begin{figure} [ht] %try to place the figure here (next option top of the page) 
+\begin{figure}[ht] 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{communicationScenarios}
 \caption{Communication Scenarios}
@@ -1231,46 +1137,36 @@ The author extracted six scenarios (see Figure~\ref{fig:commScenarios}) from the
 \end{center}
 \end{figure}
 
-The six scenarios depicts different positions of Bob and Alice in the communication model, and the way the cover traffic (m) is manipulated by the covert channel (m\textprime).\\
-The first scenario is the simplest one, it 
-involves a communication between Bob and Alice, where Alice use directly the covert channel and insert the manipulated message, which is directed to Bob, the receiver. The remaining scenarios explores different 
-combinations, depending on the behavior and identity of the sender, i.e. if Alice is the sender and introduces a manipulated message in the channel or Alice modifies an existing and legitimate one, or on the behavior and 
-identity of the receiver, i.e. whether Bob is the receiver or, where he is not, if he restores or not the original message after reception.\\
+The six scenarios depicts different positions of Bob and Alice in the communication model, and the way the cover traffic (m) is manipulated by the covert channel (m\textprime).
 
-``In these scenarios, Wendy always should be positioned between Alice and Bob so that she can monitor m\textprime\hspace{2pt} traffic. Were she positioned differently, and were unable to see m\textprime, her presence would be 
-irrelevant to the covert communication''.\\
+The first scenario is the simplest one, it involves a communication between Bob and Alice, where Alice use directly the covert channel and insert the manipulated message, which is directed to Bob, the receiver. The remaining scenarios explores different combinations, depending on the behavior and identity of the sender, i.e. if Alice is the sender and introduces a manipulated message in the channel or Alice modifies an existing and legitimate one, or on the behavior and identity of the receiver, i.e. whether Bob is the receiver or, where he is not, if he restores or not the original message after reception.
+
+``In these scenarios, Wendy always should be positioned between Alice and Bob so that she can monitor m\textprime\hspace{2pt} traffic. Were she positioned differently, and were unable to see m\textprime, her presence would be irrelevant to the covert communication''.
+
 For the scope of this research, it is assumed that the sender can control the covert channel and insert directly the manipulated message. This reduction in scope, with respect to Lewandowski's study, is justified by the 
 limitation in time, and by the simplicity of the network topology used for the experiment, that will be highlighted later in next chapters. However, it is worth saying that for an exhaustive testing of ICMPv6, related to 
 covert channels, there are interesting implications to analyze inside the other scenarios, like the ability to preserve the covert channel in situations where Alice must modify the original message of the sender, or Bob 
-must restore the original message before forwarding it to the legitimate receiver.\\
-This assumption, however, has some implications:\\
-``Alice can modify the traffic to a greater degree, since Bob does not necessarily expect the traffic to be meaningful and perhaps not even valid. On the other hand, if Alice and Bob use their own traffic to provide 
-cover, they run a greater risk of exposure as they are openly communicating''.\\
-Furthermore, in this research, it is assumed that both the sender and the receiver are the same subject.\\
+must restore the original message before forwarding it to the legitimate receiver.
 
-Another topic to take into consideration, which relates to the behavior of the active warden, is the system and semantics preservation. The concepts have been applied first to preserve steganography
-\footnote{``The art or practice of concealing a message, image, or file within another message, image, or file'', \url{http://www.merriam-webster.com/dictionary/steganography}, accessed 24.3.2016}\cite{lucena2}, but 
-``the definitions can be applied to covert channels as well''\cite{netaware}.
+This assumption, however, has some implications:
 
-\textbf{System Preservation} ``guarantees that the stegomessage is well formed within the rules of the protocol; the actual meaning of the stegomessage may be different than the original cover''\cite{lucena2}\\
-\textbf{Semantic Preservation} ``means that, as observed at a point along the message’s path through the network, the stegomessage has the same meaning as the original cover''\cite{lucena2}\\
+``Alice can modify the traffic to a greater degree, since Bob does not necessarily expect the traffic to be meaningful and perhaps not even valid. On the other hand, if Alice and Bob use their own traffic to provide cover, they run a greater risk of exposure as they are openly communicating''. Furthermore, in this research, it is assumed that both the sender and the receiver are the same subject.
 
-In the context of covert channels, ``the property of syntax preservation determines whether the modified traffic m\textprime\hspace{2pt}adheres to the protocol syntax. On the other hand, the property of semantics 
-preservation guarantees that the meaning of modified traffic m\textprime\hspace{2pt}is the same as the original traffic m, or in other words that covert channel communication performed by Alice and Bob does not alter the 
-meaning of cover traffic''.\\
-The above concepts acquire more relevance in a complex topology scheme, where an IPv6 packet must eventually traverse multiple wardens. Lewandowski's work defines the concept of ``location-based syntax and semantics 
-preservation'', which is useful to differentiate between nodes, along the path, ``performing distinct functions'' and with ``multiple levels of protocol knowledge and understanding''. Each node, with a particular function 
+Another topic to take into consideration, which relates to the behavior of the active warden, is the system and semantics preservation. The concepts have been applied first to preserve steganography \footnote{``The art or practice of concealing a message, image, or file within another message, image, or file'', \url{http://www.merriam-webster.com/dictionary/steganography}, accessed 24.3.2016}\cite{lucena2}, but ``the definitions can be applied to covert channels as well''\cite{netaware}.
+
+\textbf{System Preservation} ``guarantees that the stegomessage is well formed within the rules of the protocol; the actual meaning of the stegomessage may be different than the original cover''\cite{lucena2}
+
+\textbf{Semantic Preservation} ``means that, as observed at a point along the message’s path through the network, the stegomessage has the same meaning as the original cover''\cite{lucena2}
+
+In the context of covert channels, ``the property of syntax preservation determines whether the modified traffic m\textprime\hspace{2pt}adheres to the protocol syntax. On the other hand, the property of semantics preservation guarantees that the meaning of modified traffic m\textprime\hspace{2pt}is the same as the original traffic m, or in other words that covert channel communication performed by Alice and Bob does not alter the meaning of cover traffic''.
+
+The above concepts acquire more relevance in a complex topology scheme, where an IPv6 packet must eventually traverse multiple wardens. Lewandowski's work defines the concept of ``location-based syntax and semantics preservation'', which is useful to differentiate between nodes, along the path, ``performing distinct functions'' and with ``multiple levels of protocol knowledge and understanding''. Each node, with a particular function 
 in the network, may behave differently with respect to the packet in travel, and ``as a result, a modified traffic’s syntax or semantics might be deemed correct by an IPv6 node with limited protocol knowledge while at 
-the same time be rejected by a more knowledgeable node''.\\
-This concepts will assume a particular relevance for this research when building the experiment. As it has been said before, it is important not only to understand the ICMPv6 protocol by itself, but also its relationship 
-with devices like firewalls (the active warden) and the different configurations which produce different scenarios. Each configuration may lead to a different knowledge and understanding of the protocol by the node, which 
-may affect the ability to preserve the covert channel, and must be taken into consideration. For example, an ``interesting case is presented by protocol’s reserved fields. Since their value is fixed (usually zeroed), and 
-it is supposed to be ignored by the receiver, they do not carry any meaning and modifying such field does not alter packet’s semantics. If the modification in question avoids changing packet’s syntax as well, the 
-reserved field is ideal for the purpose of embedding covert messages. And indeed, many network covert channel investigations focus on network protocol’s reserved fields and find them useful for covert communication''.
-Therefor, choosing a different configuration for the device, a firewall or router, may affect the level of knowledge of the protocol of that device, and the ability to preserve the covert channel. Or, in the other way, 
-each scenario may produce different behaviors with the presence of a covert channel, and allow to assess a particular configuration and its ability to prevent it.\\
-Indeed, ``the objective of covert channel participants is to conduct their communication in such way that the necessary modifications of the cover traffic are always syntax and semantics preserving \textit{with respect} 
-to network nodes along the communication’s path''.
+the same time be rejected by a more knowledgeable node''.
+
+This concepts will assume a particular relevance for this research when building the experiment. As it has been said before, it is important not only to understand the ICMPv6 protocol by itself, but also its relationship with devices like firewalls (the active warden) and the different configurations which produce different scenarios. Each configuration may lead to a different knowledge and understanding of the protocol by the node, which may affect the ability to preserve the covert channel, and must be taken into consideration. For example, an ``interesting case is presented by protocol’s reserved fields. Since their value is fixed (usually zeroed), and it is supposed to be ignored by the receiver, they do not carry any meaning and modifying such field does not alter packet’s semantics. If the modification in question avoids changing packet’s syntax as well, the reserved field is ideal for the purpose of embedding covert messages. And indeed, many network covert channel investigations focus on network protocol’s reserved fields and find them useful for covert communication''. Therefor, choosing a different configuration for the device, a firewall or router, may affect the level of knowledge of the protocol of that device, and the ability to preserve the covert channel. Or, in the other way, each scenario may produce different behaviors with the presence of a covert channel, and allow to assess a particular configuration and its ability to prevent it.
+
+Indeed, ``the objective of covert channel participants is to conduct their communication in such way that the necessary modifications of the cover traffic are always syntax and semantics preserving \textit{with respect} to network nodes along the communication’s path''.
 
 \textbf{Analyzed RFCs}\\
 
@@ -1303,31 +1199,24 @@ Neighbor Discovery (ND) for IPv6&RFC4861\cite{rfc4861}\\
 
 Lewandowski's study proposed six properties of covert channels which are important for the investigation. In this research, given its scope, two of them have been considered:
 \begin{itemize}
- \item ``degree of packet alteration – syntax- and semantics-preservation level of altered packets''. Since each configuration can have different syntax- and semantics-preservation level, it is important to test each 
- covert channel against each configuration, to assess both the warden configuration and the covert channel in this particular scenario.
- \item ``channel bandwidth – amount of data that can be transfered in given covert channel per packet of cover traffic''. This property does not affect the existence of the covert channel, but its ability to be preserved 
- for a longer period. Depending on the bandwidth, a covert channel may be useful, from attacker perspective, only in situations with a low amount of data to be exfiltrated, or when it is possible to insert a delay in the 
- transmission to avoid suspicion on the traffic.
+ \item ``degree of packet alteration – syntax- and semantics-preservation level of altered packets''. Since each configuration can have different syntax- and semantics-preservation level, it is important to test each covert channel against each configuration, to assess both the warden configuration and the covert channel in this particular scenario.
+ \item ``channel bandwidth – amount of data that can be transfered in given covert channel per packet of cover traffic''. This property does not affect the existence of the covert channel, but its ability to be preserved for a longer period. Depending on the bandwidth, a covert channel may be useful, from attacker perspective, only in situations with a low amount of data to be exfiltrated, or when it is possible to insert a delay in the transmission to avoid suspicion on the traffic.
 \end{itemize}
 
 Lewandowski observed that some of the considered protocols, Neighbor Discovering is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols 
-as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''.\\
-This research, even though the observation may be correct,  will not consider its assumption. The reason is given, as stated before, by the fact that it is important to consider also the actual transition period, where 
-the two protocols, IPv4 and IPv6, coexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of 
-syntax and semantics preservation knowledge, and any IPv6 packet will transit without deep inspection. For the same reason, an address-based filtering mechanism for IPv6 would probably not be in place. Another aspect, 
-still related to the active warden, is the direction of the communication, from the inside to the outside: since it is considered a communication from a trusted to an untrusted network, the default configuration may 
-allow the traffic without restrictions.
+as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''.
+
+This research, even though the observation may be correct, will not consider its assumption. The reason is given, as stated before, by the fact that it is important to consider also the actual transition period, where the two protocols, IPv4 and IPv6, coexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of syntax and semantics preservation knowledge, and any IPv6 packet will transit without deep inspection. For the same reason, an address-based filtering mechanism for IPv6 would probably not be in place. Another aspect, still related to the active warden, is the direction of the communication, from the inside to the outside: since it is considered a communication from a trusted to an untrusted network, the default configuration may allow the traffic without restrictions.
 
 
 \textbf{Analyzed Covert Channels}
 
-In his research, Lewandowski defined a set of possible covert channels to test, which are spread among different protocols. For the scope of this research, only those that are mentioned in the aforementioned RFCs are 
-taken into consideration.\\
+In his research, Lewandowski defined a set of possible covert channels to test, which are spread among different protocols. For the scope of this research, only those that are mentioned in the aforementioned RFCs are taken into consideration.
 
-The following table summarizes the protocol or message, the fields, and the bandwidth of the tested covert channels.
+Table~\ref{table:testedCC} summarizes the protocol or message, the fields, and the bandwidth of the tested covert channels.
 
 \begin{savenotes}
-\begin{table}[h]
+\begin{table}[!htpb]
 \centering
 \begin{tabular}{|C{4.5cm}|C{3.0cm}|C{3.5cm}|C{3.0cm}|}
 \rowcolor{darkblue}
@@ -1365,46 +1254,38 @@ ICMPv6/Echo Reply&Data&Arbitrary data&Unlimited\\
 \subsubsection{Existing Tools}
 \label{subsub:tools}
 
-Lewandowski built a tool called \textit{cctool} in order to perform the tests. The tool has the ability to ``verify the existence of the covert channels, as well as to test the functionality of active wardens''. The results of 
-his tests are strictly dependent on the quality of the wardens and on the scenarios used for the tests, which include, as mentioned before, also the possibility to modify the traffic in transit.\\
-It is also worth mentioning some of the assumptions he made in order to better understand the tests. The syntax and semantics preservation are important factors in scenarios where the active wardens have the capabilities 
-to understand, at different levels, the protocols. For example, Lewandowski built a scenario, called Cover Correctness Test, where a sender produces ICMPv6 traffic which is manipulated by Alice, but there is no receiver, 
-namely Bob, at the end. The correctness of the covert channel, in this case, is demonstrated by the fact that an ICMPv6 Echo Request reaches the destination and an ICMPv6 Echo Reply is generated as usual. For such a test, 
-``the conclusion is that the covert message embedding by Alice does not disrupt the cover traffic enough to impede its normal functionality''.\\
-One limitation of this kind of tests, as the author specified, is that many covert channel cannot be tested, in particular where an answer is not expected back.\\
-Another type of scenario, instead, include also Bob, who is able to receive the message and restore it back to its initial, syntactically and semantically correct, version. In this case it is possible to test also messages 
-which do not include an answer in its processing rule, because the test environment expected that ``both sender and receiver are located on a controlled network''.\\
-The results performed by Lewandowski using cctool showed that the manipulation of the Source Address was defeated by the wardens. The tests on ICMPv6 implied an Echo Request, with correctness measured with the answer, 
-resulted in a half of them defeated in the case of the manipulation of the Code field, while the covert channels were successful in case of the Data field manipulation.\\
-One of the conclusions of Lewandowski study is ``that specification-based countermeasures cannot defeat some of the more sophisticated attacks''. In addition, with the tests performed with cctool, he demonstrated the 
-existence of network storage covert channels in IPv6. Even though the test cases have not been exhaustive, his study has a great relevance for this research, in particular because of the accurate analysis and concepts 
-underlined along the document.
+Lewandowski built a tool called \textit{cctool} in order to perform the tests. The tool has the ability to ``verify the existence of the covert channels, as well as to test the functionality of active wardens''. The results of his tests are strictly dependent on the quality of the wardens and on the scenarios used for the tests, which include, as mentioned before, also the possibility to modify the traffic in transit.
 
-Another interesting tool that have been built with the purpose to test covert channel in ICMPv6 is \textit{Voodonet}, or v00d00N3t \cite{voodoo}. The purpose of the tool is to use ICMPv6 Echo messages as a covert channel 
-to tunnel traffic. Covert Channel is embedded in the Data portion of Echo Reply message: the tool could send ``Echo Reply messages with a  payload of 1440 bytes in payload with no problem''. The capabilities of the tool 
-is to send and receive data from keyboard (chat) or as text files. Another interesting functionality, which increases the ability to maintain the covert channel, is a time- or bytes-based mechanism to throttle the dispatch 
-of the data.
+It is also worth mentioning some of the assumptions he made in order to better understand the tests. The syntax and semantics preservation are important factors in scenarios where the active wardens have the capabilities to understand, at different levels, the protocols. For example, Lewandowski built a scenario, called Cover Correctness Test, where a sender produces ICMPv6 traffic which is manipulated by Alice, but there is no receiver, namely Bob, at the end. The correctness of the covert channel, in this case, is demonstrated by the fact that an ICMPv6 Echo Request reaches the destination and an ICMPv6 Echo Reply is generated as usual. For such a test, ``the conclusion is that the covert message embedding by Alice does not disrupt the cover traffic enough to impede its normal functionality''.
 
-The two mentioned tools have been built mainly with testing purposes in mind. There is a suite of tools, instead, which has broadly functionalities and it is supposed to be used for penetration testing purposes: 
-thc-ipv6.
+One limitation of this kind of tests, as the author specified, is that many covert channel cannot be tested, in particular where an answer is not expected back.
+
+Another type of scenario, instead, include also Bob, who is able to receive the message and restore it back to its initial, syntactically and semantically correct, version. In this case it is possible to test also messages which do not include an answer in its processing rule, because the test environment expected that ``both sender and receiver are located on a controlled network''.
+
+The results performed by Lewandowski using cctool showed that the manipulation of the Source Address was defeated by the wardens. The tests on ICMPv6 implied an Echo Request, with correctness measured with the answer, resulted in a half of them defeated in the case of the manipulation of the Code field, while the covert channels were successful in case of the Data field manipulation.
+
+One of the conclusions of Lewandowski study is ``that specification-based countermeasures cannot defeat some of the more sophisticated attacks''. In addition, with the tests performed with cctool, he demonstrated the existence of network storage covert channels in IPv6. Even though the test cases have not been exhaustive, his study has a great relevance for this research, in particular because of the accurate analysis and concepts underlined along the document.
+
+Another interesting tool that have been built with the purpose to test covert channel in ICMPv6 is \textit{Voodonet}, or v00d00N3t \cite{voodoo}. The purpose of the tool is to use ICMPv6 Echo messages as a covert channel to tunnel traffic. Covert Channel is embedded in the Data portion of Echo Reply message: the tool could send ``Echo Reply messages with a  payload of 1440 bytes in payload with no problem''. The capabilities of the tool is to send and receive data from keyboard (chat) or as text files. Another interesting functionality, which increases the ability to maintain the covert channel, is a time- or bytes-based mechanism to throttle the dispatch of the data.
+
+The two mentioned tools have been built mainly with testing purposes in mind. There is a suite of tools, instead, which has broadly functionalities and it is supposed to be used for penetration testing purposes: thc-ipv6.
 
 \textbf{Thc-ipv6}
 
-The thc-ipv6 attack toolkit\footnote{\url{https://www.thc.org/thc-ipv6/}, accessed 4.4.2016} is a ``complete tool set to attack the inherent protocol weaknesses of IPV6 and ICMP6, and includes an easy to use packet 
-factory library''. The suite includes many features that could be used to test the IPv6 protocol in general, and the ICMPv6 protocol in particular\cite{thc}.\\
-\textbf{Alive6} is a tool used to check aliveness of IPv6 systems, both remotely using public addresses, and locally by taking advantage of an ICMPv6 Echo Request sent to the multicast addresses.\\
-\textbf{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovering process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the 
-IPv6 address of the requested node.\\
-Another interesting tool is \textbf{redir6}, which use ICMPv6 redirect messages. The proposed technique is to take advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and 
-the data:
+The thc-ipv6 attack toolkit\footnote{\url{https://www.thc.org/thc-ipv6/}, accessed 4.4.2016} is a ``complete tool set to attack the inherent protocol weaknesses of IPV6 and ICMP6, and includes an easy to use packet factory library''. The suite includes many features that could be used to test the IPv6 protocol in general, and the ICMPv6 protocol in particular\cite{thc}.
+
+\textbf{Alive6} is a tool used to check aliveness of IPv6 systems, both remotely using public addresses, and locally by taking advantage of an ICMPv6 Echo Request sent to the multicast addresses.
+
+\textbf{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovering process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the IPv6 address of the requested node.
+
+Another interesting tool is \textbf{redir6}, which use ICMPv6 redirect messages. The proposed technique is to take advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and the data:
 \vspace{-15pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Attacker sends an Echo Request with the target address as Source Address and the victim address as Destination Address.
  \item The victim receive the Echo Request and sends an Echo Reply to the target (which can be intercepted by the attacker)
  \item Attacker crafts a Redirect message, using the previous Echo Reply in the Redirect Header option, with local router as Source Address, victim as Destination Address, and attacker as Target Address
 \end{enumerate}
-It is interesting to highlight that the cited paper, dated 2006, took into account the transition scenario and emphasized the possibility to attack the dual stack if proper filtering were not in place for both IPv4 and 
-IPv6.
+It is interesting to highlight that the cited paper, dated 2006, took into account the transition scenario and emphasized the possibility to attack the dual stack if proper filtering were not in place for both IPv4 and IPv6.
 
 
 \subsection{Other Projects}
@@ -1413,18 +1294,17 @@ IPv6.
 \subsubsection{IPv6 Ready}
 \label{subsub:ipv6Ready}
 
-The IPv6 Ready Logo \footnote{\url{https://www.ipv6ready.org}, accessed 2.3.2016} is ``a conformance and interoperability testing program intended to increase user confidence by demonstrating that IPv6 is available now 
-and is ready to be used''. Its mission `` is to define the test specifications for IPv6 conformance and interoperability testing, to provide access to self-test tools and to deliver the IPv6 Ready Logo'' \cite{ipv6ready}.\\
-The project is composed by an Administrative Group, responsible for the administration, the definition of procedures and regulations, and by a Technical Group, which is responsible to define the tests specifications and 
-submit them to the Administrative Group in order to be ``published for public review''.\\
-The procedure to obtain the certification and the possibility to exhibit the IPv6 Ready Logo on the products is to first download the test specifications. After that it is possible to use a self-testing tool or to submit 
-the product to specialized and approved laboratories.\\
-IPv6 Ready project entered the phase 2 and version 4.06 of the test since 2010. Phase 1 indicated ``that the product includes IPv6 mandatory core protocols and can interoperate with other IPv6 equipments'', while Phase 2 
-indicated ``that a product has successfully satisfied strong requirements stated by the Logo Committee''.\\
-The project produced a detailed set of documents\cite{ipv6readyCore}\cite{ipv6readyCore2} which indicate the required network topology, as well as the detailed list of test to be performed against each protocol. Test are organized in sections 
-based on RFCs, and inside each sections in groups defined by their functionalities, e.g. Address Resolution and Neighbor Unreachability Detection for the section RFC 4861. Inside the section it is defined the scope, which 
-describes broadly the content of the RFC, and the default packet of the message type (ICMPv6). The following table(see~\ref{table:ipv6readyPacketEx}) is an example of a default Router Advertisement packet:
+The IPv6 Ready Logo \footnote{\url{https://www.ipv6ready.org}, accessed 2.3.2016} is ``a conformance and interoperability testing program intended to increase user confidence by demonstrating that IPv6 is available now and is ready to be used''. Its mission `` is to define the test specifications for IPv6 conformance and interoperability testing, to provide access to self-test tools and to deliver the IPv6 Ready Logo'' \cite{ipv6ready}.
 
+The project is composed by an Administrative Group, responsible for the administration, the definition of procedures and regulations, and by a Technical Group, which is responsible to define the tests specifications and 
+submit them to the Administrative Group in order to be ``published for public review''.
+
+The procedure to obtain the certification and the possibility to exhibit the IPv6 Ready Logo on the products is to first download the test specifications. After that it is possible to use a self-testing tool or to submit 
+the product to specialized and approved laboratories.
+
+IPv6 Ready project entered the phase 2 and version 4.06 of the test since 2010. Phase 1 indicated ``that the product includes IPv6 mandatory core protocols and can interoperate with other IPv6 equipments'', while Phase 2 indicated ``that a product has successfully satisfied strong requirements stated by the Logo Committee''.
+
+The project produced a detailed set of documents\cite{ipv6readyCore}\cite{ipv6readyCore2} which indicate the required network topology, as well as the detailed list of test to be performed against each protocol. Test are organized in sections based on RFCs, and inside each sections in groups defined by their functionalities, e.g. Address Resolution and Neighbor Unreachability Detection for the section RFC 4861. Inside the section it is defined the scope, which describes broadly the content of the RFC, and the default packet of the message type (ICMPv6). The following table(see~\ref{table:ipv6readyPacketEx}) is an example of a default Router Advertisement packet:
 
 \begin{savenotes}
 \begin{table}[h]
@@ -1459,9 +1339,7 @@ Header&Field&Value\\
 \end{savenotes}
 
 
-In each group, e.g. ``Address Resolution and Neighbor Unreachability Detection'', the tests are described with a purpose, e.g. ``Verify that a node correctly determines that a destination is on-link'', the references 
-inside the specifics RFCs, and the test setup with each packet definition, with the fields that differ from the mentioned default packet setup. Then the procedure to perform the test is shown, divided in parts. An 
-example of that is the following:
+In each group, e.g. ``Address Resolution and Neighbor Unreachability Detection'', the tests are described with a purpose, e.g. ``Verify that a node correctly determines that a destination is on-link'', the references inside the specifics RFCs, and the test setup with each packet definition, with the fields that differ from the mentioned default packet setup. Then the procedure to perform the test is shown, divided in parts. An example of that is the following:
 
 \textit{Part A: Link-local Address}:
 \vspace{-15pt}
@@ -1487,32 +1365,24 @@ The project covers all the RFCs in scope with this research with extensive tests
  \item Redirect Function
 \end{enumerate}
 
-Tests cover the expected functionality, specified by the RFC, but also the behavior of nodes in case of manipulation of the messages, e.g. a wrong code field.\\
-From the perspective of this research the test quality is very good, and it covers many possibilities to attempt to gain a foothold from the outside to the inside network. One missing part is the assessment of the opposite 
-direction, from the inside to the outside, as is the case in presence of possible cover channels. The lack of references about the configuration of the wardens prevents the assessment of this kind of attacks, specifically 
-with regards to the syntax and semantic preservation knowledge of the warden.\\
-Another issue that it is worth to underline is that the project assumes an IPv6 world, without considering the transition scenario. This is not a critique towards the project, which aim is to test the readiness of devices 
-and implementations with regard to IPv6, but only a consideration that limits the scope of the project towards this research.
+Tests cover the expected functionality, specified by the RFC, but also the behavior of nodes in case of manipulation of the messages, e.g. a wrong code field.
+
+From the perspective of this research the test quality is very good, and it covers many possibilities to attempt to gain a foothold from the outside to the inside network. One missing part is the assessment of the opposite direction, from the inside to the outside, as is the case in presence of possible cover channels. The lack of references about the configuration of the wardens prevents the assessment of this kind of attacks, specifically with regards to the syntax and semantic preservation knowledge of the warden.
+
+Another issue that it is worth to underline is that the project assumes an IPv6 world, without considering the transition scenario. This is not a critique towards the project, which aim is to test the readiness of devices and implementations with regard to IPv6, but only a consideration that limits the scope of the project towards this research.
 
 
 \subsection{Conclusions}
 
-Inside this section, this research started to analyze the backgrounds, that is RFCs document. RFCs are documents developed as an agreement to define standards upon which the Internet is built. The two main documents which 
-are in scope with the research are RFC 4443 and RFC 4861, which define the ICMPv6 messages format and the processes for which they have been developed. Besides the header formats, RFCs include directives to the protocol 
-implementation, using terms like MUST and SHOULD. This research examined the messages and presented them with a brief description. The actual header representations of each message are left to Appendix 1. Inside Appendix 2, 
-it is possible to see the ICMPv6 specifications, with a selection of the specification and the term that the RFC uses to specify which feature is mandatory (MUST) or it is better to have. These specifications will also 
-put together the tests selected for the experiment.\\
-After the background analysis, this research started to examine the concept of Covert Channels, which is a ``communication paths that allow information transfer in violation of a system’s security policies''. This is the 
-first step on analyzing both directions of the network traffic flow, from the inside and trusted network to the outside. Even though a covert channel may exist in both directions, it is useful to understand, for example 
-in case of APT, that an attacker may already have a foothold in the network and want to exfiltrate sensible data to an outside address. In this context it is important to consider the presence of wardens, firewall or 
-routers, that may disrupt the covert channel. For such a reason, during the experiment, will be noteworthy to consider different scenarios based on different warden configurations.\\
-The research continue by presenting the existing tools. Two of them, cctool and v00d00N3t, have been built to test the covert channels. The third is a suite of tools, or toolkit, which has been thought to perform security 
-tests on IPv6 and ICMPv6.\\
-After that, the IPv6 Ready project has been presented. The project's aim is to evaluate the readiness of the different products to IPv6 with an extensive set of tests based on the RFC specifications. The project offers, 
-in many aspects, to analyze the opposite network flow direction with respect to covert channels, from the outside to the inside network.\\
-In order to conclude this chapter, it is noteworthy to say that all the documents so far presented are, with different degrees, relevant for this research. The RFCs establish the base of the research, while the other 
-documents offer an insight to understand the contest of some attacks and the reasons behind the choice to perform the tests. Besides those, other documents have been examined, but have been considered not relevant. 
-Example are documents related to the common attacks on ICMPv6 and enumeration\cite{sans}, RFCs related to the internal network only and not defining new messages\cite{rfc4862}, or related to internal Denial of Service 
+Inside this section, this research started to analyze the backgrounds, that is RFCs document. RFCs are documents developed as an agreement to define standards upon which the Internet is built. The two main documents which are in scope with the research are RFC 4443 and RFC 4861, which define the ICMPv6 messages format and the processes for which they have been developed. Besides the header formats, RFCs include directives to the protocol implementation, using terms like MUST and SHOULD. This research examined the messages and presented them with a brief description. The actual header representations of each message are left to Appendix 1. Inside Appendix 2, it is possible to see the ICMPv6 specifications, with a selection of the specification and the term that the RFC uses to specify which feature is mandatory (MUST) or it is better to have. These specifications will also put together the tests selected for the experiment.
+
+After the background analysis, this research started to examine the concept of Covert Channels, which is a ``communication paths that allow information transfer in violation of a system’s security policies''. This is the first step on analyzing both directions of the network traffic flow, from the inside and trusted network to the outside. Even though a covert channel may exist in both directions, it is useful to understand, for example in case of APT, that an attacker may already have a foothold in the network and want to exfiltrate sensible data to an outside address. In this context it is important to consider the presence of wardens, firewall or routers, that may disrupt the covert channel. For such a reason, during the experiment, will be noteworthy to consider different scenarios based on different warden configurations.
+
+The research continue by presenting the existing tools. Two of them, cctool and v00d00N3t, have been built to test the covert channels. The third is a suite of tools, or toolkit, which has been thought to perform security tests on IPv6 and ICMPv6.
+
+After that, the IPv6 Ready project has been presented. The project's aim is to evaluate the readiness of the different products to IPv6 with an extensive set of tests based on the RFC specifications. The project offers, in many aspects, to analyze the opposite network flow direction with respect to covert channels, from the outside to the inside network.
+
+In order to conclude this chapter, it is noteworthy to say that all the documents so far presented are, with different degrees, relevant for this research. The RFCs establish the base of the research, while the other documents offer an insight to understand the contest of some attacks and the reasons behind the choice to perform the tests. Besides those, other documents have been examined, but have been considered not relevant. Example are documents related to the common attacks on ICMPv6 and enumeration\cite{sans}, RFCs related to the internal network only and not defining new messages\cite{rfc4862}, or related to internal Denial of Service 
 attacks\cite{smurf}.
 
 

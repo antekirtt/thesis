@@ -7,17 +7,17 @@
 \contentsline {subsubsection}{\numberline {2.1.4}RFC 4861}{25}{subsubsection.2.1.4}
 \contentsline {subsection}{\numberline {2.2}Covert Channel}{34}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}The Prisoners' Problem}{35}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Definitions}{35}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2}Definitions}{36}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Related Research}{36}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.4}Existing Tools}{41}{subsubsection.2.2.4}
-\contentsline {subsection}{\numberline {2.3}Other Projects}{43}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{43}{subsubsection.2.3.1}
-\contentsline {subsection}{\numberline {2.4}Conclusions}{46}{subsection.2.4}
-\contentsline {section}{\numberline {3}Methodology}{48}{section.3}
-\contentsline {section}{\numberline {4}Implementation}{49}{section.4}
-\contentsline {section}{\numberline {5}Experiment}{50}{section.5}
-\contentsline {section}{\numberline {6}Results}{51}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{52}{section.7}
-\contentsline {section}{References}{53}{section.7}
-\contentsline {section}{Appendix 1}{56}{section.7}
-\contentsline {section}{Appendix 2}{61}{table.caption.39}
+\contentsline {subsection}{\numberline {2.3}Other Projects}{44}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{44}{subsubsection.2.3.1}
+\contentsline {subsection}{\numberline {2.4}Conclusions}{47}{subsection.2.4}
+\contentsline {section}{\numberline {3}Methodology}{49}{section.3}
+\contentsline {section}{\numberline {4}Implementation}{50}{section.4}
+\contentsline {section}{\numberline {5}Experiment}{51}{section.5}
+\contentsline {section}{\numberline {6}Results}{52}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{53}{section.7}
+\contentsline {section}{References}{54}{section.7}
+\contentsline {section}{Appendix 1}{57}{section.7}
+\contentsline {section}{Appendix 2}{62}{table.caption.39}
