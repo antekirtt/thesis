@@ -172,4 +172,20 @@ F.~Gont and W.~Liu, ``{Security Implications of IPv6 Options of Type 10xxxxxx
   \url{https://tools.ietf.org/html/draft-gont-6man-ipv6-smurf-amplifier-03}
 \BIBentrySTDinterwordspacing
 
+\bibitem{secExperiments}
+S.~Peisert and M.~Bishop, ``{How to Design Computer Security Experiments},''
+  \emph{Fifth World Conference on Information Security Education: Proceedings
+  of the IFIP TC11 WG 11.8, WISE 5, 19 to 21 June 2007, United States Military
+  Academy, West Point, New York, USA}, 2007.
+
+\bibitem{carroll}
+T.~E. Carroll, D.~Manz, T.~Edgar, and F.~L. Greitzer, ``{Realizing Scientific
+  Methods for Cyber Security},'' \emph{Proceedings of the 2012 Workshop on
+  Learning from Authoritative Security Experiment Results}, 2012.
+
+\bibitem{kaplan}
+B.~Kaplan and D.~Duchon, ``{Combining Qualitative and Quantitative Methods in
+  Information Systems Research: A Case Study},'' \emph{Management Information
+  Systems Research Center, University of Minnesota}, 1988.
+
 \end{thebibliography}
