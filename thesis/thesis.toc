@@ -16,10 +16,14 @@
 \contentsline {section}{\numberline {3}Methodology}{49}{section.3}
 \contentsline {subsection}{\numberline {3.1}Scientific Method}{50}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Research Questions and Hypothesis}{51}{subsection.3.2}
-\contentsline {section}{\numberline {4}Implementation}{53}{section.4}
-\contentsline {section}{\numberline {5}Experiment}{54}{section.5}
-\contentsline {section}{\numberline {6}Results}{55}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{56}{section.7}
-\contentsline {section}{References}{57}{section.7}
-\contentsline {section}{Appendix 1}{60}{section.7}
-\contentsline {section}{Appendix 2}{65}{table.caption.39}
+\contentsline {subsubsection}{\numberline {3.2.1}Research Question}{51}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Hypothesis}{52}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Experiment Foundation}{53}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Test set selection}{54}{subsubsection.3.3.1}
+\contentsline {section}{\numberline {4}Implementation}{56}{section.4}
+\contentsline {section}{\numberline {5}Experiment}{57}{section.5}
+\contentsline {section}{\numberline {6}Results}{58}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{59}{section.7}
+\contentsline {section}{References}{60}{section.7}
+\contentsline {section}{\numberline {A}Appendix 1 - Protocol Headers}{63}{appendix.1}
+\contentsline {section}{\numberline {B}Appendix 2 - ICMPv6 specifications}{68}{appendix.2}

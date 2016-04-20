@@ -1393,7 +1393,7 @@ Another imporant distinction is between quantitative and qualitative research. Q
 
 This research uses both a quantitative and qualitative approach to perform the experiment. The qualitative approach is necessary to set up the experiment because of two factors: the choice of the tests and the considerations about the context. The tests are chosen starting from the description of the protocol inside the RFCs, which are for their nature not representable in a mathematical way. Among all the possible tests, some of them are considered for the experiment, as it will presented later. The context is also very important and it involves the observation of human behavior in the configuration of the border network devices and the choices of the implementers of the end devices. The quantitative approach arises after the definition of the test set. Each test is performed against a well defined configuration. The set of tests and a specific configuration is an experiment where the only variable is the test itself, and the validation or not of the hypothesis can be done only for that specific configuration. In this way, this research is considering the quantitative approach, because inside the experiment, after its set up, no other variable other then the specific test will change, thus allowing it to be measurable in a binary way: either failed or succeed. The conclusions of the experiments, however, because of its context-dependent nature, could not lead to the formulation of a mathematical evaluation. In other words it wont be possible to state that the ICMPv6 protocol is vulnerable by itself, but only that, given this specific configuration, the protocol introduces some vulnerabilities.
 
-Following the work of Peisert and Bishop in ``How to Design Computer Security Experiments'', this research defines the following steps:
+Following the work of Peisert and Bishop in \textit{How to Design Computer Security Experiments}, this research defines the following steps:
 \vspace{-10pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Form hypothesis
@@ -1408,16 +1408,53 @@ In addition to the aforementioned steps, Peisert and Bishop define three qualiti
 
 The research questions are the starting point in order to define the hypothesis. Research questions express what the research want to know about the specific topic, and leads to definition of an hypothesis, which represents what the researcher want to validate (or invalidate) through the experiments. This research starts with a general research question, from which two additional and more specific research questions have been derived.
 
-\textbf{General Research Question}
+\subsubsection{Research Question}
 
 \textit{Is it possible to manipulate the ICMPv6 protocol and, by traversing border network devices, use in an unauthorized way a remote network?}
 
 This question is a generalization which broadly introduces what this research want to know and test in relationship with the ICMPv6 protocol. Since the question introduces too many variables, it is useful and necessary to narrow down the scope, by defining two more specific research questions.
 \begin{enumerate}
- \item \textit{Is it possible to gain unauthorized access to an internal network, from the outside and traversing a border network device with a specific configuration, by manipulating the ICMPv6 protocol?}
- \item \textit{Is it possible to exfiltrate data without authorization, from an internal network to the outside, traversing a border network device with a specific configuration, by manipulating the ICMPv6 protocol?}
+ \item \textit{Is it possible to exfiltrate data without authorization, from an internal network to the outside, traversing a border network device, by manipulating the ICMPv6 protocol?}
+ \item \textit{Is it possible to gain unauthorized access to an internal network, from the outside and traversing a border network device, by manipulating the ICMPv6 protocol?}
 \end{enumerate}
 
+\subsubsection{Hypothesis}
+
+The formulation of the hypothesis follows the research questions. The hypothesis is the statement that the experiment aims to validate, which, following the aforementioned qualities of the process, may be negated by the experiment itself and by the following interpretation of data and conclusions.
+
+The hypothesis of this research is:
+
+\textit{It is possible to manipulate the ICMPv6 protocol to use a remote network in an unauthorized way, after traversing a border network device}
+
+Even thought this research will prove the truth of this hypothesis, some clarifications are necessary, and the final discussion inside the conclusions will take them into account. The first consideration is related to the general hypothesis itself, which, given its generality, may be less interesting from a scientific point of view. As stated before, each test and configuration is an experiment that may lead to prove the truth of the hypothesis for this exact experiment. The truth is related to a single experiment in the context of a general hypothesis, and the more experiments evaluate to true, the more relevant will be the results. It is very important to emphasize and understand that once a single experiment evaluate to true, the general hypothesis will be proved to be true. In other words, the truth of the hypothesis is the result of the logical \textit{or} of the set of tests performed against each configuration. From this point of view the two more specific research questions, and the two sub-hypothesis, are more relevant because by narrowing down the problem, they define more specifically the context and give more indication about the results. The two sub-hypothesis are:
+\begin{enumerate}
+ \item \textit{It is possible to manipulate the ICMPv6 protocol to exfiltrate data without authorization from an internal network to the outside and traversing a border network device}
+ \item \textit{It is possible to manipulate the ICMPv6 protocol in order to traverse a border network device and gain unauthorized access to an internal network}
+\end{enumerate}
+
+The keywords of the first hypothesis are \textit{exfiltrate data without authorization}. While the meaning of the first hypothesis is clear, the second one may be confusing. The keywords of the second hypothesis are \textit{gain unauthorized access}. With gaining unauthorized access, this research do not refer only to the action of controlling a device remotely, but includes also the access to a process to stop it from working (i.e. denial of service) and the access to a process to change its behavior (i.e. man in the middle).
+
+The assumption done before, that is, that the truth of the hypothesis is given by the logical \textit{or} of the set of tests performed against each configuration, acquires more relevance in the case of one of the sub-hypothesis, because a more thorough specification of the problem has been made.
+
+As it will be discussed in the conclusions, the relevance of the results is an important topic. This is because the aim of this research is not only to prove the truth or untruth of the hypothesis, but also to evaluate the impact that the exploitation of a vulnerability could have on an organization in relationship to the chosen wardens, the border network devices, and the deployed configuration.
+
+\subsection{Experiment Foundation}
+
+As shown before, the first step of the scientific method involves the definition of the research question, which in this case led to two sub-questions, and the formulation of the hypothesis and sub-hypothesis. The next step involves the execution of the experiment. This research will describe the experiment implementation in detail during next chapter and its execution afterwards. Before that, it is important to discuss the foundation of the experiment, that is, the choices and reasons behind it.
+
+The selection of the test set is a critical task because it is the input of the experiment.
+
+\subsubsection{Test set selection}
+
+``[T]he truth or falsity of every hypothesis is to some extent conditioned on the input data set [...] an additional step in testing a hypothesis is the validation of the input data set''\cite{secExperiments}. The statement underlines the importance of the test set selection discussed in this section.
+
+Inside chapter two (see~\ref{sec:2}), this research analyzed two RFCs which describe the ICMPv6 protocol and its messages. The analysis had the purpose to show the background of this research and to underline the basis to select the test set for the experiment. The background analysis produced a set of tables (see~\ref{Appendix 1} and~\ref{Appendix 2}). 
+
+In \ref{Appendix 1} it is possible to see the header of the messages with its fields. In the context of the set of tests, the fields acquire relevance to prove the truth of the first hypothesis, that is, the use of ICMPv6 to exfiltrate data from an internal network. Each field, with few exceptions, has been designed to carry data to fulfill a specification of the protocol. In the case of the data exfiltration described in this research, where the attacker controls both processes of sending and receiving data, only the border network device may perform some checks to validate the compliance with the protocol. The protocol itself may be used just as a transport vector for some data, by means of its fields, with the exception of the destination address specified in the IPv6 protocol, which is necessary to forward the packet to its destination. The aforementioned few exceptions are the unused or reserved fields, when defined by the message, which have no specific purposes in the context of the functionality of the protocol. In addition, each field shows an important indication for the purpose of exfiltrating data, the bandwidth. In fact, depending on the size of the field and of the data to be exfiltrated, it is possible to predict beforehand how many packets the process will use. This research, during the experiment, manipulates each ICMPv6 field and options headers against each border network device configuration, in order to test the hypothesis and assess the behavior of the warden.
+
+In \ref{Appendix 2}, the tables show the specifications of each ICMPv6 message and the processing rules in terms of what must, should, or may be implemented. These specifications and processing rules define the behavior of the protocol in relationship with the functions for which it is used by other processes or protocols. Even though some of the specifications refers to an header field, as it has been mentioned above, the reasons behind the base used to choose the set of test in this appendix is different. While to test the first hypothesis both the sending and receiving processes are controlled by the attacker, the second hypothesis implies that the attacker controls only the sending process. In fact, if a packet successfully traverse the border network device, it is the behavior of the protocol and the implementation of the end device, i.e. the receiving process, to be under testing. In other words, it is the ending device that determines the truth of the hypothesis in case a packet has been able to reach it. In such a situation the it is useful to consider the specifications that include the terms must, should, and may. This research assumes that at least the specifications including a must have been implemented. Nevertheless, each implementation may differ from another one by a very small degree, therefor such specifications must be included in the set of tests. The same applies to specifications characterized by the terms should and may, which, in addition, do not have the mandatory nature of the musts. 
+
+Another important aspect that has been taken into consideration in the choice of the set is the necessity to avoid the introduction of additional variables that it is not possible to control and verify in a reproducible way. An example of that is the last specification included in table \ref{table:4443ProcRules}, which specifies the need to limit the transmission rate of ICMPv6 error messages to limit the bandwidth and forwarding costs. Even though an high transmission rate may lead to a denial of service, there are other variables that affect the test of the specification, like the type of physical connection or the bandwith usage of other processes. Therefor this type of specifications have not been selected.
 
 
 
@@ -1460,9 +1497,12 @@ This question is a generalization which broadly introduces what this research wa
 \pagebreak
 
 %-----------------------------APPENDIX--------------------------------
-\section*{Appendix 1 - Protocol Headers}
+
+\appendix
+
+\section{Appendix 1 - Protocol Headers}
 \label{Appendix 1}
-\addcontentsline{toc}{section}{Appendix 1}
+%\addcontentsline{toc}{section}{Appendix 1}
 
 \subsection*{IPv6}
 
@@ -1862,9 +1902,9 @@ The following are the Protocol Headers described in RFC 4443.\\
 
 
 \pagebreak
-\section*{Appendix 2 - ICMPv6 specifications}
+\section{Appendix 2 - ICMPv6 specifications}
 \label{Appendix 2}
-\addcontentsline{toc}{section}{Appendix 2}
+%\addcontentsline{toc}{section}{Appendix 2}
 
 \begin{savenotes}
 \begin{table}[!htpb]

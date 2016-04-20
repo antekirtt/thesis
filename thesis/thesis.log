@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  18 APR 2016 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  20 APR 2016 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1572,7 +1572,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
 
  []
 
-[36] <figures/communicationScenarios.png, id=519, 916.42375pt x 534.99875pt>
+[36] <figures/communicationScenarios.png, id=541, 916.42375pt x 534.99875pt>
 File: figures/communicationScenarios.png Graphic file (type png)
 
 <use figures/communicationScenarios.png>
@@ -1601,137 +1601,137 @@ Overfull \hbox (1.55768pt too wide) in paragraph at lines 1256--1257
 pose to test covert chan-nel in ICMPv6
  []
 
-[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56]
-(./thesis.bbl [57] [58]) [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1506--1507
+[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
+[58] [59] (./thesis.bbl [60] [61]) [62]
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1547
 
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1523--1523
+Underfull \hbox (badness 1033) in paragraph at lines 1563--1563
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1545--1545
+Underfull \hbox (badness 1033) in paragraph at lines 1585--1585
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[60]
-Underfull \hbox (badness 1033) in paragraph at lines 1567--1567
+[63]
+Underfull \hbox (badness 1033) in paragraph at lines 1607--1607
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1589--1589
+Underfull \hbox (badness 1033) in paragraph at lines 1629--1629
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[61] [62] [63] [64]
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 1873--1904
+[64] [65] [66] [67]
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1913--1944
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 1913--1936
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1953--1976
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 1945--1957
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 1985--1997
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 1966--1979
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2006--2019
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 1988--2001
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2028--2041
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2011--2024
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2051--2064
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2033--2054
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2073--2094
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2066--2092
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2106--2132
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2102--2128
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2142--2168
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2139--2165
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2179--2205
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2174--2191
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2214--2231
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2201--2222
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2241--2262
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2234--2259
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2274--2299
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2269--2289
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2309--2329
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2298--2309
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2338--2349
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2319--2348
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2359--2388
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2357--2377
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2397--2417
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2386--2409
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2426--2449
  [][] 
  []
 
-[65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2415.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2415.
+[68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2455.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2415.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2415.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2455.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4E9BA1B90B3C457F03EC210703E609A2;1527.
+(rerunfilecheck)             Checksum: 4334A608C899B6B344B428072F818F38;1861.
  ) 
 Here is how much of TeX's memory you used:
- 32194 strings out of 493105
- 581512 string characters out of 6137071
+ 32210 strings out of 493105
+ 581723 string characters out of 6137071
  746390 words of memory out of 5000000
- 34912 multiletter control sequences out of 15000+600000
+ 34917 multiletter control sequences out of 15000+600000
  58490 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,97p,10378b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1743,10 +1743,10 @@ pe1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (76 pages, 263209 bytes).
+Output written on thesis.pdf (79 pages, 271682 bytes).
 PDF statistics:
- 860 PDF objects out of 1000 (max. 8388607)
- 764 compressed objects within 8 object streams
- 222 named destinations out of 1000 (max. 500000)
- 218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 907 PDF objects out of 1000 (max. 8388607)
+ 807 compressed objects within 9 object streams
+ 233 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
