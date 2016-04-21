@@ -1,29 +1,31 @@
-\contentsline {section}{\numberline {1}Introduction}{10}{section.1}
-\contentsline {section}{\numberline {2}Background and Related Work}{16}{section.2}
-\contentsline {subsection}{\numberline {2.1}Background}{16}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Terminology}{18}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}RFC 2460}{19}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}RFC 4443}{20}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}RFC 4861}{25}{subsubsection.2.1.4}
-\contentsline {subsection}{\numberline {2.2}Covert Channel}{34}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}The Prisoners' Problem}{35}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Definitions}{36}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Related Research}{36}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Existing Tools}{41}{subsubsection.2.2.4}
-\contentsline {subsection}{\numberline {2.3}Other Projects}{44}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{44}{subsubsection.2.3.1}
-\contentsline {subsection}{\numberline {2.4}Conclusions}{47}{subsection.2.4}
-\contentsline {section}{\numberline {3}Methodology}{49}{section.3}
-\contentsline {subsection}{\numberline {3.1}Scientific Method}{50}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Research Questions and Hypothesis}{51}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Research Question}{51}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Hypothesis}{52}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Experiment Foundation}{53}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Test set selection}{54}{subsubsection.3.3.1}
-\contentsline {section}{\numberline {4}Implementation}{56}{section.4}
-\contentsline {section}{\numberline {5}Experiment}{57}{section.5}
-\contentsline {section}{\numberline {6}Results}{58}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{59}{section.7}
-\contentsline {section}{References}{60}{section.7}
-\contentsline {section}{\numberline {A}Appendix 1 - Protocol Headers}{63}{appendix.1}
-\contentsline {section}{\numberline {B}Appendix 2 - ICMPv6 specifications}{68}{appendix.2}
+\contentsline {section}{\numberline {1}Introduction}{11}{section.1}
+\contentsline {section}{\numberline {2}Background and Related Work}{17}{section.2}
+\contentsline {subsection}{\numberline {2.1}Background}{17}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Terminology}{19}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}RFC 2460}{20}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}RFC 4443}{21}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}RFC 4861}{26}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Covert Channel}{35}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}The Prisoners' Problem}{36}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Definitions}{37}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Related Research}{37}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Existing Tools}{42}{subsubsection.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Other Projects}{45}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{45}{subsubsection.2.3.1}
+\contentsline {subsection}{\numberline {2.4}Conclusions}{48}{subsection.2.4}
+\contentsline {section}{\numberline {3}Methodology}{50}{section.3}
+\contentsline {subsection}{\numberline {3.1}Scientific Method}{51}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Research Questions and Hypothesis}{52}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Research Question}{52}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Hypothesis}{53}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Experiment Foundation}{54}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Test set selection}{55}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Environment}{56}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Border Network Device Configurations}{58}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {4}Implementation}{59}{section.4}
+\contentsline {section}{\numberline {5}Experiment}{60}{section.5}
+\contentsline {section}{\numberline {6}Results}{61}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{62}{section.7}
+\contentsline {section}{References}{63}{section.7}
+\contentsline {section}{\numberline {A}Appendix 1 - Protocol Headers}{66}{appendix.1}
+\contentsline {section}{\numberline {B}Appendix 2 - ICMPv6 specifications}{71}{appendix.2}

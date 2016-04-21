@@ -20,10 +20,12 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Hypothesis}{subsection.3.2}% 20
 \BOOKMARK [2][-]{subsection.3.3}{Experiment Foundation}{section.3}% 21
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Test set selection}{subsection.3.3}% 22
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 23
-\BOOKMARK [1][-]{section.5}{Experiment}{}% 24
-\BOOKMARK [1][-]{section.6}{Results}{}% 25
-\BOOKMARK [1][-]{section.7}{Conclusions}{}% 26
-\BOOKMARK [1][-]{section.7}{References}{}% 27
-\BOOKMARK [1][-]{appendix.1}{Appendix 1 - Protocol Headers}{}% 28
-\BOOKMARK [1][-]{appendix.2}{Appendix 2 - ICMPv6 specifications}{}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Environment}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Border Network Device Configurations}{subsection.3.3}% 24
+\BOOKMARK [1][-]{section.4}{Implementation}{}% 25
+\BOOKMARK [1][-]{section.5}{Experiment}{}% 26
+\BOOKMARK [1][-]{section.6}{Results}{}% 27
+\BOOKMARK [1][-]{section.7}{Conclusions}{}% 28
+\BOOKMARK [1][-]{section.7}{References}{}% 29
+\BOOKMARK [1][-]{appendix.1}{Appendix 1 - Protocol Headers}{}% 30
+\BOOKMARK [1][-]{appendix.2}{Appendix 2 - ICMPv6 specifications}{}% 31
