@@ -188,4 +188,32 @@ B.~Kaplan and D.~Duchon, ``{Combining Qualitative and Quantitative Methods in
   Information Systems Research: A Case Study},'' \emph{Management Information
   Systems Research Center, University of Minnesota}, 1988.
 
+\bibitem{nist}
+\BIBentryALTinterwordspacing
+{National Institute of Standards and Technology}. (2009) {Guidelines on
+  Firewalls and Firewall Policy}. Accessed: 22-04-2016. [Online]. Available:
+  \url{http://csrc.nist.gov/publications/nistpubs/800-41-Rev1/sp800-41-rev1.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nics}
+\BIBentryALTinterwordspacing
+{Nasa Integrated Communication Services}. (2014) {NICS IPv6 Best Practices
+  Guide}. Accessed: 22-04-2016. [Online]. Available:
+  \url{https://www.hpc.mil/images/hpcdocs/ipv6/nics_ipv6_best_practices_guide.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rfc4890}
+\BIBentryALTinterwordspacing
+E.~Davies and J.~Mohacsi, ``{Recommendations for Filtering ICMPv6 Messages in
+  Firewalls},'' Internet Requests for Comments, {RFC Editor}, {RFC} 4890, May
+  2007. [Online]. Available: \url{http://www.rfc-editor.org/info/rfc4890}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ip6tablesGiobbi}
+\BIBentryALTinterwordspacing
+{Giobbi R.} (2008) {Filtering ICMPv6 Using Host-Based Firewalls}. Accessed:
+  22-04-2016. [Online]. Available:
+  \url{https://insights.sei.cmu.edu/cert/2008/11/filtering-icmpv6-using-host-based-firewalls.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

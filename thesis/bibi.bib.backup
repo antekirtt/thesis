@@ -265,3 +265,32 @@ CTLdash_repeated_names= "no",
   url = {https://www.thc.org/papers/vh_thc-ipv6_attack.pdf},
   note = {Accessed: 4-04-2016}
 }
+
+@article{secExperiments,
+    AUTHOR="Peisert, S. and M. Bishop",
+    TITLE= "{How to Design Computer Security Experiments}",
+    JOURNAL={Fifth World Conference on Information Security Education: Proceedings of the IFIP TC11 WG 11.8, WISE 5, 19 to 21 June 2007, United States Military Academy, West Point, New York, USA},
+    YEAR={2007}
+}
+
+@article{carroll,
+    AUTHOR="Carroll, T. E. and Manz, D. and Edgar, T. and F. L. Greitzer",
+    TITLE= "{Realizing Scientific Methods for Cyber Security}",
+    JOURNAL={Proceedings of the 2012 Workshop on Learning from Authoritative Security Experiment Results},
+    YEAR={2012}
+}
+
+@article{kaplan,
+    AUTHOR="Kaplan, B. and D. Duchon",
+    TITLE= "{Combining Qualitative and Quantitative Methods in Information Systems Research: A Case Study}",
+    JOURNAL={Management Information Systems Research Center, University of Minnesota},
+    YEAR={1988}
+}
+
+@online{nist,
+  author = "{National Institute of Standards and Technology}",
+  title = "{Guidelines on Firewalls and Firewall Policy}",
+  year = 2009,
+  url = {http://csrc.nist.gov/publications/nistpubs/800-41-Rev1/sp800-41-rev1.pdf},
+  note = {Accessed: 22-04-2016}
+}
