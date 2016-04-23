@@ -1,0 +1,105 @@
+#!/usr/bin/python
+
+import optparse
+import sys
+import re, uuid
+import os
+import readline
+from pprint import pprint
+from commands import *
+from modules import *
+
+"""
+class responsible for framework initialization
+it shows a command prompt, has tab completion and history of commands
+"""
+class ICMPv6:
+
+    def __init__(self):
+        self.localHost = ""
+        #self.localPort = int(localPort)
+        self.help = [70*'*','help \t\t\t=> Print this help', 'shell \t\t\t=> Enter in Shell mode', 'quit \t\t\t=> Quit framework', 40*'*', 'Modules Commands:', 'echo \t\t\t=> ICMP echo', 'echorequest \t\t=> ICMPv6 Echo Request', 40*'*', 'Shell Mode Commands:', 'quit \t\t\t=> Quit shell mode', 'ls \t\t\t=> list file and directories', 'ls -l \t\t\t=> List files and directories extended format', 'cd \t\t\t=> Change directory', 70*'*']
+        self.commandBuffer = []
+
+    #shows the logo of the framework
+    def startupLogo(self):
+        initLogo = [80*'*', '', '\t\t\tICMPv6 abusing - Proof of Concept', '', 80*'*']
+        for line in initLogo:
+            print line
+
+    def showCursor(self):
+        sys.stdout.write('[]>')
+        sys.stdout.flush()
+
+    #starts the interactive propmt
+    def startSystem(self):
+        self.startupLogo()
+        Commands.setMainHistory()
+        running = 1
+        while running:
+            readline.parse_and_bind("tab: complete")
+            #we receive data from the keyboard                    
+            command  = raw_input('[]>')
+            #get emtpy line
+            #if re.match(r'^\s*$', command):
+            #   self.showCursor()
+            #help command
+            if re.match('help', command):
+                self.showHelp()
+            #quit framework command
+            elif re.match('quit', command):
+                running = 0
+                sys.exit(1)
+            elif re.match(r'echo$', command):
+                print 'echo4'
+                module = ICMPv4Echo()
+                module.startSystem()
+            elif re.match(r'echorequest', command):
+                print 'echo6'
+                module = ICMPv6Echo()
+                module.startSystem()
+            #shell mode command
+            elif re.match("shell", command):
+                shell = 1
+                Commands.setShellHistory()
+                while shell:
+                    c = raw_input('$')
+                    if re.match("quit", c):
+                        shell = 0
+                        Commands.setMainHistory()
+                    elif re.match(r'ls\s$', c):
+                        files = os.listdir('.')
+                        for f in files:
+                            print f
+                    elif re.match(r'ls -l', c):
+                        files = os.system(c)
+                        print files
+                    elif re.match('cd', c):
+                        path = re.sub('cd', ' ', c)
+                        try:
+                            os.chdir(path.strip())
+                        except:
+                            print 'Error! Wrong path!'
+
+                    else:
+                        print 'Error! Command not found!'
+            else:
+                print 'Error! Command not found!'
+    
+    def showHelp(self):
+        for entry in self.help:
+            print entry
+
+def main():
+    parser = optparse.OptionParser("usage: %prog")
+    #parser.add_option('-p', dest='localPort', type='string', help='specify local port')
+    (options, args) = parser.parse_args()
+    #localPort = options.localPort
+    #if(localPort == None):
+     #   print parser.usage
+     #   exit(0)
+    icmpv6 = ICMPv6()
+    icmpv6.startSystem()
+    
+if __name__ == '__main__':
+	main()
