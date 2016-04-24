@@ -7,7 +7,7 @@ import readline
 from pprint import pprint
 from commands import *
 from covertChannels import *
-
+from allCovertTest import *
 
 """
 class responsible for Covert Channel module
@@ -39,6 +39,10 @@ class CovertChannel:
             #set echo reply covert channel
             elif re.match(r'setEchoReply', command):
                 covert = EchoReply()
+                covert.startSystem()
+            #set all covert channel tests
+            elif re.match(r'setAll', command):
+                covert = AllTests()
                 covert.startSystem()
             else:
                 print 'Error! Command not found!'

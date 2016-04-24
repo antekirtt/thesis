@@ -39,7 +39,7 @@ class Commands:
     
     @classmethod
     def setCovertChannelHistory(self):
-        commands = ['help', 'quit', 'setEchoRequest', 'setEchoReply']
+        commands = ['help', 'quit', 'setEchoRequest', 'setEchoReply', 'setAll']
         completer = HistoryConsole(commands)
         return readline.set_completer(completer.complete)
 
@@ -66,7 +66,7 @@ class Help:
 
     @classmethod
     def getCovertChannelHelp(self):
-        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit Covert Channel mode', 'setEchoRequest \t\t=> Set echo request covert channel mode', 'setEchoReply \t\t=> Set echo reply covert channel mode', 70*'*']
+        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit Covert Channel mode', 'setEchoRequest \t\t=> Set echo request covert channel mode', 'setEchoReply \t\t=> Set echo reply covert channel mode', 'setAll \t\t\t=> Set all covert channels testing mode',70*'*']
 
     @classmethod
     def getAttackingChannelHelp(self):
