@@ -15,8 +15,9 @@ it shows a command prompt, has tab completion and history of commands
 """
 class ICMPv6:
 
-    def __init__(self):
+    def __init__(self, iface):
         self.commandBuffer = []
+        self.iface = iface
 
     #shows the logo of the framework
     def startupLogo(self):
@@ -26,6 +27,7 @@ class ICMPv6:
 
     #starts the interactive prompt
     def startSystem(self):
+        os.system('clear')
         self.startupLogo()
         Commands.setMainHistory()
         running = 1
@@ -40,7 +42,7 @@ class ICMPv6:
                 running = 0
                 sys.exit(1)
             elif re.match(r'testing', command):
-                module = TestingFramework()
+                module = TestingFramework(iface)
                 module.startSystem()
             else:
                 print 'Error! Command not found!'
@@ -50,10 +52,16 @@ class ICMPv6:
             print entry
 
 def main():
-    parser = optparse.OptionParser("usage: %prog")
+    parser = optparse.OptionParser("usage: %prog -i <interface>")
+    parser.add_option('-i', dest='iface', type='string', help='specify exit interface')
     (options, args) = parser.parse_args()
-    icmpv6 = ICMPv6()
-    icmpv6.startSystem()
+    iface = options.iface
+    if(iface == None):
+        print parser.usage
+        exit(0)
+    else:
+        icmpv6 = ICMPv6(iface)
+        icmpv6.startSystem()
     
 if __name__ == '__main__':
 	main()

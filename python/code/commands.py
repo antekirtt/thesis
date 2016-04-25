@@ -55,6 +55,13 @@ class Commands:
         completer = HistoryConsole(commands)
         return readline.set_completer(completer.complete)
 
+    @classmethod
+    def setAllCovertTestHistory(self):
+        commands = ['help', 'quit', 'exec', 'rec']
+        completer = HistoryConsole(commands)
+        return readline.set_completer(completer.complete)
+    
+
 """
 this is the help of the framework
 """
@@ -83,3 +90,7 @@ class Help:
     @classmethod
     def getShellHelp(self):
         return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit shell mode', 'ls \t\t\t=> list file and directories', 'ls -l \t\t\t=> List files and directories extended format', 'cd \t\t\t=> Change directory', 'select <file> \t\t=> select file to exfiltrate', 70*'*']
+
+    @classmethod
+    def getAllCovertTestHelp(self):
+        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit all covert channels test mode', 'exec \t\t\t=> Start all covert channels test', 'rec \t\t\t=> Start the receiver for the tests', 70*'*']

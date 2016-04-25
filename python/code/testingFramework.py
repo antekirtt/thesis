@@ -14,8 +14,9 @@ class responsible for Covert Channel module
 """
 class CovertChannel:
 
-    def __init__(self):
+    def __init__(self, iface):
         self.name = 'Covert'
+        self.iface = iface
         
     #starts the interactive propmt
     def startSystem(self):
@@ -42,7 +43,7 @@ class CovertChannel:
                 covert.startSystem()
             #set all covert channel tests
             elif re.match(r'setAll', command):
-                covert = AllTests()
+                covert = AllTests(self.iface)
                 covert.startSystem()
             else:
                 print 'Error! Command not found!'

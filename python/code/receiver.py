@@ -7,11 +7,13 @@ import readline
 from pprint import pprint
 from commands import *
 from scapy.all import *
+from bitstring import *
 
 class Receiver:
 
-    def __init__(self):
-        self.bla = ''
+    def __init__(self, iface, adr):
+        self.iface = iface
+        self.ipAdr = adr
 
     def packet_callback(self, packet):
         if ICMPv6DestUnreach in packet[0]:
@@ -24,8 +26,17 @@ class Receiver:
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             if mtu !=1280:
-                sys.stdout.write(chr(mtu))
-            sys.stdout.flush()
+                binary = BitArray(uint=mtu, length=32)
+                first = binary[:8]
+                second = binary[8:16]
+                third = binary[16:24]
+                fourth = binary[24:]
+                first = int(first.bin, 2)
+                second = int(second.bin, 2)
+                third = int(third.bin, 2)
+                fourth = int(fourth.bin, 2)
+                sys.stdout.write(chr(first)+chr(second)+chr(third)+chr(fourth))
+                sys.stdout.flush()
         elif ICMPv6TimeExceeded in packet[0]:
             code = packet[ICMPv6TimeExceeded].code
             sys.stdout.write(chr(code))
@@ -49,8 +60,13 @@ class Receiver:
             sys.stdout.flush()
             sys.stdout.write(chr(seq))
             sys.stdout.flush()
-            sys.stdout.write(data)
-            sys.stdout.flush()
+            if(data):
+                try:
+                    sys.stdout.write(chr(data))
+                    sys.stdout.flush()
+                except TypeError:
+                    sys.stdout.write(chr(int(data)))
+                    sys.stdout.flush()
         elif ICMPv6EchoReply in packet[0]:
             code = packet[ICMPv6EchoReply].code
             idn = packet[ICMPv6EchoReply].id
@@ -62,8 +78,13 @@ class Receiver:
             sys.stdout.flush()
             sys.stdout.write(chr(seq))
             sys.stdout.flush()
-            sys.stdout.write(data)
-            sys.stdout.flush()
+            if(data):
+                try:
+                    sys.stdout.write(chr(data))
+                    sys.stdout.flush()
+                except TypeError:
+                    sys.stdout.write(chr(int(data)))
+                    sys.stdout.flush()
         elif ICMPv6ND_RS in packet[0]:
             code = packet[ICMPv6ND_RS].code
             res = packet[ICMPv6ND_RS].res
@@ -122,5 +143,5 @@ class Receiver:
             #sys.stdout.write(dst)
             #sys.stdout.flush()
             
-    def receive(self, adr):
-        sniff(filter='ip6', prn=self.packet_callback, store=0)
+    def receive(self):
+        sniff(iface=self.iface, filter='ip6', prn=self.packet_callback, store=0)

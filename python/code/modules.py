@@ -14,8 +14,9 @@ class responsible for the testing framework
 """
 class TestingFramework:
 
-    def __init__(self):
+    def __init__(self, iface):
         self.name = 'Testing'
+        self.iface = iface
         
     #starts the interactive propmt
     def startSystem(self):
@@ -33,7 +34,7 @@ class TestingFramework:
                 running = 0
                 Commands.setMainHistory()
             elif re.match('covert', command):
-                channel = CovertChannel()
+                channel = CovertChannel(iface)
                 channel.startSystem()                
             elif re.match('attacking', command):
                 channel = AttackingChannel()
