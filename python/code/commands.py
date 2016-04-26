@@ -57,7 +57,7 @@ class Commands:
 
     @classmethod
     def setAllCovertTestHistory(self):
-        commands = ['help', 'quit', 'exec', 'rec']
+        commands = ['help', 'quit', 'exec', 'rec', 'setAdr']
         completer = HistoryConsole(commands)
         return readline.set_completer(completer.complete)
     
@@ -93,4 +93,4 @@ class Help:
 
     @classmethod
     def getAllCovertTestHelp(self):
-        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit all covert channels test mode', 'exec \t\t\t=> Start all covert channels test', 'rec \t\t\t=> Start the receiver for the tests', 70*'*']
+        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit all covert channels test mode', 'setAdr \t\t\t=> Set the IPv6 address both to send and to receive', 'exec \t\t\t=> Start all covert channels test', 'rec \t\t\t=> Start the receiver for the tests', 70*'*']

@@ -34,7 +34,7 @@ class TestingFramework:
                 running = 0
                 Commands.setMainHistory()
             elif re.match('covert', command):
-                channel = CovertChannel(iface)
+                channel = CovertChannel(self.iface)
                 channel.startSystem()                
             elif re.match('attacking', command):
                 channel = AttackingChannel()

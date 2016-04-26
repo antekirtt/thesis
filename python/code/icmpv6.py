@@ -8,6 +8,7 @@ import readline
 from pprint import pprint
 from commands import *
 from modules import *
+import logging
 
 """
 class responsible for framework initialization
@@ -18,6 +19,7 @@ class ICMPv6:
     def __init__(self, iface):
         self.commandBuffer = []
         self.iface = iface
+        logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
     #shows the logo of the framework
     def startupLogo(self):
@@ -42,7 +44,7 @@ class ICMPv6:
                 running = 0
                 sys.exit(1)
             elif re.match(r'testing', command):
-                module = TestingFramework(iface)
+                module = TestingFramework(self.iface)
                 module.startSystem()
             else:
                 print 'Error! Command not found!'
