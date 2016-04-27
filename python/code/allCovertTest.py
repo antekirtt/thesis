@@ -420,7 +420,7 @@ class NeighborSolicitationCovert:
     def __init__(self):
         self.bandwidthCode = 1
         #it seems that scapy uses only 3 bytes
-        self.bandwidthRes = 3
+        self.bandwidthRes = 4
         self.bandwidthTargetAdr = 16
         self.nameCode = 'Neighbor Solicitation code '
         self.nameRes = 'Neighbor Solicitation reserved '

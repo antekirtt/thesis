@@ -152,7 +152,7 @@ class Receiver:
             sys.stdout.flush()
             #bitLength = len(format(res, 'b'))+1
             #it seems that scapy neighbor solicitation reserved field use only 24 bits
-            bitLength = 24
+            bitLength = 32
             container = self.extractBytes(res, bitLength)
             for item in container:
                 sys.stdout.write(chr(item))
