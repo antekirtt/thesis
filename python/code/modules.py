@@ -37,7 +37,7 @@ class TestingFramework:
                 channel = CovertChannel(self.iface)
                 channel.startSystem()                
             elif re.match('attacking', command):
-                channel = AttackingChannel()
+                channel = AttackingChannel(self.iface)
                 channel.startSystem()
             else:
                 print 'Error! Command not found!'

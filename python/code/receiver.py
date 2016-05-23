@@ -18,12 +18,32 @@ class Receiver:
     def packet_callback(self, packet):
         if ICMPv6DestUnreach in packet[0]:
             code = packet[ICMPv6DestUnreach].code
+            length = packet[ICMPv6DestUnreach].length
+            unused = packet[ICMPv6DestUnreach].unused
+            payload = packet[ICMPv6DestUnreach].load
             bitLength = len(format(code, 'b'))+1
             bitLength = 8
             container = self.extractBytes(code, bitLength)
             for item in container:
                 sys.stdout.write(chr(item))
                 sys.stdout.flush
+            bitLength = 8
+            container = self.extractBytes(length, bitLength)
+            for item in container:
+                sys.stdout.write(chr(item))
+                sys.stdout.flush
+            bitLength = 24
+            container = self.extractBytes(unused, bitLength)
+            for item in container:
+                sys.stdout.write(chr(item))
+                sys.stdout.flush
+            bitLength = 64
+            if payload != 'x':
+                payload = int(payload)
+                container = self.extractBytes(payload, bitLength)
+                for item in container:
+                    sys.stdout.write(chr(item))
+                    sys.stdout.flush
         elif ICMPv6PacketTooBig in packet[0]:
             code = packet[ICMPv6PacketTooBig].code
             mtu = packet[ICMPv6PacketTooBig].mtu
@@ -38,8 +58,28 @@ class Receiver:
                     sys.stdout.flush
         elif ICMPv6TimeExceeded in packet[0]:
             code = packet[ICMPv6TimeExceeded].code
+            length = packet[ICMPv6TimeExceeded].length
+            unused = packet[ICMPv6TimeExceeded].unused
+            payload = packet[ICMPv6TimeExceeded].load
             sys.stdout.write(chr(code))
             sys.stdout.flush()
+            bitLength = 8
+            container = self.extractBytes(length, bitLength)
+            for item in container:
+                sys.stdout.write(chr(item))
+                sys.stdout.flush
+            bitLength = 24
+            container = self.extractBytes(unused, bitLength)
+            for item in container:
+                sys.stdout.write(chr(item))
+                sys.stdout.flush
+            bitLength = 64
+            if payload != 'x':
+                payload = int(payload)
+                container = self.extractBytes(payload, bitLength)
+                for item in container:
+                    sys.stdout.write(chr(item))
+                    sys.stdout.flush
         elif ICMPv6ParamProblem in packet[0]:
             code = packet[ICMPv6ParamProblem].code
             pointer = packet[ICMPv6ParamProblem].ptr
@@ -56,7 +96,7 @@ class Receiver:
             code = packet[ICMPv6EchoRequest].code
             idn = packet[ICMPv6EchoRequest].id
             seq = packet[ICMPv6EchoRequest].seq
-            data = packet[ICMPv6EchoRequest].data            
+            data = packet[ICMPv6EchoRequest].data
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             bitLength = len(format(idn, 'b'))+1
@@ -101,7 +141,7 @@ class Receiver:
                 sys.stdout.flush
             if(data):
                 #this because scapy internals transform it in string before sending
-                data = int(data)                
+                data = int(data)
                 bitLength = len(format(data, 'b'))+1
                 bitLength = 64
                 container = self.extractBytes(data, bitLength)
@@ -121,10 +161,10 @@ class Receiver:
                 sys.stdout.flush
         elif ICMPv6ND_RA in packet[0]:
             code = packet[ICMPv6ND_RA].code
-            chlim = packet[ICMPv6ND_RA].chlim            
+            chlim = packet[ICMPv6ND_RA].chlim
             routerlifetime = packet[ICMPv6ND_RA].routerlifetime
             reachabletime = packet[ICMPv6ND_RA].reachabletime
-            retranstimer = packet[ICMPv6ND_RA].retranstimer            
+            retranstimer = packet[ICMPv6ND_RA].retranstimer
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             sys.stdout.write(chr(chlim))
@@ -147,11 +187,12 @@ class Receiver:
         elif ICMPv6ND_NS in packet[0]:
             code = packet[ICMPv6ND_NS].code
             res = packet[ICMPv6ND_NS].res
-            #tgt = packet[ICMPv6ND_NS].tgt            
+            #tgt = packet[ICMPv6ND_NS].tgt
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             #bitLength = len(format(res, 'b'))+1
-            #it seems that scapy neighbor solicitation reserved field use only 24 bits
+            #it seems that scapy neighbor solicitation reserved field use only 24 bits(ver2.3.2)
+            #requires version 2.3.2-dev
             bitLength = 32
             container = self.extractBytes(res, bitLength)
             for item in container:
@@ -160,7 +201,7 @@ class Receiver:
         elif ICMPv6ND_NA in packet[0]:
             code = packet[ICMPv6ND_NA].code
             res = packet[ICMPv6ND_NA].res
-            #tgt = packet[ICMPv6ND_NA].tgt            
+            #tgt = packet[ICMPv6ND_NA].tgt
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             bitLength = len(format(res, 'b'))+1
@@ -173,7 +214,7 @@ class Receiver:
             code = packet[ICMPv6ND_Redirect].code
             res = packet[ICMPv6ND_Redirect].res
             #tgt = packet[ICMPv6ND_Redirect].tgt
-            #dst = packet[ICMPv6ND_Redirect].dst            
+            #dst = packet[ICMPv6ND_Redirect].dst
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             bitLength = len(format(res, 'b'))+1
@@ -186,7 +227,7 @@ class Receiver:
             #sys.stdout.flush()
             #sys.stdout.write(dst)
             #sys.stdout.flush()
-            
+
     def receive(self):
         sniff(iface=self.iface, filter='ip6 and dst '+self.ipAdr, prn=self.packet_callback, store=0)
 

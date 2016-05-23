@@ -45,7 +45,7 @@ class Commands:
 
     @classmethod
     def setAttackingChannelHistory(self):
-        commands = ['help', 'quit']
+        commands = ['help', 'quit', 'setAll']
         completer = HistoryConsole(commands)
         return readline.set_completer(completer.complete)
     
@@ -58,6 +58,12 @@ class Commands:
     @classmethod
     def setAllCovertTestHistory(self):
         commands = ['help', 'quit', 'exec', 'rec', 'setAdr']
+        completer = HistoryConsole(commands)
+        return readline.set_completer(completer.complete)
+
+    @classmethod
+    def setAllAttackingTestHistory(self):
+        commands = ['help', 'quit', 'exec', 'setAdr']
         completer = HistoryConsole(commands)
         return readline.set_completer(completer.complete)
     
@@ -77,7 +83,7 @@ class Help:
 
     @classmethod
     def getAttackingChannelHelp(self):
-        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit Attacking Channel mode', 70*'*']
+        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit Attacking Channel mode', 'setAll \t\t\t=> Set All attacking channel mode', 70*'*']
 
     @classmethod
     def getTestingFrameworkHelp(self):
@@ -94,3 +100,7 @@ class Help:
     @classmethod
     def getAllCovertTestHelp(self):
         return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit all covert channels test mode', 'setAdr \t\t\t=> Set the IPv6 address both to send and to receive', 'exec \t\t\t=> Start all covert channels test', 'rec \t\t\t=> Start the receiver for the tests', 70*'*']
+
+    @classmethod
+    def getAllAttackingTestHelp(self):
+        return [70*'*', 'help \t\t\t=> Print this help', 'quit \t\t\t=> Quit all attacking test mode', 'setAdr \t\t\t=> Set the IPv6 address to attack', 'exec \t\t\t=> Start all attacking test', 70*'*']

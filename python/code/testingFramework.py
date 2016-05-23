@@ -8,6 +8,7 @@ from pprint import pprint
 from commands import *
 from covertChannels import *
 from allCovertTest import *
+from allAttackingTest import *
 
 """
 class responsible for Covert Channel module
@@ -37,13 +38,9 @@ class CovertChannel:
             elif re.match(r'setEchoRequest', command):
                 covert = EchoRequest()
                 covert.startSystem()
-            #set echo reply covert channel
-            elif re.match(r'setEchoReply', command):
-                covert = EchoReply()
-                covert.startSystem()
             #set all covert channel tests
             elif re.match(r'setAll', command):
-                covert = AllTests(self.iface)
+                covert = AllCovertTests(self.iface)
                 covert.startSystem()
             else:
                 print 'Error! Command not found!'
@@ -58,8 +55,9 @@ class responsible for Attacking Channel module
 """
 class AttackingChannel:
 
-    def __init__(self):
+    def __init__(self, iface):
         self.name = 'Attacking'
+        self.iface = iface
 
     #starts the interactive propmt
     def startSystem(self):
@@ -76,6 +74,10 @@ class AttackingChannel:
             elif re.match('quit', command):
                 running = 0
                 Commands.setMainHistory()
+            #set all attacking tests
+            elif re.match(r'setAll', command):
+                attacking = AllAttackingTests(self.iface)
+                attacking.startSystem()
             else:
                 print 'Error! Command not found!'
 
