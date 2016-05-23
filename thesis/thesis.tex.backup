@@ -193,19 +193,90 @@ The thesis is in [language] and contains [pages] pages of text, [chapters] chapt
 \section*{\begin{center}
 Glossary of Terms and Abbreviations
 \end{center}}
-Lühendite  ning  mõistete  sõnastikku  lisatakse kõik töö põhitekstis kasutatud  uued  ning  ka mitmetähenduslikud üldtuntud terminid. Näiteks inglisekeelne lühend PC  võib tähendada nii Personal Computer kui ka Program Counter, sõltuvalt kontekstist. Lühendid ja mõisted esitatakse tabuleeritult kahte tulpa selliselt, et vasakul on esitatud lühend või mõiste ja paremal tulbas seletus. Inglisekeelsed sõnad seletustes esitatakse kaldkirjas. Alltoodud näited esitavad lühendite ja mõistete sõnastiku korrektset vormistamist.
 
-\begin{tabular}{p{3 cm}ll}
-IPv6&Internet Protocol version 6\\
-ICMPv6&Internet Control Message Protocol version 6\\
-Node&ll\\
-NAT&dd\\
-IANA&Internet Assigned Numbers Authority\\
-BYID&Bring Your Own Device\\
-OS&Operating System\\
-IoT&Internet of Things\\
-rootkit&ff
+% \begin{tabular}{p{3 cm}ll}
+% IPv6&Internet Protocol version 6\\
+% ICMPv6&Internet Control Message Protocol version 6\\
+% Node&ll\\
+% NAT&dd\\
+% IANA&Internet Assigned Numbers Authority\\
+% BYID&Bring Your Own Device\\
+% OS&Operating System\\
+% IoT&Internet of Things\\
+% rootkit&ff
+% \end{tabular}
+
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Node}:&a device that implements IPv6\cite{rfc4861}.\\
+\hdashline
+\textit{Link}:&a communication facility or medium over which nodes can communicate at the link layer, i.e., the layer immediately below IPv6\cite{rfc4861}.\\
+\hdashline
+\textit{Interface}:&a node's attachment to a link\cite{rfc4861}.\\
+\hdashline
+\textit{Neighbors}:&nodes attached to the same link\cite{rfc4861}.\\
+\hdashline
+\textit{Prefix}:&a bit string that consists of some number of initial bits of an address\cite{rfc4861}.\\
+\hdashline
+\textit{On-link}:&an address that is assigned to an interface on a specified link\cite{rfc4861}.\\
+\hdashline
+\textit{Off-link}:&an address that is not assigned to any interfaces on the specified link\cite{rfc4861}.\\
+\hdashline
+\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches\cite{rfc4861}.\\
+\hdashline
+\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are being processed properly by the receiving IP layer\cite{rfc4861}.\\
+\hdashline
+\textit{Packet}:&an IPv6 header plus payload\cite{rfc4861}.\\
+\hdashline
+\textit{Link MTU}:&the maximum transmission unit, i.e., maximum packet size in octets, that can be conveyed over a link\cite{rfc4861}.\\
+\hdashline
+\textit{Path MTU}:&the minimum link MTU of all the links in a path between a source node and a destination node\cite{rfc4861}.\\
+\hdashline
+\textit{Multicast capable}:&a link that supports a native mechanism at the link layer for sending packets to all (i.e., broadcast) or a subset of all neighbors\cite{rfc4861}.\\
+\hdashline
+\textit{Point-to-point}:&a link that connects exactly two interfaces\cite{rfc4861}.\\
+\hdashline
 \end{tabular}
+
+\begin{savenotes}
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Link-local address}:&a unicast address having link-only scope that can be used to reach neighbors\cite{rfc4861}.\\
+\hdashline
+\textit{All-nodes multicast address}:&the link-local scope address to reach all nodes, FF02::1\cite{rfc4861}.\\
+\hdashline
+\textit{All-routers multicast address}:&the link-local scope address to reach all routers, FF02::2\cite{rfc4861}.\\
+\hdashline
+\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer\cite{rfc4861}.\\
+\hdashline
+\textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
+unspecified address has a value of 0:0:0:0:0:0:0:0\cite{rfc4861}.\\
+\hdashline
+\textit{Covert Channel}:&is a communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by manipulating an overt communication\cite{netaware} \footnote{open to view or knowledge; not concealed or secret, \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016}.\\
+\hdashline
+\textit{Cover traffic}:&is the traffic that is being manipulated by covert channel participants\cite{netaware}.\\
+\hdashline
+\textit{Storage Covert Channel}:&manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content\cite{netaware}.\\
+\hdashline
+\textit{Active Warden}:&is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the content of network traffic\cite{netaware}\\
+\hdashline
+\end{tabular}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Policy}:&A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area \footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
+\hdashline
+\textit{Standard}:&A mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
+\hdashline
+\textit{Procedure}:&Procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.\\
+\hdashline
+\end{tabular}
+\end{savenotes}
+
+
+
 \pagebreak
 
 \tableofcontents
@@ -286,58 +357,6 @@ RFCs use a specific set of words to express the requirements of the implementati
 Since the list of possibilities may be long, this research will use criteria in order to generate a subset of specification to test. The followed mechanism is to first select specifications and insert them into a set of tables, each related to a specific message, and then select from each table the test to be performed during the experiment. The criteria are presented at the end of this chapter, after the related works' analysis.
 
 \pagebreak
-\subsubsection{Terminology}
-\label{subsub:terminology}
-
-This research background's analysis starts from the terminology, since it is important to define and understand the terms which will be spread across the RFCs. The definition's sources are the RFCs.
-
-\begin{tabular}{L{3.3cm}L{11.2cm}}
-\hdashline
-\textit{Node}:&a device that implements IPv6.\\
-\hdashline
-\textit{Link}:&a communication facility or medium over which nodes can communicate at the link layer, i.e., the layer immediately below IPv6.\\
-\hdashline
-\textit{Interface}:&a node's attachment to a link.\\
-\hdashline
-\textit{Neighbors}:&nodes attached to the same link.\\
-\hdashline
-\textit{Prefix}:&a bit string that consists of some number of initial bits of an address.\\
-\hdashline
-\textit{On-link}:&an address that is assigned to an interface on a specified link.\\
-\hdashline
-\textit{Off-link}:&an address that is not assigned to any interfaces on the specified link.\\
-\hdashline
-\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches.\\
-\hdashline
-\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are being processed properly by the receiving IP layer.\\
-\hdashline
-\textit{Packet}:&an IPv6 header plus payload.\\
-\hdashline
-\textit{Link MTU}:&the maximum transmission unit, i.e., maximum packet size in octets, that can be conveyed over a link.\\
-\hdashline
-\textit{Path MTU}:&the minimum link MTU of all the links in a path between a source node and a destination node.\\
-\hdashline
-\textit{Multicast capable}:&a link that supports a native mechanism at the link layer for sending packets to all (i.e., broadcast) or a subset of all neighbors.\\
-\hdashline
-\textit{Point-to-point}:&a link that connects exactly two interfaces.\\
-\hdashline
-\end{tabular}
-
-\begin{tabular}{L{3.3cm}L{11.2cm}}
-\hdashline
-\textit{Link-local address}:&a unicast address having link-only scope that can be used to reach neighbors.\\
-\hdashline
-\textit{All-nodes multicast address}:&the link-local scope address to reach all nodes, FF02::1.\\
-\hdashline
-\textit{All-routers multicast address}:&the link-local scope address to reach all routers, FF02::2.\\
-\hdashline
-\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer.\\
-\hdashline
-\textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
-unspecified address has a value of 0:0:0:0:0:0:0:0.\\
-\hdashline
-\end{tabular}
-
 
 \subsubsection{RFC 2460}
 \label{subsub:2460}
@@ -1076,7 +1095,7 @@ MTU&The recommended MTU for the link.\\
 \end{savenotes}
 
 
-This ends the background analysis. Next, this research takes on the related work, in which other researches are taken into consideration in order to understand what have been done in the field, and to take suggestions about possible scenarios that are worth to test.
+This ends the background analysis. Next, this research takes on the topic of covert channels, which is interesting because it covers the motivations and gives the possibility to exfiltrate data, after a malicious actor has gained a foothold in the internal network.
 
 
 
@@ -1084,7 +1103,7 @@ This ends the background analysis. Next, this research takes on the related work
 \label{sub:covert}
 
 
-In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another scenario to take into consideration, especially if APT and the amount of resources that APAs have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information outside the internal perimeter.
+In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another scenario to take into consideration, especially if APT and the amount of resources they have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information outside the internal perimeter.
 
 This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and, at the same time, to be able to pursue its goals. 
 
@@ -1101,20 +1120,8 @@ In the context of a networked communication, ``Alice and Bob exploit an already 
 
 In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
 
-\textbf{Policy}: A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area \footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
-\textbf{Standard}: A mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
-\textbf{Procedure}: Procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.
 
-\subsubsection{Definitions}
-\label{subsub:definitions}
 
-\textbf{Covert Channel} is a ``communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by manipulating an overt communication''\cite{netaware} \footnote{open to view or knowledge; not concealed or secret, \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016}.
-
-\textbf{Cover traffic} ``is the traffic that is being manipulated by covert channel participants''\cite{netaware}.
-
-\textbf{Storage Covert Channel} ``manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content''\cite{netaware}.
-
-An \textbf{active warden} ``is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the content of network traffic''\cite{netaware}\\
 
 \subsubsection{Related Research}
 
@@ -1378,18 +1385,18 @@ attacks\cite{smurf}.
 \section{Methodology}
 \label{sec:3}
 
-The second chapter of this research started by analyzing the background. The analyzed RFCs define the type of messages that compose the ICMPv6 protocol. For each message the RFCs specify the header and the fields, and the behavior of the protocol to fulfill its functions. The specifications include how to validate a message, the mandatory and optional fields, the data that each field must, should, or may deliver. The language use the terms must, should, may in order to underline what is mandatory to include in the implementation of the protocol, what it is better to include, and what may or not be implemented, leaving the developer more feedom in how to implement a task. The RFCs represents the knowledge about the protocol. The observation of the rules could lead to think if it is possible to break the rules in some way, and what could happen if different implementors interpret them in a different way.
+The second chapter of this research started by analyzing the background. The analyzed RFCs define the type of messages that compose the ICMPv6 protocol. For each message the RFCs specify the header and the fields, and the behavior of the protocol to fulfill its functions. The specifications include how to validate a message, the mandatory and optional fields, the data that each field must, should, or may deliver. The language use the terms must, should, may in order to underline what is mandatory to include in the implementation of the protocol, what it is better to include, and what may or not be implemented, leaving the developer more freedom in how to implement a task. The RFCs represents the knowledge about the protocol. The observation of the rules could lead to think if it is possible to break the rules in some way, and what could happen if different implementors interpret them in a different way.
 
-Another observation regard the environment on which the protocol operate: a network based on a specific protocol suite. The Internet is a complex environment composed by devices interconnecting each other, using many protocols. This complexity make the Internet an environment not suitable to try to find an answer to the questions derived by the observation. This is because the amount of variables that it introduces do not allow to derive a unique consequence from an action, and thus reliable conclusions. In order to be able to derive reliable conclusions the environment must be simplified and be controllable. A controlled procedure needs to have exactly one variable, and to achive that, as it has been mentioned before, a particular configuration must be defined. A specific configuration of the enviroment represents a costant, thus allowing to modify a specific rule. A set of tests is performed using manipulated rules against a well defined configuration. Then the same set of test can be performed against another configuration, leading to a number of tests equal to the number of configurations multiplied by the number of elements in the set.\cite{secExperiments}
+Another observation regard the environment on which the protocol operate: a network based on a specific protocol suite. The Internet is a complex environment composed by devices interconnecting each other, using many protocols. This complexity make the Internet an environment not suitable to try to find an answer to the questions derived by the observation. This is because the amount of variables that it introduces do not allow to derive a unique consequence from an action, and thus reliable conclusions. In order to be able to derive reliable conclusions the environment must be simplified and be controllable. A controlled procedure needs to have exactly one variable, and to achieve that, as it has been mentioned before, a particular configuration must be defined. A specific configuration of the environment represents a constant, thus allowing to modify a specific rule. A set of tests is performed using manipulated rules against a well defined configuration. Then the same set of test can be performed against another configuration, leading to a number of tests equal to the number of configurations multiplied by the number of elements in the set.\cite{secExperiments}
 
 After the process of observing the background, and the environment in which the ICMPv6 protocol operate, this research found that the best methodology to follow is the scientific method. The reason behind the choice is that many element of the analysis of the second chapter, the observation of the data, led to the formulation of questions and hypothesis, that could be validate, or negate, by experimentation. As it will be better explained next, the process of the scientific method is ideal to test the hypothesis derived by the research questions, taking into account the different configurations of the environment which has been discussed in the second chapter.
 
 \subsection{Scientific Method}
 \label{sub:sciMeth}
 
-The scientific method has its roots in the ancient greek philosophy, with Plato and Aristotle. The human reasoning has been the basis for the scientific evolution and studies, with the expression of an hypothesis, the argumentation about the truth or untruth, and eventually the formulation of a theory. Many centuries later, with the Enlightenment, two ways of looking at science cohexisted in the developing scientific community: rationalism and empiricism. While the former accepted the human intuition, mainly in the field of natural science, and then applies testing hypothesis in order to formulate theories, the latter was more based on the observation of the data and then experimentation. Since then, both approaches have influenced the developing of the scientific method and reasoning, and applied to natural and human science.\cite{carroll}
+The scientific method has its roots in the ancient Greek philosophy, with Plato and Aristotle. The human reasoning has been the basis for the scientific evolution and studies, with the expression of an hypothesis, the argumentation about the truth or untruth, and eventually the formulation of a theory. Many centuries later, with the Enlightenment, two ways of looking at science coexisted in the developing scientific community: rationalism and empiricism. While the former accepted the human intuition, mainly in the field of natural science, and then applies testing hypothesis in order to formulate theories, the latter was more based on the observation of the data and then experimentation. Since then, both approaches have influenced the developing of the scientific method and reasoning, and applied to natural and human science.\cite{carroll}
 
-Another imporant distinction is between quantitative and qualitative research. Quantitative research is based on the use of statistics or on data that are quantifiable and measurable, in order to produce a result which is not biased on some context and, thus, could lead to a generalization of some theories. Qualitative research, instead, introduces the contextualization and relies on the context in which it is possible to observe a given phenomenon, which is more related to the human science, where observation and definition of a context in which human beings interact may allow to validate or not an hypothesis.\cite{kaplan}
+Another important distinction is between quantitative and qualitative research. Quantitative research is based on the use of statistics or on data that are quantifiable and measurable, in order to produce a result which is not biased on some context and, thus, could lead to a generalization of some theories. Qualitative research, instead, introduces the contextualization and relies on the context in which it is possible to observe a given phenomenon, which is more related to the human science, where observation and definition of a context in which human beings interact may allow to validate or not an hypothesis.\cite{kaplan}
 
 This research uses both a quantitative and qualitative approach to perform the experiment. The qualitative approach is necessary to set up the experiment because of two factors: the choice of the tests and the considerations about the context. The tests are chosen starting from the description of the protocol inside the RFCs, which are for their nature not representable in a mathematical way. Among all the possible tests, some of them are considered for the experiment, as it will presented later. The context is also very important and it involves the observation of human behavior in the configuration of the border network devices and the choices of the implementers of the end devices. The quantitative approach arises after the definition of the test set. Each test is performed against a well defined configuration. The set of tests and a specific configuration is an experiment where the only variable is the test itself, and the validation or not of the hypothesis can be done only for that specific configuration. In this way, this research is considering the quantitative approach, because inside the experiment, after its set up, no other variable other then the specific test will change, thus allowing it to be measurable in a binary way: either failed or succeed. The conclusions of the experiments, however, because of its context-dependent nature, could not lead to the formulation of a mathematical evaluation. In other words it wont be possible to state that the ICMPv6 protocol is vulnerable by itself, but only that, given this specific configuration, the protocol introduces some vulnerabilities.
 
@@ -1402,7 +1409,7 @@ Following the work of Peisert and Bishop in \textit{How to Design Computer Secur
  \item Interpret data and draw conclusions
 \end{enumerate}
 
-In addition to the aforementioned steps, Peisert and Bishop define three qualities, the most relevant in the domain of computer security, that the procedures requires. The procedures must be falsifiable, which means that the experiment must not be set up in order to justifie a positive answer, but to test hypothesis that may ends up to be false. The procedures must be controlled, which involves the presence of exactly one variable. The procedures must be reproducible, which assumes that it is possible to repeat the experiment and obtain the same result.\cite{secExperiments}
+In addition to the aforementioned steps, Peisert and Bishop define three qualities, the most relevant in the domain of computer security, that the procedures requires. The procedures must be falsifiable, which means that the experiment must not be set up in order to justify a positive answer, but to test hypothesis that may ends up to be false. The procedures must be controlled, which involves the presence of exactly one variable. The procedures must be reproducible, which assumes that it is possible to repeat the experiment and obtain the same result.\cite{secExperiments}
 
 \subsection{Research Questions and Hypothesis}
 \label{sub:reearchQandH}
@@ -1459,7 +1466,7 @@ In \ref{Appendix 1} it is possible to see the header of the messages with its fi
 
 In \ref{Appendix 2}, the tables show the specifications of each ICMPv6 message and the processing rules in terms of what must, should, or may be implemented. These specifications and processing rules define the behavior of the protocol in relationship with the functions for which it is used by other processes or protocols. Even though some of the specifications refers to an header field, as it has been mentioned above, the reasons behind the base used to choose the set of test in this appendix is different. While to test the first hypothesis both the sending and receiving processes are controlled by the attacker, the second hypothesis implies that the attacker controls only the sending process. In fact, if a packet successfully traverse the border network device, it is the behavior of the protocol and the implementation of the end device, i.e. the receiving process, to be under testing. In other words, it is the ending device that determines the truth of the hypothesis in case a packet has been able to reach it. In such a situation the it is useful to consider the specifications that include the terms must, should, and may. This research assumes that at least the specifications including a must have been implemented. Nevertheless, each implementation may differ from another one by a very small degree, therefor such specifications must be included in the set of tests. The same applies to specifications characterized by the terms should and may, which, in addition, do not have the mandatory nature of the musts. 
 
-Another important aspect that has been taken into consideration in the choice of the set is the necessity to avoid the introduction of additional variables that it is not possible to control and verify in a reproducible way. An example of that is the last specification included in table \ref{table:4443ProcRules}, which specifies the need to limit the transmission rate of ICMPv6 error messages to limit the bandwidth and forwarding costs. Even though an high transmission rate may lead to a denial of service, there are other variables that affect the test of the specification, like the type of physical connection or the bandwith usage of other processes. Therefor this type of specifications have not been selected.
+Another important aspect that has been taken into consideration in the choice of the set is the necessity to avoid the introduction of additional variables that it is not possible to control and verify in a reproducible way. An example of that is the last specification included in table \ref{table:4443ProcRules}, which specifies the need to limit the transmission rate of ICMPv6 error messages to limit the bandwidth and forwarding costs. Even though an high transmission rate may lead to a denial of service, there are other variables that affect the test of the specification, like the type of physical connection or the bandwidth usage of other processes. Therefor this type of specifications have not been selected.
 
 The next step is the experiment environment and the reasons behind the choices.
 
@@ -1468,7 +1475,7 @@ The next step is the experiment environment and the reasons behind the choices.
 
 The environment has been chosen taking into account the possibility to test the hypothesis and properties related to the methodology. To test the hypothesis, the experiment must include an attacking machine positioned in an outside network, which border is delimited by a border network device. The attacking machine is responsible for the receiving process in testing the first hypothesis (see~\ref{firstHyp}), and it is used to send the manipulated ICMPv6 packets in testing the second hypothesis (see~\ref{secondHyp}). The network topology includes two wardens, a dedicated Cisco Adaptive Security Appliance (ASA)\footnote{\url{http://www.cisco.com/c/en/us/support/security/asa-5505-adaptive-security-appliance/model.html}}, and a Linux host with firewalling capabilities. Each experiment uses only a warden with a specific configuration. The details of each configuration is discussed in the next chapter (see~\ref{sec:4}). The environment includes two end devices, one linux host and one windows host. End devices purpose is to be responsible for the sending process in testing the first hypothesis (the linux host), and, when testing the second hypothesis, to receive the ICMPv6 manipulated packets.
 
-The choice of the devices for the experiment has been made taking into account the availability of the devices or virtualized environments. For virtualized environments, one limitation was the available memory (8GB) on the laptop used to develop the attacking framework and to host the virtual machines. The first research about the environment aimed to have a complete virtualized environment. The difficulties in that research arose in finding a virtualized environment for one of the warden, because one of the objectives of this work is to test a security device which may be used in production systems, like a Cisco firewall. Since there are no freely available images, this possibility has been abandoned. After a bit of research, it has been possible to obtain a physical device (ASA firewall) on University's laboratory, which also has the advantage to decrease the overall need of memory for the virtualization. The virtualized environment is built on top of VirtualBox\footnote{\url{https://www.virtualbox.org/}}, chosen because it is available as open source software with GNU General Public License (GPL) version 2\footnote{\url{http://www.gnu.org/licenses/old-licenses/gpl-2.0.html}}, and supports for many guest operating systems. The second warden is a Debian Jesse\footnote{\url{https://www.debian.org/releases/jessie/}} linux virtualized guest, which uses iptables\footnote{\url{https://wiki.debian.org/iptables}} to provide firewalling services. The virtualized environment has been chosen also for the two end devices, a Debian Jesse guest OS and a Windows 7 guest OS. In this case Debian Jesse has been chosen because it is a linux open source OS, and because a linux-based machine could be used as a server in production environments. The Windows 7 guest, instead, may represent common workstations in an internal network, and a virtual image could be downloaded\footnote{\url{https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/windows/}} with a free trial license. The last device to consider is the attacking device, which had a constraint: because of the phisical firewall, also that machine must be a physical device to form a network segment with the firewall. This constraint at the beginning posed some issues, because of a limited availability of devices. After some research the choice has fallen on a Raspberry Pi\footnote{\url{https://www.raspberrypi.org/}} with a Kali linux OS. The resons behind this choice is both on Kali linux and Raspberry Pi as a attacking/pentesting device. Kali linux has support for Raspberry Pi, and it is possible to download a pre-built image from Offensive Security website\footnote{\url{https://www.offensive-security.com/kali-linux-arm-images/}}, which are the creators of Kali. In addition, Raspberry Pi with Kali linux may be a choice for attackers as a portable hacking station. Its dimension may allow to hide it or to use it without causing suspicion in places where the use of a laptop is not common.
+The choice of the devices for the experiment has been made taking into account the availability of the devices or virtualized environments. For virtualized environments, one limitation was the available memory (8GB) on the laptop used to develop the attacking framework and to host the virtual machines. The first research about the environment aimed to have a complete virtualized environment. The difficulties in that research arose in finding a virtualized environment for one of the warden, because one of the objectives of this work is to test a security device which may be used in production systems, like a Cisco firewall. Since there are no freely available images, this possibility has been abandoned. After a bit of research, it has been possible to obtain a physical device (ASA firewall) on University's laboratory, which also has the advantage to decrease the overall need of memory for the virtualization. The virtualized environment is built on top of VirtualBox\footnote{\url{https://www.virtualbox.org/}}, chosen because it is available as open source software with GNU General Public License (GPL) version 2\footnote{\url{http://www.gnu.org/licenses/old-licenses/gpl-2.0.html}}, and supports for many guest operating systems. The second warden is a Debian Jesse\footnote{\url{https://www.debian.org/releases/jessie/}} linux virtualized guest, which uses iptables\footnote{\url{https://wiki.debian.org/iptables}} to provide firewalling services. The virtualized environment has been chosen also for the two end devices, a Debian Jesse guest OS and a Windows 7 guest OS. In this case Debian Jesse has been chosen because it is a linux open source OS, and because a linux-based machine could be used as a server in production environments. The Windows 7 guest, instead, may represent common workstations in an internal network, and a virtual image could be downloaded\footnote{\url{https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/windows/}} with a free trial license. The last device to consider is the attacking device, which had a constraint: because of the physical firewall, also that machine must be a physical device to form a network segment with the firewall. This constraint at the beginning posed some issues, because of a limited availability of devices. After some research the choice has fallen on a Raspberry Pi\footnote{\url{https://www.raspberrypi.org/}} with a Kali linux OS. The reasons behind this choice is both on Kali linux and Raspberry Pi as a attacking/pentesting device. Kali linux has support for Raspberry Pi, and it is possible to download a pre-built image from Offensive Security website\footnote{\url{https://www.offensive-security.com/kali-linux-arm-images/}}, which are the creators of Kali. In addition, Raspberry Pi with Kali linux may be a choice for attackers as a portable hacking station. Its dimension may allow to hide it or to use it without causing suspicion in places where the use of a laptop is not common.
 
 
 \subsubsection{Border Network Device Configurations}
@@ -1484,7 +1491,7 @@ A linux-based machine, with firewalling services, may be the choice of an organi
 
 In order to deploy meaningful configurations for the experiment, this research examined documents, best practices and RFCs. 
 
-The first document has been written by the National Institute of Standards and Technology (NIST)\footnote{\url{http://www.nist.gov/}}, which has a dedicated chapter on firewall policy and a sub-chapter on IPv6. Inside the section there is a statement that shows how much has to be done for IPv6 and ICMPv6, which says ``[b]ecause IPv6 deployment is still in its early stages, there is not yet widespread agreement in the IPv6 operations community about what an IPv6 firewall should do that is different from IPv4 firewalls''. The suggestions inside the document are more related to filtering packets with an invalid source or destination addresses, for example a link local address arriving at the boundary from the ouside network. Another advice is to block all IPv6 traffic in the case that the organization do not use IPv6. For what is related to ICMP6, the document suggested to refer to RFC 4890, which will be examined next in this chapter.\cite{nist}
+The first document has been written by the National Institute of Standards and Technology (NIST)\footnote{\url{http://www.nist.gov/}}, which has a dedicated chapter on firewall policy and a sub-chapter on IPv6. Inside the section there is a statement that shows how much has to be done for IPv6 and ICMPv6, which says ``[b]ecause IPv6 deployment is still in its early stages, there is not yet widespread agreement in the IPv6 operations community about what an IPv6 firewall should do that is different from IPv4 firewalls''. The suggestions inside the document are more related to filtering packets with an invalid source or destination addresses, for example a link local address arriving at the boundary from the outside network. Another advice is to block all IPv6 traffic in the case that the organization do not use IPv6. For what is related to ICMP6, the document suggested to refer to RFC 4890, which will be examined next in this chapter.\cite{nist}
 
 The second document have been draft by the National Aeronautics and Space Administration (NASA)\footnote{\url{http://www.nasa.gov/}} by means of the Communications Service Office (CSO), and used for the NASA Integrated Communication Services (NICS) contract\footnote{\url{https://cso.nasa.gov/content/about-cso-and-nics}}. The documents describes best practices related to IPv6 in detail. The relevance for this research is limited, because the document refers mostly to internal networks. Specifically, in the chapter related to firewall rules, the document warns about the need of neighbor solicitation and advertisement messages in order for the Neighbor Discovery protocol to work\cite{nics}.
 
@@ -1533,6 +1540,7 @@ The configuration of the firewall, as border network device, is another importan
 
 Finally, this chapter introduced the components used to build the testing/attacking framework, which are python as a programming language and scapy as packets manipulating library.
 
+The next chapter will dig deeper in the implementation of the experiment, with the details of each involved component.
 
 
 

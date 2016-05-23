@@ -193,19 +193,94 @@ The thesis is in [language] and contains [pages] pages of text, [chapters] chapt
 \section*{\begin{center}
 Glossary of Terms and Abbreviations
 \end{center}}
-Lühendite  ning  mõistete  sõnastikku  lisatakse kõik töö põhitekstis kasutatud  uued  ning  ka mitmetähenduslikud üldtuntud terminid. Näiteks inglisekeelne lühend PC  võib tähendada nii Personal Computer kui ka Program Counter, sõltuvalt kontekstist. Lühendid ja mõisted esitatakse tabuleeritult kahte tulpa selliselt, et vasakul on esitatud lühend või mõiste ja paremal tulbas seletus. Inglisekeelsed sõnad seletustes esitatakse kaldkirjas. Alltoodud näited esitavad lühendite ja mõistete sõnastiku korrektset vormistamist.
 
-\begin{tabular}{p{3 cm}ll}
-IPv6&Internet Protocol version 6\\
-ICMPv6&Internet Control Message Protocol version 6\\
-Node&ll\\
-NAT&dd\\
-IANA&Internet Assigned Numbers Authority\\
-BYID&Bring Your Own Device\\
-OS&Operating System\\
-IoT&Internet of Things\\
-rootkit&ff
+% \begin{tabular}{p{3 cm}ll}
+% IPv6&Internet Protocol version 6\\
+% ICMPv6&Internet Control Message Protocol version 6\\
+% Node&ll\\
+% NAT&dd\\
+% IANA&Internet Assigned Numbers Authority\\
+% BYID&Bring Your Own Device\\
+% OS&Operating System\\
+% IoT&Internet of Things\\
+% rootkit&ff
+% \end{tabular}
+
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Node}:&a device that implements IPv6\cite{rfc4861}.\\
+\hdashline
+\textit{Link}:&a communication facility or medium over which nodes can communicate at the link layer, i.e., the layer immediately below IPv6\cite{rfc4861}.\\
+\hdashline
+\textit{Interface}:&a node's attachment to a link\cite{rfc4861}.\\
+\hdashline
+\textit{Neighbors}:&nodes attached to the same link\cite{rfc4861}.\\
+\hdashline
+\textit{Prefix}:&a bit string that consists of some number of initial bits of an address\cite{rfc4861}.\\
+\hdashline
+\textit{On-link}:&an address that is assigned to an interface on a specified link\cite{rfc4861}.\\
+\hdashline
+\textit{Off-link}:&an address that is not assigned to any interfaces on the specified link\cite{rfc4861}.\\
+\hdashline
+\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches\cite{rfc4861}.\\
+\hdashline
+\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are being processed properly by the receiving IP layer\cite{rfc4861}.\\
+\hdashline
+\textit{Packet}:&an IPv6 header plus payload\cite{rfc4861}.\\
+\hdashline
+\textit{Link MTU}:&the maximum transmission unit, i.e., maximum packet size in octets, that can be conveyed over a link\cite{rfc4861}.\\
+\hdashline
+\textit{Path MTU}:&the minimum link MTU of all the links in a path between a source node and a destination node\cite{rfc4861}.\\
+\hdashline
+\textit{Multicast capable}:&a link that supports a native mechanism at the link layer for sending packets to all (i.e., broadcast) or a subset of all neighbors\cite{rfc4861}.\\
+\hdashline
+\textit{Point-to-point}:&a link that connects exactly two interfaces\cite{rfc4861}.\\
+\hdashline
 \end{tabular}
+
+\begin{savenotes}
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Link-local address}:&a unicast address having link-only scope that can be used to reach neighbors\cite{rfc4861}.\\
+\hdashline
+\textit{All-nodes multicast address}:&the link-local scope address to reach all nodes, FF02::1\cite{rfc4861}.\\
+\hdashline
+\textit{All-routers multicast address}:&the link-local scope address to reach all routers, FF02::2\cite{rfc4861}.\\
+\hdashline
+\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer\cite{rfc4861}.\\
+\hdashline
+\textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
+unspecified address has a value of 0:0:0:0:0:0:0:0\cite{rfc4861}.\\
+\hdashline
+\textit{Covert Channel}:&is a communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by manipulating an overt communication\cite{lewandowski} \footnote{open to view or knowledge; not concealed or secret, \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016}.\\
+\hdashline
+\textit{Cover traffic}:&is the traffic that is being manipulated by covert channel participants\cite{lewandowski}.\\
+\hdashline
+\textit{Storage Covert Channel}:&manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content\cite{lewandowski}.\\
+\hdashline
+\textit{Active Warden}:&is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the content of network traffic\cite{lewandowski}\\
+\hdashline
+\end{tabular}
+\end{savenotes}
+
+\begin{savenotes}
+\begin{tabular}{L{3.3cm}L{12cm}}
+\hdashline
+\textit{Policy}:&a formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area \footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
+\hdashline
+\textit{Standard}:&a mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
+\hdashline
+\textit{Procedure}:&procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.\\
+\hdashline
+\textit{System Preservation}:&guarantees that the stegomessage is well formed within the rules of the protocol; the actual meaning of the stegomessage may be different than the original cover\cite{lucena2}.\\
+\hdashline
+\textit{Semantic Preservation}:&means that, as observed at a point along the message’s path through the network, the stegomessage has the same meaning as the original cover\cite{lucena2}.\\
+\hdashline
+\end{tabular}
+\end{savenotes}
+
+
+
 \pagebreak
 
 \tableofcontents
@@ -286,58 +361,6 @@ RFCs use a specific set of words to express the requirements of the implementati
 Since the list of possibilities may be long, this research will use criteria in order to generate a subset of specification to test. The followed mechanism is to first select specifications and insert them into a set of tables, each related to a specific message, and then select from each table the test to be performed during the experiment. The criteria are presented at the end of this chapter, after the related works' analysis.
 
 \pagebreak
-\subsubsection{Terminology}
-\label{subsub:terminology}
-
-This research background's analysis starts from the terminology, since it is important to define and understand the terms which will be spread across the RFCs. The definition's sources are the RFCs.
-
-\begin{tabular}{L{3.3cm}L{11.2cm}}
-\hdashline
-\textit{Node}:&a device that implements IPv6.\\
-\hdashline
-\textit{Link}:&a communication facility or medium over which nodes can communicate at the link layer, i.e., the layer immediately below IPv6.\\
-\hdashline
-\textit{Interface}:&a node's attachment to a link.\\
-\hdashline
-\textit{Neighbors}:&nodes attached to the same link.\\
-\hdashline
-\textit{Prefix}:&a bit string that consists of some number of initial bits of an address.\\
-\hdashline
-\textit{On-link}:&an address that is assigned to an interface on a specified link.\\
-\hdashline
-\textit{Off-link}:&an address that is not assigned to any interfaces on the specified link.\\
-\hdashline
-\textit{Longest prefix match}:&the process of determining which prefix in a set of prefixes covers a target address. A target address is covered by a prefix if all of the bits in the prefix match the left-most bits of the target address. When multiple prefixes cover an address, the longest prefix is the one that matches.\\
-\hdashline
-\textit{Reachability}:&whether or not the one-way "forward" path to a neighbor is functioning properly. In particular, whether packets sent to a neighbor are reaching the IP layer on the neighboring machine and are being processed properly by the receiving IP layer.\\
-\hdashline
-\textit{Packet}:&an IPv6 header plus payload.\\
-\hdashline
-\textit{Link MTU}:&the maximum transmission unit, i.e., maximum packet size in octets, that can be conveyed over a link.\\
-\hdashline
-\textit{Path MTU}:&the minimum link MTU of all the links in a path between a source node and a destination node.\\
-\hdashline
-\textit{Multicast capable}:&a link that supports a native mechanism at the link layer for sending packets to all (i.e., broadcast) or a subset of all neighbors.\\
-\hdashline
-\textit{Point-to-point}:&a link that connects exactly two interfaces.\\
-\hdashline
-\end{tabular}
-
-\begin{tabular}{L{3.3cm}L{11.2cm}}
-\hdashline
-\textit{Link-local address}:&a unicast address having link-only scope that can be used to reach neighbors.\\
-\hdashline
-\textit{All-nodes multicast address}:&the link-local scope address to reach all nodes, FF02::1.\\
-\hdashline
-\textit{All-routers multicast address}:&the link-local scope address to reach all routers, FF02::2.\\
-\hdashline
-\textit{Solicited-node multicast address}:&a link-local scope multicast address that is computed as a function of the solicited target's address. The function is chosen so that IP addresses that differ only in the most significant bits will map to the same solicited-node address thereby reducing the number of multicast addresses a node must join at the link layer.\\
-\hdashline
-\textit{Unspecified address}:&a reserved address value that indicates the lack of an address. It is never used as a destination address, but may be used as a source address if the sender does not know its own address. The 
-unspecified address has a value of 0:0:0:0:0:0:0:0.\\
-\hdashline
-\end{tabular}
-
 
 \subsubsection{RFC 2460}
 \label{subsub:2460}
@@ -1076,7 +1099,7 @@ MTU&The recommended MTU for the link.\\
 \end{savenotes}
 
 
-This ends the background analysis. Next, this research takes on the related work, in which other researches are taken into consideration in order to understand what have been done in the field, and to take suggestions about possible scenarios that are worth to test.
+This ends the background analysis. Next, this research takes on the topic of covert channels, which is interesting because it covers the motivations and gives the possibility to exfiltrate data, after a malicious actor has gained a foothold in the internal network.
 
 
 
@@ -1084,48 +1107,36 @@ This ends the background analysis. Next, this research takes on the related work
 \label{sub:covert}
 
 
-In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another scenario to take into consideration, especially if APT and the amount of resources that APAs have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information outside the internal perimeter.
+In the context of an attack, malicious actors can exploit a vulnerability to gain a foothold in the internal perimeter. This is a kind of scenario that concerns many actors, but it is not the only one. There is another scenario to take into consideration, especially if APTs and the amount of resources they have, are recognized. The case that the malicious actor has already gained a foothold and want to exfiltrate data without authorization. The absence of a proper authorization is an important concept, because it includes in the scenario also persons that are authorized to access the network, like employees, but have no authorization to send information outside the internal perimeter.
 
 This scenario is characterized by the flow of the attack, from the internal perimeter to the outside, and by the need, from an attacker point of view, to stay undetected and, at the same time, to be able to pursue its goals. 
 
 The analysis of this scenario is presented next, and it is usually referred to with the presence of a covert channel.
 
-Before attempting to analyze the scenario characterized by a covert channel in a networked communication, it is necessary to describe the context in which it came out first, that is, the Prisoners' Problem.
+Before attempting to analyze the scenario characterized by a covert channel in a networked communication, it is necessary to describe the context in which it came out first, that is, the Prisoners' Problem. This is important, because there are many similarities between the Prisoners' Problem and the context of a covert channel: two communication actors, or processes, a warden, and a communication path that must be submitted to a policy in order to be allowed.
 
 \subsubsection{The Prisoners' Problem}
 \label{subsub:prisoners}
 
-The Prisoners' Problem\cite{prisoners} involves two actors that ``have been arrested and are about to be locked in widely separated cells'', and a warden, who ``is willing to allow the prisoners to exchange messages in the hope that he can deceive at least one of them into accepting as a genuine communication from the other either a fraudulent message created by the warden himself or else a modification by him of a genuine message''.
+The Prisoners' Problem involves two actors that ``have been arrested and are about to be locked in widely separated cells'', and a warden, who ``is willing to allow the prisoners to exchange messages in the hope that he can deceive at least one of them into accepting as a genuine communication from the other either a fraudulent message created by the warden himself or else a modification by him of a genuine message''\cite{prisoners}.
 
-In the context of a networked communication, ``Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob''\cite{netaware}.
+In the context of a networked communication, ``Alice and Bob exploit an already existing communication path, corresponding to two arbitrary communicating processes: the sender and the receiver. Wendy is a warden, located somewhere along the communication path, monitoring all possible messages exchanged by Alice and Bob''\cite{lewandowski}.
 
 In the analyzed scenario the attacker represents both the sender process located in the inside network, and the receiver process, located outside. The warden is a firewall, or a router, which allows specific communications from the inside to the outside, regulated by the organization's security policy, standards, and procedures. The challenge for the attacker is to find a communication path, which is allowed in the specific traffic direction flow, and use it as a covert channel, in order to deceive the countermeasures in place to consider it as a legitimate traffic.
 
-\textbf{Policy}: A formal, brief, and high-level statement or plan that embraces an organization's general beliefs, goals, objectives, and acceptable procedures for a specified subject area \footnote{\label{policy}\url{http://www.slu.edu/its/policies-and-processes}, accessed 1.4.2016}.\\
-\textbf{Standard}: A mandatory action or rule designed to support and conform to a policy \cref{policy}.\\
-\textbf{Procedure}: Procedures describe the process: who does what, when they do it, and under what criteria \cref{policy}.
 
-\subsubsection{Definitions}
-\label{subsub:definitions}
 
-\textbf{Covert Channel} is a ``communication paths that allow information transfer in violation of a system’s security policies. In the context of network protocols, covert channel communication is generally achieved by manipulating an overt communication''\cite{netaware} \footnote{open to view or knowledge; not concealed or secret, \url{http://www.dictionary.com/browse/overt}, accessed 1.4.2016}.
-
-\textbf{Cover traffic} ``is the traffic that is being manipulated by covert channel participants''\cite{netaware}.
-
-\textbf{Storage Covert Channel} ``manipulates a storage location in such a way that it conveys information to an observer. This definition was initially applied only to covert channels within a single machine or at least with a shared storage location. It was then extended to network covert channels and in this context, a storage channel is understood to be a channel that relies on modification of network traffic content''\cite{netaware}.
-
-An \textbf{active warden} ``is positioned so that it can observe and modify network traffic in its area of responsibility. The task of active wardens is to prevent and disrupt covert channel communication by modifying the content of network traffic''\cite{netaware}\\
 
 \subsubsection{Related Research}
 
-The aforementioned Lewandowski's research defines a communication model for network storage channels, which involves two parties who wish to communicate covertly. ``As a cover, Alice and Bob might either select a suitable, already ongoing communication or generate an appropriate one if they can do so without arousing suspicion, and then they proceed to modify the cover communication’s content to transmit their information. Meanwhile a third party, Wendy, positioned somewhere on the covert communication’s path, attempts to disrupt Alice and Bob’s efforts while preserving the integrity of the cover traffic''.
+Lewandowski's research defines a communication model for network storage channels, which involves two parties who wish to communicate covertly. ``As a cover, Alice and Bob might either select a suitable, already ongoing communication or generate an appropriate one if they can do so without arousing suspicion, and then they proceed to modify the cover communication’s content to transmit their information. Meanwhile a third party, Wendy, positioned somewhere on the covert communication’s path, attempts to disrupt Alice and Bob’s efforts while preserving the integrity of the cover traffic''\cite{lewandowski}.
 
 The author extracted six scenarios (see Figure~\ref{fig:commScenarios}) from the model, based on the work of Lucena\cite{lucena}.
 
 \begin{figure}[ht] 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{communicationScenarios}
-\caption{Communication Scenarios}
+\caption{Communication Scenarios\cite{lewandowski}}
 \label{fig:commScenarios}
 \end{center}
 \end{figure}
@@ -1134,27 +1145,25 @@ The six scenarios depicts different positions of Bob and Alice in the communicat
 
 The first scenario is the simplest one, it involves a communication between Bob and Alice, where Alice use directly the covert channel and insert the manipulated message, which is directed to Bob, the receiver. The remaining scenarios explores different combinations, depending on the behavior and identity of the sender, i.e. if Alice is the sender and introduces a manipulated message in the channel or Alice modifies an existing and legitimate one, or on the behavior and identity of the receiver, i.e. whether Bob is the receiver or, where he is not, if he restores or not the original message after reception.
 
-``In these scenarios, Wendy always should be positioned between Alice and Bob so that she can monitor m\textprime\hspace{2pt} traffic. Were she positioned differently, and were unable to see m\textprime, her presence would be irrelevant to the covert communication''.
+``In these scenarios, Wendy always should be positioned between Alice and Bob so that she can monitor m\textprime\hspace{2pt} traffic. Were she positioned differently, and were unable to see m\textprime, her presence would be irrelevant to the covert communication''\cite{lewandowski}.
 
-For the scope of this research, it is assumed that the sender can control the covert channel and insert directly the manipulated message. This reduction in scope, with respect to Lewandowski's study, is justified by the limitation in time, and by the simplicity of the network topology used for the experiment, that will be highlighted later in next chapters. However, it is worth saying that for an exhaustive testing of ICMPv6, related to covert channels, there are interesting implications to analyze inside the other scenarios, like the ability to preserve the covert channel in situations where Alice must modify the original message of the sender, or Bob must restore the original message before forwarding it to the legitimate receiver.
+For the scope of this research, it is assumed that the sender can control the covert channel and insert directly the manipulated message. This reduction in scope, with respect to Lewandowski's study, is justified by the limitation in time, and by the simplicity of the network topology used for the experiment, which will be highlighted later in next chapters. However, it is worth saying that for an exhaustive testing of ICMPv6, related to covert channels, there are interesting implications to analyze inside the other scenarios, like the ability to preserve the covert channel in situations where Alice must modify the original message of the sender, or Bob must restore the original message before forwarding it to the legitimate receiver.
 
 This assumption, however, has some implications:
 
-``Alice can modify the traffic to a greater degree, since Bob does not necessarily expect the traffic to be meaningful and perhaps not even valid. On the other hand, if Alice and Bob use their own traffic to provide cover, they run a greater risk of exposure as they are openly communicating''. Furthermore, in this research, it is assumed that both the sender and the receiver are the same subject.
+``Alice can modify the traffic to a greater degree, since Bob does not necessarily expect the traffic to be meaningful and perhaps not even valid. On the other hand, if Alice and Bob use their own traffic to provide cover, they run a greater risk of exposure as they are openly communicating''\cite{lewandowski}. Furthermore, in this research, it is assumed that the sender and the receiver are different processes, but controlled by the same subject, the attacker.
 
-Another topic to take into consideration, which relates to the behavior of the active warden, is the system and semantics preservation. The concepts have been applied first to preserve steganography \footnote{``The art or practice of concealing a message, image, or file within another message, image, or file'', \url{http://www.merriam-webster.com/dictionary/steganography}, accessed 24.3.2016}\cite{lucena2}, but ``the definitions can be applied to covert channels as well''\cite{netaware}.
+Another topic to take into consideration, which relates to the behavior of the active warden, is the system and semantics preservation. The concepts have been applied first to preserve steganography \footnote{``The art or practice of concealing a message, image, or file within another message, image, or file'', \url{http://www.merriam-webster.com/dictionary/steganography}, accessed 24.3.2016}\cite{lucena2}, but ``the definitions can be applied to covert channels as well''\cite{lewandowski}.
 
-\textbf{System Preservation} ``guarantees that the stegomessage is well formed within the rules of the protocol; the actual meaning of the stegomessage may be different than the original cover''\cite{lucena2}
+In the context of covert channels, ``the property of syntax preservation determines whether the modified traffic m\textprime\hspace{2pt}adheres to the protocol syntax. On the other hand, the property of semantics preservation guarantees that the meaning of modified traffic m\textprime\hspace{2pt}is the same as the original traffic m, or in other words that covert channel communication performed by Alice and Bob does not alter the meaning of cover traffic''\cite{lewandowski}.
 
-\textbf{Semantic Preservation} ``means that, as observed at a point along the message’s path through the network, the stegomessage has the same meaning as the original cover''\cite{lucena2}
+The above concepts acquire more relevance in a complex topology scheme, where an IPv6 packet must eventually traverse multiple wardens. Lewandowski's work defines the concept of ``location-based syntax and semantics preservation'', which is useful to differentiate between nodes, along the path, ``performing distinct functions'' and with ``multiple levels of protocol knowledge and understanding''. Each node, with a particular function in the network, may behave differently with respect to the packet in travel, and ``as a result, a modified traffic’s syntax or semantics might be deemed correct by an IPv6 node with limited protocol knowledge while at  the same time be rejected by a more knowledgeable node''\cite{lewandowski}.
 
-In the context of covert channels, ``the property of syntax preservation determines whether the modified traffic m\textprime\hspace{2pt}adheres to the protocol syntax. On the other hand, the property of semantics preservation guarantees that the meaning of modified traffic m\textprime\hspace{2pt}is the same as the original traffic m, or in other words that covert channel communication performed by Alice and Bob does not alter the meaning of cover traffic''.
+This concepts will assume a particular relevance for this research when building the experiment. As it has been said before, it is important not only to understand the ICMPv6 protocol by itself, but also its relationship with devices like firewalls (the active warden) and the different configurations which produce different scenarios. Each configuration may lead to a different knowledge and understanding of the protocol by the node, which may affect the ability to preserve the covert channel, and must be taken into consideration. 
 
-The above concepts acquire more relevance in a complex topology scheme, where an IPv6 packet must eventually traverse multiple wardens. Lewandowski's work defines the concept of ``location-based syntax and semantics preservation'', which is useful to differentiate between nodes, along the path, ``performing distinct functions'' and with ``multiple levels of protocol knowledge and understanding''. Each node, with a particular function in the network, may behave differently with respect to the packet in travel, and ``as a result, a modified traffic’s syntax or semantics might be deemed correct by an IPv6 node with limited protocol knowledge while at  the same time be rejected by a more knowledgeable node''.
+For example, it is worth to mention the reserved and unused fields, which are present in some message's headers. The receiver must ignore them, they have no meaning and any modification does not change the semantics. If the syntax is not altered, these fields may be ideal candidates for covert messages\cite{lewandowski}. Therefor, choosing a different configuration for the device, a firewall or router, may affect the level of knowledge of the protocol of that device, and the ability to preserve the covert channel. Or, in the other way, each scenario may produce different behaviors with the presence of a covert channel, and allow to assess a particular configuration and its ability to prevent it.
 
-This concepts will assume a particular relevance for this research when building the experiment. As it has been said before, it is important not only to understand the ICMPv6 protocol by itself, but also its relationship with devices like firewalls (the active warden) and the different configurations which produce different scenarios. Each configuration may lead to a different knowledge and understanding of the protocol by the node, which may affect the ability to preserve the covert channel, and must be taken into consideration. For example, an ``interesting case is presented by protocol’s reserved fields. Since their value is fixed (usually zeroed), and it is supposed to be ignored by the receiver, they do not carry any meaning and modifying such field does not alter packet’s semantics. If the modification in question avoids changing packet’s syntax as well, the reserved field is ideal for the purpose of embedding covert messages. And indeed, many network covert channel investigations focus on network protocol’s reserved fields and find them useful for covert communication''. Therefor, choosing a different configuration for the device, a firewall or router, may affect the level of knowledge of the protocol of that device, and the ability to preserve the covert channel. Or, in the other way, each scenario may produce different behaviors with the presence of a covert channel, and allow to assess a particular configuration and its ability to prevent it.
-
-Indeed, ``the objective of covert channel participants is to conduct their communication in such way that the necessary modifications of the cover traffic are always syntax and semantics preserving \textit{with respect} to network nodes along the communication’s path''.
+Indeed, ``the objective of covert channel participants is to conduct their communication in such way that the necessary modifications of the cover traffic are always syntax and semantics preserving \textit{with respect} to network nodes along the communication’s path''\cite{lewandowski}.
 
 \textbf{Analyzed RFCs}\\
 
@@ -1186,12 +1195,13 @@ Neighbor Discovery (ND) for IPv6&RFC4861\cite{rfc4861}\\
 \textbf{Properties of Covert Channels}\\
 
 Lewandowski's study proposed six properties of covert channels which are important for the investigation. In this research, given its scope, two of them have been considered:
-\begin{itemize}
- \item ``degree of packet alteration – syntax- and semantics-preservation level of altered packets''. Since each configuration can have different syntax- and semantics-preservation level, it is important to test each covert channel against each configuration, to assess both the warden configuration and the covert channel in this particular scenario.
- \item ``channel bandwidth – amount of data that can be transfered in given covert channel per packet of cover traffic''. This property does not affect the existence of the covert channel, but its ability to be preserved for a longer period. Depending on the bandwidth, a covert channel may be useful, from attacker perspective, only in situations with a low amount of data to be exfiltrated, or when it is possible to insert a delay in the transmission to avoid suspicion on the traffic.
-\end{itemize}
+\vspace{-15pt}
+\begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item ``degree of packet alteration – syntax- and semantics-preservation level of altered packets''. Since each configuration can have different syntax- and semantics-preservation level, it is important to test each covert channel against each configuration, to assess both the warden configuration and the covert channel in this particular scenario\cite{lewandowski}.
+ \item ``channel bandwidth – amount of data that can be transfered in given covert channel per packet of cover traffic''. This property does not affect the existence of the covert channel, but its ability to be preserved for a longer period. Depending on the bandwidth, a covert channel may be useful, from attacker perspective, only in situations with a low amount of data to be exfiltrated, or when it is possible to insert a delay in the transmission to avoid suspicion on the traffic\cite{lewandowski}.
+\end{enumerate}
 
-Lewandowski observed that some of the considered protocols, Neighbor Discovering is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''.
+Lewandowski observed that some of the considered protocols, Neighbor Discovering is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''\cite{lewandowski}.
 
 This research, even though the observation may be correct, will not consider its assumption. The reason is given, as stated before, by the fact that it is important to consider also the actual transition period, where the two protocols, IPv4 and IPv6, coexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of syntax and semantics preservation knowledge, and any IPv6 packet will transit without deep inspection. For the same reason, an address-based filtering mechanism for IPv6 would probably not be in place. Another aspect, still related to the active warden, is the direction of the communication, from the inside to the outside: since it is considered a communication from a trusted to an untrusted network, the default configuration may allow the traffic without restrictions.
 
@@ -1233,7 +1243,7 @@ ICMPv6/Echo Reply&Code&Undefined Code&8 bits/packet\\
 ICMPv6/Echo Reply&Data&Arbitrary data&Unlimited\\
 \hline
 \end{tabular}
-\caption{Tested Covert Channels}
+\caption{Tested Covert Channels\cite{lewandowski}}
 \label{table:testedCC}
 \end{table}
 \end{savenotes}
@@ -1241,19 +1251,23 @@ ICMPv6/Echo Reply&Data&Arbitrary data&Unlimited\\
 \subsubsection{Existing Tools}
 \label{subsub:tools}
 
-Lewandowski built a tool called \textit{cctool} in order to perform the tests. The tool has the ability to ``verify the existence of the covert channels, as well as to test the functionality of active wardens''. The results of his tests are strictly dependent on the quality of the wardens and on the scenarios used for the tests, which include, as mentioned before, also the possibility to modify the traffic in transit.
+\textbf{cctool}
 
-It is also worth mentioning some of the assumptions he made in order to better understand the tests. The syntax and semantics preservation are important factors in scenarios where the active wardens have the capabilities to understand, at different levels, the protocols. For example, Lewandowski built a scenario, called Cover Correctness Test, where a sender produces ICMPv6 traffic which is manipulated by Alice, but there is no receiver, namely Bob, at the end. The correctness of the covert channel, in this case, is demonstrated by the fact that an ICMPv6 Echo Request reaches the destination and an ICMPv6 Echo Reply is generated as usual. For such a test, ``the conclusion is that the covert message embedding by Alice does not disrupt the cover traffic enough to impede its normal functionality''.
+Lewandowski built a tool called \textit{cctool} in order to perform the tests. The tool has the ability to ``verify the existence of the covert channels, as well as to test the functionality of active wardens''. The results of his tests are strictly dependent on the quality of the wardens and on the scenarios used for the tests, which include, as mentioned before, also the possibility to modify the traffic in transit\cite{lewandowski}.
+
+It is also worth mentioning some of the assumptions he made in order to better understand the tests. The syntax and semantics preservation are important factors in scenarios where the active wardens have the capabilities to understand, at different levels, the protocols. For example, Lewandowski built a scenario, called Cover Correctness Test, where a sender produces ICMPv6 traffic which is manipulated by Alice, but there is no receiver, namely Bob, at the end. The correctness of the covert channel, in this case, is demonstrated by the fact that an ICMPv6 Echo Request reaches the destination and an ICMPv6 Echo Reply is generated as usual. For such a test, ``the conclusion is that the covert message embedding by Alice does not disrupt the cover traffic enough to impede its normal functionality''\cite{lewandowski}.
 
 One limitation of this kind of tests, as the author specified, is that many covert channel cannot be tested, in particular where an answer is not expected back.
 
-Another type of scenario, instead, include also Bob, who is able to receive the message and restore it back to its initial, syntactically and semantically correct, version. In this case it is possible to test also messages which do not include an answer in its processing rule, because the test environment expected that ``both sender and receiver are located on a controlled network''.
+Another type of scenario, instead, include also Bob, who is able to receive the message and restore it back to its initial, syntactically and semantically correct, version. In this case it is possible to test also messages which do not include an answer in its processing rule, because the test environment expected that ``both sender and receiver are located on a controlled network''\cite{lewandowski}.
 
 The results performed by Lewandowski using cctool showed that the manipulation of the Source Address was defeated by the wardens. The tests on ICMPv6 implied an Echo Request, with correctness measured with the answer, resulted in a half of them defeated in the case of the manipulation of the Code field, while the covert channels were successful in case of the Data field manipulation.
 
-One of the conclusions of Lewandowski study is ``that specification-based countermeasures cannot defeat some of the more sophisticated attacks''. In addition, with the tests performed with cctool, he demonstrated the existence of network storage covert channels in IPv6. Even though the test cases have not been exhaustive, his study has a great relevance for this research, in particular because of the accurate analysis and concepts underlined along the document.
+One of the conclusions of Lewandowski study is ``that specification-based countermeasures cannot defeat some of the more sophisticated attacks''. In addition, with the tests performed with cctool, he demonstrated the existence of network storage covert channels in IPv6. Even though the test cases have not been exhaustive, his study has a great relevance for this research, in particular because of the accurate analysis and concepts underlined along the document\cite{lewandowski}.
 
-Another interesting tool that have been built with the purpose to test covert channel in ICMPv6 is \textit{Voodonet}, or v00d00N3t \cite{voodoo}. The purpose of the tool is to use ICMPv6 Echo messages as a covert channel to tunnel traffic. Covert Channel is embedded in the Data portion of Echo Reply message: the tool could send ``Echo Reply messages with a  payload of 1440 bytes in payload with no problem''. The capabilities of the tool is to send and receive data from keyboard (chat) or as text files. Another interesting functionality, which increases the ability to maintain the covert channel, is a time- or bytes-based mechanism to throttle the dispatch of the data.
+\textbf{v00d00N3t}
+
+Another interesting tool that have been built with the purpose to test covert channel in ICMPv6 is \textit{Voodonet}, or v00d00N3t. The purpose of the tool is to use ICMPv6 Echo messages as a covert channel to tunnel traffic. Covert Channel is embedded in the Data portion of Echo Reply message: the tool could send ``Echo Reply messages with a  payload of 1440 bytes in payload with no problem''. The capabilities of the tool is to send and receive data from keyboard (chat) or as text files. Another interesting functionality, which increases the ability to maintain the covert channel, is a time- or bytes-based mechanism to throttle the dispatch of the data\cite{voodoo}.
 
 The two mentioned tools have been built mainly with testing purposes in mind. There is a suite of tools, instead, which has broadly functionalities and it is supposed to be used for penetration testing purposes: thc-ipv6.
 
@@ -1261,11 +1275,11 @@ The two mentioned tools have been built mainly with testing purposes in mind. Th
 
 The thc-ipv6 attack toolkit\footnote{\url{https://www.thc.org/thc-ipv6/}, accessed 4.4.2016} is a ``complete tool set to attack the inherent protocol weaknesses of IPV6 and ICMP6, and includes an easy to use packet factory library''. The suite includes many features that could be used to test the IPv6 protocol in general, and the ICMPv6 protocol in particular\cite{thc}.
 
-\textbf{Alive6} is a tool used to check aliveness of IPv6 systems, both remotely using public addresses, and locally by taking advantage of an ICMPv6 Echo Request sent to the multicast addresses.
+\textit{Alive6} is a tool used to check aliveness of IPv6 systems, both remotely using public addresses, and locally by taking advantage of an ICMPv6 Echo Request sent to the multicast addresses\cite{thc}.
 
-\textbf{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovering process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the IPv6 address of the requested node.
+\textit{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovering process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the IPv6 address of the requested node\cite{thc}.
 
-Another interesting tool is \textbf{redir6}, which use ICMPv6 redirect messages. The proposed technique is to take advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and the data:
+Another interesting tool is \textit{redir6}, which use ICMPv6 redirect messages. The proposed technique is to take advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and the data\cite{thc}:
 \vspace{-15pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Attacker sends an Echo Request with the target address as Source Address and the victim address as Destination Address.

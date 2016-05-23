@@ -21,6 +21,23 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{rfc4861}
+\BIBentryALTinterwordspacing
+T.~Narten, E.~Nordmark, W.~Simpson, and H.~Soliman, ``{Neighbor Discovery for
+  IP version 6 (IPv6)},'' Internet Requests for Comments, {RFC Editor}, {RFC}
+  4861, September 2007. [Online]. Available:
+  \url{http://www.rfc-editor.org/info/rfc4861}
+\BIBentrySTDinterwordspacing
+
+\bibitem{lewandowski}
+G.~Lewandowski, ``{Network-aware Active Wardens in IPv6},'' \emph{Electrical
+  Engineering and Computer Science - Dissertations}, 2011.
+
+\bibitem{lucena2}
+N.~Lucena, J.~Pease, P.~Yadollahpour, and S.~J. Chapin, ``{Syntax and
+  Semantics-Preserving Application-Layer Protocol Steganography},''
+  \emph{Syracuse University}, 2004.
+
 \bibitem{rfc2460}
 \BIBentryALTinterwordspacing
 S.~Deering and R.~Hinden, ``{Internet Protocol, Version 6 (IPv6)
@@ -65,14 +82,6 @@ M.~Chakraborty, N.~Chaki, and A.~Cortesi, ``{A New Intrusion Prevention System
   2014 Federated Conference on Computer Science and Information Systems},
   vol.~2, 2014.
 
-\bibitem{rfc4861}
-\BIBentryALTinterwordspacing
-T.~Narten, E.~Nordmark, W.~Simpson, and H.~Soliman, ``{Neighbor Discovery for
-  IP version 6 (IPv6)},'' Internet Requests for Comments, {RFC Editor}, {RFC}
-  4861, September 2007. [Online]. Available:
-  \url{http://www.rfc-editor.org/info/rfc4861}
-\BIBentrySTDinterwordspacing
-
 \bibitem{apt}
 Fortinet, ``{Threats on the Horizon: The Rise of the Advanced Persistent
   Threat},'' \emph{solution report, Fortinet Inc.}, 2013.
@@ -104,18 +113,9 @@ J.~G. Simmons, ``{The prisoners’ problem and the subliminal channel},''
   \emph{Advances in Cryptology, Proceedings of CRYPTO ’83, pages 51–67},
   1984.
 
-\bibitem{netaware}
-G.~Lewandowski, ``{Network-aware Active Wardens in IPv6},'' \emph{Electrical
-  Engineering and Computer Science - Dissertations}, 2011.
-
 \bibitem{lucena}
 N.~Lucena, ``Application-level protocol steganography,'' \emph{PhD thesis,
   Syracuse University}, 2008.
-
-\bibitem{lucena2}
-N.~Lucena, J.~Pease, P.~Yadollahpour, and S.~J. Chapin, ``{Syntax and
-  Semantics-Preserving Application-Layer Protocol Steganography},''
-  \emph{Syracuse University}, 2004.
 
 \bibitem{voodoo}
 \BIBentryALTinterwordspacing
