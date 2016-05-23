@@ -1286,6 +1286,7 @@ Another interesting tool is \textit{redir6}, which use ICMPv6 redirect messages.
  \item The victim receive the Echo Request and sends an Echo Reply to the target (which can be intercepted by the attacker)
  \item Attacker crafts a Redirect message, using the previous Echo Reply in the Redirect Header option, with local router as Source Address, victim as Destination Address, and attacker as Target Address
 \end{enumerate}
+
 It is interesting to highlight that the cited paper, dated 2006, took into account the transition scenario and emphasized the possibility to attack the dual stack if proper filtering were not in place for both IPv4 and IPv6.
 
 
