@@ -101,6 +101,11 @@ N.~Falliere, L.~O. Murchu, and E.~Chien. (2011) {W32.Stuxnet Dossier}.
 F.~Rajpari, ``{Finding the Advanced Persistent Adversary},'' \emph{SANS
   Institute}, 2014.
 
+\bibitem{penTesting}
+S.~Northcutt, J.~Shenk, D.~Shackleford, T.~Rosenberg, R.~Siles, and S.~Mancini,
+  ``{Penetration Testing: Assessing Your Overall Security Before Attackers
+  Do},'' \emph{SANS Institute}, 2006.
+
 \bibitem{rfc2026}
 \BIBentryALTinterwordspacing
 S.~Bradner, ``{The Internet Standards Process -- Revision 3},'' Internet
@@ -113,9 +118,18 @@ J.~G. Simmons, ``{The prisoners’ problem and the subliminal channel},''
   \emph{Advances in Cryptology, Proceedings of CRYPTO ’83, pages 51–67},
   1984.
 
+\bibitem{milevaPanajotov}
+A.~Mileva and B.~Panajotov, ``{Covert Channels in TCP/IP Protocol Stack},''
+  \emph{Central European Journal of Computer Science}, 2014.
+
 \bibitem{lucena}
 N.~Lucena, ``Application-level protocol steganography,'' \emph{PhD thesis,
   Syracuse University}, 2008.
+
+\bibitem{protocolScrubbers}
+D.~Watson, M.~Smart, and R.~Malan, ``{Protocol Scrubbing: Network Security
+  Through Transparent Flow Modification},'' \emph{IEEE/ACM TRANSACTIONS ON
+  NETWORKING, VOL. 12, NO. 2}, 2004.
 
 \bibitem{voodoo}
 \BIBentryALTinterwordspacing

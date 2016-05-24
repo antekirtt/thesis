@@ -15,45 +15,45 @@ Database file #1: bibi.bib.bib
 Warning--missing institution in smurf
 
 Done.
-You've used 32 entries,
+You've used 35 entries,
             4087 wiz_defined-function locations,
-            987 strings with 11974 characters,
-and the built_in function-call counts, 13493 in all, are:
-= -- 1184
-> -- 230
+            1001 strings with 12503 characters,
+and the built_in function-call counts, 14845 in all, are:
+= -- 1285
+> -- 277
 < -- 10
-+ -- 108
-- -- 54
-* -- 568
-:= -- 2622
-add.period$ -- 71
-call.type$ -- 32
-change.case$ -- 41
++ -- 130
+- -- 65
+* -- 628
+:= -- 2853
+add.period$ -- 77
+call.type$ -- 35
+change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 1107
-empty$ -- 1132
-format.name$ -- 67
-if$ -- 2923
+cite$ -- 36
+duplicate$ -- 1225
+empty$ -- 1253
+format.name$ -- 81
+if$ -- 3227
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 247
-newline$ -- 154
-num.names$ -- 31
-pop$ -- 559
+int.to.str$ -- 34
+missing$ -- 270
+newline$ -- 163
+num.names$ -- 34
+pop$ -- 625
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 1050
+skip$ -- 1151
 stack$ -- 0
-substring$ -- 40
-swap$ -- 734
+substring$ -- 43
+swap$ -- 801
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 32
+type$ -- 35
 warning$ -- 1
-while$ -- 31
-width$ -- 33
-write$ -- 347
+while$ -- 34
+width$ -- 36
+write$ -- 371
 (There was 1 warning)

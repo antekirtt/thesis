@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  23 MAY 2016 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.18)  24 MAY 2016 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1570,181 +1570,185 @@ Underfull \hbox (badness 10000) in paragraph at lines 370--370
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-[36] <figures/communicationScenarios.png, id=577, 916.42375pt x 534.99875pt>
+[36] <figures/communicationScenarios.png, id=581, 916.42375pt x 534.99875pt>
 File: figures/communicationScenarios.png Graphic file (type png)
 
 <use figures/communicationScenarios.png>
 Package pdftex.def Info: figures/communicationScenarios.png used on input line 
-1138.
+1143.
 (pdftex.def)             Requested size: 354.86412pt x 207.16292pt.
  [37 <./figures/communicationScenarios.png>] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1168--1169
+Underfull \hbox (badness 10000) in paragraph at lines 1173--1174
 
  []
 
 
-Overfull \hbox (12.9685pt too wide) in paragraph at lines 1170--1194
+Overfull \hbox (12.9685pt too wide) in paragraph at lines 1175--1199
 []\T1/ptm/m/n/12 The fol-low-ing ta-ble (see [][]20[][]) shows the list of pro-
 to-cols and as-so-ci-ated RFC from Lewandowski's
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1200--1201
 
  []
 
-[39] [40] [41]
-Overfull \hbox (1.55768pt too wide) in paragraph at lines 1270--1271
+[39] [40] [41] [42]
+Overfull \hbox (1.55768pt too wide) in paragraph at lines 1279--1280
 []\T1/ptm/m/n/12 Another in-ter-est-ing tool that have been built with the pur-
 pose to test covert chan-nel in ICMPv6
  []
 
-[42] [43]
+[43] [44]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
-Overfull \hbox (74.42155pt too wide) in paragraph at lines 1484--1484
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
+Overfull \hbox (74.42155pt too wide) in paragraph at lines 1493--1493
 [][][][][]$\T1/pcr/m/n/10 http : / / www . cisco . com / c / en / us / support 
 / security / asa-[]5505-[]adaptive-[]security-[]appliance /
  []
 
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 1486--1486
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1495
 [][][][][]$\T1/pcr/m/n/10 https : / / developer . microsoft . com / en-[]us / m
 icrosoft-[]edge / tools / vms /
  []
 
-[55] [56] [57] [58] [59] [60] [61] [62] [63] (./thesis.bbl [64] [65]) [66]
-Underfull \hbox (badness 10000) in paragraph at lines 1640--1641
+[56] [57] [58] [59] [60] [61] [62] [63] [64] (./thesis.bbl [65] [66] [67])
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1650
 
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1657--1657
+Underfull \hbox (badness 1033) in paragraph at lines 1666--1666
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1679--1679
+Underfull \hbox (badness 1033) in paragraph at lines 1688--1688
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[67]
-Underfull \hbox (badness 1033) in paragraph at lines 1701--1701
+[69]
+Underfull \hbox (badness 1033) in paragraph at lines 1710--1710
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1723--1723
+Underfull \hbox (badness 1033) in paragraph at lines 1732--1732
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[68] [69] [70] [71]
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2007--2038
+[70] [71] [72] [73]
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2016--2047
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2047--2070
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2056--2079
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2079--2091
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2088--2100
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2100--2113
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2109--2122
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2122--2135
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2131--2144
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2145--2158
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2154--2167
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2167--2188
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2176--2197
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2200--2226
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2209--2235
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2236--2262
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2245--2271
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2273--2299
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2282--2308
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2308--2325
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2317--2334
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2335--2356
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2344--2365
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2368--2393
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2377--2402
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2403--2423
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2412--2432
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2432--2443
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2441--2452
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2453--2482
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2462--2491
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2491--2511
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2500--2520
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2520--2543
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 2529--2552
  [][] 
  []
 
-[72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2549.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2549.
+[74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2558.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2558.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2549.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2549.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2558.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2558.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3B7E30E49BB44D5B59A3D4F3AC951FCF;2034.
+(rerunfilecheck)             Checksum: 62772865981EAA78F71062DDE75DB50C;2026.
  ) 
 Here is how much of TeX's memory you used:
- 32275 strings out of 493105
- 582595 string characters out of 6137071
- 747390 words of memory out of 5000000
- 34943 multiletter control sequences out of 15000+600000
+ 32283 strings out of 493105
+ 582714 string characters out of 6137071
+ 748390 words of memory out of 5000000
+ 34946 multiletter control sequences out of 15000+600000
  58490 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,97p,10378b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1756,10 +1760,10 @@ pe1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (83 pages, 291545 bytes).
+Output written on thesis.pdf (85 pages, 295172 bytes).
 PDF statistics:
- 1069 PDF objects out of 1200 (max. 8388607)
- 962 compressed objects within 10 object streams
- 272 named destinations out of 1000 (max. 500000)
+ 1086 PDF objects out of 1200 (max. 8388607)
+ 977 compressed objects within 10 object streams
+ 277 named destinations out of 1000 (max. 500000)
  266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
