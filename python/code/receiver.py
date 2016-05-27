@@ -14,6 +14,7 @@ class Receiver:
     def __init__(self, iface, adr):
         self.iface = iface
         self.ipAdr = adr
+        self.containerBits = ''
 
     def packet_callback(self, packet):
         if ICMPv6DestUnreach in packet[0]:
@@ -152,20 +153,39 @@ class Receiver:
         elif ICMPv6ND_RA in packet[0]:
             code = packet[ICMPv6ND_RA].code
             chlim = packet[ICMPv6ND_RA].chlim
+            M = packet[ICMPv6ND_RA].M
+            O = packet[ICMPv6ND_RA].O
             res = packet[ICMPv6ND_RA].res
             routerlifetime = packet[ICMPv6ND_RA].routerlifetime
             reachabletime = packet[ICMPv6ND_RA].reachabletime
             retranstimer = packet[ICMPv6ND_RA].retranstimer
-            bitLength = 8
-            container = self.extractBytes(code, bitLength)
-            for item in container:
-                sys.stdout.write(chr(item))
-                sys.stdout.flush
+            if code not in range(1,3):
+                bitLength = 8
+                container = self.extractBytes(code, bitLength)
+                for item in container:
+                    sys.stdout.write(chr(item))
+                    sys.stdout.flush
             bitLength = 8
             container = self.extractBytes(chlim, bitLength)
             for item in container:
                 sys.stdout.write(chr(item))
                 sys.stdout.flush
+            if code == 1:
+                self.containerBits += str(M)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            if code == 2:
+                self.containerBits += str(O)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
             bitLength = 16
             container = self.extractBytes(routerlifetime, bitLength)
             for item in container:
@@ -203,14 +223,42 @@ class Receiver:
         elif ICMPv6ND_NA in packet[0]:
             code = packet[ICMPv6ND_NA].code
             res = packet[ICMPv6ND_NA].res
+            R = packet[ICMPv6ND_NA].R
+            S = packet[ICMPv6ND_NA].S
+            O = packet[ICMPv6ND_NA].O
             tgt = packet[ICMPv6ND_NA].tgt
-            sys.stdout.write(chr(code))
-            sys.stdout.flush()
+            if code not in range(1,4):
+                sys.stdout.write(chr(code))
+                sys.stdout.flush()
             bitLength = 24
             container = self.extractBytes(res, bitLength)
             for item in container:
                 sys.stdout.write(chr(item))
                 sys.stdout.flush
+            if code == 1:
+                self.containerBits += str(R)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            if code == 2:
+                self.containerBits += str(S)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            if code == 3:
+                self.containerBits += str(O)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
             bitLength = 128
             container = self.extractBytesAddress(tgt, bitLength)
             if container:
@@ -269,7 +317,7 @@ class Receiver:
         container = []
         for d in dataList:
             if d and d != '0' and d != '1':
-                #len is 1 because scapy takes away leading 0 in ipv6 address
+                #len is 1 because scapy takes away leading 0s in ipv6 address
                 if len(d) == 1:
                     d = '0'+d
                 binary = BitArray(hex=d)
