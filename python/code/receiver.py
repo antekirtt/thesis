@@ -155,11 +155,14 @@ class Receiver:
             chlim = packet[ICMPv6ND_RA].chlim
             M = packet[ICMPv6ND_RA].M
             O = packet[ICMPv6ND_RA].O
+            H = packet[ICMPv6ND_RA].H
+            prf = packet[ICMPv6ND_RA].prf
+            P = packet[ICMPv6ND_RA].P
             res = packet[ICMPv6ND_RA].res
             routerlifetime = packet[ICMPv6ND_RA].routerlifetime
             reachabletime = packet[ICMPv6ND_RA].reachabletime
             retranstimer = packet[ICMPv6ND_RA].retranstimer
-            if code not in range(1,3):
+            if code not in range(1,7):
                 bitLength = 8
                 container = self.extractBytes(code, bitLength)
                 for item in container:
@@ -178,8 +181,42 @@ class Receiver:
                         sys.stdout.write(chr(item))
                         sys.stdout.flush
                     self.containerBits = ''
-            if code == 2:
+            elif code == 2:
                 self.containerBits += str(O)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            elif code == 3:
+                self.containerBits += str(H)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            elif code == 4:
+                tmpBit = BitArray(uint=prf, length=2)
+                self.containerBits += tmpBit.bin
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            elif code == 5:
+                self.containerBits += str(P)
+                if len(self.containerBits) == 8:
+                    container = self.extractBytes(int(self.containerBits, 2), 8)
+                    for item in container:
+                        sys.stdout.write(chr(item))
+                        sys.stdout.flush
+                    self.containerBits = ''
+            elif code == 6:
+                tmpBit = BitArray(uint=res, length=2)
+                self.containerBits += tmpBit.bin
                 if len(self.containerBits) == 8:
                     container = self.extractBytes(int(self.containerBits, 2), 8)
                     for item in container:

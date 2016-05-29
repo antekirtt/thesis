@@ -70,15 +70,17 @@ class AllCovertTests:
                 routerSol.execModule(self.dataToExfilt, '', self.iface, self.ipAddress)
                 routerSol.execModule('', self.dataToExfilt, self.iface, self.ipAddress)
                 routerAdv = RouterAdvertisementCovert()
-                routerAdv.execModule(self.dataToExfilt, '', '', '', '', '', '', '', self.iface, self.ipAddress)
-                routerAdv.execModule('', self.dataToExfilt, '', '', '', '', '', '', self.iface, self.ipAddress)
-                routerAdv.execModule('', '', self.dataToExfilt, '', '', '', '', '', self.iface, self.ipAddress)
-                routerAdv.execModule('', '', '', self.dataToExfilt, '', '', '', '', self.iface, self.ipAddress)
-                #reserved field is 6 bit
-                #routerAdv.execModule('', '', '', '', self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
-                routerAdv.execModule('', '', '', '', '', self.dataToExfilt, '', '', self.iface, self.ipAddress)
-                routerAdv.execModule('', '', '', '', '', '', self.dataToExfilt, '', self.iface, self.ipAddress)
-                routerAdv.execModule('', '', '', '', '', '', '', self.dataToExfilt, self.iface, self.ipAddress)                
+                routerAdv.execModule(self.dataToExfilt, '', '', '', '', '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', self.dataToExfilt, '', '', '', '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', self.dataToExfilt, '', '', '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', self.dataToExfilt, '', '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', self.dataToExfilt, '', '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', self.dataToExfilt, '', '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', '', self.dataToExfilt, '', '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', '', '', self.dataToExfilt, '', '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', '', '', '', self.dataToExfilt, '', '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', '', '', '', '', self.dataToExfilt, '', self.iface, self.ipAddress)
+                routerAdv.execModule('', '', '', '', '', '', '', '', '', '', self.dataToExfilt, self.iface, self.ipAddress)
                 neighbSol = NeighborSolicitationCovert()
                 neighbSol.execModule(self.dataToExfilt, '', '', self.iface, self.ipAddress)
                 neighbSol.execModule('', self.dataToExfilt, '', self.iface, self.ipAddress)
@@ -399,6 +401,9 @@ class RouterAdvertisementCovert:
         self.bandwidthCurHopLimit = 1
         self.bandwidthM = 1
         self.bandwidthO = 1
+        self.bandwidthH = 1
+        self.bandwidthPrf = 1
+        self.bandwidthP = 1
         self.bandwidthRes = 1
         self.bandwidthRouterLifeTime = 2
         self.bandwidthReachTime = 4
@@ -407,6 +412,9 @@ class RouterAdvertisementCovert:
         self.nameCurHopLimit = 'Router Advertisement Cur Hop Limit '
         self.nameM = 'Router Advertisement M '
         self.nameO = 'Router Advertisement O '
+        self.nameH = 'Router Advertisement H '
+        self.namePrf = 'Router Advertisement Prf '
+        self.nameP = 'Router Advertisement P '
         self.nameRes = 'Router Advertisement reserved '
         self.nameRouterLifeTime = 'Router Advertisement router life time '
         self.nameReachTime = 'Router Advertisement reachable time '
@@ -425,8 +433,17 @@ class RouterAdvertisementCovert:
     def buildPacketO(self, chunk, ipAdr):
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=2, O=chunk, routerlifetime=0)
 
+    def buildPacketH(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=3, H=chunk, routerlifetime=0)
+
+    def buildPacketPrf(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=4, prf=chunk, routerlifetime=0)
+
+    def buildPacketP(self, chunk, ipAdr):
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=5, P=chunk, routerlifetime=0)
+        
     def buildPacketRes(self, chunk, ipAdr):
-        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(res=chunk)
+        self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(code=6, res=chunk, routerlifetime=0)
 
     def buildPacketRouterLifeTime(self, chunk, ipAdr):
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(routerlifetime=chunk)
@@ -437,7 +454,7 @@ class RouterAdvertisementCovert:
     def buildPacketRetransTimer(self, chunk, ipAdr):
         self.packet = IPv6(dst=ipAdr)/ICMPv6ND_RA(retranstimer=chunk, routerlifetime=0)
         
-    def execModule(self, dataCode, dataChlim, dataM, dataO, dataRes, dataRouterLifeTime, dataReachTime, dataRetransTimer, exitIface, ipAdr):
+    def execModule(self, dataCode, dataChlim, dataM, dataO, dataH, dataPrf, dataP, dataRes, dataRouterLifeTime, dataReachTime, dataRetransTimer, exitIface, ipAdr):
         if dataCode:
             data = self.nameCode+dataCode
             sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthCode, self.nameCode)
@@ -462,9 +479,27 @@ class RouterAdvertisementCovert:
             for chunk in sendingBuffer:
                 self.buildPacketO(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
+        elif dataH:
+            data = self.nameH+dataH
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthH, self.nameH)
+            for chunk in sendingBuffer:
+                self.buildPacketH(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        elif dataPrf:
+            data = self.namePrf+dataPrf
+            sendingBuffer = HelperClass.chunkPackets2Bit(data, self.bandwidthPrf, self.namePrf)
+            for chunk in sendingBuffer:
+                self.buildPacketPrf(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
+        elif dataP:
+            data = self.nameP+dataP
+            sendingBuffer = HelperClass.chunkPacketsBit(data, self.bandwidthP, self.nameP)
+            for chunk in sendingBuffer:
+                self.buildPacketP(chunk, ipAdr)
+                send(self.packet, iface=exitIface, verbose=False)
         elif dataRes:
             data = self.nameRes+dataRes
-            sendingBuffer = HelperClass.chunkPackets(data, self.bandwidthRes, self.nameRes)
+            sendingBuffer = HelperClass.chunkPackets2Bit(data, self.bandwidthRes, self.nameRes)
             for chunk in sendingBuffer:
                 self.buildPacketRes(chunk, ipAdr)
                 send(self.packet, iface=exitIface, verbose=False)
@@ -688,6 +723,24 @@ class HelperClass:
                 for bit in bits.bin:
                     chunkNumber += 1
                     sendingBuffer.append(int(bit))
+        print '[*] chunks %d' % chunkNumber
+        return sendingBuffer
+
+    @classmethod
+    def chunkPackets2Bit(self, data, maxPacketSize, messageAndField):
+        print '[*] %s' % messageAndField
+        maxP = float(format(maxPacketSize, '.2f'))/8*2
+        print '[*] bandwidth %s' % format(maxP, '.2f')
+        sendingBuffer = []
+        chunkNumber = 0
+        print '[*] size of data %d' % len(data)
+        chunks = [data[i:i+maxPacketSize] for i in range(0, len(data), maxPacketSize)]
+        for tmpChunk in chunks:
+            for c in tmpChunk:
+                bits = BitArray(uint=ord(c), length=8)
+                for bit in range(0, len(bits.bin), 2):
+                    chunkNumber += 1
+                    sendingBuffer.append(int(bits.bin[bit:(bit+2)], 2))
         print '[*] chunks %d' % chunkNumber
         return sendingBuffer
     
