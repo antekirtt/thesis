@@ -1,56 +1,62 @@
-\contentsline {table}{\numberline {1}{\ignorespaces ICMPv6 General Header Format\relax }}{22}{table.caption.1}
-\contentsline {table}{\numberline {2}{\ignorespaces ICMPv6 Error Messages\relax }}{22}{table.caption.2}
-\contentsline {table}{\numberline {3}{\ignorespaces ICMPv6 Informational Messages\relax }}{22}{table.caption.3}
-\contentsline {table}{\numberline {4}{\ignorespaces Destination Unreachable Codes\relax }}{24}{table.caption.4}
-\contentsline {table}{\numberline {5}{\ignorespaces Time Exceeded Codes\relax }}{25}{table.caption.5}
-\contentsline {table}{\numberline {6}{\ignorespaces Parameter Problem Codes\relax }}{25}{table.caption.6}
-\contentsline {table}{\numberline {7}{\ignorespaces Echo Request Fields\relax }}{26}{table.caption.7}
-\contentsline {table}{\numberline {8}{\ignorespaces Echo Reply Fields\relax }}{26}{table.caption.8}
-\contentsline {table}{\numberline {9}{\ignorespaces RFC 4861 Messages\relax }}{27}{table.caption.9}
-\contentsline {table}{\numberline {10}{\ignorespaces Router Solicitation Fields and Options\relax }}{28}{table.caption.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Router Advertisement Fields and Options\relax }}{29}{table.caption.11}
-\contentsline {table}{\numberline {12}{\ignorespaces Neighbor Solicitation Fields and Options\relax }}{30}{table.caption.12}
-\contentsline {table}{\numberline {13}{\ignorespaces Neighbor Advertisement Fields and Options\relax }}{31}{table.caption.13}
-\contentsline {table}{\numberline {14}{\ignorespaces Redirect Fields and Options\relax }}{32}{table.caption.14}
-\contentsline {table}{\numberline {15}{\ignorespaces Options Type and Names\relax }}{33}{table.caption.15}
-\contentsline {table}{\numberline {16}{\ignorespaces Source/Target Link-layer Address Fields\relax }}{33}{table.caption.16}
-\contentsline {table}{\numberline {17}{\ignorespaces Prefix Information Fields\relax }}{34}{table.caption.17}
-\contentsline {table}{\numberline {18}{\ignorespaces Redirect Header Fields\relax }}{34}{table.caption.18}
-\contentsline {table}{\numberline {19}{\ignorespaces MTU Fields\relax }}{35}{table.caption.19}
-\contentsline {table}{\numberline {20}{\ignorespaces Investigated Protocols\relax }}{40}{table.caption.21}
-\contentsline {table}{\numberline {21}{\ignorespaces Tested Covert Channels\cite {lewandowski}\relax }}{41}{table.caption.22}
-\contentsline {table}{\numberline {22}{\ignorespaces Router Advertisement Packet example for IPv6 Ready Project\relax }}{46}{table.caption.23}
-\contentsline {table}{\numberline {23}{\ignorespaces IPv6 Header\relax }}{69}{table.caption.24}
-\contentsline {table}{\numberline {24}{\ignorespaces Destination Unreachable\relax }}{69}{table.caption.25}
-\contentsline {table}{\numberline {25}{\ignorespaces Packet Too Big\relax }}{70}{table.caption.26}
-\contentsline {table}{\numberline {26}{\ignorespaces Time Exceeded\relax }}{70}{table.caption.27}
-\contentsline {table}{\numberline {27}{\ignorespaces Parameter Problem\relax }}{70}{table.caption.28}
-\contentsline {table}{\numberline {28}{\ignorespaces Echo Request\relax }}{70}{table.caption.29}
-\contentsline {table}{\numberline {29}{\ignorespaces Echo Reply\relax }}{71}{table.caption.30}
-\contentsline {table}{\numberline {30}{\ignorespaces Router Solicitation\relax }}{71}{table.caption.31}
-\contentsline {table}{\numberline {31}{\ignorespaces Router Advertisement\relax }}{71}{table.caption.32}
-\contentsline {table}{\numberline {32}{\ignorespaces Neighbor Solicitation\relax }}{72}{table.caption.33}
-\contentsline {table}{\numberline {33}{\ignorespaces Neighbor Advertisement\relax }}{72}{table.caption.34}
-\contentsline {table}{\numberline {34}{\ignorespaces Redirect\relax }}{72}{table.caption.35}
-\contentsline {table}{\numberline {35}{\ignorespaces Source/Target link-layer Address\relax }}{72}{table.caption.36}
-\contentsline {table}{\numberline {36}{\ignorespaces Prefix Information\relax }}{73}{table.caption.37}
-\contentsline {table}{\numberline {37}{\ignorespaces Redirect Header\relax }}{73}{table.caption.38}
-\contentsline {table}{\numberline {38}{\ignorespaces MTU\relax }}{73}{table.caption.39}
-\contentsline {table}{\numberline {39}{\ignorespaces RFC 4443 - Message Processing Rules\relax }}{74}{table.caption.40}
-\contentsline {table}{\numberline {40}{\ignorespaces RFC 4443 - Destination Unreachable\relax }}{75}{table.caption.41}
-\contentsline {table}{\numberline {41}{\ignorespaces RFC 4443 - Packet Too Big\relax }}{75}{table.caption.42}
-\contentsline {table}{\numberline {42}{\ignorespaces RFC 4443 - Time Exceeded\relax }}{76}{table.caption.43}
-\contentsline {table}{\numberline {43}{\ignorespaces RFC 4443 - Parameter Problem\relax }}{76}{table.caption.44}
-\contentsline {table}{\numberline {44}{\ignorespaces RFC 4443 - Echo Request\relax }}{76}{table.caption.45}
-\contentsline {table}{\numberline {45}{\ignorespaces RFC 4443 - Echo Reply\relax }}{77}{table.caption.46}
-\contentsline {table}{\numberline {46}{\ignorespaces RFC 4861 - Validation of Router Solicitation\relax }}{78}{table.caption.47}
-\contentsline {table}{\numberline {47}{\ignorespaces RFC 4861 - Validation of Router Advertisement\relax }}{79}{table.caption.48}
-\contentsline {table}{\numberline {48}{\ignorespaces RFC 4861 - Validation of Neighbor Solicitation\relax }}{80}{table.caption.49}
-\contentsline {table}{\numberline {49}{\ignorespaces RFC 4861 - Sending Neighbor Solicitation\relax }}{81}{table.caption.50}
-\contentsline {table}{\numberline {50}{\ignorespaces RFC 4861 - Reception of Neighbor Solicitation\relax }}{81}{table.caption.51}
-\contentsline {table}{\numberline {51}{\ignorespaces RFC 4861 - Validation of Neighbor Advertisement\relax }}{82}{table.caption.52}
-\contentsline {table}{\numberline {52}{\ignorespaces RFC 4861 - Solicited Neighbor Advertisement\relax }}{83}{table.caption.53}
-\contentsline {table}{\numberline {53}{\ignorespaces RFC 4861 - Receipt of Neighbor Advertisement\relax }}{83}{table.caption.54}
-\contentsline {table}{\numberline {54}{\ignorespaces RFC 4861 - Validation of Redirect\relax }}{84}{table.caption.55}
-\contentsline {table}{\numberline {55}{\ignorespaces RFC 4861 - Redirect, specifications\relax }}{85}{table.caption.56}
-\contentsline {table}{\numberline {56}{\ignorespaces RFC 4861 - Options\relax }}{85}{table.caption.57}
+\contentsline {table}{\numberline {1}{\ignorespaces ICMPv6 General Header Format\relax }}{23}{table.caption.17}
+\contentsline {table}{\numberline {2}{\ignorespaces ICMPv6 Error Messages\relax }}{23}{table.caption.18}
+\contentsline {table}{\numberline {3}{\ignorespaces ICMPv6 Informational Messages\relax }}{23}{table.caption.19}
+\contentsline {table}{\numberline {4}{\ignorespaces Destination Unreachable Codes\relax }}{24}{table.caption.20}
+\contentsline {table}{\numberline {5}{\ignorespaces Time Exceeded Codes\relax }}{25}{table.caption.28}
+\contentsline {table}{\numberline {6}{\ignorespaces Parameter Problem Codes\relax }}{26}{table.caption.29}
+\contentsline {table}{\numberline {7}{\ignorespaces Echo Request Fields\relax }}{27}{table.caption.30}
+\contentsline {table}{\numberline {8}{\ignorespaces Echo Reply Fields\relax }}{27}{table.caption.31}
+\contentsline {table}{\numberline {9}{\ignorespaces RFC 4861 Messages\relax }}{28}{table.caption.33}
+\contentsline {table}{\numberline {10}{\ignorespaces Router Solicitation Fields and Options\relax }}{29}{table.caption.34}
+\contentsline {table}{\numberline {11}{\ignorespaces Router Advertisement Fields and Options\relax }}{30}{table.caption.35}
+\contentsline {table}{\numberline {12}{\ignorespaces Neighbor Solicitation Fields and Options\relax }}{31}{table.caption.36}
+\contentsline {table}{\numberline {13}{\ignorespaces Neighbor Advertisement Fields and Options\relax }}{32}{table.caption.37}
+\contentsline {table}{\numberline {14}{\ignorespaces Redirect Fields and Options\relax }}{33}{table.caption.38}
+\contentsline {table}{\numberline {15}{\ignorespaces Options Type and Names\relax }}{34}{table.caption.39}
+\contentsline {table}{\numberline {16}{\ignorespaces Source/Target Link-layer Address Fields\relax }}{34}{table.caption.40}
+\contentsline {table}{\numberline {17}{\ignorespaces Prefix Information Fields\relax }}{35}{table.caption.41}
+\contentsline {table}{\numberline {18}{\ignorespaces Redirect Header Fields\relax }}{35}{table.caption.42}
+\contentsline {table}{\numberline {19}{\ignorespaces MTU Fields\relax }}{35}{table.caption.43}
+\contentsline {table}{\numberline {20}{\ignorespaces Investigated Protocols\relax }}{40}{table.caption.49}
+\contentsline {table}{\numberline {21}{\ignorespaces Tested Covert Channels\cite {lewandowski}\relax }}{42}{table.caption.53}
+\contentsline {table}{\numberline {22}{\ignorespaces Router Advertisement Packet example for IPv6 Ready Project\relax }}{46}{table.caption.62}
+\contentsline {table}{\numberline {23}{\ignorespaces Raspberry Pi implementation\relax }}{62}{table.caption.121}
+\contentsline {table}{\numberline {24}{\ignorespaces Linux Debian\relax }}{63}{table.caption.136}
+\contentsline {table}{\numberline {25}{\ignorespaces Linux Debian Firewall\relax }}{64}{table.caption.148}
+\contentsline {table}{\numberline {26}{\ignorespaces IPv6 Header\relax }}{98}{table.caption.290}
+\contentsline {table}{\numberline {27}{\ignorespaces Destination Unreachable\relax }}{98}{table.caption.291}
+\contentsline {table}{\numberline {28}{\ignorespaces Packet Too Big\relax }}{99}{table.caption.292}
+\contentsline {table}{\numberline {29}{\ignorespaces Time Exceeded\relax }}{99}{table.caption.293}
+\contentsline {table}{\numberline {30}{\ignorespaces Parameter Problem\relax }}{99}{table.caption.294}
+\contentsline {table}{\numberline {31}{\ignorespaces Echo Request\relax }}{99}{table.caption.295}
+\contentsline {table}{\numberline {32}{\ignorespaces Echo Reply\relax }}{99}{table.caption.296}
+\contentsline {table}{\numberline {33}{\ignorespaces Router Solicitation\relax }}{100}{table.caption.297}
+\contentsline {table}{\numberline {34}{\ignorespaces Router Advertisement\relax }}{100}{table.caption.298}
+\contentsline {table}{\numberline {35}{\ignorespaces Neighbor Solicitation\relax }}{100}{table.caption.299}
+\contentsline {table}{\numberline {36}{\ignorespaces Neighbor Advertisement\relax }}{101}{table.caption.300}
+\contentsline {table}{\numberline {37}{\ignorespaces Redirect\relax }}{101}{table.caption.301}
+\contentsline {table}{\numberline {38}{\ignorespaces Source/Target link-layer Address\relax }}{101}{table.caption.302}
+\contentsline {table}{\numberline {39}{\ignorespaces Prefix Information\relax }}{102}{table.caption.303}
+\contentsline {table}{\numberline {40}{\ignorespaces Redirect Header\relax }}{102}{table.caption.304}
+\contentsline {table}{\numberline {41}{\ignorespaces MTU\relax }}{102}{table.caption.305}
+\contentsline {table}{\numberline {42}{\ignorespaces RFC 4443 - Message Processing Rules\relax }}{103}{table.caption.307}
+\contentsline {table}{\numberline {43}{\ignorespaces RFC 4443 - Destination Unreachable\relax }}{104}{table.caption.308}
+\contentsline {table}{\numberline {44}{\ignorespaces RFC 4443 - Packet Too Big\relax }}{104}{table.caption.309}
+\contentsline {table}{\numberline {45}{\ignorespaces RFC 4443 - Time Exceeded\relax }}{104}{table.caption.310}
+\contentsline {table}{\numberline {46}{\ignorespaces RFC 4443 - Parameter Problem\relax }}{105}{table.caption.311}
+\contentsline {table}{\numberline {47}{\ignorespaces RFC 4443 - Echo Request\relax }}{105}{table.caption.312}
+\contentsline {table}{\numberline {48}{\ignorespaces RFC 4443 - Echo Reply\relax }}{105}{table.caption.313}
+\contentsline {table}{\numberline {49}{\ignorespaces RFC 4861 - Validation of Router Solicitation\relax }}{106}{table.caption.314}
+\contentsline {table}{\numberline {50}{\ignorespaces RFC 4861 - Validation of Router Advertisement\relax }}{107}{table.caption.315}
+\contentsline {table}{\numberline {51}{\ignorespaces RFC 4861 - Validation of Neighbor Solicitation\relax }}{108}{table.caption.316}
+\contentsline {table}{\numberline {52}{\ignorespaces RFC 4861 - Sending Neighbor Solicitation\relax }}{108}{table.caption.317}
+\contentsline {table}{\numberline {53}{\ignorespaces RFC 4861 - Reception of Neighbor Solicitation\relax }}{109}{table.caption.318}
+\contentsline {table}{\numberline {54}{\ignorespaces RFC 4861 - Validation of Neighbor Advertisement\relax }}{109}{table.caption.319}
+\contentsline {table}{\numberline {55}{\ignorespaces RFC 4861 - Solicited Neighbor Advertisement\relax }}{110}{table.caption.320}
+\contentsline {table}{\numberline {56}{\ignorespaces RFC 4861 - Receipt of Neighbor Advertisement\relax }}{110}{table.caption.321}
+\contentsline {table}{\numberline {57}{\ignorespaces RFC 4861 - Validation of Redirect\relax }}{111}{table.caption.322}
+\contentsline {table}{\numberline {58}{\ignorespaces RFC 4861 - Redirect, specifications\relax }}{112}{table.caption.323}
+\contentsline {table}{\numberline {59}{\ignorespaces RFC 4861 - Options\relax }}{112}{table.caption.324}
+\contentsline {table}{\numberline {60}{\ignorespaces Data Exfiltration Test Set\relax }}{113}{table.caption.326}
+\contentsline {table}{\numberline {61}{\ignorespaces Data Exfiltration Results\relax }}{114}{table.caption.329}
+\contentsline {table}{\numberline {62}{\ignorespaces Data Exfiltration Results\relax }}{115}{table.caption.330}

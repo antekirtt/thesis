@@ -1,31 +1,66 @@
-\contentsline {section}{\numberline {1}Introduction}{13}{section.1}
-\contentsline {section}{\numberline {2}Background and Related Work}{19}{section.2}
-\contentsline {subsection}{\numberline {2.1}Background}{19}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}RFC 2460}{21}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}RFC 4443}{21}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}RFC 4861}{27}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Covert Channel}{35}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}The Prisoners' Problem}{36}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Related Research}{36}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Existing Tools}{42}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Other Projects}{45}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{45}{subsubsection.2.3.1}
-\contentsline {subsection}{\numberline {2.4}Summary}{47}{subsection.2.4}
-\contentsline {section}{\numberline {3}Methodology}{49}{section.3}
-\contentsline {subsection}{\numberline {3.1}Scientific Method}{50}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Research Questions and Hypothesis}{51}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Research Question}{51}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Hypothesis}{52}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Experiment Foundation}{53}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Test set selection}{54}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Environment}{55}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Border Network Device Configurations}{57}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Testing/Attacking framework}{59}{subsubsection.3.3.4}
-\contentsline {subsection}{\numberline {3.4}Summary}{60}{subsection.3.4}
-\contentsline {section}{\numberline {4}Implementation}{61}{section.4}
-\contentsline {section}{\numberline {5}Experiment}{62}{section.5}
-\contentsline {section}{\numberline {6}Results}{63}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{64}{section.7}
-\contentsline {section}{References}{65}{section.7}
-\contentsline {section}{\numberline {A}Appendix 1 - Protocol Headers}{69}{appendix.1}
-\contentsline {section}{\numberline {B}Appendix 2 - ICMPv6 specifications}{74}{appendix.2}
+\contentsline {section}{\numberline {1}Introduction}{14}{section.3}
+\contentsline {section}{\numberline {2}Background and Related Work}{20}{section.8}
+\contentsline {subsection}{\numberline {2.1}Background}{20}{subsection.9}
+\contentsline {subsubsection}{\numberline {2.1.1}RFC 2460}{22}{subsubsection.14}
+\contentsline {subsubsection}{\numberline {2.1.2}RFC 4443}{22}{subsubsection.16}
+\contentsline {subsubsection}{\numberline {2.1.3}RFC 4861}{28}{subsubsection.32}
+\contentsline {subsection}{\numberline {2.2}Covert Channel}{36}{subsection.44}
+\contentsline {subsubsection}{\numberline {2.2.1}The Prisoners' Problem}{36}{subsubsection.45}
+\contentsline {subsubsection}{\numberline {2.2.2}Related Research}{37}{subsubsection.46}
+\contentsline {subsubsection}{\numberline {2.2.3}Existing Tools}{42}{subsubsection.54}
+\contentsline {subsection}{\numberline {2.3}Other Projects}{45}{subsection.59}
+\contentsline {subsubsection}{\numberline {2.3.1}IPv6 Ready}{45}{subsubsection.60}
+\contentsline {subsection}{\numberline {2.4}Summary}{47}{subsection.71}
+\contentsline {section}{\numberline {3}Methodology}{49}{section.72}
+\contentsline {subsection}{\numberline {3.1}Scientific Method}{50}{subsection.73}
+\contentsline {subsection}{\numberline {3.2}Research Questions and Hypothesis}{51}{subsection.78}
+\contentsline {subsubsection}{\numberline {3.2.1}Research Question}{51}{subsubsection.79}
+\contentsline {subsubsection}{\numberline {3.2.2}Hypothesis}{52}{subsubsection.82}
+\contentsline {subsection}{\numberline {3.3}Experiment Foundation}{53}{subsection.85}
+\contentsline {subsubsection}{\numberline {3.3.1}Test set selection}{54}{subsubsection.86}
+\contentsline {subsubsection}{\numberline {3.3.2}Environment}{55}{subsubsection.87}
+\contentsline {subsubsection}{\numberline {3.3.3}Border Network Device Configurations}{57}{subsubsection.96}
+\contentsline {subsubsection}{\numberline {3.3.4}Testing/Attacking application}{59}{subsubsection.112}
+\contentsline {subsection}{\numberline {3.4}Summary}{60}{subsection.117}
+\contentsline {section}{\numberline {4}Implementation}{62}{section.118}
+\contentsline {subsection}{\numberline {4.1}Virtualbox}{62}{subsection.119}
+\contentsline {subsection}{\numberline {4.2}Raspberry Pi with Kali Linux}{62}{subsection.120}
+\contentsline {subsection}{\numberline {4.3}Linux Debian}{63}{subsection.135}
+\contentsline {subsection}{\numberline {4.4}Linux Debian Firewall}{64}{subsection.147}
+\contentsline {subsection}{\numberline {4.5}Windows 7}{65}{subsection.166}
+\contentsline {subsection}{\numberline {4.6}Cisco ASA Firewall}{65}{subsection.167}
+\contentsline {subsection}{\numberline {4.7}PoC}{66}{subsection.230}
+\contentsline {section}{\numberline {5}Experiment}{68}{section.240}
+\contentsline {subsection}{\numberline {5.1}Network Configurations}{69}{subsection.241}
+\contentsline {subsection}{\numberline {5.2}Firewall Configuration}{70}{subsection.244}
+\contentsline {subsubsection}{\numberline {5.2.1}Netfilter Open}{71}{subsubsection.245}
+\contentsline {subsubsection}{\numberline {5.2.2}ASA Default Configuration}{72}{subsubsection.246}
+\contentsline {subsubsection}{\numberline {5.2.3}ASA with ICMP module}{73}{subsubsection.247}
+\contentsline {subsubsection}{\numberline {5.2.4}Netfilter with Best Practices}{73}{subsubsection.248}
+\contentsline {subsection}{\numberline {5.3}Proof of Concept (PoC) - General Functionality}{77}{subsection.250}
+\contentsline {subsection}{\numberline {5.4}Experiment - First Hypothesis}{78}{subsection.252}
+\contentsline {subsubsection}{\numberline {5.4.1}Test Set}{78}{subsubsection.253}
+\contentsline {subsubsection}{\numberline {5.4.2}PoC}{78}{subsubsection.254}
+\contentsline {subsubsection}{\numberline {5.4.3}Experiment Setup and Run}{80}{subsubsection.260}
+\contentsline {subsection}{\numberline {5.5}Experiment - Second Hypothesis}{82}{subsection.264}
+\contentsline {section}{\numberline {6}Results}{83}{section.265}
+\contentsline {subsection}{\numberline {6.1}First Hypothesis}{83}{subsection.266}
+\contentsline {subsubsection}{\numberline {6.1.1}Netfilter Open}{84}{subsubsection.267}
+\contentsline {subsubsection}{\numberline {6.1.2}ASA Default Configuration}{85}{subsubsection.268}
+\contentsline {subsubsection}{\numberline {6.1.3}ASA with ICMP module}{86}{subsubsection.271}
+\contentsline {subsubsection}{\numberline {6.1.4}Netfilter with Best Practices}{88}{subsubsection.282}
+\contentsline {subsubsection}{\numberline {6.1.5}Considerations about the Results}{90}{subsubsection.285}
+\contentsline {subsection}{\numberline {6.2}Second Hypothesis}{92}{subsection.287}
+\contentsline {section}{\numberline {7}Conclusions}{93}{section.288}
+\contentsline {section}{References}{94}{section.288}
+\contentsline {section}{\numberline {A}Appendix 1 - Protocol Headers}{98}{appendix.289}
+\contentsline {section}{\numberline {B}Appendix 2 - ICMPv6 specifications}{103}{appendix.306}
+\contentsline {section}{\numberline {C}Appendix 3 - Test Set}{113}{appendix.325}
+\contentsline {section}{\numberline {D}Appendix 4 - Results}{114}{appendix.327}
+\contentsline {subsection}{\numberline {D.1}First Hypothesis}{114}{subsection.328}
+\contentsline {subsection}{\numberline {D.2}Second Hypothesis}{116}{subsection.331}
+\contentsline {section}{\numberline {E}Appendix 5 - Firewall Configuration}{117}{appendix.332}
+\contentsline {subsection}{\numberline {E.1}Netfilter Open Configuration}{117}{subsection.333}
+\contentsline {subsection}{\numberline {E.2}ASA Default Configuration}{117}{subsection.351}
+\contentsline {subsection}{\numberline {E.3}ASA Default with ICMP Module Configuration}{120}{subsection.493}
+\contentsline {subsection}{\numberline {E.4}Netfilter with Best Practices Configuration}{122}{subsection.636}

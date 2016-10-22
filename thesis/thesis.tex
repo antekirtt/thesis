@@ -13,7 +13,7 @@
 \usepackage{csquotes}
 \usepackage{tocloft}
 \usepackage{amssymb}
-\renewcommand{\labelitemi}{\tiny$\blacksquare$} %For square itemized lists
+%\renewcommand{\labelitemi}{\tiny$\blacksquare$} %For square itemized lists
 \usepackage{caption} 
 \captionsetup{labelsep=period}
 \usepackage{verbatimbox} %To put program code in the center using Verbatim
@@ -30,7 +30,7 @@
 \usepackage{array}
 \usepackage{tabu}   % Wide lines in tables
 \usepackage{xspace} % Non-eatable spaces in macros
-\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[hypertexnames=false,colorlinks=true,linkcolor=blue]{hyperref}
 \usepackage[all]{hypcap}
 \usepackage{url}
 % Packages for defining colourful text together with some colours
@@ -52,45 +52,66 @@
 \newcommand{\typeF}[1] {\ensuremath{\mathsf{type_{#1}}}\xspace}
 \newcommand{\opDiv}{\ensuremath{\backslash \mathsf{div}}\xspace} 
 \usepackage{listings}
-
-\lstset{ 
-  %language=python,                % the language of the code
-  language=C++,
-  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
-  %numbers=left,                   % where to put the line-numbers
-  %numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
-  numberstyle=\tiny\color{gray}, 
-  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line 
-                                   % will be numbered
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  backgroundcolor=\color{white},   % choose the background color. You must add \usepackage{color}
-  showspaces=false,                % show spaces adding particular underscores
-  showstringspaces=false,          % underline spaces within strings
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  frame = lines,
-  %frame=single,                   % adds a frame around the code
-  rulecolor=\color{black},		   % if not set, the frame-color may be changed on line-breaks within 
-                                   % not-black text (e.g. commens (green here))
-  tabsize=2,                       % sets default tabsize to 2 spaces
-  captionpos=b,                    % sets the caption-position to bottom
-  breaklines=true,                 % sets automatic line breaking
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  %title=\lstname,                 % show the filename of files included with \lstinputlisting;
-                                   % also try caption instead of title
-                                   % also try caption instead of title
-  keywordstyle=\color{blue},       % keyword style
-  commentstyle=\color{dkgreen},    % comment style
-  stringstyle=\color{mauve},       % string literal style
-  escapeinside={\%*}{*)},          % if you want to add a comment within your code
-  morekeywords={*,game, fun}       % if you want to add more keywords to the set
-}
+\lstdefinestyle{bash}{
+   language=bash,
+   showspaces=false,
+   showstringspaces=false,
+   basicstyle=\ttfamily\scriptsize,
+   columns=flexible,
+   keywordstyle=\color{black},
+   commentstyle=\color{black},
+   breaklines=true
+ }
+ 
+\lstdefinestyle{python}{
+   language=python,
+   showspaces=false,
+   showstringspaces=false,
+   basicstyle=\ttfamily\scriptsize,
+   columns=flexible,
+   keywordstyle=\color{black},
+   commentstyle=\color{blue},
+   breaklines=true
+ }
+ 
+% \lstset{ 
+%   %language=python,                % the language of the code
+%   language=C++,
+%   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+%   %numbers=left,                   % where to put the line-numbers
+%   %numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+%   numberstyle=\tiny\color{gray}, 
+%   stepnumber=1,                    % the step between two line-numbers. If it's 1, each line 
+%                                    % will be numbered
+%   numbersep=5pt,                   % how far the line-numbers are from the code
+%   backgroundcolor=\color{white},   % choose the background color. You must add \usepackage{color}
+%   showspaces=false,                % show spaces adding particular underscores
+%   showstringspaces=false,          % underline spaces within strings
+%   showtabs=false,                  % show tabs within strings adding particular underscores
+%   frame = lines,
+%   %frame=single,                   % adds a frame around the code
+%   rulecolor=\color{black},		   % if not set, the frame-color may be changed on line-breaks within 
+%                                    % not-black text (e.g. commens (green here))
+%   tabsize=2,                       % sets default tabsize to 2 spaces
+%   captionpos=b,                    % sets the caption-position to bottom
+%   breaklines=true,                 % sets automatic line breaking
+%   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+%   %title=\lstname,                 % show the filename of files included with \lstinputlisting;
+%                                    % also try caption instead of title
+%                                    % also try caption instead of title
+%   keywordstyle=\color{blue},       % keyword style
+%   commentstyle=\color{dkgreen},    % comment style
+%   stringstyle=\color{mauve},       % string literal style
+%   escapeinside={\%*}{*)},          % if you want to add a comment within your code
+%   morekeywords={*,game, fun}       % if you want to add more keywords to the set
+% }
 
 \usepackage{multirow}
 \setlength{\tabcolsep}{0pt}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1-\arrayrulewidth\relax}}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1-\arrayrulewidth\relax}}
 
-\usepackage{booktabs,fixltx2e}
+\usepackage{booktabs}
 \usepackage{tikz}
 %used for ex. for m prime
 \usepackage{flexisym}
@@ -276,6 +297,9 @@ unspecified address has a value of 0:0:0:0:0:0:0:0\cite{rfc4861}.\\
 \hdashline
 \textit{Semantic Preservation}:&means that, as observed at a point along the message’s path through the network, the stegomessage has the same meaning as the original cover\cite{lucena2}.\\
 \hdashline
+\textit{IDS}:&Intrusion Detection System.\\
+\hdashline
+\textit{IPS}:&Intrusion Prevention System.\\
 \end{tabular}
 \end{savenotes}
 
@@ -647,7 +671,7 @@ The data, which has no limitations in size, must be the same which has been rece
 \subsubsection{RFC 4861}
 \label{subsub:4861}
 
-The Neighbor Discovering Protocol has many functionalities and it is used by an IPv6 nodes in order to determine the link-layer address of neighbors, hosts and routers, and to discover which router is able to forward their packets to another off-link networks. In addition, it is used as a reachability mechanism to determine if a host is still alive.
+The Neighbor Discovery Protocol has many functionalities and it is used by an IPv6 nodes in order to determine the link-layer address of neighbors, hosts and routers, and to discover which router is able to forward their packets to another off-link networks. In addition, it is used as a reachability mechanism to determine if a host is still alive.
 
 The RFC defines five additional messages, characterized by the type field (for these messages the code is always zero), as summarized in table \ref{table:4861Messages}.
 
@@ -797,7 +821,7 @@ Prefix Information&These options specify the prefixes that are on-link and/or ar
 
 \textbf{Neighbor Solicitation}
 
-Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify if a neighbor's reachability.
+Neighbor Solicitation is used by nodes to request the Link-layer address of a neighbor, or to verify a neighbor's reachability.
 
 See table~\ref{table:neighSolicit} in Appendix 1 for the detailed header format.
 
@@ -950,7 +974,7 @@ Redirected Header&As much as possible of the IP packet that triggered the sendin
 
 \textbf{Options}
 
-RFC 4861 specifies a set of options, which can be included in the messages. The general form includes an 8 bit identifier (Type) and an 8 bit length field, which represents ``the length of the option in units of 8 octets. Options should be padded when necessary to ensure that they end on their natural 64-bit boundaries''.
+RFC 4861 specifies a set of options, which can be included in the messages (see~\ref{table:optionsTN}). The general form includes an 8 bit identifier (Type) and an 8 bit length field, which represents ``the length of the option in units of 8 octets. Options should be padded when necessary to ensure that they end on their natural 64-bit boundaries''.
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1006,7 +1030,7 @@ Link-Layer Address&The variable length link-layer address.\\
 
 \textbf{Prefix Information}
 
-The Prefix Information is used by routers to inform hosts about on-link prefixes of the network segments, and allow them to perform address autoconfiguration.
+The Prefix Information is used by routers to inform hosts about on-link prefixes of the network segments, and allow them to perform address autoconfiguration (see~\ref{table:prefixInfo}).
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1046,7 +1070,7 @@ Prefix&An IP address or a prefix of an IP address. The Prefix Length field conta
 
 \textbf{Redirect Header}
 
-This options is used by Redirect messages and contains, in IP header and data, the original packet that triggered the redirect.
+This options is used by Redirect messages and contains, in IP header and data, the original packet that triggered the redirect (see~\ref{table:redirHead}).
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1073,7 +1097,7 @@ IP header + data&The original packet truncated to ensure that the size of the re
 
 \textbf{MTU}
 
-The MTU option is used to ensure that all the nodes on the link use the same MTU value, in such case where ``heterogeneous technologies are bridged together''.
+The MTU option is used to ensure that all the nodes on the link use the same MTU value, in such case where ``heterogeneous technologies are bridged together'' (see~\ref{table:mtu}).
 
 \begin{savenotes}
 \begin{table}[!htpb]
@@ -1152,7 +1176,7 @@ The first scenario is the simplest one, it involves a communication between Bob 
 
 ``In these scenarios, Wendy always should be positioned between Alice and Bob so that she can monitor m\textprime\hspace{2pt} traffic. Were she positioned differently, and were unable to see m\textprime, her presence would be irrelevant to the covert communication''\cite{lewandowski}.
 
-For the scope of this research, it is assumed that the sender can control the covert channel and insert directly the manipulated message. This reduction in scope, with respect to Lewandowski's study, is justified by the limitation in time, and by the simplicity of the network topology used for the experiment, which will be highlighted later in next chapters. However, it is worth saying that for an exhaustive testing of ICMPv6, related to covert channels, there are interesting implications to analyze inside the other scenarios, like the ability to preserve the covert channel in situations where Alice must modify the original message of the sender, or Bob must restore the original message before forwarding it to the legitimate receiver.
+For the scope of this research, it is assumed that the sender can control the covert channel and insert directly the manipulated message. This reduction in scope, with respect to Lewandowski's study, is justified by the limitation in time, and by the simplicity of the network configuration used for the experiment, which will be highlighted later in next chapters. However, it is worth saying that for an exhaustive testing of ICMPv6, related to covert channels, there are interesting implications to analyze inside the other scenarios, like the ability to preserve the covert channel in situations where Alice must modify the original message of the sender, or Bob must restore the original message before forwarding it to the legitimate receiver.
 
 This assumption, however, has some implications:
 
@@ -1206,7 +1230,7 @@ Lewandowski's study proposed six properties of covert channels which are importa
  \item ``channel bandwidth – amount of data that can be transfered in given covert channel per packet of cover traffic''. This property does not affect the existence of the covert channel, but its ability to be preserved for a longer period. Depending on the bandwidth, a covert channel may be useful, from attacker perspective, only in situations with a low amount of data to be exfiltrated, or when it is possible to insert a delay in the transmission to avoid suspicion on the traffic\cite{lewandowski}.
 \end{enumerate}
 
-Lewandowski observed that some of the considered protocols, Neighbor Discovering is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''\cite{lewandowski}.
+Lewandowski observed that some of the considered protocols, Neighbor Discovery is an example of them, ``are designed for operation on a single network segment. In consequence, any covert channel using these protocols as a cover will be similarly limited in its range'', and that ``the communication can be easily defeated by simple address-based filtering mechanism''\cite{lewandowski}.
 
 This research, even though the observation may be correct, will not consider its assumption. The reason is given, as stated before, by the fact that it is important to consider also the actual transition period, where the two protocols, IPv4 and IPv6, coexist in many configurations. This scenario implies that both networks are in place, but the active warden is configured to inspect only IPv4-related protocols, thus with a low level of syntax and semantics preservation knowledge, and any IPv6 packet will transit without deep inspection. For the same reason, an address-based filtering mechanism for IPv6 would probably not be in place. Another aspect, still related to the active warden, is the direction of the communication, from the inside to the outside: since it is considered a communication from a trusted to an untrusted network, the default configuration may allow the traffic without restrictions.
 
@@ -1286,9 +1310,9 @@ The thc-ipv6 attack toolkit\footnote{\url{https://www.thc.org/thc-ipv6/}, access
 
 \textit{Alive6} is a tool used to check aliveness of IPv6 systems, both remotely using public addresses, and locally by taking advantage of an ICMPv6 Echo Request sent to the multicast addresses\cite{thc}.
 
-\textit{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovering process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the IPv6 address of the requested node\cite{thc}.
+\textit{Parasite6} can be used to perform a Man-in-the-middle attack to the internal LAN by exploiting the Neighbor Discovery process, and sending Neighbor Advertisements to nodes with the attacker MAC address and the IPv6 address of the requested node\cite{thc}.
 
-Another interesting tool is \textit{redir6}, which use ICMPv6 redirect messages. The proposed technique is to take advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and the data\cite{thc}:
+Another interesting tool is \textit{redir6}, which use ICMPv6 redirect messages. The proposed technique takes advantage of the Redirect Header as an option for the Redirect message, which includes the IPv6 header and the data\cite{thc}:
 \vspace{-15pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Attacker sends an Echo Request with the target address as Source Address and the victim address as Destination Address.
@@ -1313,7 +1337,7 @@ The procedure to obtain the certification and the possibility to exhibit the IPv
 
 IPv6 Ready project entered the phase 2 and version 4.06 of the test since 2010. Phase 1 indicated ``that the product includes IPv6 mandatory core protocols and can interoperate with other IPv6 equipments'', while Phase 2 indicated ``that a product has successfully satisfied strong requirements stated by the Logo Committee''.
 
-The project produced a detailed set of documents\cite{ipv6readyCore}\cite{ipv6readyCore2} which indicate the required network topology, as well as the detailed list of test to be performed against each protocol. Test are organized in sections based on RFCs, and inside each sections in groups defined by their functionalities, e.g. Address Resolution and Neighbor Unreachability Detection for the section RFC 4861. Inside the section it is defined the scope, which describes broadly the content of the RFC, and the default packet of the message type (ICMPv6). The following table(see~\ref{table:ipv6readyPacketEx}) is an example of a default Router Advertisement packet:
+The project produced a detailed set of documents\cite{ipv6readyCore}\cite{ipv6readyCore2} which indicate the required network topology, as well as the detailed list of test to be performed against each protocol. Test are organized in sections based on RFCs, and inside each section in groups defined by their functionalities, e.g. Address Resolution and Neighbor Unreachability Detection for the section RFC 4861. Inside the section it is defined the scope, which describes broadly the content of the RFC, and the default packet of the message type (ICMPv6). The following table(see~\ref{table:ipv6readyPacketEx}) is an example of a default Router Advertisement packet:
 
 \begin{savenotes}
 \begin{table}[h]
@@ -1406,7 +1430,7 @@ The second chapter of this research starts by analyzing the background. The anal
 
 Another observation regard the environment on which the protocol operate: a network based on a specific protocol suite. The Internet is a complex environment composed by devices interconnecting each other, using many protocols. This complexity make the Internet an environment not suitable to try to find an answer to the questions derived by the observation. This is because the amount of variables that it introduces do not allow to derive a unique consequence from an action, and thus reliable conclusions. In order to be able to derive reliable conclusions the environment must be simplified and be controllable. A controlled procedure needs to have exactly one variable, and to achieve that, as it has been mentioned before, a particular configuration must be defined. A specific configuration of the environment represents a constant, thus allowing to modify a specific rule. A set of tests is performed using manipulated rules against a well defined configuration. Then the same set of test can be performed against another configuration, leading to a number of tests equal to the number of configurations multiplied by the number of elements in the set.\cite{secExperiments}
 
-After the process of observing the background, and the environment in which the ICMPv6 protocol operate, this research found that the best methodology to follow is the scientific method. The reason behind the choice is that many element of the analysis of the second chapter, the observation of the data, led to the formulation of questions and hypothesis, that could be validate, or negate, by experimentation. As it will be better explained next, the process of the scientific method is ideal to test the hypothesis derived by the research questions, taking into account the different configurations of the environment which has been discussed in the second chapter.
+After the process of observing the background, and the environment in which the ICMPv6 protocol operate, this research found that the best methodology to follow is the scientific method. The reason behind the choice is that many element of the analysis of the second chapter, the observation of the data, led to the formulation of questions and hypothesis, that could be validated, or negated, by experimentation. As it will be better explained next, the process of the scientific method is ideal to test the hypothesis derived by the research questions, taking into account the different configurations of the environment which has been discussed in the second chapter.
 
 \subsection{Scientific Method}
 \label{sub:sciMeth}
@@ -1415,7 +1439,7 @@ The scientific method has its roots in the ancient Greek philosophy, with Plato 
 
 Another important distinction is between quantitative and qualitative research. Quantitative research is based on the use of statistics or on data that are quantifiable and measurable, in order to produce a result which is not biased on some context and, thus, could lead to a generalization of some theories. Qualitative research, instead, introduces the contextualization and relies on the context in which it is possible to observe a given phenomenon, which is more related to the human science, where observation and definition of a context in which human beings interact may allow to validate or not an hypothesis.\cite{kaplan}
 
-This research uses both a quantitative and qualitative approach to perform the experiment. The qualitative approach is necessary to set up the experiment because of two factors: the choice of the tests and the considerations about the context. The tests are chosen starting from the description of the protocol inside the RFCs, which are for their nature not representable in a mathematical way. Among all the possible tests, some of them are considered for the experiment, as it will presented later. The context is also very important and it involves the observation of human behavior in the configuration of the border network devices and the choices of the implementers of the end devices. The quantitative approach arises after the definition of the test set. Each test is performed against a well defined configuration. The set of tests and a specific configuration is an experiment where the only variable is the test itself, and the validation or not of the hypothesis can be done only for that specific configuration. In this way, this research is considering the quantitative approach, because inside the experiment, after its set up, no other variable other then the specific test will change, thus allowing it to be measurable in a binary way: either failed or succeed. The conclusions of the experiments, however, because of its context-dependent nature, could not lead to the formulation of a mathematical evaluation. In other words it wont be possible to state that the ICMPv6 protocol is vulnerable by itself, but only that, given this specific configuration, the protocol introduces some vulnerabilities.
+This research uses both a quantitative and qualitative approach to perform the experiment. The qualitative approach is necessary to set up the experiment because of two factors: the choice of the tests and the considerations about the context. The tests are chosen starting from the description of the protocol inside the RFCs, which are for their nature not representable in a mathematical way. Among all the possible tests, some of them are considered for the experiment, as it will be presented later. The context is also very important and it involves the observation of human behavior in the configuration of the border network devices and the choices of the implementers of the end devices. The quantitative approach arises after the definition of the test set. Each test is performed against a well defined configuration. The set of tests and a specific configuration is an experiment where the only variable is the test itself, and the validation or not of the hypothesis can be done only for that specific configuration. In this way, this research is considering the quantitative approach, because inside the experiment, after its set up, no other variable other then the specific test will change, thus allowing it to be measurable in a binary way: either failed or succeed. The conclusions of the experiments, however, because of its context-dependent nature, could not lead to the formulation of a mathematical evaluation. In other words it wont be possible to state that the ICMPv6 protocol is vulnerable by itself, but only that, given this specific configuration, the protocol introduces some vulnerabilities.
 
 Following the work of Peisert and Bishop in \textit{How to Design Computer Security Experiments}, this research defines the following steps:
 \vspace{-10pt}
@@ -1481,7 +1505,7 @@ Inside chapter two (see~\ref{sec:2}), this research analyzed two RFCs which desc
 
 In \ref{Appendix 1} it is possible to see the header of the messages with its fields. In the context of the set of tests, the fields acquire relevance to prove the truth of the first hypothesis, that is, the use of ICMPv6 to exfiltrate data from an internal network. Each field, with few exceptions, has been designed to carry data to fulfill a specification of the protocol. In the case of the data exfiltration described in this research, where the attacker controls both processes of sending and receiving data, only the border network device may perform some checks to validate the compliance with the protocol. The protocol itself may be used just as a transport vector for some data, by means of its fields, with the exception of the destination address specified in the IPv6 protocol, which is necessary to forward the packet to its destination. The aforementioned few exceptions are the unused or reserved fields, when defined by the message, which have no specific purposes in the context of the functionality of the protocol. In addition, each field shows an important indication for the purpose of exfiltrating data, the bandwidth. In fact, depending on the size of the field and of the data to be exfiltrated, it is possible to predict beforehand how many packets the process will use. This research, during the experiment, manipulates each ICMPv6 field and options headers against each border network device configuration, in order to test the hypothesis and assess the behavior of the warden.
 
-In \ref{Appendix 2}, the tables show the specifications of each ICMPv6 message and the processing rules in terms of what must, should, or may be implemented. These specifications and processing rules define the behavior of the protocol in relationship with the functions for which it is used by other processes or protocols. Even though some of the specifications refers to an header field, as it has been mentioned above, the reasons behind the base used to choose the set of test in this appendix is different. While to test the first hypothesis both the sending and receiving processes are controlled by the attacker, the second hypothesis implies that the attacker controls only the sending process. In fact, if a packet successfully traverse the border network device, it is the behavior of the protocol and the implementation of the end device, i.e. the receiving process, to be under testing. In other words, it is the ending device that determines the truth of the hypothesis in case a packet has been able to reach it. In such a situation the it is useful to consider the specifications that include the terms must, should, and may. This research assumes that at least the specifications including a must have been implemented. Nevertheless, each implementation may differ from another one by a very small degree, therefor such specifications must be included in the set of tests. The same applies to specifications characterized by the terms should and may, which, in addition, do not have the mandatory nature of the musts. 
+In \ref{Appendix 2}, the tables show the specifications of each ICMPv6 message and the processing rules in terms of what must, should, or may be implemented. These specifications and processing rules define the behavior of the protocol in relationship with the functions for which it is used by other processes or protocols. Even though some of the specifications refers to an header field, as it has been mentioned above, the reasons behind the base used to choose the set of test in this appendix is different. While to test the first hypothesis both the sending and receiving processes are controlled by the attacker, the second hypothesis implies that the attacker controls only the sending process. In fact, if a packet successfully traverse the border network device, it is the behavior of the protocol and the implementation of the end device, i.e. the receiving process, to be under testing. In other words, it is the ending device that determines the truth of the hypothesis in case a packet has been able to reach it. In such a situation it is useful to consider the specifications that include the terms must, should, and may. This research assumes that at least the specifications including a must have been implemented. Nevertheless, each implementation may differ from another one by a very small degree, therefor such specifications must be included in the set of tests. The same applies to specifications characterized by the terms should and may, which, in addition, do not have the mandatory nature of the musts. 
 
 Another important aspect that has been taken into consideration in the choice of the set is the necessity to avoid the introduction of additional variables that it is not possible to control and verify in a reproducible way. An example of that is the last specification included in table \ref{table:4443ProcRules}, which specifies the need to limit the transmission rate of ICMPv6 error messages to limit the bandwidth and forwarding costs. Even though an high transmission rate may lead to a denial of service, there are other variables that affect the test of the specification, like the type of physical connection or the bandwidth usage of other processes. Therefor this type of specifications have not been selected.
 
@@ -1490,9 +1514,9 @@ The next step is the experiment environment and the reasons behind the choices.
 \subsubsection{Environment}
 \label{subsub:enviroment}
 
-The environment has been chosen taking into account the possibility to test the hypothesis and properties related to the methodology. To test the hypothesis, the experiment must include an attacking machine positioned in an outside network, which border is delimited by a border network device. The attacking machine is responsible for the receiving process in testing the first hypothesis (see~\ref{firstHyp}), and it is used to send the manipulated ICMPv6 packets in testing the second hypothesis (see~\ref{secondHyp}). The network topology includes two wardens, a dedicated Cisco Adaptive Security Appliance (ASA)\footnote{\url{http://www.cisco.com/c/en/us/support/security/asa-5505-adaptive-security-appliance/model.html}}, and a Linux host with firewall (i.e. iptables) capabilities. Each experiment uses only a warden with a specific configuration. The details of each configuration is discussed in the next chapter (see~\ref{sec:4}). The environment includes two end devices, one Linux host and one windows host. End devices purpose is to be responsible for the sending process in testing the first hypothesis (the Linux host), and, when testing the second hypothesis, to receive the ICMPv6 manipulated packets.
+The environment has been chosen taking into account the possibility to test the hypothesis and properties related to the methodology. To test the hypothesis, the experiment must include an attacking machine positioned in an outside network, which border is delimited by a border network device. The attacking machine is responsible for the receiving process in testing the first hypothesis (see~\ref{firstHyp}), and it is used to send the manipulated ICMPv6 packets in testing the second hypothesis (see~\ref{secondHyp}). The network configuration includes two wardens, a dedicated Cisco Adaptive Security Appliance (ASA)\footnote{\url{http://www.cisco.com/c/en/us/support/security/asa-5505-adaptive-security-appliance/model.html}}, and a Linux host with firewall (i.e. iptables) capabilities. Each experiment uses only a warden with a specific configuration. The details of each configuration is discussed in the next chapter (see~\ref{sec:4}). The environment includes two end devices, one Linux host and one windows host. End devices purpose is to be responsible for the sending process in testing the first hypothesis (the Linux host), and, when testing the second hypothesis, to receive the ICMPv6 manipulated packets.
 
-The choice of the devices for the experiment has been made taking into account the availability of the devices or virtualized environments. For virtualized environments, one limitation was the available memory (8GB) on the laptop used to develop the attacking framework and to host the virtual machines. The first research about the environment aimed to have a complete virtualized environment. The difficulties in that research arose in finding a virtualized environment for one of the warden, because one of the objectives of this work is to test a security device which may be used in production systems, like a Cisco firewall. Since there are no freely available images, this possibility has been abandoned. After a bit of research, it has been possible to obtain a physical device (ASA firewall) on University's laboratory, which also has the advantage to decrease the overall need of memory for the virtualization. The virtualized environment is built on top of VirtualBox\footnote{\url{https://www.virtualbox.org/}}, chosen because it is available as open source software with GNU General Public License (GPL) version 2\footnote{\url{http://www.gnu.org/licenses/old-licenses/gpl-2.0.html}}, and supports for many guest operating systems. The second warden is a Debian Jesse\footnote{\url{https://www.debian.org/releases/jessie/}} Linux virtualized guest, which uses iptables\footnote{\url{https://wiki.debian.org/iptables}} to provide firewall services. The virtualized environment has been chosen also for the two end devices, a Debian Jesse guest OS and a Windows 7 guest OS. In this case Debian Jesse has been chosen because it is a Linux open source OS, and because a Linux-based machine could be used as a server in production environments. The Windows 7 guest, instead, may represent common workstations in an internal network, and a virtual image could be downloaded\footnote{\url{https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/windows/}} with a free trial license. The last device to consider is the attacking device, which had a constraint: because of the physical firewall, also that machine must be a physical device to form a network segment with the firewall. This constraint at the beginning posed some issues, because of a limited availability of devices. After some research the choice has fallen on a Raspberry Pi\footnote{\url{https://www.raspberrypi.org/}} with a Kali Linux OS. The reasons behind this choice is both on Kali Linux and Raspberry Pi as a attacking/pentesting device. Kali Linux has support for Raspberry Pi, and it is possible to download a pre-built image from Offensive Security website\footnote{\url{https://www.offensive-security.com/kali-linux-arm-images/}}, which are the creators of Kali. In addition, Raspberry Pi with Kali Linux may be a choice for attackers as a portable hacking station. Its dimension may allow to hide it or to use it without causing suspicion in places where the use of a laptop is not common.
+The choice of the devices for the experiment has been made taking into account the availability of the devices or virtualized environments. For virtualized environments, one limitation was the available memory (8GB) on the laptop used to develop the attacking PoC and to host the virtual machines. The first research about the environment aimed to have a complete virtualized environment. The difficulties in that research arose in finding a virtualized environment for one of the warden, because one of the objectives of this work is to test a security device which may be used in production systems, like a Cisco firewall. Since there are no freely available images, this possibility has been abandoned. After a bit of research, it has been possible to obtain a physical device (ASA firewall) on University's laboratory, which also has the advantage to decrease the overall need of memory for the virtualization. The virtualized environment is built on top of VirtualBox\footnote{\url{https://www.virtualbox.org/}}, chosen because it is available as open source software with GNU General Public License (GPL) version 2\footnote{\url{http://www.gnu.org/licenses/old-licenses/gpl-2.0.html}}, and supports for many guest operating systems. The second warden is a Debian Jesse\footnote{\url{https://www.debian.org/releases/jessie/}} Linux virtualized guest, which uses iptables\footnote{\url{https://wiki.debian.org/iptables}} to provide firewall services. The virtualized environment has been chosen also for the two end devices, a Debian Jesse guest OS and a Windows 7 guest OS. In this case Debian Jesse has been chosen because it is a Linux open source OS, and because a Linux-based machine could be used as a server in production environments. The Windows 7 guest, instead, may represent common workstations in an internal network, and a virtual image could be downloaded\footnote{\url{https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/windows/}} with a free trial license. The last device to consider is the attacking device, which had a constraint: because of the physical firewall, also that machine must be a physical device to form a network segment with the firewall. This constraint at the beginning posed some issues, because of a limited availability of devices. After some research the choice has fallen on a Raspberry Pi\footnote{\url{https://www.raspberrypi.org/}} with a Kali Linux OS. The reasons behind this choice is both on Kali Linux and Raspberry Pi as a attacking/pentesting device. Kali Linux has support for Raspberry Pi, and it is possible to download a pre-built image from Offensive Security website\footnote{\url{https://www.offensive-security.com/kali-linux-arm-images/}}, which are the creators of Kali. In addition, Raspberry Pi with Kali Linux may be a choice for attackers as a portable hacking station. Its dimension may allow to hide it or to use it without causing suspicion in places where the use of a laptop is not common.
 
 
 \subsubsection{Border Network Device Configurations}
@@ -1512,7 +1536,8 @@ The first document has been written by the National Institute of Standards and T
 
 The second document have been draft by the National Aeronautics and Space Administration (NASA)\footnote{\url{http://www.nasa.gov/}} by means of the Communications Service Office (CSO), and used for the NASA Integrated Communication Services (NICS) contract\footnote{\url{https://cso.nasa.gov/content/about-cso-and-nics}}. The documents describes best practices related to IPv6 in detail. The relevance for this research is limited, because the document refers mostly to internal networks. Specifically, in the chapter related to firewall rules, the document warns about the need of neighbor solicitation and advertisement messages in order for the Neighbor Discovery protocol to work\cite{nics}.
 
-The most important suggestions for this research are described in RFC 4890. Chapter 4 divides firewall rules in 5 broad categories:
+The most important suggestions for this research are described in RFC 4890. Chapter 4 divides firewall rules in two main categories, which, inside, define five broad sub-categories. The main categories are related to ICMPv6 transit traffic, and ICMPv6 local traffic. The following are the five sub-categories:
+
 \vspace{-15pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
  \item Messages that must not be dropped
@@ -1523,26 +1548,29 @@ The most important suggestions for this research are described in RFC 4890. Chap
 \end{enumerate}
 Inside each category the RFC defines ICMPv6 messages that belongs to it, which in fact allows to build firewall rules accordingly\cite{rfc4890}.
 
+In addition, the RFC cites messages and technologies which are not in scope with this research: these messages are not taken into consideration.
+
 The last source is related to the configuration of a Linux-based host with firewall services. The source also refers to RFC 4890, but as the author states, do not cover all the advices from there. Nevertheless this is a very good starting point to implement the Linux-based scenario of this research\cite{ip6tablesGiobbi}. In addition, there is a basic script\footnote{\url{http://www.cert.org/downloads/IPv6/ip6tables_rules.txt}, accessed 22.4.2016} that is downloadable from the main Computer Emergency Response Team (CERT) website, hosted by the Carnegie Mellon University\footnote{\url{http://www.cmu.edu/}}. 
 
 Based on the above described information, this research decided to implement the following configuration categories:
 \vspace{-10pt}
 \begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
- \item Linux-based firewall services using ip6tables\footnote{\url{http://ipset.netfilter.org/ip6tables.man.html}}
- \item Cisco ASA firewall with default configuration (without IPv6 filtering)
- \item Cisco ASA firewall with default configuration (no native IPv6, complete IPv6 filtering)
- \item Cisco ASA firewall with RFC 4890 best practices
+ \label{confCategories}
+ \item Linux-based firewall services using ip6tables\footnote{\url{http://ipset.netfilter.org/ip6tables.man.html}}, forwarding without filtering
+ \item Linux-based firewall services using ip6tables, with RFC 4890 ICMPv6 best practices
+ \item Cisco ASA firewall with default configuration (without ICMP module)
+ \item Cisco ASA firewall with ICMP module for deep packet inspection
 \end{enumerate}
 
 
-\subsubsection{Testing/Attacking framework}
+\subsubsection{Testing/Attacking application}
 \label{subsub:framework}
 
-The experiment part of this research includes a framework which is able to manipulate and send ICMPv6 packets to test the hypothesis. The framework is written in Python\footnote{\url{https://www.python.org/}} as a programming language, which use an external library to manipulate ICMPv6 messages, called Scapy\footnote{\url{http://www.secdev.org/projects/scapy/}}.
+The experiment part of this research includes a Proof of Concept (PoC) which is able to manipulate and send ICMPv6 packets to test the hypothesis. The PoC is written in Python\footnote{\url{https://www.python.org/}} as a programming language, which use an external library to manipulate ICMPv6 messages, called Scapy\footnote{\url{http://www.secdev.org/projects/scapy/}}.
 
 Python is a programming language which is possible to use in scripts, with functions, and with object oriented programming. It is installed by default in most Linux distributions and allows to use many third party libraries related to computer security and network testing. Example of that is a project supported by Open Web Application Security Project (OWASP)\footnote{\url{https://www.owasp.org/index.php/Main_Page}}, called OWASP Python Security Project\footnote{\url{http://www.pythonsecurity.org/}}.
 
-Scapy is a very flexible tool that allows to build packets for many protocols. It allows to use the default protocol implementation, but it is also possible to manipulate packets or create new protocol from scratch. In addition, it allows to control the process of sending and receiving packets, and to visualize the content in different formats in order to build detailed reports. For these reasons, it the ideal tool to build a framework for the experiment.
+Scapy is a very flexible tool that allows to build packets for many protocols. It allows to use the default protocol implementation, but it is also possible to manipulate packets or create new protocol from scratch. In addition, it allows to control the process of sending and receiving packets, and to visualize the content in different formats in order to build detailed reports. For these reasons, it the ideal tool to build a PoC for the experiment.
 
 \subsection{Summary}
 \label{sub:methConclusions}
@@ -1555,7 +1583,7 @@ The next step in the chapter has been to describe the foundation of the experime
 
 The configuration of the firewall, as border network device, is another important topic, because each configuration represents a scenario. A scenario is a representation of what might be the choice of an organization for a firewall, based on aspects like the available budget, or the needed expertise to configure it.
 
-Finally, this chapter introduced the components used to build the testing/attacking framework, which are python as a programming language and scapy as packets manipulating library.
+Finally, this chapter introduced the components used to build the testing/attacking PoC, which are python as a programming language and scapy as packets manipulating library.
 
 The next chapter will dig deeper in the implementation of the experiment, with the details of each involved component.
 
@@ -1568,17 +1596,729 @@ The next chapter will dig deeper in the implementation of the experiment, with t
 \section{Implementation}
 \label{sec:4}
 
+This chapter aims to describe in detail the implementation of the experiment. Each involved device, and service, is presented, with the details to build and reproduce the experiment.
+
+\subsection{Virtualbox}
+
+Virtualbox is the virtualized environment used to host the Linux Debian device, the Windows 7 device, and the Linux Debian Firewall.
+
+\textbf{Virtualbox version:} 
+
+\vspace{-15pt}
+VirtualBox Graphical User Interface Version 5.0.24_Debian r108355
+
+\subsection{Raspberry Pi with Kali Linux}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|L{5cm}|}{Model}&\multicolumn{2}{|L{5cm}|}{OS}&\multicolumn{2}{|L{5cm}|}{OS and Software Update}\\
+\hline
+\multicolumn{2}{|c|}{Raspberry Pi 2 Model B}&\multicolumn{2}{|c|}{Kali Linux}&\multicolumn{2}{|c|}{31.08.2016}\\
+\hline
+\end{tabular}}
+\caption{Raspberry Pi implementation}
+\label{table:raspImpl}
+\end{table}
+\end{savenotes}
+
+The OS has been downloaded from: \url{https://www.offensive-security.com/kali-linux-arm-images/}, and the updated on 31.08.2016 with the following commands (common for all Linux devices, root privileges required):
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+ apt-get update
+ apt-get upgrade
+ apt-get dist-upgrade
+\end{lstlisting}
+
+\textbf{Kernel version (uname -a):}
+
+\vspace{-15pt}
+Linux mazinga 4.1.19-v7 \#1 SMP Tue Mar 15 15:10:00 CDT 2016 armv7l GNU/Linux
+
+
+\textbf{/etc/network/interfaces:}
+
+\vspace{-5pt}
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+iface eth0 inet6 static
+	address 2001:db8:acad:1::2
+	netmask 64
+	gateway fe80::1
+\end{lstlisting}
+
+\textbf{Python version:} 
+
+\vspace{-15pt}
+Python 2.7.12+
+
+\subsection{Linux Debian}
+
+\textbf{Device configuration}:
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|L{5cm}|}{Base Memory:}&\multicolumn{2}{|L{5cm}|}{Processor:}&\multicolumn{2}{|L{5cm}|}{Video Memory:}\\
+\hline
+\multicolumn{2}{|c|}{2048MB}&\multicolumn{2}{|c|}{2CPU}&\multicolumn{2}{|c|}{24MB}\\
+\hline
+\end{tabular}}
+\caption{Linux Debian}
+\label{table:linuxDeb}
+\end{table}
+\end{savenotes}
+
+The OS has been downloaded from: \url{https://www.debian.org/releases/jessie/debian-installer/}, installed and the updated on 31.08.2016.
+
+\textbf{Kernel version (uname -a):} 
+
+\vspace{-15pt}
+Linux debian 3.16.0-4.amd64 \#1 SMP Debian 3.16.7-ckt25-2+deb8u3 (2016-07-02) x86_64 GNU/Linux
+
+\textbf{/etc/network/interfaces}:
+
+\vspace{-5pt}
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+auto lo
+iface lo inet loopback
+
+auto eth0
+
+iface eth0 inet6 static
+	address 2001:abcd:acad:2::2
+	netmask 64
+	gateway fe80::1
+\end{lstlisting}
+
+\textbf{Python version:} 
+
+\vspace{-15pt}
+Python 2.7.9
+
+\subsection{Linux Debian Firewall}
+
+\textbf{Device configuration}:
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|L{5cm}|}{Base Memory:}&\multicolumn{2}{|L{5cm}|}{Processor:}&\multicolumn{2}{|L{5cm}|}{Video Memory:}\\
+\hline
+\multicolumn{2}{|c|}{1024MB}&\multicolumn{2}{|c|}{1CPU}&\multicolumn{2}{|c|}{12MB}\\
+\hline
+\end{tabular}}
+\caption{Linux Debian Firewall}
+\label{table:linuxDebFirewall}
+\end{table}
+\end{savenotes}
+
+The OS has been downloaded from: \url{https://www.debian.org/releases/jessie/debian-installer/}, installed and the updated on 31.08.2016.
+
+\textbf{Kernel version (uname -a):} 
+
+\vspace{-15pt}
+Linux debian 3.16.0-4.amd64 \#1 SMP Debian 3.16.7-ckt25-2+deb8u3 (2016-07-02) x86_64 GNU/Linux
+
+\textbf{/etc/network/interfaces}:
+
+\vspace{-5pt}
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet6 static
+	address 2001:db8:acad:1::1
+	address fe80::1
+	netmask 64
+
+auto eth1
+iface eth1 inet6 static
+	address 2001:db8:acad:2::1
+	address fe80::1
+	netmask 64
+\end{lstlisting}
+
+\textbf{/etc/sysctl.d/99-sysctl.conf}:
+
+\vspace{-5pt}
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+ net.ipv6.conf.all.forwarding=1
+\end{lstlisting}
+
+\textbf{Python version:} 
+
+\vspace{-15pt}
+Python 2.7.9
+
+\subsection{Windows 7}
+
+\subsection{Cisco ASA Firewall}
+
+\textbf{Model:} 
+
+\vspace{-15pt}
+Cisco Adaptive Security Appliance (ASA) 5505 Series
+
+\textbf{Version:}
+
+\vspace{-5pt}
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\scriptsize]
+ Cisco Adaptive Security Appliance Software Version 9.1(5) 
+Device Manager Version 7.5(2)
+
+Compiled on Thu 27-Mar-14 09:36 by builders
+System image file is "disk0:/asa915-k8.bin"
+Config file at boot was "startup-config"
+
+ASA-EXP up 5 hours 57 mins
+
+Hardware:   ASA5505, 256 MB RAM, CPU Geode 500 MHz,
+Internal ATA Compact Flash, 128MB
+BIOS Flash M50FW080 @ 0xfff00000, 1024KB
+
+Encryption hardware device : Cisco ASA-5505 on-board accelerator (revision 0x0)
+                             Boot microcode        : CN1000-MC-BOOT-2.00 
+                             SSL/IKE microcode     : CNLite-MC-SSLm-PLUS-2_05
+                             IPSec microcode       : CNlite-MC-IPSECm-MAIN-2.09
+                             Number of accelerators: 1
+
+ 0: Int: Internal-Data0/0    : address is 0021.a02e.8564, irq 11
+ 1: Ext: Ethernet0/0         : address is 0021.a02e.855c, irq 255
+ 2: Ext: Ethernet0/1         : address is 0021.a02e.855d, irq 255
+ 3: Ext: Ethernet0/2         : address is 0021.a02e.855e, irq 255
+ 4: Ext: Ethernet0/3         : address is 0021.a02e.855f, irq 255
+ 5: Ext: Ethernet0/4         : address is 0021.a02e.8560, irq 255
+ 6: Ext: Ethernet0/5         : address is 0021.a02e.8561, irq 255
+ 7: Ext: Ethernet0/6         : address is 0021.a02e.8562, irq 255
+ 8: Ext: Ethernet0/7         : address is 0021.a02e.8563, irq 255
+ 9: Int: Internal-Data0/1    : address is 0000.0003.0002, irq 255
+10: Int: Not used            : irq 255
+11: Int: Not used            : irq 255
+
+Licensed features for this platform:
+Maximum Physical Interfaces       : 8              perpetual
+VLANs                             : 3              DMZ Restricted
+Dual ISPs                         : Disabled       perpetual
+VLAN Trunk Ports                  : 0              perpetual
+Inside Hosts                      : 50             perpetual
+Failover                          : Disabled       perpetual
+Encryption-DES                    : Enabled        perpetual
+Encryption-3DES-AES               : Enabled        perpetual
+AnyConnect Premium Peers          : 25             perpetual
+AnyConnect Essentials             : Disabled       perpetual
+Other VPN Peers                   : 10             perpetual
+Total VPN Peers                   : 25             perpetual
+Shared License                    : Disabled       perpetual
+AnyConnect for Mobile             : Disabled       perpetual
+AnyConnect for Cisco VPN Phone    : Disabled       perpetual
+Advanced Endpoint Assessment      : Disabled       perpetual
+UC Phone Proxy Sessions           : 2              perpetual
+Total UC Proxy Sessions           : 2              perpetual
+Botnet Traffic Filter             : Disabled       perpetual
+Intercompany Media Engine         : Disabled       perpetual
+Cluster                           : Disabled       perpetual
+
+This platform has a Base license.
+
+Serial Number: JMX1247Z330
+Running Permanent Activation Key: 0x4e25d64e 0xf8628255 0xb822197c 0x8714f8d8 0x0b31aba6 
+Configuration register is 0x1
+Configuration last modified by enable_15 at 11:55:20.129 UTC Sat Oct 22 2016
+\end{lstlisting}
+
+\subsection{PoC}
+
+The PoC for the experiment could be find at:
+
+\vspace{-10pt}
+\url{https://github.com/antekirtt/thesis/tree/master/python/code}
+
+It is possible to download a zip file with all the thesis material, or in alternative use git:
+
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\footnotesize]
+ git clone https://github.com/antekirtt/thesis.git
+ cd python/code/
+\end{lstlisting}
+
+\textbf{Requirements:}
+
+\vspace{-15pt}
+The PoC has been written and tested for Linux Debian and Kali Linux.
+
+The following libraries for python are required:
+
+\underline{\textit{scapy}:}
+
+Version 2.3.2_dev, retrieved on 31.08.16 and installed on all the devices that use the PoC.
+
+\textit{Note:} the version used in the Kali and Debian repositories is 2.3.2. This version has some bugs related to IPv6 that have been solved in the development version.
+
+To download and install the library:
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\footnotesize]
+ git clone https://github.com/secdev/scapy.git
+ cd scapy
+ python setup.py install
+\end{lstlisting}
+
+\underline{\textit{bitstring}:}
+
+Installed on 31.08.16 in all the devices that use the PoC.
+
+To install the library:
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\footnotesize]
+ easy_install bitstring
+\end{lstlisting}
+
+
+
 \pagebreak
 
 %------------------------------EXPERIMENT-----------------------------------
 \section{Experiment}
 \label{sec:5}
 
+The experiment of this research has been designed to test the research question and to validate, or negate, the hypothesis. The third chapter (see~\ref{sec:3}) defines a main research question and hypothesis, which could be divided in two more specific research questions and hypothesis, one for each network flow direction. That is, from the internal network to the external network (see~\ref{firstHyp}), and from the external network to the internal network (see~\ref{secondHyp}).
+
+This chapter is organized to show in detail the experiment and the choices behind it. Two network configurations have been designed to test each hypothesis. Each configuration includes an external host, a firewall device, and an internal Linux device, while to test the second hypothesis a Window device has been introduced. 
+
+Since one of the goals of this research is to validate, or negate, the hypothesis against different firewall services and configurations, also the device changes accordingly: a Cisco ASA with two different configurations, and a Linux device also with two configurations.
+
+The test set, one for each hypothesis, has been chosen, and is discussed in this chapter.
+
+After the description of the common characteristics related to the test of the two hypothesis, this research will dig deeper into the detail of them. Finally, the focus will be on the PoC and instructions to run the experiment.
+
+It is worth to underline how this research uses the term ``experiment'' in different ways. Along this document, the term is often used in a general way, indicating the experimentation part of this research. But, as it has been mentioned before, an experiment is also the run of a single test against a firewall configuration and an internal host, in the context of the validation of an hypothesis. This is because the hypothesis may be validated just for that single test, while it is negated for another test, firewall configuration, or host. 
+
+\subsection{Network Configurations}
+\label{subsection:netConfigurations}
+
+The network configurations (see~\ref{fig:netConfiguration1} and~\ref{fig:netConfiguration2}) used to run the experiment are very similar and differ only in the presence of the Windows box inside the second configuration.
+
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.7\textwidth]{networkTopology1}
+\caption{Network Configuration to test first hypothesis}
+\label{fig:netConfiguration1}
+\end{center}
+\end{figure}
+
+In~\ref{fig:netConfiguration1} is represented the configuration to test the first hypothesis (see~\ref{firstHyp}). The goal of the hypothesis is to test data exfiltration from an inside, and trusted, network to the outside. The context is given by an attacker who has gained a foothold on the internal network, but also by a disgruntled employee, whose aim is to exfiltrate data without authorization.
+
+The network configurations are very simple and are not reflecting a production environment of a company. The reason behind this choice is to have a controlled environment, where it is possible to modify a variable at a time, which is a mandatory constraint to test the hypothesis.
+
+Another choice in~\ref{fig:netConfiguration1} is the use of a single internal device. There are two reasons behind that. The first is related to the PoC, which is written in python with a focus on a Linux environment (this topic will be developed later in this chapter). The second reason is related to the two processes, in the context of data exfiltration, which are both controlled by the attacker: the sending process is managed by the PoC in the Linux internal host, while the receiving process is running in the external host. Since both processes are not controlled only by the network stack implemented in the kernel of the devices, this research decided that a test using another device (the Windows host) would have been less interesting, while adding more complexity in writing the PoC.
+
+The firewall, in both figures, is a general representation of a device with firewall services. During the execution of the experiment, the whole test set related to the hypothesis is run against each device and configuration. The difference between each configuration is discussed in detail later in this chapter, while the figure shows the common characteristics, the IPv6 addresses of the two interfaces, one linked to the internal network, and one to the ouside world.
+
+In~\ref{fig:netConfiguration2} is represented the configuration to test the second hypothesis (see~\ref{secondHyp}).
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.7\textwidth]{networkTopology2}
+\caption{Network Configuration to test second hypothesis}
+\label{fig:netConfiguration2}
+\end{center}
+\end{figure}
+
+In this scenario, the attacker controls the external device and want to test the possibility to use the internal network and hosts in an unauthorized way. The scenario, and hypothesis, is more oriented to test the implementation of ICMPv6 in different OSs, therefor the introduction of an additional device. This is another limitation in scope of this research. The OS against which the implementation of ICMPv6 should and must be tested are many, and research must take them into account. This research considers a Linux device because it may be the choice for a server offering services for an enterprise, and a Windows 7 device to simulate an employee workstation.
+
+
+\subsection{Firewall Configuration}
+\label{subsection:firewallConf}
+
+The configuration of the warden is a key point of this research. The firewall is the border network device that provide the line of defense of an enterprise network towards the external IPv6 world, where also the IPv6 internal addresses are routeable. This is a difference with the IPv4 world, where, due to a significatly smaller address space, common practices led to use Network Address Translation (NAT) to map internal private addresses to one, or more, world routeable IP addresses. This practice has been also used as a security by obscurity feature, thinking that the lack of knowledge of the real internal network configuration may be a line of defense against malicious actors. In IPv6, NAT is no more present and security officer and network administrator must rely only on the firewall device(s) as a last line of defense.
+
+The firewall configuration inside this research is also used as a way to simulate different requirements, budget, and expertise that an enterprise may have. These three characteristics must be carefully evaluated by an organization, and a balance between them must be found. The requirements are usually to have the maximum level of defense, and are evaluated against the budget of the enterprise. The configuration of the appliance is crucial, and requires the needed level of expertise, which, again, is strongly dependend on the available budget.
+
+Finally, since this research's goal is to test the ICMPv6 protocol, the different configurations of the firewall must be chosen in a way that take into consideration the boundaries of the test possibilities. This is accomplished by having four configurations, where two of them represents the boundaries of the test space. This concept has been developed next, inside each configuration description.
+
+\subsubsection{Netfilter Open}
+\label{subsub:netfilterOpen}
+
+This firewall configuration represents the lower limit in the test space, where there is no packet filtering.
+
+As it is possible to see in~\ref{appendix:netfilterOpenApp}, the netfilter configuration enables IPv6 packets forwarding in the linux kernel, and explicitly accept packets in the forwarding chain of the filter table.
+
+This open configuration offers the possibility to reach two goals. It simulates a bad practice that may arise in the transition period, where the IPv4 protocol suite is the choice of an organization, but IPv6 is already active in the private network. The term simulation, here, is used on purpose, because the forwarding of IPv6 packets is not active by default. Nevertheless, it may stimulate the necessary awareness in the audience regarding the transition period and the need to deal with IPv6.
+
+The second goal is to test the design and implementation of ICMPv6 by itself, without the additional filter of an organization's security practitioners. This configuration allows to test the protocol in a direction which is close to the aforementioned IPv6 Ready Project (see~\ref{subsub:ipv6Ready}), in the contest of the second hypothesis. In addition, the configuration allows to evaluate the design of the ICMPv6 protocol and the fields in its messages in the contest of data exfiltration, which is related to the first hypothesis. The latter may be of secondary importance for the goals of this research, but, nevertheless, from the point of view of a network protocol's designer, could be interesting to think about how a protocol must rely on third party devices and configurations, like routers and firewalls, to avoid that some fields are used in a different way with respect to the semantic for which they have been created.
+
+\subsubsection{ASA Default Configuration}
+\label{subsub:asaDefault}
+
+The Cisco Adaptive Security Appliance is a device that may be the choice of small to medium organizations. When first fired on, it is possible to do some basic configurations to allow it to be operational by configuring and activating some basic features, like the IP/IPv6 address of the interfaces and their security level, the default being a security level of 100 for the inside interface, and a security level of 0 for the outside interface.
+
+This kind of configuration may not be sufficient to protect the organization, and it is not in most cases, but it is a representation of a bad practice that leads to buy a professional, in some cases expensive, appliance, with the feeling that it is enough to protect the enterprise's business assets. This configuration simulate also the lack of the necessary expertise, both from a management and technical point of view. The management should evaluate the needs of both the appliance and the technical expertise to configure it.
+
+The configuration file (see~\ref{appendix:ASAdefaultAppendix}) shows the configured parameters, with just few of them modified from the default: the IPv6 address of the two interfaces, the activation of ssh for management purposes, hostname, domain, and the encryption of the passwords. In order to activate IPv6 it is sufficient to configure the IPv6 address on the vlans associated to the network interfaces.
+
+\subsubsection{ASA with ICMP module}
+\label{subsub:asaDefaultICMP}
+
+This configuration adds an important features with respect to ICMPv6: the activation of the ICMP module on the global policy, in order to allow deep packet inspection on the ICMPv6 packets. It is worth noting that the ASA configuration uses the term ICMP for both ICMP and ICMPv6.
+
+In the case of this configuration, the management evaluated the needs of the appliance, but also the needed expertise to do the necessary configuration, which for this research considers an ICMPv6 only world. In other words, a production environment must take into consideration the services offered by the enterprise and add the required configuration, which involves the creation of access lists to determine the packets to allow in and out the internal perimeter.
+
+The configuration file (see~\ref{appendix:ASAicmpAppendix}) shows, under the policy-map global_policy section, the added ICMP module.
+
+\subsubsection{Netfilter with Best Practices}
+\label{subsub:netfilterBestPractices}
+
+The last firewall configuration is represented by a Linux device with netfilter services. This choice represents the necessary expertise to configure a border network device to deal with ICMPv6, and, in the mean time, the use of an unexpensive device with an open source software to provide the filtering services. In terms of awareness, it means that the management may have chosen to invest in expertise rather then in the device itself, in a context where the budget has some limitations.
+
+The configuration file (see~\ref{appendix:netfilterBestAppendix}) has been developed starting from a script published by the CERT website \footnote{\url{http://www.cert.org/downloads/IPv6/ip6tables_rules.txt}, accessed 22.4.2016}, and modified to fullfill this research requirement using RFC 4890 (which also contains an example script)\cite{rfc4890}. In addition, the original script has been thought for an host-based firewall, an end device, with rules applied to the input and output chains of the filter table. This research, instead, required a device for packets in transit, in addition to the packets with the firewall as destination. This involves the forwarding chain, where the best practices for the communication between the internal network and the rest of the world have been applied.
+
+It is worth to mention this configuration as a contribution of this research. As it will be described next, the rules applied to the different chains allows to understand better some functionalities of ICMPv6, which may be usefull from a didactical point of view to introduce security practices in network classes.
+
+\textbf{Ip6tables Rules (Netfilter Service)}
+
+The script with best practices rules has comments that introduce each block of rules. An analysis of each block with the rules follows.
+
+The first block contains variables related to the two network interfaces of the firewall, and the IPv6 addresses, which identify the internal and external network linked to them.
+
+The second block allow to activate packet forwarding in the linux kernel. The command allows a temporary activation of the service, which last until a reboot of the OS. In order to configure it permanently, it is possible to modify the following file:
+
+/etc/sysctl.conf
+
+by adding, or uncommenting if present, the argument of the previous command: 
+
+net/ipv6/conf/all/forwarding=1
+
+The following block is the reset of the rules that may be present in previous configurations: it erases the rules and the user created chains, and clear the statistics of the packets. The statistics represents a very useful tool to understand, and verify, how the rules behave and which packets are blocked or enter a particular chain. The following command, given as the root user, shows the statistics:
+
+ip6tables -L -n -v
+
+Then, ad hoc chains have been created. This step may not be necessary in terms of functionality, but it allows to better understand the organization of the code. This research point of view is that readability and clear code is a security best practice, which should be applied not only in software engineering, but also in writing small script. The first two chains shows the network flow directions, which are mainly related to the two hypothesis. The two additional chains allows to establish an ssh connection to the firewall device, and to the attacking device, for monitoring purposes.
+
+As the comment suggests, the next block applies the default policy in a whitelist way, which is dropping packets entering the chain by default, if there is not a rule matching the entry. The white list approach has advantages, but also drawbacks to take into considerations. In terms of security, this is the better approach, in contrast to the blacklist approach. The reason is that the blacklisting procedure allows to block, or filter, what is well known, which could be the signature of an attack, or an IPv6 address known to be the source of an attack. The problem arises for new attacks, or packets that the security practitioner is not aware of being part of an attack, which, with this approach, are forwarded and went unnoticed, at least from the perspective of the firewall. The whitelist approach, instead, denies the access for all but the known and authorized packets. It is the task of the administrator to provide the rules to allow the forwarding of the packets.
+
+The whitelist approach requires a very good understanding of the network, and of the behavior of the protocols and of the services allowed on the network. Since all is denied by default, also authorized packets are blocked until not explicitly allowed. This may disrupt the network and break the availability of some services.
+
+The following blocks define rules to apply to the input and output chains, the chains of the filter table to manage packets with the firewall network interface address as destination (input chain), or for packets that originate from the firewall device (output chain). This rules are needed for the correct operations of the local network segments, i.e. to allow protocol like the Neighbor Discover to work correctly.
+
+The rules applied agains the forwarding chain that appear next regulate packets with addresses which are valid in the local network only, like link-local and multicast addresses.
+
+The script then defines the rules that cause to jump in the aforementioned ad hoc chains, which depend on the source and destination addresses for the ICMPV6-TO-OUT chain, and on the destination address for the ICMPV6-TO-IN chain. Both of them match the ICMPv6 protocol only.
+
+The forwarding rules applied to the ICMPv6 protocol are the core of this research. Here is where best practices found on documents and RFC 4890 are applyed.
+
+The first analyzed rules regard packets originating from the internal network and forwarded to the outside. The ICMPv6 error message types are accepted and forwarded, since their function are needed for the correct operation of IPv6. The two informational messages are treated in a different way: Echo Requests are allowed but rate limited, while Echo Reply are droped. While the former rate limitation is not strictly necessary with today network bandwidth, the latter is a choice of this research, based on a possible organization's policy. Most of the examined documents, during this research, put the attention on the fact that, due to the huge address space in IPv6, it is no more necessary to filter Echo Request from the outside to deny network scan operations and the map of the internal network. This research is taking another approach, which follows the whitelist approach phylosophy. The functionality may be useful to test the reachability, from the outside, of some internal devices, e.g. a server in the DMZ. This functionality, however, may be needed during the initial configuration, or after some critical updates, but not during the everyday activity. It is the opinion of the researcher that it is a better practice to deny the forwarding of messages that are not needed for every day work, while it is possible to craft special configurations (in this case may be to allow one specific IPv6 source address to test reachability) to deal with special cases.
+
+The remaining rules of this ICMPV6-TO-OUT chain are related to the Neighbor Discovery Protocol. Here the choice of this work is to comply explicitly with the RFC (\cite{rfc4861}) and allow the forwarding of NDP messages only if the hop limit is equal to 255. This has the equivalent effect of denying the messages, since, in the forwarding process, the device decrement by one the hop limit, resulting in a value of 254, and therefor being droped by the policy. The last two rules allow to log the droped messages, and to explicitly drop the remaining, not matching, packets. The last rule is redundant because of the policy, and it is there just to show the last rule to apply in case the policy is to allow packets by default (blacklisting).
+
+The last block of rules, to filter packets to be forwarded in the ICMPV6-TO-IN chain, reflects the choices of the preceding block. The ICMPv6 error messages are allowed to be forwarded. The informational messages are divided into the Echo Request, denied by the organization's policy, and Echo Reply, allowed as answer to an Echo Request from the internal network. The NDP messages, instead, are explicitly droped, which, as said, accomplishes the same effect previously described with the hop limit of 255, which is to deny the forwarding of the packet.
+
+
+\subsection{Proof of Concept (PoC) - General Functionality}
+\label{PoC-general}
+
+As mentioned in the previous chapter, the PoC has been written in Python, with the help of Scapy to generate the ICMPv6 packets.
+
+The PoC is started at command prompt as follows:
+
+sudo ./icmpv6 -i eth0
+
+with the mandatory -i option defining the network interface to use. Since it requires the generation of raw packets, it needs the superuser permissions to run.
+
+The picture (see~\ref{fig:pocMain}) shows the initial screen and some basic function, the help command with explanation of possible commands, and the command completion obtained by pressing the tab key twice.
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.6\textwidth]{pocMain}
+\caption{PoC initial screen}
+\label{fig:pocMain}
+\end{center}
+\end{figure}
+
+
+Help and command completion are available along all the sections of the PoC.
+
+The PoC is divided into two main parts linked to the test of each hypothesis. Next in this chapter, inside the section related to each hypothesis, each part is presented.
+
+
+\subsection{Experiment - First Hypothesis}
+\label{sub:firstHypExp}
+
+In order to carry the experiment for the first hypothesis (see~\ref{firstHyp}), it is required to build the network configuration introduced at the beginning of this chapter (see~\ref{fig:netConfiguration1}).
+
+Before the beginning of the experiment it is necessary to introduce and discuss the test set.
+
+\subsubsection{Test Set}
+\label{subsub:testSet1}
+
+The complete test set for this hypothesis is visible in appendix (see~\ref{table:exfiltrationTestSet}).
+
+The tables shows the fields used as test set. The rows are grouped by message type to show more clearly how many fields, for each type, are used for experimentation.
+
+From the proposed test set there is a consideration that is important for this research: all the field of each message type have been considered for the set. It is worth to remember that RFCs defines the behavior of some processes that use the message types: for example, the unused field in Destination Unreachable and Time exceed messages, or the reserved field in the NDP messages, are often pointed out as fields to ignore, or zeroize by end devices or firewalls. Previously in this research, it has been specified the need to evaluate also the design of the network protocols, and not only the implementation. The unused and reserved field must be part of this evaluation, since, even though they may be there to reserve some space for future use, there may be other ways to accomplish future needs. The fields, in fact, are perfect candidates to be used for data exfiltration, because they allow to preserve the syntax and the semantics of the protocol \cite{lewandowski}.
+
+
+\subsubsection{PoC}
+\label{subsub:poc1}
+
+
+The PoC related to the test of the first hypothesis is contained in the file named allCovertTest.py. The main class inside the file, AllCovertTests, defines some variables and the main method ``startSystem''. The variable ``dataToExfilt'' defines the second part of the data to be exfiltrated, which is the following: : 
+
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\small]
+ :this is the super secret data to exfiltrate to our attacking machine\n
+\end{lstlisting}
+
+The above data is concatenated with the name of each message type and field. For example, the complete data for Destination Unreachable type, and the use of the Code field to embedd the data, is the following:
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\small]
+ Destination Unreachable code :this is the super secret data to exfiltrate to our attacking machine\n
+\end{lstlisting}
+
+For each message type, a class is defined, and it is responsible to build the packets to send. In addition to the initialization, each class contains two kind of methods. The first is a set of methods, one for each field of the message, which follows the pattern ``buildPacket'' plus the name of the field. It is responsible to build each single packet using the functionalities of Scapy. The second is common to all the classes, it is called ``execModule'', and it is responsible to initialize the packets, and send them after the data has been divided to fit the field bandwidth. The last functionality is achieved using an helper class, which contains a family of methods to be used depending on the bandwidth, and on the way that Scapy manages internally some type of data (e.g. address fields).
+
+One challenge of the functionality that allows to chunk the data to fit each field has been to find a data structure, and a methodology, that allows to send the data from one side, and rebuild the same data on the other side. Most of the variables representing the fields in Scapy are integers, which is a problem because integers are not represented with a fixed length. For example, the ascii decimal code for the character ``c'' is 99, while for character ``d'' is 100. The concatenation of the two, in case of two byte bandwidth, is 99100. Since the length is variable, on the other side would be more complicated to split it into two different bytes, and characters.
+
+The algorithm used to achieve the functionality is the following (the example shows the methodology used with multiples of one byte bandwidth, for simplicity):
+
+First, data has been divided into chunks accordingly to the field's bandwidth. Then, from each chunk, the single character is processed and transformed in its binary representation using the bitstring package. Each binary representation is added to the preceding one, with a resulting binary number which is a multiple of one byte. The binary representation is transformed back in an integer, which is sent.
+
+On the receiving side it is possible to transform back the integer in a fixed length binary number, divide it into bytes, and obtain the ascii code wich is displayed as a character.
+
+Another important file to test the hypothesis is named receiver.py. The Receiver class uses the functionality of the packet sniffer inside the Scapy library, filtering the packets by their IPv6 destination address. This could be considered the weekest part of the PoC: the packet sniffer itself, and the implementation to get the data, sometimes get some unwanted packages, leading to show some garbage on the screen. This is caused by the presence of network protocols data that the receiver is not able to filter appropriately, which may lead to the corruption of data. However, the result of the experiment is not affected by this issue, which is confirmed by intercepting the data using Wireshark\footnote{\url{https://www.wireshark.org/}, accessed 11.10.2016}, on the destination device, and by analyzing it. Nevertheless, an improvement of the receiver is needed in the evolution of the software.
+
+
+\subsubsection{Experiment Setup and Run}
+\label{subsub:expRun}
+
+In order to setup the experiment it is necessary to prepare the devices as described in~\ref{sec:4}, and the network topology (see~\ref{fig:netConfiguration1}). In addition, the PoC must be downloaded from \url{https://github.com/antekirtt/thesis} and installed on the devices with the correct dependencies, also described in~\ref{sec:4}.
+
+The Linux Debian device, in the context of the experiment, is owned by the attacker with root privileges. The Raspberry Pi Kali Linux (RPKL) device is also controlled by the attacker.
+
+The first step to run the experiment is to start the receiver on the RPKL device, with the command:
+
+./icmpv6.py -i eth0
+
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.6\textwidth]{runExpReceiver}
+\caption{The screen of the receiver}
+\label{fig:runExpRec}
+\end{center}
+\end{figure}
+
+As it is possible to see from the figure (see~\ref{fig:runExpRec}), the only piece of configuration is the IPv6 address of the receiver, the RPKL device.
+
+The second step involves to start the PoC on the Linux Debian device. To start the PoC the same command is issued:
+
+./icmpv6.py -i eth0
+
+From the figure (see~\ref{fig:runExpSend}), it is possible to see the commands and the configured IPv6 address.
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.6\textwidth]{runExpSender}
+\caption{The screen of the sender}
+\label{fig:runExpSend}
+\end{center}
+\end{figure}
+
+The results of the experiment, with all the details, will be discussed in the next chapter. The picture (see~\ref{fig:initialSetupVal}) partially shows the data exfiltrated to the RPKL device, using the open firewall configuration, and it is introduced here to show the expected result and to validate the initial setup of the experiment.
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.55\textwidth]{initialSetupVal}
+\caption{Initial Setup Validation}
+\label{fig:initialSetupVal}
+\end{center}
+\end{figure}
+
+\clearpage
+
+\subsection{Experiment - Second Hypothesis}
+\label{sub:secondHypExp}
+
+
 \pagebreak
 
 %------------------------------RESULTS-----------------------------------
 \section{Results}
 \label{sec:6}
+
+
+This chapter exhibits the results of the experiment of this research. It is organized to introduce first how the results are presented. Then, the chapter is divided into the two sub-hypothesis (see~\ref{firstHyp}, and~\ref{secondHyp}) to show for each of them what are the outcomes of the experiment.
+
+The results related to the first hypothesis are presented by introducing some general considerations about the experiment, and by describing how to read the table in appendix that shows the outcomes. After that, for each firewall configuration, this research will explain the results and discuss the differences between them and the expectations before performing the experiment. Finally, the result of each experiment against a particular firewall configuration is compared to the others, and the hypothesis is eventually validated or negated.
+
+\subsection{First Hypothesis}
+\label{resultsFirstHypothesis}
+
+In order to test the first hypothesis, this research defined a test set (see~\ref{Appendix 3}). The PoC has being written to validate or negate the hypothesis using each test of the set against each warden configuration, as previously described.
+
+It is worth to remember that, for the experiment to be valid, only one variable at a time must be modified. This variable is represented by the specific firewall configuration, while the other components of the experiment remain constant. For this reason, also the results are presented, along this chapter, in sections named after the firewall configuration that generated them (see~\ref{subsection:firewallConf}).
+
+The results of the experiment are visible in~\ref{appendix:resultsFirst}.
+
+The table with the results is organized by enumerating the tests in the first column to allow a direct reference to each test. Tests from number 1 to 10 included represents the ICMPv6 error messages. Tests from 11 to 18 represents ICMPv6 informational messages. Tests from 19 to 44 use ICMPv6 messages defined by the Neighbor Discovery protocol. Grouping the tests is usefull because each group of messages depicts a different broad functionality of the ICMPv6 protocol, and it reflects some expectations about the results of the experiment, which, as it is possible to see, and it will be described next, it is not always the case.
+
+The second and third columns represents respectively the ICMPv6 message type and the field of the message used to exfiltrate data in the covert channel.
+
+The fourth column shows the bandwidth obtained by using the particular covert channel offered by the field, in terms of bytes for each sent packet. The value of the bandwidth is static and it has been measured taking the amount of bits that a field can carry. This value is only theoretically correct, because there is no mechanism in the PoC to manage the retransmission of a lost packet. Nevertheless, this data is interesting in the evaluation of the covert channel and to analyze the possibility that a covert channel will stay undetected for longer: channels with low bandwidth requires more packets, given the same amount of data, for a successful exfiltration, which means a higher chance to be detected.
+
+The fifth column depicts the firewall configuration applied for the test set. It is divided in four sub-columns which represents each configuration. Each sub-column, numbered after the configuration categories defined in~\ref{confCategories}, shows if that specific test validates or negates the hypothesis for that specific configuration.
+
+\subsubsection{Netfilter Open}
+\label{resultsFirstNetfilterOpen}
+
+The tests against this configuration produced the expected results and validate the first hypothesis for this specific configuration (see~\ref{appendix:resultsFirst}).
+
+The Netfilter Open could be seen as the trivial case. The covert channel is dependent from its ability to preserve the syntax and the semantics of the message \cite{lewandowski}, and from the ability of the wardens, along the path to the destination, to catch each modification of those properties. The triviality of this part of the experiment is given by the fact that the warden has no knowledge of the protocol, thus it is unable to detect such modifications. Nevertheless, in the context of the experiment, the tests allow to assess the following:
+\vspace{-15pt}
+\begin{itemize}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item Exploit the possibility for further investigations. In the case that the tests shows the presence of covert channels, it is possible to proceed by investigating more restrictive configurations.
+ \item Analyze the presence, or absence, of covert channels in the ICMPv6 protocol by itself, and eventually broaden the discussion to network protocols in general.
+\end{itemize}
+
+The table with the results shows that this configuration allows to use a covert channel to exfiltrate data with all the fields of each message, without exceptions.
+
+The experiment to test the first hypothesis suggests that it is useful to proceed by investigating more restictive configurations. Furthermore, since the configuration represents the trivial case, the conclusion of this research is that the ICMPv6 protocol allows the presence of covert channels. In other words, without an active warden which is capable to detect them, the ICMPv6 protocol is not able to prevent covert channels that use its fields to transport information. This conclusion will be further analyzed later inside the comparison of the results.
+
+
+\subsubsection{ASA Default Configuration}
+\label{resultsFirstASADefault}
+
+The results of the experiment with the ASA with the default configuration was quite different from the expectations of this research. The table (see~\ref{appendix:resultsFirst}) shows that the ASA has been able to block the covert channels embedded in the ICMPv6 error messages. Instead, covert channels using ICMPv6 informational messages, and messages defined in the context of the Neighbor Discovery protocol, validate the hypothesis for this kind of tests and this configuration.
+
+The expectation of this research was quite the opposite, and it was based on the best practices that came out from the research, and applied to the fourth configuration. The ASA firewall is a dedicated device, which must be configured accordingly to the needs of an organization and its network, and services. In fact, a best practice regarding devices, or applications, is to never leave them in the default configuration, which, in the best case scenario, is something that every malicious actor can guess and try to bypass with public information. Nevertheless, this research's opinion is that the expectation after buying a device like the ASA firewall, is to have a device with minimal operation capabilities with the default configuration, which requires then to be conformed to the needs of the company for what is related to specific services. In other words, in terms of a common protocol like ICMPv6, the expectation is to have something as close as possible to the best practices.
+
+From the table of the results:
+\begin{enumerate}[noitemsep,topsep=0pt,partopsep=0pt]
+ \item tests from 1 to 10 included negate the hypothesis
+ \item tests from 11 to 44 validate the hypothesis
+\end{enumerate}
+
+As mentioned before, tests from 1 to 10 refer to the error messages of ICMPv6. The message types are: Destination Unreachable, Packet Too Big, Time Exceeded, and parameter Problem. These messages are used by the network to communicate that there are issues of different kind in the delivering of a packet. For example, the Packet Too Big type uses the MTU field to communicate to the source of the packet that some link, along the path to the destination, has a Maximum Transmission Unit that is lower than the one that connects the origin to its first hop. This kind of information is important for the communication to work properly, and should not be blocked by the device.
+
+On the other side, the ICMPv6 messages defined by the Neighbor Discovery protocol, Router Solicitation, Router Advertisement, Neighbor Solicitation, Neighbor Advertisement, and Redirect, are messages employed inside a network segment, inside the LAN, and are not supposed to travel beyond a firewall, or a router. In fact, the best practices state to filter such packets with a Hop Limit lower than 255. This kind of messages must not leave the internal network and must be blocked at the boundaries of the network segment.
+
+
+\subsubsection{ASA with ICMP module}
+\label{resultsFirstASADefaultICMP}
+
+This configuration adds the deep inspection of ICMPv6 messages by activating the ICMP module.
+
+The table (see~\ref{appendix:resultsFirst}) depicts the results of this set of experiments. The hypothesis is negated by tests from 1 to 11 included, and from 15 to 18 included. For test 12,13,14, and from 19 to 44, instead, the experiment validate the hypothesis and allow the creation of covert channels to exfiltrate data.
+
+The expectations of this research, for this set of tests and configuration, was sightly different compared to the previous one. Since the covert channels have been created by modifying the semantics of the fields, with the activation of the deep packet inspection for ICMPv6 messages (the module is called icmp for both ICMP and ICMPv6) this research expected the negation of the hypothesis for all the ICMPv6 message types. Instead, the experiment validates the hypothesis for the Echo Request type, using Identifier, Sequence Number, and Data fields, and for all the messages related to the Neighbor Discovery protocol.
+
+The expectations about the experiment with this configuration were built upon a wrong interpretation of what the deep packet inspection for ICMP and ICMPv6 is able to do. In fact, the module enables the firewall to be stateful with respect to the ICMPv6 protocol, which is by nature stateless. By adding a session to the traffic, the ASA allows the returning traffic, generated by ICMPv6 messages, to pass through the ASA and return back to the host that generated the initial messages. This is the case for an Echo Reply, which return traffic is generated by an Echo Request. In fact, the module allows to open a session only for an Echo Request and not for other type of messages, which are not supposed to expect a return traffic.
+
+The session allows the device to block the covert channels related to the fields of the Echo Reply message, as shown by the results. This is because there are no valid Echo Requests that opened a session and allowed for the trafffic to come back. The ASA searches for an open session, which is not found, and the packet is dropped. From the results, instead, only the covert channel which uses the Echo Request code field has been blocked. The opinion of this research is that this is due to the fact that the ICMP module is looking for a valid code in order to open a session, but it could not find one, since the only semantically valid code for an Echo Request is 0. This opinion however needs further investigations, and a new iteration of the experiment. 
+
+The following command, issued on the ASA cli, can be used to debug and better understand the applied rules:
+
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\small]
+ packet-tracer input inside icmp 2001:abcd:acad:2::2 128 0 2001:abcd:acad:1::2 detailed
+\end{lstlisting}
+
+the command shows in detail when and at which phase a rule may allow or drop a packet. It takes into consideration packets in the input of the inside interface, related to the icmp protocol (ICMP or ICMPv6), which arrived from the given source address. The ICMPv6 message has type 128 (Echo Request) and code 0. The command comfirms that a packet with the given characteristics is allowed to pass the firewall. Test number 11, instead, changed the semantics of the field, which results in a drop of the packet. Another command useful for the investigation is the following:
+
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\small]
+ show asp drop
+\end{lstlisting}
+
+the command shows the statistics of the dropped packets (to reset the statistics use the \textit{clear asp drop} command).
+
+To confirm the aforementioned opinion, this research decided to slightly modify to PoC, by commenting all the tests, but the one that uses the Echo Request code field. After clearing the statistics, the experiment is performed. 
+
+\begin{figure}[ht] 
+\begin{center}
+\includegraphics[width=0.4\textwidth]{echoCodeOnly}
+\caption{Experiment iteration}
+\label{fig:expIteration}
+\end{center}
+\end{figure}
+
+The proposed command confirmed the assumption:
+
+\begin{lstlisting}[style=python,basicstyle=\ttfamily\small]
+ ASA-EXP(config)# show asp drop
+
+  Frame drop:
+   ICMP Inspect bad icmp code (inspect-icmp-bad-code)                          89
+\end{lstlisting}
+
+The test sent 89 packets in order to exfiltrate data, which are inspected by the ICMP module and dropped because of a bad code. In this case, the ICMP module is able to negate the first hypothesis and prevent the covert channel.
+
+Tests from 19 to 44 follows the same reasoning depicted in the previous configuration, that is, the messages defined by Neighbor Discovery must be blocked inside the broadcast domain. 
+
+
+\subsubsection{Netfilter with Best Practices}
+\label{resultsFirstNetfilterBest}
+
+The table (see~\ref{appendix:resultsFirst}) shows the results of the experiment with the Netfilter configuration using best practices. The results fulfills the expectations of this research and validate the first hypothesis for tests from 1 to 14 included. Test from 15 to 44, on the other hand, negate the hypothesis.
+
+The result is fully expected because the best practices, which led to this configuration, clearly define which are the functionalities that a network needs in order to work properly. In addition, the applied best practices divide the functionalities between those that are required by the internal network, and those that are required for an end-to-end communication. For both of them, as described in~\ref{subsub:netfilterBestPractices}, the rules to allow or drop an ICMPv6 message are applied.
+
+Tests from 1 to 10 included use ICMPv6 error messages. Those messages are required to communicate that the network traffic encountered some kind of error, which may disrupt or slow down the communication. The results  were expected because, even though the configuration follows the best practices, the device has not enough knowledge of the syntax and semantics of the protocol, which are the properties to which a covert channel must adhere in order to stay undetected. With the test, the syntax is respected, but the semantics change completely: the values of the fields are meaningless for the message. For example, a Time Exceeded code must always have values between 0 and 1 included, while the covert channel that uses that field modifies the value accordingly to the data it needs to transport.
+
+Tests from 11 to 18 included represent the ICMPv6 informational messages. Here the hypothesis has been validated by the Echo Request tests, and negated by the Echo Reply tests. In this case the difference is caused by the application of best practices, but by an hypothetical internal policy that a company may have. The policy states that the organization want to be able to test external connectivity and allow return traffic under the form of an Echo Reply. On the other side, the policy grants that an external entitiy would not be able to perform aliveness test, and for this reason the return traffic is dropped.
+
+Finally, since NDP is required on the internal network only, ICMPv6 messages defined by this protocol are dropped at the boundaries. This negates the hypothesis for tests from 19 to 44.
+
+The Netfilter configuration with best practices is part of the contribution of this research, but it is not enough to detect all the covert channel, as shown by the results. This configuration is able to filter the messages accordingly to the best practices, but in order to disrupt also the covert channels that use the required ICMPv6 messages and fields, another kind of mechanism is needed. This mechanism is the deep packet inspection, which is based on a deeper knowledge of the syntax and semantics of the protocol. The mechanism may be offered by IDS and IPS services like Snort \footnote{\url{https://www.snort.org/}, accessed 19.10.2016}, or Suricata \footnote{\url{https://suricata-ids.org/}, accessed 19.10.2016}. These services are not in scope with this research and will not be further analyzed.
+
+
+\subsubsection{Considerations about the Results}
+\label{resultsFirstComparison}
+
+The experiment related to the first hypothesis led to some considerations which are specific to each particular firewall configuration. Inside this section, instead, this research explores some general considerations regarding the ICMPv6 protocol in relationship with covert channels.
+
+It is useful to present again the first hypothesis:
+
+\textit{It is possible to manipulate the ICMPv6 protocol to exfiltrate data without authorization from an internal network to the outside and traversing a border network device}
+
+The experiment shows that the hypothesis is validated by some tests and configurations. It is useful at this point to step back and try to evaluate the protocol itself, by keeping away for a moment the last part of the hypothesis, the one that includes the border network device. The trivial case, the one with the Netfilter Open configuration, may represent this case, where the only device's task is to forward packets.
+
+As shown before, this special case validates the hypothesis for all the messages and fields. This result leads to the following question:
+
+\textit{the presence of covert channels in the ICMPv6 protocol is specific to the protocol itself, to the way it has being designed and implemented, or this presence could be extended to other networked protocols?}
+
+It is the opinion of this research that this presence could be extended to other protocols, as far as the protocol has a mechanism that allows it to be transported to the destination. For ICMPv6, this mechanism is granted by the IPv6 protocol. On the other side, a trivial example is the destination address field of the IPv6 protocol: since the field is used to route the packet, a hypothetical covert channel that use this field will disrupt the communication, and the covert channel itself. Other protocols must be tested to confirm that they could be used for a covert channel, but if they rely on other protocols to be delivered, there is a great possibility that they are vulnerable as well, in all or some of their fields.
+
+As the experiment shows, each field could be used for a covert channel. The nature of this particular configuration depicts the fact that the ICMPv6 protocol is vulnerable for this kind of misuse of a network protocol. The defense, in fact, is delegated to other device, like active warden, or protocols.
+
+From an implementation point of view, the specification in RFCs do not explicitly mention the behavior of intermediate devices with respect to ICMPv6 packets. The specifications regard only end systems and the behavior of the sender and receiver of the packet. In the validation of the Neighbor Discovery protocol, the RFC specifies that a packet whose IPv6 Hop Limit field is less than 255 must be silently discarded \cite{rfc4861}. The directive again refers to end systems, which could also be routers or firewalls, if the packet is originated from, or directed to it. Nevertheless, this directive may be an implicit suggestion for a defense mechanism on intermediate devices. 
+
+From a design point of view, there are some consideration that are worth to underline. First, the presence of a covert channel is in the design of the protocol itself. The opinion of this research is that this is common and acceptable, because a network protocol must adhere to its requirements only, and any addition, in terms of functionality, could introduce complexity and new vulnerabilities. Other protocols must be designed and implemented to deal with other kind of functionalities. A simple example is the IPv6 protocol, which supply the transport mechanism. In the case of ICMPv6, a security mechanism to filter manipulated packets is demanded to the active wardens with knowledge of the syntax and semantics of the protocol.
+
+The second consideration is related to the unused and reserved fields. Even though their presence could be justified by the needs to maintain a consistency in the lenght of the header, or for future use, these kind of fields may be considered overdesign. As mentioned before, a covert channel must be consistent to the syntax and semantics of the field to stay undetected. By introducing such fields in the design, the ICMPv6 protocol defines fields semantically meaningless, which gives less weapons to detect the covert channel to those intermediate devices to which the security of ICMPv6 is delegated.
+
+Another aspect that is worth to analyze is the behavior of the active wardens in relationship with covert channels. The Netfilter configuration with Best Practices represents a service that must be completely configured accordingly to the needs of an organization, which involves an analysis of the requirements, and an understanding of the security implications that a choice may produce. In this case, the persons involved in the process needs to be aware of what a specific configuration is able to do. The experiment shows that following the best practices is not enough to block all the covert channel, and this research suggests the use of other services. This is a contribution in terms of security awareness.
+
+The configuration of the ASA firewall, instead, may introduce some issues, depending on the approach taken by the management and security personnel. The experiment shows some differences between the expectations of this research and the actual results. The configuration applied to the device by an organization may follow their expectations as well, with the consequence to be vulnerable to data exfiltration using a covert channel. The default policy of the ASA firewall allows traffic to travel from an interface with high security level to an interface with lower secuirty level, but not the opposite \footnote{\url{http://www.cisco.com/c/en/us/td/docs/security/asa/asa91/configuration/general/asa_91_general_config/interface_complete_routed.html}, accessed 22.10.2016}. This policy may be seen as an asymmetric evaluation between the risk that a malicious actor try to break the company's defenses from the outside network, and the risk that the same malicious actor has already gained access and try to exfiltrate data. Since one of the goal of this research is to produce the necessary awareness, this asymmetry must be taken into consideration.
+
+
+
+\subsection{Second Hypothesis}
+\label{resultsSecondHypothesis}
+
+
 
 \pagebreak
 
@@ -2238,6 +2978,8 @@ Source Link-Layer Address option.\\
 \end{savenotes}
 
 
+
+
 \begin{savenotes}
 \begin{table}[!htpb]
 \centering
@@ -2553,6 +3295,202 @@ the packet.\\
 \label{table:4861Options}
 \end{table}
 \end{savenotes}
+
+\clearpage
+
+\pagebreak
+
+\section{Appendix 3 - Test Set}
+\label{Appendix 3}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|L{4.5cm}|L{3.5cm}|L{4.5cm}|L{3.5cm}|}
+\hline
+\rowcolor{lightblue}
+Message&Field&Message&Field\\
+\hline
+Destination Unreachable&Code&Router Solicitation&Code\\
+Destination Unreachable&Length&Router Solicitation&Reserved\\
+\cline{3-4}
+Destination Unreachable&Unused&Router Advertisement&Code\\ 
+\cline{1-2}
+Packet Too Big&Code&Router Advertisement&Cur Hop Limit\\
+Packet Too Big&MTU&Router Advertisement&M\\
+\cline{1-2}
+Time Exceeded&Code&Router Advertisement&O\\
+Time Exceeded&Length&Router Advertisement&H\\
+Time Exceeded&Unused&Router Advertisement&Prf\\
+\cline{1-2}
+Parameter Problem&Code&Router Advertisement&P\\
+Parameter Problem&Pointer&Router Advertisement&Reserved\\
+\cline{1-2}
+Echo Request&Code&Router Advertisement&Router Life Time\\
+Echo Request&Identifier&Router Advertisement&Reachable Time\\
+Echo Request&Sequence Number&Router Advertisement&Retrans Timer\\
+\cline{3-4}
+Echo Request&Data&Neighbor Solicitation&Code\\
+\cline{1-2}
+Echo Reply&Code&Neighbor Solicitation&Reserved\\
+Echo Reply&Identifier&Neighbor Solicitation&Target Address\\
+\cline{3-4}
+Echo Reply&Sequence Number&Neighbor Advertisement&Code\\
+Echo Reply&Data&Neighbor Advertisement&R\\
+\cline{1-2}
+&&Neighbor Advertisement&S\\
+&&Neighbor Advertisement&O\\
+&&Neighbor Advertisement&Reserved\\
+&&Neighbor Advertisement&Target Address\\
+\cline{3-4}
+&&Redirect&Code\\
+&&Redirect&Reserved\\
+&&Redirect&Target Address\\
+&&Redirect&Destination Address\\
+\hline
+\end{tabular}}
+\caption{Data Exfiltration Test Set}
+\label{table:exfiltrationTestSet}
+\end{table}
+\end{savenotes}
+
+
+\newpage
+\section{Appendix 4 - Results}
+\label{Appendix 4}
+\vspace{-20pt}
+\subsection{First Hypothesis}
+\label{appendix:resultsFirst}
+
+
+\begin{savenotes}
+\begin{table}[!h]
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\addvbuffer[-15pt 0pt]{\begin{tabular}{|C{1.0cm}|L{5.0cm}|L{5.0cm}|C{2.0cm}|C{1.0cm}|C{1.0cm}|C{1.0cm}|C{1.0cm}|}
+\hline
+\rowcolor{lightblue}
+Test Number&Message&Field&Bandwidth (Bytes/Packet)&\multicolumn{4}{c|}{Firewall Configuration}\\ \cline{5-8}
+\rowcolor{lightblue}
+\multirow{-2}{*}{}&\multirow{-2}{*}{}&\multirow{-2}{*}{}&\multirow{-2}{*}{}&1&2&3&4\\
+\hline
+1&Destination Unreachable&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+2&Destination Unreachable&Length&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+3&Destination Unreachable&Unused&3&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+\hline
+4&Packet Too Big&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+5&Packet Too Big&MTU&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+\hline
+6&Time Exceeded&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+7&Time Exceeded&Length&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+8&Time Exceeded&Unused&3&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+\hline
+9&Parameter Problem&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+10&Parameter Problem&Pointer&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+\hline
+11&Echo Request&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+12&Echo Request&Identifier&2&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+13&Echo Request&Sequence Number&2&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+14&Echo Request&Data&8&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}\\
+\hline
+15&Echo Reply&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+16&Echo Reply&Identifier&2&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+17&Echo Reply&Sequence Number&2&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+18&Echo Reply&Data&8&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+19&Router Solicitation&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+20&Router Solicitation&Reserved&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+21&Router Advertisement&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+22&Router Advertisement&Cur Hop Limit&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+23&Router Advertisement&M&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+24&Router Advertisement&O&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+25&Router Advertisement&H&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+26&Router Advertisement&Prf&0.25&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+27&Router Advertisement&P&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+28&Router Advertisement&Reserved&0.25&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+29&Router Advertisement&Router Life Time&2&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+30&Router Advertisement&Reachable Time&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+31&Router Advertisement&Retrans Timer&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+\end{tabular}}}
+\caption{Data Exfiltration Results}
+\label{table:exfiltrationResults1}
+\end{table}
+\end{savenotes}
+
+
+\begin{savenotes}
+\begin{table}[!htpb]
+\centering
+\addtolength{\tabcolsep}{1pt}
+\noindent\makebox[\textwidth]{
+\begin{tabular}{|C{1.0cm}|L{5.0cm}|L{5.0cm}|C{2.0cm}|C{1.0cm}|C{1.0cm}|C{1.0cm}|C{1.0cm}|}
+\hline
+\rowcolor{lightblue}
+Test Number&Message&Field&Bandwidth (Bytes/Packet)&\multicolumn{4}{c|}{Firewall Configuration}\\ \cline{5-8}
+\rowcolor{lightblue}
+\multirow{-2}{*}{}&\multirow{-2}{*}{}&\multirow{-2}{*}{}&\multirow{-2}{*}{}&1&2&3&4\\
+\hline
+32&Neighbor Solicitation&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+33&Neighbor Solicitation&Reserved&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+34&Neighbor Solicitation&Target Address&16&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+35&Neighbor Advertisement&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+36&Neighbor Advertisement&R&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+37&Neighbor Advertisement&S&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+38&Neighbor Advertisement&O&0.12&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+39&Neighbor Advertisement&Reserved&3&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+40&Neighbor Advertisement&Target Address&16&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+41&Redirect&Code&1&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+42&Redirect&Reserved&4&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+43&Redirect&Target Address&16&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+44&Redirect&Destination Address&16&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{ok}&\includegraphics[width=4mm, height=4mm]{notok}\\
+\hline
+\end{tabular}}
+\caption{Data Exfiltration Results}
+\label{table:exfiltrationResults2}
+\end{table}
+\end{savenotes}
+
+\clearpage
+
+\subsection{Second Hypothesis}
+\label{appendix:resultsSecond}
+
+\clearpage
+
+\pagebreak
+
+\section{Appendix 5 - Firewall Configuration}
+\label{Appendix 5}
+
+\subsection{Netfilter Open Configuration}
+\label{appendix:netfilterOpenApp}
+
+\lstinputlisting[style=bash,caption=Netfilter open,label=NetfilterOpenConfig]{files/firewall_open_rules.sh}
+
+\subsection{ASA Default Configuration}
+\label{appendix:ASAdefaultAppendix}
+
+\lstinputlisting[style=bash,caption=ASA Default,label=ASADefaultConfig]{files/ASADefaultConfig}
+
+
+\subsection{ASA Default with ICMP Module Configuration}
+\label{appendix:ASAicmpAppendix}
+
+
+\lstinputlisting[style=bash,caption=ASA with ICMP module enabled,label=ASADefaultPlusICMPConfig]{files/ASADefaultPlusICMPConfig}
+
+\subsection{Netfilter with Best Practices Configuration}
+\label{appendix:netfilterBestAppendix}
+
+\lstinputlisting[style=bash,caption=Netfilter with Best Practices,label=NetfilterBestPracticesConfig]{files/firewall_rules.sh}
+
 
 
 \end{document}
