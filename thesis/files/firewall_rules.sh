@@ -45,6 +45,7 @@ ip6tables -A INPUT -p icmpv6 --icmpv6-type redirect -j ACCEPT
 
 #accept ssh related and established traffic, and ns,na traffic on output chain
 ip6tables -A OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
+ip6tables -A OUTPUT -p icmpv6 --icmpv6-type router-advertisement -j ACCEPT
 ip6tables -A OUTPUT -p icmpv6 --icmpv6-type neighbor-solicitation -j ACCEPT
 ip6tables -A OUTPUT -p icmpv6 --icmpv6-type neighbor-advertisement -j ACCEPT
 ip6tables -A OUTPUT -j LOG --log-prefix "output drops"

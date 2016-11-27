@@ -17,50 +17,31 @@
 \BOOKMARK [3][-]{subsubsection.79}{Research Question}{subsection.78}% 17
 \BOOKMARK [3][-]{subsubsection.82}{Hypothesis}{subsection.78}% 18
 \BOOKMARK [2][-]{subsection.85}{Experiment Foundation}{section.72}% 19
-\BOOKMARK [3][-]{subsubsection.86}{Test set selection}{subsection.85}% 20
-\BOOKMARK [3][-]{subsubsection.87}{Environment}{subsection.85}% 21
-\BOOKMARK [3][-]{subsubsection.96}{Border Network Device Configurations}{subsection.85}% 22
-\BOOKMARK [3][-]{subsubsection.112}{Testing/Attacking application}{subsection.85}% 23
-\BOOKMARK [2][-]{subsection.117}{Summary}{section.72}% 24
-\BOOKMARK [1][-]{section.118}{Implementation}{}% 25
-\BOOKMARK [2][-]{subsection.119}{Virtualbox}{section.118}% 26
-\BOOKMARK [2][-]{subsection.120}{Raspberry Pi with Kali Linux}{section.118}% 27
-\BOOKMARK [2][-]{subsection.135}{Linux Debian}{section.118}% 28
-\BOOKMARK [2][-]{subsection.147}{Linux Debian Firewall}{section.118}% 29
-\BOOKMARK [2][-]{subsection.166}{Windows 7}{section.118}% 30
-\BOOKMARK [2][-]{subsection.167}{Cisco ASA Firewall}{section.118}% 31
-\BOOKMARK [2][-]{subsection.230}{PoC}{section.118}% 32
-\BOOKMARK [1][-]{section.240}{Experiment}{}% 33
-\BOOKMARK [2][-]{subsection.241}{Network Configurations}{section.240}% 34
-\BOOKMARK [2][-]{subsection.244}{Firewall Configuration}{section.240}% 35
-\BOOKMARK [3][-]{subsubsection.245}{Netfilter Open}{subsection.244}% 36
-\BOOKMARK [3][-]{subsubsection.246}{ASA Default Configuration}{subsection.244}% 37
-\BOOKMARK [3][-]{subsubsection.247}{ASA with ICMP module}{subsection.244}% 38
-\BOOKMARK [3][-]{subsubsection.248}{Netfilter with Best Practices}{subsection.244}% 39
-\BOOKMARK [2][-]{subsection.250}{Proof of Concept \(PoC\) - General Functionality}{section.240}% 40
-\BOOKMARK [2][-]{subsection.252}{Experiment - First Hypothesis}{section.240}% 41
-\BOOKMARK [3][-]{subsubsection.253}{Test Set}{subsection.252}% 42
-\BOOKMARK [3][-]{subsubsection.254}{PoC}{subsection.252}% 43
-\BOOKMARK [3][-]{subsubsection.260}{Experiment Setup and Run}{subsection.252}% 44
-\BOOKMARK [2][-]{subsection.264}{Experiment - Second Hypothesis}{section.240}% 45
-\BOOKMARK [1][-]{section.265}{Results}{}% 46
-\BOOKMARK [2][-]{subsection.266}{First Hypothesis}{section.265}% 47
-\BOOKMARK [3][-]{subsubsection.267}{Netfilter Open}{subsection.266}% 48
-\BOOKMARK [3][-]{subsubsection.268}{ASA Default Configuration}{subsection.266}% 49
-\BOOKMARK [3][-]{subsubsection.271}{ASA with ICMP module}{subsection.266}% 50
-\BOOKMARK [3][-]{subsubsection.282}{Netfilter with Best Practices}{subsection.266}% 51
-\BOOKMARK [3][-]{subsubsection.285}{Considerations about the Results}{subsection.266}% 52
-\BOOKMARK [2][-]{subsection.287}{Second Hypothesis}{section.265}% 53
-\BOOKMARK [1][-]{section.288}{Conclusions}{}% 54
-\BOOKMARK [1][-]{section.288}{References}{}% 55
-\BOOKMARK [1][-]{appendix.289}{Appendix 1 - Protocol Headers}{}% 56
-\BOOKMARK [1][-]{appendix.306}{Appendix 2 - ICMPv6 specifications}{}% 57
-\BOOKMARK [1][-]{appendix.325}{Appendix 3 - Test Set}{}% 58
-\BOOKMARK [1][-]{appendix.327}{Appendix 4 - Results}{}% 59
-\BOOKMARK [2][-]{subsection.328}{First Hypothesis}{appendix.327}% 60
-\BOOKMARK [2][-]{subsection.331}{Second Hypothesis}{appendix.327}% 61
-\BOOKMARK [1][-]{appendix.332}{Appendix 5 - Firewall Configuration}{}% 62
-\BOOKMARK [2][-]{subsection.333}{Netfilter Open Configuration}{appendix.332}% 63
-\BOOKMARK [2][-]{subsection.351}{ASA Default Configuration}{appendix.332}% 64
-\BOOKMARK [2][-]{subsection.493}{ASA Default with ICMP Module Configuration}{appendix.332}% 65
-\BOOKMARK [2][-]{subsection.636}{Netfilter with Best Practices Configuration}{appendix.332}% 66
+\BOOKMARK [2][-]{subsection.113}{Summary}{section.72}% 20
+\BOOKMARK [1][-]{section.114}{Implementation}{}% 21
+\BOOKMARK [2][-]{subsection.115}{Technical Details - Devices}{section.114}% 22
+\BOOKMARK [2][-]{subsection.166}{Network Configurations}{section.114}% 23
+\BOOKMARK [2][-]{subsection.180}{Firewall Configuration}{section.114}% 24
+\BOOKMARK [2][-]{subsection.182}{Proof of Concept \(PoC\) and Test Set}{section.114}% 25
+\BOOKMARK [1][-]{section.198}{Experiment}{}% 26
+\BOOKMARK [2][-]{subsection.199}{First Hypothesis}{section.198}% 27
+\BOOKMARK [2][-]{subsection.207}{Second Hypothesis}{section.198}% 28
+\BOOKMARK [1][-]{section.223}{Results}{}% 29
+\BOOKMARK [2][-]{subsection.224}{First Hypothesis}{section.223}% 30
+\BOOKMARK [2][-]{subsection.240}{Second Hypothesis}{section.223}% 31
+\BOOKMARK [1][-]{section.256}{Conclusions}{}% 32
+\BOOKMARK [1][-]{section.256}{References}{}% 33
+\BOOKMARK [1][-]{appendix.257}{Appendix 1 - Protocol Headers}{}% 34
+\BOOKMARK [1][-]{appendix.274}{Appendix 2 - ICMPv6 specifications}{}% 35
+\BOOKMARK [1][-]{appendix.293}{Cisco ASA Version}{}% 36
+\BOOKMARK [1][-]{appendix.356}{Test Set - First Hypothesis}{}% 37
+\BOOKMARK [1][-]{appendix.358}{Commands - Second Hypothesis}{}% 38
+\BOOKMARK [1][-]{appendix.362}{Results}{}% 39
+\BOOKMARK [2][-]{subsection.363}{First Hypothesis}{appendix.362}% 40
+\BOOKMARK [2][-]{subsection.366}{Second Hypothesis}{appendix.362}% 41
+\BOOKMARK [1][-]{appendix.379}{Firewall Configurations}{}% 42
+\BOOKMARK [2][-]{subsection.380}{Netfilter Open Configuration}{appendix.379}% 43
+\BOOKMARK [2][-]{subsection.398}{ASA Default Configuration}{appendix.379}% 44
+\BOOKMARK [2][-]{subsection.540}{ASA Default with ICMP Module Configuration}{appendix.379}% 45
+\BOOKMARK [2][-]{subsection.683}{Netfilter with Best Practices Configuration}{appendix.379}% 46
+\BOOKMARK [1][-]{appendix.807}{Monitor Windows Firewall - PoC}{}% 47

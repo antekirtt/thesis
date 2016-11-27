@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.10.22)  22 OCT 2016 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.10.22)  26 NOV 2016 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1623,15 +1623,15 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 (./thesis.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
- [8] [9])
+ [8])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [10] (./thesis.lof)
+ [9] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [11] (./thesis.lot [12])
+ [10] (./thesis.lot [11] [12])
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
@@ -1661,7 +1661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--394
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
-<figures/communicationScenarios.png, id=785, 916.42375pt x 534.99875pt>
+<figures/communicationScenarios.png, id=721, 916.42375pt x 534.99875pt>
 File: figures/communicationScenarios.png Graphic file (type png)
 
 <use figures/communicationScenarios.png>
@@ -1702,982 +1702,2401 @@ Underfull \hbox (badness 10000) in paragraph at lines 1519--1519
 icrosoft-[]edge / tools / vms /
  []
 
-[56] [57] [58] [59] [60] [61]
+[56] [57] [58] [59] [60]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [62]
-Overfull \hbox (9.64761pt too wide) in paragraph at lines 1685--1686
+) [61]
+Overfull \hbox (9.64761pt too wide) in paragraph at lines 1691--1692
 []\T1/ptm/m/n/12 The OS has been down-loaded from: [][]$\T1/pcr/m/n/12 https : 
 / / www . debian . org / releases / jessie /
  []
 
-[63]
-Overfull \hbox (9.64761pt too wide) in paragraph at lines 1734--1735
+[62]
+Overfull \hbox (9.64761pt too wide) in paragraph at lines 1750--1751
 []\T1/ptm/m/n/12 The OS has been down-loaded from: [][]$\T1/pcr/m/n/12 https : 
 / / www . debian . org / releases / jessie /
  []
 
-[64] [65] [66] [67]
-<figures/networkTopology1.png, id=1221, 599.23875pt x 307.1475pt>
+
+Overfull \hbox (2.94762pt too wide) in paragraph at lines 1816--1817
+[]\T1/ptm/m/n/12 The OS has been down-loaded from: [][]$\T1/pcr/m/n/12 https : 
+/ / developer . microsoft . com / en-[]us /
+ []
+
+[63] [64] <figures/networkTopology1.png, id=1077, 599.23875pt x 307.1475pt>
 File: figures/networkTopology1.png Graphic file (type png)
 
 <use figures/networkTopology1.png>
-Package pdftex.def Info: figures/networkTopology1.png used on input line 1920.
+Package pdftex.def Info: figures/networkTopology1.png used on input line 1875.
 (pdftex.def)             Requested size: 310.50357pt x 159.15521pt.
- [68] [69 <./figures/networkTopology1.png>]
-<figures/networkTopology2.png, id=1237, 648.4225pt x 308.15125pt>
+ [65 <./figures/networkTopology1.png>]
+<figures/networkTopology2.png, id=1088, 648.4225pt x 308.15125pt>
 File: figures/networkTopology2.png Graphic file (type png)
 
 <use figures/networkTopology2.png>
-Package pdftex.def Info: figures/networkTopology2.png used on input line 1938.
+Package pdftex.def Info: figures/networkTopology2.png used on input line 1893.
 (pdftex.def)             Requested size: 310.50357pt x 147.56296pt.
- [70 <./figures/networkTopology2.png>]
-[71] [72] [73] [74] [75] [76]
-<figures/pocMain.png, id=1279, 724.7075pt x 471.7625pt>
+ [66 <./figures/networkTopology2.png>]
+[67] [68] [69] [70] [71] [72] [73]
+<figures/pocMain.png, id=1156, 724.7075pt x 471.7625pt>
 File: figures/pocMain.png Graphic file (type png)
 
 <use figures/pocMain.png>
-Package pdftex.def Info: figures/pocMain.png used on input line 2048.
+Package pdftex.def Info: figures/pocMain.png used on input line 2068.
 (pdftex.def)             Requested size: 266.14978pt x 173.25365pt.
- [77 <./figures/pocMain.png>]
-Overfull \hbox (7.37648pt too wide) in paragraph at lines 2081--2082
-\T1/ptm/m/n/12 The PoC re-lated to the test of the first hy-poth-e-sis is con-t
-ained in the file named all-CovertTest.py.
+
+Overfull \hbox (7.37648pt too wide) in paragraph at lines 2083--2084
+[]\T1/ptm/m/n/12 The PoC re-lated to the test of the first hy-poth-e-sis is con
+-tained in the file named all-CovertTest.py.
  []
 
-[78] [79] <figures/runExpReceiver.png, id=1309, 727.71875pt x 218.8175pt>
+[74 <./figures/pocMain.png>] [75] [76] [77] [78] [79]
+<figures/runExpReceiver.png, id=1206, 727.71875pt x 218.8175pt>
 File: figures/runExpReceiver.png Graphic file (type png)
 
 <use figures/runExpReceiver.png>
-Package pdftex.def Info: figures/runExpReceiver.png used on input line 2119.
+Package pdftex.def Info: figures/runExpReceiver.png used on input line 2182.
 (pdftex.def)             Requested size: 266.14978pt x 80.02965pt.
- [80]
-<figures/runExpSender.png, id=1318, 725.71124pt x 198.7425pt>
+
+<figures/runExpSender.png, id=1209, 725.71124pt x 198.7425pt>
 File: figures/runExpSender.png Graphic file (type png)
 
 <use figures/runExpSender.png>
-Package pdftex.def Info: figures/runExpSender.png used on input line 2135.
+Package pdftex.def Info: figures/runExpSender.png used on input line 2199.
 (pdftex.def)             Requested size: 266.14978pt x 72.88763pt.
+ [80 <./figures/runExpReceiver.png> <./figures/runExpSender.png>]
 
-<figures/initialSetupVal.png, id=1320, 942.52126pt x 364.36125pt>
-File: figures/initialSetupVal.png Graphic file (type png)
+LaTeX Warning: Reference `subsub:netFromFirstToSecond' on page 81 undefined on 
+input line 2215.
 
-<use figures/initialSetupVal.png>
-Package pdftex.def Info: figures/initialSetupVal.png used on input line 2145.
-(pdftex.def)             Requested size: 243.96951pt x 94.30914pt.
- [81 <./figures/runExpReceiver.png> <./figures/runExpSender.png> <./figures/ini
-tialSetupVal.png>] [82
-
-] [83] [84] [85]
-Overfull \hbox (6.17688pt too wide) in paragraph at lines 2217--2218
+[81] [82] [83] [84] [85] [86] [87] [88]
+Overfull \hbox (6.17688pt too wide) in paragraph at lines 2377--2378
 \T1/ptm/m/n/12 So-lic-i-ta-tion, Router Ad-ver-tise-ment, Neigh-bor So-lic-i-ta
 -tion, Neigh-bor Ad-ver-tise-ment, and Redi-
  []
 
-[86] [87] <figures/echoCodeOnly.png, id=1369, 393.47pt x 203.76125pt>
+[89] <figures/echoCodeOnly.png, id=1300, 393.47pt x 203.76125pt>
 File: figures/echoCodeOnly.png Graphic file (type png)
 
 <use figures/echoCodeOnly.png>
-Package pdftex.def Info: figures/echoCodeOnly.png used on input line 2251.
+Package pdftex.def Info: figures/echoCodeOnly.png used on input line 2411.
 (pdftex.def)             Requested size: 177.42868pt x 91.88136pt.
- [88 <./figures/echoCodeOnly.png>] [89] [90]
-Underfull \hbox (badness 10000) in paragraph at lines 2314--2314
+ [90] [91 <./figures/echoCodeOnly.png>] [92]
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 2474--2474
 [][][][][]$\T1/pcr/m/n/10 http : / / www . cisco . com / c / en / us / td / doc
 s / security / asa / asa91 / configuration /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2314--2314
+Underfull \hbox (badness 10000) in paragraph at lines 2474--2474
 \T1/pcr/m/n/10 general / asa _ 91 _ general _ config / interface _ complete _ r
 outed . html$[][]\T1/ptm/m/n/10 , ac-cessed
  []
 
-[91] [92] [93] (./thesis.bbl [94] [95] [96]) [97]
-Underfull \hbox (badness 10000) in paragraph at lines 2389--2390
+[94] [95] [96] [97] [98] [99]
+Underfull \hbox (badness 10000) in paragraph at lines 2563--2563
+[][][][][]$\T1/pcr/m/n/10 http : / / www . iana . org / assignments / protocol-
+[]numbers / protocol-[]numbers .
+ []
+
+[100]
+Underfull \hbox (badness 10000) in paragraph at lines 2573--2573
+[][][][][]$\T1/pcr/m/n/10 https : / / developer . microsoft . com / en-[]us / m
+icrosoft-[]edge / tools / vms /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2575--2575
+[][][][][]$\T1/pcr/m/n/10 https : / / www . ipv6ready . org / db / index . php 
+/ public / search / ?vn = Microsoft & p =
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 2575--2575
+[][][][][]$\T1/pcr/m/n/10 https : / / www . ipv6ready . org / db / index . php 
+/ public / logo / 02-[]C-[]000524/$[][]\T1/ptm/m/n/10 , ac-cessed
+ []
+
+[101] [102] [103] [104] [105] [106] (./thesis.bbl [107] [108] [109]) [110]
+Underfull \hbox (badness 10000) in paragraph at lines 2707--2708
 
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 2406--2406
+Underfull \hbox (badness 1033) in paragraph at lines 2724--2724
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 2428--2428
+Underfull \hbox (badness 1033) in paragraph at lines 2746--2746
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 2450--2450
+Underfull \hbox (badness 1033) in paragraph at lines 2768--2768
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 2472--2472
+Underfull \hbox (badness 1033) in paragraph at lines 2790--2790
 []\T1/ptm/m/n/12 As much of in-vock-ing packet as pos-si-ble with-out the
  []
 
-[98] [99] [100] [101] [102]
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2756--2787
+[111] [112] [113] [114] [115]
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3074--3105
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2796--2819
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3114--3137
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2828--2840
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3146--3158
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2849--2862
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3167--3180
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2871--2884
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3189--3202
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2894--2907
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3212--3225
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2916--2937
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3234--3255
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2949--2975
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3267--3293
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 2987--3013
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3305--3331
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3024--3050
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3342--3368
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3059--3076
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3377--3394
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3086--3107
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3404--3425
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3119--3144
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3437--3462
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3154--3174
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3472--3492
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3183--3194
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3501--3512
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3204--3233
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3522--3551
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3242--3262
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3560--3580
  [][] 
  []
 
 
-Overfull \hbox (1.83922pt too wide) in paragraph at lines 3271--3294
+Overfull \hbox (1.83922pt too wide) in paragraph at lines 3589--3612
  [][] 
  []
 
-[103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113
+[116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126
 
-]
-<figures/ok.png, id=1525, 250.9375pt x 288.07625pt>
+] [127]
+[128] [129] <figures/ok.png, id=1617, 250.9375pt x 288.07625pt>
 File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 
-<figures/notok.png, id=1526, 150.5625pt x 138.5175pt>
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+ <figures/notok.png, id=1618, 150.5625pt x 138.5175pt>
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/notok.png Graphic file (type png)
-
-<use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/notok.png Graphic file (type png)
-
-<use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
-
-<use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/ok.png Graphic file (type png)
- <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
-(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
-File: figures/notok.png Graphic file (type png)
- <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3419.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3419.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3906.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
 
 <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
 
 <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/ok.png Graphic file (type png)
  <use figures/ok.png>
-Package pdftex.def Info: figures/ok.png used on input line 3454.
+Package pdftex.def Info: figures/ok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
 File: figures/notok.png Graphic file (type png)
  <use figures/notok.png>
-Package pdftex.def Info: figures/notok.png used on input line 3454.
+Package pdftex.def Info: figures/notok.png used on input line 3941.
 (pdftex.def)             Requested size: 11.379pt x 11.37964pt.
- [114 <./figures/ok.png> <./figures/notok.png>] [115] [116
+File: figures/ok.png Graphic file (type png)
 
-]
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3941.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+ [130
+
+ <./figures/ok.png> <./figures/notok.png>] [131]
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 3994.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4025.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4055.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4092.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4118.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4141.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.60278pt too wide) in paragraph at lines 4162--4162
+ \T1/ptm/m/n/12 lected| 
+ []
+
+File: figures/notok.png Graphic file (type png)
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4162.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4162.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4162.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.60278pt too wide) in paragraph at lines 4200--4200
+ \T1/ptm/m/n/12 lected| 
+ []
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4200.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4224.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.60278pt too wide) in paragraph at lines 4251--4251
+ \T1/ptm/m/n/12 lected| 
+ []
+
+File: figures/notok.png Graphic file (type png)
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4251.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.60278pt too wide) in paragraph at lines 4280--4280
+ \T1/ptm/m/n/12 lected| 
+ []
+
+File: figures/notok.png Graphic file (type png)
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4280.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (0.60278pt too wide) in paragraph at lines 4309--4309
+ \T1/ptm/m/n/12 lected| 
+ []
+
+File: figures/ok.png Graphic file (type png)
+<use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/ok.png Graphic file (type png)
+ <use figures/ok.png>
+Package pdftex.def Info: figures/ok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.37976pt x 11.38042pt.
+File: figures/notok.png Graphic file (type png)
+
+<use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+File: figures/notok.png Graphic file (type png)
+ <use figures/notok.png>
+Package pdftex.def Info: figures/notok.png used on input line 4309.
+(pdftex.def)             Requested size: 11.379pt x 11.37964pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[132
+
+] [133] [134] [135] [136] [137] [138]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -2685,27 +4104,31 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 3475.
+nput line 4325.
 
-(./files/firewall_open_rules.sh) (./files/ASADefaultConfig [117
+(./files/firewall_open_rules.sh) (./files/ASADefaultConfig [139
 
-] [118] [119])
-(./files/ASADefaultPlusICMPConfig [120] [121]) (./files/firewall_rules.sh
-[122] [123] [124]) [125]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3496.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3496.
+] [140] [141])
+(./files/ASADefaultPlusICMPConfig [142] [143]) (./files/firewall_rules.sh
+[144] [145] [146]) (./files/monitorWinFirewall.py [147]) [148]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4349.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4349.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3496.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3496.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4349.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4349.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 41A10E29E52B607A041A47AE50F7D7F4;4619.
+(rerunfilecheck)             Checksum: EF987363AD0A6CD21AA7310724EFE1BB;3111.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 35099 strings out of 494945
- 627217 string characters out of 6181031
- 922195 words of memory out of 5000000
- 36930 multiletter control sequences out of 15000+600000
+ 35292 strings out of 494945
+ 630043 string characters out of 6181031
+ 930356 words of memory out of 5000000
+ 36999 multiletter control sequences out of 15000+600000
  60353 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,21n,117p,10378b,2326s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2716,10 +4139,10 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (125 pages, 736399 bytes).
+Output written on thesis.pdf (148 pages, 664323 bytes).
 PDF statistics:
- 2223 PDF objects out of 2487 (max. 8388607)
- 2046 compressed objects within 21 object streams
- 916 named destinations out of 1000 (max. 500000)
- 591 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2419 PDF objects out of 2487 (max. 8388607)
+ 2219 compressed objects within 23 object streams
+ 1037 named destinations out of 1200 (max. 500000)
+ 434 words of extra memory for PDF output out of 10000 (max. 10000000)
 
