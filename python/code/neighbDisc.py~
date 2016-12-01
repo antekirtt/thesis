@@ -1,0 +1,120 @@
+#!/usr/bin/python
+
+import sys
+import re, uuid
+import os
+import readline
+from pprint import pprint
+from commands import *
+from RAAttacks import *
+from NAAttacks import *
+from NSAttacks import *
+from redirectAttacks import *
+
+"""
+This is general class to start Neighbor Discovery protocol tests.
+The linuxInterface and windwosInterface variables must be changed accordingly.
+"""
+class NeighborDiscoveryAttacks:
+
+    def __init__(self, iface):
+        self.ipAddress = ''
+        self.iface = iface
+        self.name = 'NeighborDiscovery'
+        self.linuxInterface = "2001:abcd:acad:2:a00:27ff:fe84:bb37"
+        self.windowsInterface = "2001:abcd:acad:2:b485:2aec:9447:fd83"
+        self.firewallAddress = "2001:abcd:acad:2::1"
+
+
+    def startSystem(self):
+        Commands.setNeighborDiscoveryAttacksHistory()
+        running = 1
+        while running:
+            readline.parse_and_bind("tab: complete")
+            #we receive data from the keyboard                    
+            command  = raw_input(self.name + ' >>')
+            #help command
+            if re.match('help', command):
+                self.showHelp()
+            #quit module command
+            elif re.match('quit', command):
+                running = 0
+                Commands.setAttackingChannelHistory()
+            elif re.match('setAdr', command):
+                self.ipAddress = re.sub('setAdr', ' ', command).lstrip()
+                print 'setting Ip address: ' + self.ipAddress
+            #-----Router Advertisement section-----
+            #execution of all RA with Prefix tests
+            elif re.match('execRAPrefixRemote', command):
+                ra = RAPrefixOption(self.linuxInterface, self.windowsInterface)
+                ra.execModule(self.iface, self.ipAddress)
+            #execution of RA with Prefix internal verification
+            elif re.match('execRAPrefixInternal', command):
+                ra = RAPrefixOption(self.linuxInterface, self.windowsInterface)
+                ra.execModuleInternal(self.iface, self.ipAddress)
+            #execution of all RA with MTU tests
+            elif re.match('execRAMTURemote', command):
+                ra = RAMTUOption(self.linuxInterface, self.windowsInterface)
+                ra.execModule(self.iface, self.ipAddress)
+            #execution of RA with MTU internal verification
+            elif re.match('execRAMTUInternal', command):
+                ra = RAMTUOption(self.linuxInterface, self.windowsInterface)
+                ra.execModuleInternal(self.iface, self.ipAddress)
+
+            #-----Neighbor Advertisement section-----
+    
+            #execution of Win Mitm with internal NAs
+            elif re.match('execNAWinMitmInternal', command):
+                na = NA(self.linuxInterface, self.windowsInterface)
+                na.execModuleInternalWinMitm(self.iface)
+            #execution of Cache Flooding with internal NAs
+            elif re.match('execNACacheFloodingInternal', command):
+                na = NA(self.linuxInterface, self.windowsInterface)
+                na.execModuleInternalCacheFlooding(self.iface, self.ipAddress)
+            #execution of Cache Flooding with remote NAs to linux internal
+            elif re.match('execNACacheFloodingRemoteLinux', command):
+                na = NA(self.linuxInterface, self.windowsInterface)
+                na.execModuleRemoteLinuxCacheFlooding(self.iface)
+            #execution of NA remote test
+            elif re.match('execNARemote', command):
+                na = NA(self.linuxInterface, self.windowsInterface)
+                na.execModule(self.iface, self.ipAddress)
+                
+            #-----Neighbor Solicitation section-----
+            
+            #execution of NS internal test
+            elif re.match('execNSInternalFlooding', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModuleInternalCacheFlooding(self.iface, self.ipAddress)
+            elif re.match('execNSInternalSelfSolWin', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModuleInternalWinSelfSol(self.iface)
+            elif re.match('execNSInternalSelfSolLinux', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModuleInternalLinuxSelfSol(self.iface)
+            elif re.match('execNSRemoteSelfSolLinux', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModuleRemoteLinuxSelfSol(self.iface)
+            elif re.match('execNSInternal', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModuleInternal(self.iface, self.ipAddress)
+            #execution of NS remote test
+            elif re.match('execNSRemote', command):
+                ns = NS(self.linuxInterface, self.windowsInterface)
+                ns.execModule(self.iface, self.ipAddress)
+
+            #----Redirect section-----
+
+            #execution of Redirect internal test
+            elif re.match('execRedirectInternal', command):
+                redirect = Redirect(self.linuxInterface, self.windowsInterface)
+                redirect.execModuleInternal(self.iface, self.ipAddress)
+            #execution of Redirect remote test
+            elif re.match('execRedirectRemote', command):
+                redirect = Redirect(self.linuxInterface, self.windowsInterface)
+                redirect.execModuleRemote(self.iface, self.ipAddress)
+                
+    def showHelp(self):
+        for entry in Help.getNeighborDiscoveryAttacksHelp():
+            print entry
+

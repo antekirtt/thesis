@@ -21,7 +21,7 @@ class Receiver:
             code = packet[ICMPv6DestUnreach].code
             length = packet[ICMPv6DestUnreach].length
             unused = packet[ICMPv6DestUnreach].unused
-            payload = packet[ICMPv6DestUnreach].load
+            #payload = packet[ICMPv6DestUnreach].load
             bitLength = 8
             container = self.extractBytes(code, bitLength)
             for item in container:
@@ -38,12 +38,15 @@ class Receiver:
                 sys.stdout.write(chr(item))
                 sys.stdout.flush
             bitLength = 64
-            if payload != 'x':
-                payload = int(payload)
-                container = self.extractBytes(payload, bitLength)
-                for item in container:
-                    sys.stdout.write(chr(item))
-                    sys.stdout.flush
+            #if payload != 'x':
+            #    try:
+            #        payload = int(payload)
+            #        container = self.extractBytes(payload, bitLength)
+            #        for item in container:
+            #            sys.stdout.write(chr(item))
+            #            sys.stdout.flush
+            #    except:
+            #        pass
         elif ICMPv6PacketTooBig in packet[0]:
             code = packet[ICMPv6PacketTooBig].code
             mtu = packet[ICMPv6PacketTooBig].mtu
@@ -59,7 +62,7 @@ class Receiver:
             code = packet[ICMPv6TimeExceeded].code
             length = packet[ICMPv6TimeExceeded].length
             unused = packet[ICMPv6TimeExceeded].unused
-            payload = packet[ICMPv6TimeExceeded].load
+            #payload = packet[ICMPv6TimeExceeded].load
             sys.stdout.write(chr(code))
             sys.stdout.flush()
             bitLength = 8
@@ -72,13 +75,13 @@ class Receiver:
             for item in container:
                 sys.stdout.write(chr(item))
                 sys.stdout.flush
-            bitLength = 64
-            if payload != 'x':
-                payload = int(payload)
-                container = self.extractBytes(payload, bitLength)
-                for item in container:
-                    sys.stdout.write(chr(item))
-                    sys.stdout.flush
+            # bitLength = 64
+            # if payload != 'x':
+            #     payload = int(payload)
+            #     container = self.extractBytes(payload, bitLength)
+            #     for item in container:
+            #         sys.stdout.write(chr(item))
+            #         sys.stdout.flush
         elif ICMPv6ParamProblem in packet[0]:
             code = packet[ICMPv6ParamProblem].code
             pointer = packet[ICMPv6ParamProblem].ptr

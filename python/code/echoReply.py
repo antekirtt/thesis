@@ -1,0 +1,64 @@
+#!/usr/bin/python
+
+from scapy.all import *
+from sets import Set
+import threading
+import time
+
+
+"""
+the class build Echo Reply messages
+"""
+class EchoReply:
+    
+    def __init__(self):
+        self.adrList = Set()
+        print 'Echo Reply'
+        self.win = "2001:abcd:acad:2:b485:2aec:9447:fd83"
+        self.linux = "2001:abcd:acad:2:a00:27ff:fe84:bb37"
+        
+
+    def buildPacketEchoReply(self, ipAdr):
+        data = "abcdefghijklmnopqrstuvwabcdefghi"
+        return IPv6(dst=ipAdr)/ICMPv6EchoReply(id=0,seq=0)/data
+    
+    #sending unsolicited reply to windows 7 internal with firewall off cause the dev to send back
+    #Parameter Problem (4) code 1 Unrecognized next header type
+    def execModuleEchoReplyWin(self, exitIface):
+        receiver = ReceiverThread(exitIface)
+        receiver.start()
+        packetContainer = self.buildPacketEchoReply(self.win)
+        for x in range(1,10):
+            send(packetContainer, iface=exitIface, verbose=False)
+
+    def execModuleEchoReplyLinux(self, exitIface):
+        receiver = ReceiverThread(exitIface)
+        receiver.start()
+        packetContainer = self.buildPacketEchoReply(self.linux)
+        for x in range(1,10):
+            send(packetContainer, iface=exitIface, verbose=False)
+    
+
+
+"""
+Threads necessary to start the receiver and at the same time send packets
+"""            
+class ReceiverThread(threading.Thread):
+    
+    def __init__(self, iface):
+        threading.Thread.__init__(self)
+        self.iface = iface
+
+    def run(self):
+        print "Starting Receiving Packets"
+        rec = self.receiver(self.iface)
+
+    def packet_callback(self, packet):
+        if ICMPv6ParamProblem in packet[0]:
+            adr = packet[IPv6].src
+            code = packet[ICMPv6ParamProblem].code
+            print code
+            print adr
+
+    def receiver(self, iFace):
+        sniff(iface=iFace, filter='ip6', prn=self.packet_callback, store=0, timeout=10)

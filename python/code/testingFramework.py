@@ -9,6 +9,8 @@ from commands import *
 from covertChannels import *
 from allCovertTest import *
 from allAttackingTest import *
+from neighbDisc import *
+from infoAndErrorAttacks import *
 
 """
 class responsible for Covert Channel module
@@ -74,10 +76,14 @@ class AttackingChannel:
             elif re.match('quit', command):
                 running = 0
                 Commands.setMainHistory()
-            #set all attacking tests
-            elif re.match(r'setAll', command):
-                attacking = AllAttackingTests(self.iface)
-                attacking.startSystem()
+            #set all Neighbor Discovery tests
+            elif re.match(r'setNeighborDiscovery', command):
+                neighDisc = NeighborDiscoveryAttacks(self.iface)
+                neighDisc.startSystem()
+            #set all Informational and Error tests
+            elif re.match(r'setInfoAndError', command):
+                infoError = InfoAndErrorAttacks(self.iface)
+                infoError.startSystem()
             else:
                 print 'Error! Command not found!'
 

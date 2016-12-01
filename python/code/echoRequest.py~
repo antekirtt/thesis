@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+from scapy.all import *
+
+
+
+"""
+the class build Echo Request messages
+"""
+class EchoRequest:
+    
+    def __init__(self):
+        print 'Echo Request'
+        self.localAdr = "2001:abcd:acad:1::2"
+        win = "2001:abcd:acad:2:b485:2aec:9447:fd83"
+
+    def buildPacketEchoRequest(self, ipAdr):
+        data = "abcdefghijklmnopqrstuvwabcdefghi"
+        return IPv6(dst=ipAdr)/ICMPv6EchoRequest(id=0,seq=0)/data
+    
+
+    def execModuleEchoRequestNeighCacheExhaustion(self, exitIface, ipAdr):
+        packetContainer = self.buildPacketEchoRequest(ipAdr)
+        for x in range(1,10):
+            send(packetContainer, iface=exitIface, verbose=False)

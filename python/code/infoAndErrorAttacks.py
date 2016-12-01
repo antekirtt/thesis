@@ -1,0 +1,208 @@
+#!/usr/bin/python
+
+import sys
+import re, uuid
+import os
+import readline
+from pprint import pprint
+from commands import *
+from echoReply import *
+from destinationUnreach import *
+from packetTooBig import *
+from timeExceeded import *
+from parameterProblem import *
+from echoRequest import *
+
+"""
+This is general class to start Informational and Error ICMPv6 message type tests.
+"""
+class InfoAndErrorAttacks:
+
+    def __init__(self, iface):
+        self.iface = iface
+        self.name = 'InfoAndErrorAttacks'
+
+    def startSystem(self):
+        Commands.setInfoAndErrorAttacksHistory()
+        running = 1
+        while running:
+            readline.parse_and_bind("tab: complete")
+            #we receive data from the keyboard                    
+            command  = raw_input(self.name + ' >>')
+            #help command
+            if re.match('help', command):
+                self.showHelp()
+            #quit module command
+            elif re.match('quit', command):
+                running = 0
+                Commands.setAttackingChannelHistory()
+            elif re.match('execEchoReplyRemoteWin', command):
+                er = EchoReply()
+                er.execModuleEchoReplyWin(self.iface)
+            elif re.match('execDestUnreachAllWin', command):
+                du = DestinationUnreach() 
+                du.execAllWindows(self.iface)
+            elif re.match('execDestUnreachAllLinux', command):
+                du = DestinationUnreach()
+                du.execAllLinux(self.iface)
+            elif re.match('execDestUnreachBadCodeWin', command):
+                du = DestinationUnreach() 
+                du.execDestUnreachBadCodeWin(self.iface)
+            elif re.match('execDestUnreachBadCodeLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachBadCodeLinux(self.iface)
+            elif re.match('execDestUnreachDifferentLengthLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachLengthLinux(self.iface)
+            elif re.match('execDestUnreachDifferentLengthWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachLengthWin(self.iface)
+            elif re.match('execDestUnreachNoRouteWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachNoRouteToDestWin(self.iface)
+            elif re.match('execDestUnreachNoRouteLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachNoRouteToDestLinux(self.iface)
+            elif re.match('execDestUnreachAdrUnreachWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachAdrUnreachWin(self.iface)
+            elif re.match('execDestUnreachAdrUnreachLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachAdrUnreachLinux(self.iface)
+            elif re.match('execDestUnreachPortUnreachWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachPortUnreachWin(self.iface)
+            elif re.match('execDestUnreachPortUnreachLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachPortUnreachLinux(self.iface)
+            elif re.match('execDestUnreachComAdminProhibWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachCommDstAdminProhibitedWin(self.iface)
+            elif re.match('execDestUnreachComAdminProhibLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachCommDstAdminProhibitedLinux(self.iface)
+            elif re.match('execDestUnreachBeyondScopeWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachBeyondScopeSrcAdrWin(self.iface)
+            elif re.match('execDestUnreachBeyondScopeLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachBeyondScopeSrcAdrLinux(self.iface)
+            elif re.match('execDestUnreachSrcFailedPolicyWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachSrcFailedPolicyWin(self.iface)
+            elif re.match('execDestUnreachSrcFailedPolicyLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachSrcFailedPolicyLinux(self.iface)
+            elif re.match('execDestUnreachRejectRouteWin', command):
+                du = DestinationUnreach()
+                du.execDestUnreachRejectRouteWin(self.iface)
+            elif re.match('execDestUnreachRejectRouteLinux', command):
+                du = DestinationUnreach()
+                du.execDestUnreachRejectRouteLinux(self.iface)
+            elif re.match('execPacketTooBigMTUBigWin', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUBigWin(self.iface)
+            elif re.match('execPacketTooBigMTUBigLinux', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUBigLinux(self.iface)
+            elif re.match('execPacketTooBigMTUSmallWin', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUSmallWin(self.iface)
+            elif re.match('execPacketTooBigMTUSmallLinux', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUSmallLinux(self.iface)
+            elif re.match('execPacketTooBigMTUWin', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUWin(self.iface)
+            elif re.match('execPacketTooBigMTULinux', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTULinux(self.iface)
+            elif re.match('execPacketTooBigBadCodeWin', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTUWin(self.iface)
+            elif re.match('execPacketTooBigBadCodeLinux', command):
+                ptb = PacketTooBig()
+                ptb.execModulePacketTooBigMTULinux(self.iface)
+            elif re.match('execTimeExceededBadCodeWin', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededBadCodeWin(self.iface)
+            elif re.match('execTimeExceededBadCodeLinux', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededBadCodeLinux(self.iface)
+            elif re.match('execTimeExceededHopLimitWin', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededHopLimitWin(self.iface)
+            elif re.match('execTimeExceededHopLimitLinux', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededHopLimitLinux(self.iface)
+            elif re.match('execTimeExceededFragmentReassemblyWin', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededFragmentReassemblyWin(self.iface)
+            elif re.match('execTimeExceededFragmentReassemblyLinux', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededFragmentReassemblyLinux(self.iface)
+            elif re.match('execTimeExceededLengthWin', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededLengthWin(self.iface)
+            elif re.match('execTimeExceededLengthLinux', command):
+                te = TimeExceeded()
+                te.execModuleTimeExceededLengthLinux(self.iface)
+            elif re.match('execParameterProblemBadCodeWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemBadCodeWin(self.iface)
+            elif re.match('execParameterProblemBadCodeLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemBadCodeLinux(self.iface)
+            elif re.match('execParameterProblemFloodPointerWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemFloodPointerWin(self.iface)
+            elif re.match('execParameterProblemFloodPointerLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemFloodPointerLinux(self.iface)
+            elif re.match('execParameterProblemFloodHighPointerWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemFloodHighPointerWin(self.iface)
+            elif re.match('execParameterProblemFloodHighPointerLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemFloodHighPointerLinux(self.iface)
+            elif re.match('execParameterProblemErrHeaderWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemErrHeaderWin(self.iface)
+            elif re.match('execParameterProblemErrHeaderLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemErrHeaderLinux(self.iface)
+            elif re.match('execParameterProblemUnrecHeaderWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemUnrecHeaderWin(self.iface)
+            elif re.match('execParameterProblemUnrecHeaderLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemUnrecHeaderLinux(self.iface)
+            elif re.match('execParameterProblemUnrecIPOptionWin', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemUnrecIPOptionrWin(self.iface)
+            elif re.match('execParameterProblemUnrecIPOptionLinux', command):
+                pp = ParameterProblem()
+                pp.execModuleParameterProblemUnrecIPOptionLinux(self.iface)
+            elif re.match('execEchoRequestNeighCacheExhaustionDstVictimWin', command):
+                er = EchoRequest()
+                er.execModuleEchoRequestNeighCacheExhaustionDstVictimWin(self.iface)
+            elif re.match('execEchoRequestNeighCacheExhaustionDstVictimLinux', command):
+                er = EchoRequest()
+                er.execModuleEchoRequestNeighCacheExhaustionDstVictimLinux(self.iface)
+            elif re.match('execEchoRequestNeighCacheExhaustionSrcVictimWin', command):
+                er = EchoRequest()
+                er.execModuleEchoRequestNeighCacheExhaustionSrcVictimWin(self.iface)
+            elif re.match('execEchoRequestNeighCacheExhaustionSrcVictimLinux', command):
+                er = EchoRequest()
+                er.execModuleEchoRequestNeighCacheExhaustionSrcVictimLinux(self.iface)
+            elif re.match('execEchoReplyRemoteWin', command):
+                er = EchoReply()
+                er.execModuleEchoReplyWin(self.iface)
+            elif re.match('execEchoReplyRemoteLinux', command):
+                er = EchoReply()
+                er.execModuleEchoReplyWin(self.iface)
+                
+    def showHelp(self):
+        for entry in Help.getInfoAndErrorAttacksHelp():
+            print entry
+
