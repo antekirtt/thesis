@@ -113,6 +113,63 @@ S.~Bradner, ``{The Internet Standards Process -- Revision 3},'' Internet
   Available: \url{http://www.rfc-editor.org/info/rfc2026}
 \BIBentrySTDinterwordspacing
 
+\bibitem{rfc4884}
+\BIBentryALTinterwordspacing
+R.~Bonica, D.~Gan, D.~Tappan, and C.~Pignataro, ``{Extended ICMP to Support
+  Multi-Part Messages},'' Internet Requests for Comments, {RFC Editor}, {RFC}
+  4884, April 2007. [Online]. Available:
+  \url{http://www.rfc-editor.org/info/rfc4884}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rfc3775}
+\BIBentryALTinterwordspacing
+D.~Perkins and J.~Arkko, ``{Mobility Support in IPv6},'' Internet Requests for
+  Comments, {RFC Editor}, {RFC} 3775, June 2004. [Online]. Available:
+  \url{http://www.rfc-editor.org/info/rfc3775}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rfc4191}
+\BIBentryALTinterwordspacing
+R.~Draves and D.~Thaler, ``{Default Router Preferences and More-Specific
+  Routes},'' Internet Requests for Comments, {RFC Editor}, {RFC} 4191, November
+  2005. [Online]. Available: \url{http://www.rfc-editor.org/info/rfc4191}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rfc4389}
+\BIBentryALTinterwordspacing
+D.~Thaler, M.~Talwar, and C.~Patel, ``{Neighbor Discovery Proxies (ND
+  Proxy)},'' Internet Requests for Comments, {RFC Editor}, {RFC} 4389, April
+  2006. [Online]. Available: \url{http://www.rfc-editor.org/info/rfc4389}
+\BIBentrySTDinterwordspacing
+
+\bibitem{schaefer}
+\BIBentryALTinterwordspacing
+R.~Schaefer and C.~Werny. (2014) {IPv6 Attack and Defense Strategies}.
+  Accessed: 21-10-2016. [Online]. Available:
+  \url{https://www.blackhat.com/docs/sp-14/materials/arsenal/sp-14-Schaefer-Workshop-Slides.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6ready}
+\BIBentryALTinterwordspacing
+{IPv6 Ready Committee}. (2013) {IPv6 Ready Logo White Paper}. Accessed:
+  2-04-2016. [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/IPv6_Ready_Logo_White_Paper_Final.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6readyCore}
+\BIBentryALTinterwordspacing
+{IPv6 Ready Committee}. (2010) {Core Conformance}. Accessed: 2-04-2016.
+  [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/Core_Conformance_Latest.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ipv6readyCore2}
+\BIBentryALTinterwordspacing
+{IPv6 Ready Committee}. (2010) {Core Interoperability}. Accessed: 2-04-2016.
+  [Online]. Available:
+  \url{https://www.ipv6ready.org/docs/Core_Interoperability_Latest.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{prisoners}
 J.~G. Simmons, ``{The prisoners’ problem and the subliminal channel},''
   \emph{Advances in Cryptology, Proceedings of CRYPTO ’83, pages 51–67},
@@ -143,47 +200,6 @@ R.~P. Murphy. (2006) {IPv6/ICMPv6 Covert Channels}. Accessed: 2-04-2016.
 {The Hacker Choice}. (2006) {Attacking the IPv6 Protocol Suite}. Accessed:
   4-04-2016. [Online]. Available:
   \url{https://www.thc.org/papers/vh_thc-ipv6_attack.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ipv6ready}
-\BIBentryALTinterwordspacing
-{IPv6 Ready Committee}. (2013) {IPv6 Ready Logo White Paper}. Accessed:
-  2-04-2016. [Online]. Available:
-  \url{https://www.ipv6ready.org/docs/IPv6_Ready_Logo_White_Paper_Final.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ipv6readyCore}
-\BIBentryALTinterwordspacing
-{IPv6 Ready Committee}. (2010) {Core Conformance}. Accessed: 2-04-2016.
-  [Online]. Available:
-  \url{https://www.ipv6ready.org/docs/Core_Conformance_Latest.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ipv6readyCore2}
-\BIBentryALTinterwordspacing
-{IPv6 Ready Committee}. (2010) {Core Interoperability}. Accessed: 2-04-2016.
-  [Online]. Available:
-  \url{https://www.ipv6ready.org/docs/Core_Interoperability_Latest.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{sans}
-A.~Pilihanto, ``{A complete guide on IPv6 attack and defense},'' \emph{SANS
-  Institute}, 2011.
-
-\bibitem{rfc4862}
-\BIBentryALTinterwordspacing
-S.~Thomson, T.~Narten, and T.~Jinmei, ``{IPv6 Stateless Address
-  Autoconfiguration},'' Internet Requests for Comments, {RFC Editor}, {RFC}
-  4862, September 2007. [Online]. Available:
-  \url{http://www.rfc-editor.org/info/rfc4862}
-\BIBentrySTDinterwordspacing
-
-\bibitem{smurf}
-\BIBentryALTinterwordspacing
-F.~Gont and W.~Liu, ``{Security Implications of IPv6 Options of Type 10xxxxxx
-  draft-gont-6man-ipv6-smurf-amplifier-03},'' Internet Draft, {Draft}, March
-  2013. [Online]. Available:
-  \url{https://tools.ietf.org/html/draft-gont-6man-ipv6-smurf-amplifier-03}
 \BIBentrySTDinterwordspacing
 
 \bibitem{secExperiments}

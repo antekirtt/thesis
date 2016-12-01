@@ -12,48 +12,46 @@ Database file #1: bibi.bib.bib
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
-Warning--missing institution in smurf
 
 Done.
-You've used 35 entries,
+You've used 37 entries,
             4087 wiz_defined-function locations,
-            1001 strings with 12503 characters,
-and the built_in function-call counts, 14845 in all, are:
-= -- 1285
-> -- 277
-< -- 10
-+ -- 130
-- -- 65
-* -- 628
-:= -- 2853
-add.period$ -- 77
-call.type$ -- 35
-change.case$ -- 44
+            1016 strings with 12798 characters,
+and the built_in function-call counts, 16064 in all, are:
+= -- 1402
+> -- 308
+< -- 13
++ -- 144
+- -- 72
+* -- 689
+:= -- 3085
+add.period$ -- 82
+call.type$ -- 37
+change.case$ -- 47
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 1225
-empty$ -- 1253
-format.name$ -- 81
-if$ -- 3227
+cite$ -- 37
+duplicate$ -- 1314
+empty$ -- 1333
+format.name$ -- 91
+if$ -- 3490
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 270
-newline$ -- 163
-num.names$ -- 34
-pop$ -- 625
+int.to.str$ -- 36
+missing$ -- 296
+newline$ -- 175
+num.names$ -- 36
+pop$ -- 673
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 1151
+skip$ -- 1242
 stack$ -- 0
-substring$ -- 43
-swap$ -- 801
-text.length$ -- 10
+substring$ -- 46
+swap$ -- 880
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 35
-warning$ -- 1
-while$ -- 34
-width$ -- 36
-write$ -- 371
-(There was 1 warning)
+type$ -- 37
+warning$ -- 0
+while$ -- 36
+width$ -- 38
+write$ -- 401

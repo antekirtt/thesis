@@ -1,79 +1,26 @@
-\contentsline {table}{\numberline {1}{\ignorespaces ICMPv6 General Header Format\relax }}{23}{table.caption.17}
-\contentsline {table}{\numberline {2}{\ignorespaces ICMPv6 Error Messages\relax }}{23}{table.caption.18}
-\contentsline {table}{\numberline {3}{\ignorespaces ICMPv6 Informational Messages\relax }}{23}{table.caption.19}
-\contentsline {table}{\numberline {4}{\ignorespaces Destination Unreachable Codes\relax }}{24}{table.caption.20}
-\contentsline {table}{\numberline {5}{\ignorespaces Time Exceeded Codes\relax }}{25}{table.caption.28}
-\contentsline {table}{\numberline {6}{\ignorespaces Parameter Problem Codes\relax }}{26}{table.caption.29}
-\contentsline {table}{\numberline {7}{\ignorespaces Echo Request Fields\relax }}{27}{table.caption.30}
-\contentsline {table}{\numberline {8}{\ignorespaces Echo Reply Fields\relax }}{27}{table.caption.31}
-\contentsline {table}{\numberline {9}{\ignorespaces RFC 4861 Messages\relax }}{28}{table.caption.33}
-\contentsline {table}{\numberline {10}{\ignorespaces Router Solicitation Fields and Options\relax }}{29}{table.caption.34}
-\contentsline {table}{\numberline {11}{\ignorespaces Router Advertisement Fields and Options\relax }}{30}{table.caption.35}
-\contentsline {table}{\numberline {12}{\ignorespaces Neighbor Solicitation Fields and Options\relax }}{31}{table.caption.36}
-\contentsline {table}{\numberline {13}{\ignorespaces Neighbor Advertisement Fields and Options\relax }}{32}{table.caption.37}
-\contentsline {table}{\numberline {14}{\ignorespaces Redirect Fields and Options\relax }}{33}{table.caption.38}
-\contentsline {table}{\numberline {15}{\ignorespaces Options Type and Names\relax }}{34}{table.caption.39}
-\contentsline {table}{\numberline {16}{\ignorespaces Source/Target Link-layer Address Fields\relax }}{34}{table.caption.40}
-\contentsline {table}{\numberline {17}{\ignorespaces Prefix Information Fields\relax }}{35}{table.caption.41}
-\contentsline {table}{\numberline {18}{\ignorespaces Redirect Header Fields\relax }}{35}{table.caption.42}
-\contentsline {table}{\numberline {19}{\ignorespaces MTU Fields\relax }}{35}{table.caption.43}
-\contentsline {table}{\numberline {20}{\ignorespaces Investigated Protocols\relax }}{40}{table.caption.49}
-\contentsline {table}{\numberline {21}{\ignorespaces Tested Covert Channels\cite {lewandowski}\relax }}{42}{table.caption.53}
-\contentsline {table}{\numberline {22}{\ignorespaces Router Advertisement Packet example for IPv6 Ready Project\relax }}{46}{table.caption.62}
-\contentsline {table}{\numberline {23}{\ignorespaces Raspberry Pi implementation\relax }}{61}{table.caption.116}
-\contentsline {table}{\numberline {24}{\ignorespaces Linux Debian\relax }}{62}{table.caption.130}
-\contentsline {table}{\numberline {25}{\ignorespaces Linux Debian Firewall\relax }}{63}{table.caption.146}
-\contentsline {table}{\numberline {26}{\ignorespaces Windows 7\relax }}{64}{table.caption.164}
-\contentsline {table}{\numberline {27}{\ignorespaces Linux Debian External\relax }}{64}{table.caption.165}
-\contentsline {table}{\numberline {28}{\ignorespaces IPv6 Header\relax }}{111}{table.caption.258}
-\contentsline {table}{\numberline {29}{\ignorespaces Destination Unreachable\relax }}{111}{table.caption.259}
-\contentsline {table}{\numberline {30}{\ignorespaces Packet Too Big\relax }}{112}{table.caption.260}
-\contentsline {table}{\numberline {31}{\ignorespaces Time Exceeded\relax }}{112}{table.caption.261}
-\contentsline {table}{\numberline {32}{\ignorespaces Parameter Problem\relax }}{112}{table.caption.262}
-\contentsline {table}{\numberline {33}{\ignorespaces Echo Request\relax }}{112}{table.caption.263}
-\contentsline {table}{\numberline {34}{\ignorespaces Echo Reply\relax }}{112}{table.caption.264}
-\contentsline {table}{\numberline {35}{\ignorespaces Router Solicitation\relax }}{113}{table.caption.265}
-\contentsline {table}{\numberline {36}{\ignorespaces Router Advertisement\relax }}{113}{table.caption.266}
-\contentsline {table}{\numberline {37}{\ignorespaces Neighbor Solicitation\relax }}{113}{table.caption.267}
-\contentsline {table}{\numberline {38}{\ignorespaces Neighbor Advertisement\relax }}{114}{table.caption.268}
-\contentsline {table}{\numberline {39}{\ignorespaces Redirect\relax }}{114}{table.caption.269}
-\contentsline {table}{\numberline {40}{\ignorespaces Source/Target link-layer Address\relax }}{114}{table.caption.270}
-\contentsline {table}{\numberline {41}{\ignorespaces Prefix Information\relax }}{115}{table.caption.271}
-\contentsline {table}{\numberline {42}{\ignorespaces Redirect Header\relax }}{115}{table.caption.272}
-\contentsline {table}{\numberline {43}{\ignorespaces MTU\relax }}{115}{table.caption.273}
-\contentsline {table}{\numberline {44}{\ignorespaces RFC 4443 - Message Processing Rules\relax }}{116}{table.caption.275}
-\contentsline {table}{\numberline {45}{\ignorespaces RFC 4443 - Destination Unreachable\relax }}{117}{table.caption.276}
-\contentsline {table}{\numberline {46}{\ignorespaces RFC 4443 - Packet Too Big\relax }}{117}{table.caption.277}
-\contentsline {table}{\numberline {47}{\ignorespaces RFC 4443 - Time Exceeded\relax }}{117}{table.caption.278}
-\contentsline {table}{\numberline {48}{\ignorespaces RFC 4443 - Parameter Problem\relax }}{118}{table.caption.279}
-\contentsline {table}{\numberline {49}{\ignorespaces RFC 4443 - Echo Request\relax }}{118}{table.caption.280}
-\contentsline {table}{\numberline {50}{\ignorespaces RFC 4443 - Echo Reply\relax }}{118}{table.caption.281}
-\contentsline {table}{\numberline {51}{\ignorespaces RFC 4861 - Validation of Router Solicitation\relax }}{119}{table.caption.282}
-\contentsline {table}{\numberline {52}{\ignorespaces RFC 4861 - Validation of Router Advertisement\relax }}{120}{table.caption.283}
-\contentsline {table}{\numberline {53}{\ignorespaces RFC 4861 - Validation of Neighbor Solicitation\relax }}{121}{table.caption.284}
-\contentsline {table}{\numberline {54}{\ignorespaces RFC 4861 - Sending Neighbor Solicitation\relax }}{121}{table.caption.285}
-\contentsline {table}{\numberline {55}{\ignorespaces RFC 4861 - Reception of Neighbor Solicitation\relax }}{122}{table.caption.286}
-\contentsline {table}{\numberline {56}{\ignorespaces RFC 4861 - Validation of Neighbor Advertisement\relax }}{122}{table.caption.287}
-\contentsline {table}{\numberline {57}{\ignorespaces RFC 4861 - Solicited Neighbor Advertisement\relax }}{123}{table.caption.288}
-\contentsline {table}{\numberline {58}{\ignorespaces RFC 4861 - Receipt of Neighbor Advertisement\relax }}{123}{table.caption.289}
-\contentsline {table}{\numberline {59}{\ignorespaces RFC 4861 - Validation of Redirect\relax }}{124}{table.caption.290}
-\contentsline {table}{\numberline {60}{\ignorespaces RFC 4861 - Redirect, specifications\relax }}{125}{table.caption.291}
-\contentsline {table}{\numberline {61}{\ignorespaces RFC 4861 - Options\relax }}{125}{table.caption.292}
-\contentsline {table}{\numberline {62}{\ignorespaces Data Exfiltration Test Set\relax }}{127}{table.caption.357}
-\contentsline {table}{\numberline {63}{\ignorespaces PoC Commands - Second Hypothesis\relax }}{128}{table.caption.359}
-\contentsline {table}{\numberline {64}{\ignorespaces PoC Commands - Second Hypothesis\relax }}{129}{table.caption.360}
-\contentsline {table}{\numberline {65}{\ignorespaces PoC Commands - Internal Tests\relax }}{129}{table.caption.361}
-\contentsline {table}{\numberline {66}{\ignorespaces Data Exfiltration Results\relax }}{130}{table.caption.364}
-\contentsline {table}{\numberline {67}{\ignorespaces Data Exfiltration Results\relax }}{131}{table.caption.365}
-\contentsline {table}{\numberline {68}{\ignorespaces Attacking internal network, Destination Unreachable (Type 1)\relax }}{132}{table.caption.367}
-\contentsline {table}{\numberline {69}{\ignorespaces Attacking internal network, Packet Too Big (Type 2)\relax }}{133}{table.caption.368}
-\contentsline {table}{\numberline {70}{\ignorespaces Attacking internal network, Time Exceeded (Type 3)\relax }}{133}{table.caption.369}
-\contentsline {table}{\numberline {71}{\ignorespaces Attacking internal network, Parameter Problem (Type 4)\relax }}{134}{table.caption.370}
-\contentsline {table}{\numberline {72}{\ignorespaces Attacking internal network, Echo Request (Type 128)\relax }}{135}{table.caption.371}
-\contentsline {table}{\numberline {73}{\ignorespaces Attacking internal network, Echo Reply (Type 129)\relax }}{135}{table.caption.372}
-\contentsline {table}{\numberline {74}{\ignorespaces Attacking internal network, Router Solicitation (Type 133)\relax }}{135}{table.caption.373}
-\contentsline {table}{\numberline {75}{\ignorespaces Attacking internal network, Router Advertisement (Type 134)\relax }}{136}{table.caption.374}
-\contentsline {table}{\numberline {76}{\ignorespaces Attacking internal network, Router Advertisement (Type 134)\relax }}{137}{table.caption.375}
-\contentsline {table}{\numberline {77}{\ignorespaces Attacking internal network, Neighbor Solicitation (Type 135)\relax }}{137}{table.caption.376}
-\contentsline {table}{\numberline {78}{\ignorespaces Attacking internal network, Neighbor Advertisement (Type 136)\relax }}{138}{table.caption.377}
-\contentsline {table}{\numberline {79}{\ignorespaces Attacking internal network, Redirect (Type 137)\relax }}{138}{table.caption.378}
+\contentsline {table}{\numberline {1}{\ignorespaces ICMPv6 Error Messages\relax }}{20}{table.caption.15}
+\contentsline {table}{\numberline {2}{\ignorespaces ICMPv6 Informational Messages\relax }}{20}{table.caption.16}
+\contentsline {table}{\numberline {3}{\ignorespaces RFC 4861 Messages\relax }}{21}{table.caption.17}
+\contentsline {table}{\numberline {4}{\ignorespaces Raspberry Pi implementation\relax }}{44}{table.caption.72}
+\contentsline {table}{\numberline {5}{\ignorespaces Linux Debian\relax }}{45}{table.caption.87}
+\contentsline {table}{\numberline {6}{\ignorespaces Linux Debian Firewall\relax }}{46}{table.caption.104}
+\contentsline {table}{\numberline {7}{\ignorespaces Windows 7\relax }}{46}{table.caption.122}
+\contentsline {table}{\numberline {8}{\ignorespaces Linux Debian External\relax }}{47}{table.caption.124}
+\contentsline {table}{\numberline {9}{\ignorespaces Data Exfiltration Test Set\relax }}{99}{table.caption.289}
+\contentsline {table}{\numberline {10}{\ignorespaces PoC Commands - Second Hypothesis\relax }}{100}{table.caption.291}
+\contentsline {table}{\numberline {11}{\ignorespaces PoC Commands - Second Hypothesis\relax }}{101}{table.caption.292}
+\contentsline {table}{\numberline {12}{\ignorespaces PoC Commands - Internal Tests\relax }}{101}{table.caption.293}
+\contentsline {table}{\numberline {13}{\ignorespaces Data Exfiltration Results\relax }}{102}{table.caption.296}
+\contentsline {table}{\numberline {14}{\ignorespaces Data Exfiltration Results\relax }}{103}{table.caption.297}
+\contentsline {table}{\numberline {15}{\ignorespaces Attacking internal network, Destination Unreachable (Type 1)\relax }}{104}{table.caption.299}
+\contentsline {table}{\numberline {16}{\ignorespaces Attacking internal network, Packet Too Big (Type 2)\relax }}{105}{table.caption.300}
+\contentsline {table}{\numberline {17}{\ignorespaces Attacking internal network, Time Exceeded (Type 3)\relax }}{105}{table.caption.301}
+\contentsline {table}{\numberline {18}{\ignorespaces Attacking internal network, Parameter Problem (Type 4)\relax }}{106}{table.caption.302}
+\contentsline {table}{\numberline {19}{\ignorespaces Attacking internal network, Echo Request (Type 128)\relax }}{107}{table.caption.303}
+\contentsline {table}{\numberline {20}{\ignorespaces Attacking internal network, Echo Reply (Type 129)\relax }}{107}{table.caption.304}
+\contentsline {table}{\numberline {21}{\ignorespaces Attacking internal network, Router Solicitation (Type 133)\relax }}{107}{table.caption.305}
+\contentsline {table}{\numberline {22}{\ignorespaces Attacking internal network, Router Advertisement (Type 134)\relax }}{108}{table.caption.306}
+\contentsline {table}{\numberline {23}{\ignorespaces Attacking internal network, Router Advertisement (Type 134)\relax }}{109}{table.caption.307}
+\contentsline {table}{\numberline {24}{\ignorespaces Attacking internal network, Neighbor Solicitation (Type 135)\relax }}{109}{table.caption.308}
+\contentsline {table}{\numberline {25}{\ignorespaces Attacking internal network, Neighbor Advertisement (Type 136)\relax }}{110}{table.caption.309}
+\contentsline {table}{\numberline {26}{\ignorespaces Attacking internal network, Redirect (Type 137)\relax }}{110}{table.caption.310}
